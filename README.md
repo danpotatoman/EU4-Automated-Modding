@@ -1,16 +1,29 @@
-# EU4 Modding Automation & Black-Box Verification
+# EU4 Automation & Black-Box Testing Framework
 
-A Windows research project exploring how to build and verify mods for a closed-source
-interactive application. Europa Universalis IV is the target; the engineering work
-combines static analysis, isolated native tests, process supervision, runtime assertions,
-bounded UI input and independent saved-state checks.
+An automation and integration-testing framework for **Europa Universalis IV**, a
+closed-source interactive application. Built in Node.js and PowerShell, it stages
+isolated game profiles, supervises native processes, collects runtime assertions,
+coordinates bounded UI input and verifies behavior against independent saved state.
 
-This is an active development repository. Brittany Missions is the established mod;
-American Century is a second, growing USA mission project. Neither is certified as a
-complete release package. [Current status](docs/STATUS.md) and
-[USA slice results](docs/testing/american-century/README.md) define the actual scope.
+**Stack:** Node.js · PowerShell · Windows process automation · CWTools · EU4 scripting · GitHub Actions
 
-## Why this is interesting
+## Engineering highlights
+
+- **Layered verification:** static wiring checks, scripted assertions, real mission-button
+  activation and before/after save checks distinguish completion flags from actual rewards.
+- **Process supervision and recovery:** explicit process/profile ownership, crash and
+  assertion-stall detection, verified cleanup and bounded retries in fresh profiles.
+- **Native integration evidence:** four Brittany behavior contracts; a USA slice with
+  four production mission claims, 31 save/input checks and 12 ordinary reload comparisons.
+- **Offline regression and CI:** 53 Node tests plus four tool self-test programs run
+  without EU4 or an input adapter; GitHub Actions is configured for Linux and Windows.
+
+The repository is actively developed. Brittany Missions is the established mod;
+American Century is a growing USA mission project. Neither is certified as a complete
+release package. [Current status](docs/STATUS.md) and
+[USA slice results](docs/testing/american-century/README.md) define the supported claims.
+
+## The testing problem
 
 An interface that records completion can skip the behavior being tested. In fresh
 Nantes experiments, EU4 console/script commands recorded a mission as completed
@@ -23,7 +36,7 @@ actual UI dispatch, reward quantities and persistence. A static pass, clean log 
 completion flag cannot substitute for all those layers.
 [Investigation and evidence](docs/testing/runtime-mission-claim/README.md).
 
-## Workflow
+## Architecture and workflow
 
 ```mermaid
 flowchart TD
@@ -48,21 +61,21 @@ it refuses unrelated EU4 sessions. Assertion failures stop; selected infrastruct
 failures can retry after successful owned cleanup. Raw profiles, logs, saves and
 screenshots remain local. Small reviewed evidence supports replayable regression tests.
 
-## Evidence-supported results
+## Verified results and scope
 
 | Capability | Verified scope |
 | --- | --- |
 | Native regression | Four Brittany contracts: preview predicate, conditional shipbuilding reward, alliance-dependent diplomatic reward and installed textiles-building helper; static wiring checked separately |
-| Faithful input | One Nantes claim and fresh unready refusal, using actual pointer input and independent before/after saves; both permanent rewards once and immediate downstream readiness |
+| Faithful input | One Nantes claim and fresh unready refusal, using actual pointer input and independent before/after saves; both permanent rewards granted once and immediate downstream readiness |
 | USA slice | Vanilla formation by real input, four production claims, 31 save/input checks and 12 ordinary reload comparisons; separate eight-check unready contract |
 | Recovery | Controlled owned exit, native crash/reporter cleanup and an actual after-BEGIN suspension; fresh retry and separate clean suites afterward |
-| Offline regression | Current publication check: 53 Node tests plus four tool self-test programs; no installed game or input adapter required |
+| Offline regression | Documented validation: 53 Node tests plus four tool self-test programs; no installed game or input adapter required |
 
-The latest historical native development check recorded **51 shared Node tests**;
-the publication work adds four config/audit tests. Two of the resulting 55 tests
-exercise the real Windows process adapter and are separate from the 53-test offline
-command. See [publication validation](docs/PUBLICATION.md) for current results and
-[coverage](docs/testing/runtime-coverage.md) for boundaries. Replays check evaluators
+**Test-count breakdown:** the historical native development check recorded 51 shared
+Node tests. Four configuration/audit tests bring the total to 55; two exercise the real
+Windows process adapter and run separately from the 53-test offline command.
+See [validation results](docs/PUBLICATION.md) and
+[coverage boundaries](docs/testing/runtime-coverage.md). Replays check evaluators
 against retained observations; they do not launch another game session.
 
 ## Run without EU4
@@ -78,8 +91,9 @@ node tools/publication/audit.mjs
 
 The offline command runs assertion, wiring, lifecycle simulation, evidence replay,
 input/save contracts, configuration checks and synthetic tool self-tests. It writes
-only ignored test output. GitHub Actions runs these checks on Linux and Windows.
-CI does **not** run EU4, CWTools's installed server or real gameplay input.
+only ignored test output. The GitHub Actions workflow is configured to run these
+checks on Linux and Windows. CI does **not** run EU4, CWTools's installed server or
+real gameplay input.
 
 ## Local EU4 validation and testing
 
@@ -113,11 +127,16 @@ bounds are available. Cleanup verifies identities before terminating owned proce
 [Testing guide](docs/TESTING.md) and [runner documentation](tools/runtime-tests/README.md)
 cover outcomes, preparation-only mode, negative controls and recovery.
 
-Faithful UI tests additionally require an active Codex session with the historical
-supported Windows `node_repl` / `@oai/sky` input adapter. Bare PowerShell cannot operate
-that handoff. The verified UI condition is a 1280×720 client, scale 1 and initial tree
-scroll; screenshots and fresh owned-window identities must be inspected before input.
-This adapter is environment-provided and not a bundled standalone automation service.
+### UI-input dependency
+
+Faithful UI tests require an active Codex session with the historical supported
+Windows `node_repl` / `@oai/sky` input adapter. The adapter supplies external input;
+the repository supplies test orchestration, ownership checks, assertions, state
+verification, lifecycle management and recovery logic. Bare PowerShell cannot operate
+that handoff, and the adapter is not a bundled standalone automation service.
+
+The verified UI condition is a 1280×720 client, scale 1 and initial tree scroll;
+screenshots and fresh owned-window identities must be inspected before input.
 [Nantes operator contract](tools/runtime-tests/README.md#faithful-nantes-claim) and
 [USA playtests](docs/testing/american-century/README.md#playtest-list) give exact steps.
 
@@ -131,13 +150,11 @@ This adapter is environment-provided and not a bundled standalone automation ser
 | `docs/testing/` | Scenarios, coverage, historical reports and reviewed textual evidence |
 | `docs/{PROJECT,DESIGN,STATUS,ROADMAP,DECISIONS,TESTING}.md` | Durable project knowledge and active development state |
 | `AGENTS.md`, `.agent/` | Codex integrity instructions and execution plans |
-| `.local/` and ignored tool output | Machine configuration, raw evidence and audit originals; never public |
+| `.local/` and ignored tool output | Machine configuration, raw evidence and audit originals; excluded from the public repository |
 
 [Project map](PROJECT_STRUCTURE.md), [contribution workflow](CONTRIBUTING.md) and
-[public-repository hygiene](docs/REPOSITORY_HYGIENE.md) explain ongoing development.
-The prepared workspace itself now has clean Git metadata; original private history
-is archived locally. Continue developing here with ignored local config/evidence
-and the configured staged-content commit hook. Repeated exports are unnecessary.
+[repository hygiene](docs/REPOSITORY_HYGIENE.md) explain ongoing development,
+local configuration, evidence handling and staged-content checks.
 
 ## Limitations and next work
 
@@ -153,7 +170,7 @@ paths and preserves failed verdicts. Game screenshots and bulk engine dumps are 
 locally pending ownership review, so readers cannot replay the original visual inspection
 from the public textual fixtures alone.
 
-## Ownership and publication
+## Ownership and licensing
 
 Europa Universalis IV is developed and published by Paradox. This independent project
 is not affiliated with or endorsed by Paradox. EU4 assets and trademarks belong to
@@ -162,7 +179,6 @@ rights. This repository supplies project tooling/mod content and references exte
 game definitions; it does not supply the game.
 
 Licensing is pending owner review; no open-source license grant is implied yet.
-MIT is recommended for confirmed project-owned code, with third-party/runtime material
-explicitly outside its scope. [Audit and licensing review](docs/PUBLICATION.md) identifies
-the remaining decisions, including preservation of the original private Git history. No
-remote, commit or push was created by the publication preparation.
+The [audit and licensing review](docs/PUBLICATION.md) recommends MIT for confirmed
+project-owned code, with third-party/runtime material explicitly outside its scope,
+and documents the remaining ownership decisions.
