@@ -1,0 +1,51 @@
+# Executes the real production reward after extraction; fixtures never copy it.
+BRI = {
+    170 = {
+        remove_building = shipyard
+        remove_building = grand_shipyard
+        remove_province_modifier = bri_brest_dockyards
+        export_to_variable = { which = eu4rt_cost_before value = modifier:local_ship_cost }
+        export_to_variable = { which = eu4rt_repair_before value = modifier:local_ship_repair }
+        if = { limit = { NOT = { has_building = shipyard } NOT = { has_building = grand_shipyard } } log = "EU4RT 7fa89d6ec1683acb_1 OK empty-before" }
+        else = { log = "EU4RT 7fa89d6ec1683acb_1 FAIL empty-before" }
+    }
+    bri_shipbuilding_reward_effect = yes
+    170 = {
+        if = { limit = { has_building = shipyard NOT = { has_building = grand_shipyard } } log = "EU4RT 7fa89d6ec1683acb_1 OK shipyard-granted" }
+        else = { log = "EU4RT 7fa89d6ec1683acb_1 FAIL shipyard-granted" }
+        export_to_variable = { which = eu4rt_cost_delta value = modifier:local_ship_cost }
+        subtract_variable = { which = eu4rt_cost_delta which = eu4rt_cost_before }
+        if = { limit = { check_variable = { which = eu4rt_cost_delta value = -0.100 } NOT = { check_variable = { which = eu4rt_cost_delta value = -0.099 } } } log = "EU4RT 7fa89d6ec1683acb_1 OK ship-cost-delta" }
+        else = { log = "EU4RT 7fa89d6ec1683acb_1 FAIL ship-cost-delta" }
+        export_to_variable = { which = eu4rt_repair_delta value = modifier:local_ship_repair }
+        subtract_variable = { which = eu4rt_repair_delta which = eu4rt_repair_before }
+        # Installed shipyard contributes 0.25 repair; the reward contributes 0.20.
+        if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.450 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.451 } } } log = "EU4RT 7fa89d6ec1683acb_1 OK ship-repair-delta" }
+        else = { log = "EU4RT 7fa89d6ec1683acb_1 FAIL ship-repair-delta" }
+        remove_province_modifier = bri_brest_dockyards
+        export_to_variable = { which = eu4rt_cost_delta value = modifier:local_ship_cost }
+        subtract_variable = { which = eu4rt_cost_delta which = eu4rt_cost_before }
+        export_to_variable = { which = eu4rt_repair_delta value = modifier:local_ship_repair }
+        subtract_variable = { which = eu4rt_repair_delta which = eu4rt_repair_before }
+        if = { limit = { check_variable = { which = eu4rt_cost_delta value = 0.000 } NOT = { check_variable = { which = eu4rt_cost_delta value = 0.001 } } check_variable = { which = eu4rt_repair_delta value = 0.250 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.251 } } } log = "EU4RT 7fa89d6ec1683acb_1 OK modifier-removed" }
+        else = { log = "EU4RT 7fa89d6ec1683acb_1 FAIL modifier-removed" }
+        remove_building = shipyard
+        add_building = grand_shipyard
+        export_to_variable = { which = eu4rt_repair_before value = modifier:local_ship_repair }
+        if = { limit = { has_building = grand_shipyard NOT = { has_building = shipyard } } log = "EU4RT 7fa89d6ec1683acb_1 OK grand-before" }
+        else = { log = "EU4RT 7fa89d6ec1683acb_1 FAIL grand-before" }
+    }
+    bri_shipbuilding_reward_effect = yes
+    170 = {
+        if = { limit = { has_building = grand_shipyard NOT = { has_building = shipyard } } log = "EU4RT 7fa89d6ec1683acb_1 OK grand-preserved" }
+        else = { log = "EU4RT 7fa89d6ec1683acb_1 FAIL grand-preserved" }
+        export_to_variable = { which = eu4rt_repair_delta value = modifier:local_ship_repair }
+        subtract_variable = { which = eu4rt_repair_delta which = eu4rt_repair_before }
+        if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.200 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.201 } } } log = "EU4RT 7fa89d6ec1683acb_1 OK grand-repair-delta" }
+        else = { log = "EU4RT 7fa89d6ec1683acb_1 FAIL grand-repair-delta" }
+    }
+    if = { limit = { NOT = { mission_completed = bri_breton_shipbuilding } } log = "EU4RT 7fa89d6ec1683acb_1 OK mission-incomplete" }
+    else = { log = "EU4RT 7fa89d6ec1683acb_1 FAIL mission-incomplete" }
+}
+log = "EU4RT 7fa89d6ec1683acb_1 END shipbuilding-reward"
+

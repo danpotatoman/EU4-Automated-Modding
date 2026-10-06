@@ -1,0 +1,18 @@
+on_startup = { if = { limit = { tag = BRI } log = "EU4RUN 77f4bab0b67467dc READY simple" if = { limit = { has_dlc = "Conquest of Paradise" } log = "EU4RUN 77f4bab0b67467dc OK dlc-1" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-1" }
+if = { limit = { has_dlc = "Cradle of Civilization" } log = "EU4RUN 77f4bab0b67467dc OK dlc-2" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-2" }
+if = { limit = { has_dlc = "Dharma" } log = "EU4RUN 77f4bab0b67467dc OK dlc-3" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-3" }
+if = { limit = { has_dlc = "Domination" } log = "EU4RUN 77f4bab0b67467dc OK dlc-4" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-4" }
+if = { limit = { has_dlc = "El Dorado" } log = "EU4RUN 77f4bab0b67467dc OK dlc-5" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-5" }
+if = { limit = { has_dlc = "Emperor" } log = "EU4RUN 77f4bab0b67467dc OK dlc-6" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-6" }
+if = { limit = { has_dlc = "Golden Century" } log = "EU4RUN 77f4bab0b67467dc OK dlc-7" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-7" }
+if = { limit = { has_dlc = "King of Kings" } log = "EU4RUN 77f4bab0b67467dc OK dlc-8" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-8" }
+if = { limit = { has_dlc = "Leviathan" } log = "EU4RUN 77f4bab0b67467dc OK dlc-9" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-9" }
+if = { limit = { has_dlc = "Lions of the North" } log = "EU4RUN 77f4bab0b67467dc OK dlc-10" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-10" }
+if = { limit = { has_dlc = "Mandate of Heaven" } log = "EU4RUN 77f4bab0b67467dc OK dlc-11" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-11" }
+if = { limit = { has_dlc = "Mare Nostrum" } log = "EU4RUN 77f4bab0b67467dc OK dlc-12" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-12" }
+if = { limit = { has_dlc = "Res Publica" } log = "EU4RUN 77f4bab0b67467dc OK dlc-13" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-13" }
+if = { limit = { has_dlc = "Rule Britannia" } log = "EU4RUN 77f4bab0b67467dc OK dlc-14" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-14" }
+if = { limit = { has_dlc = "The Cossacks" } log = "EU4RUN 77f4bab0b67467dc OK dlc-15" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-15" }
+if = { limit = { has_dlc = "Third Rome" } log = "EU4RUN 77f4bab0b67467dc OK dlc-16" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-16" }
+if = { limit = { has_dlc = "Wealth of Nations" } log = "EU4RUN 77f4bab0b67467dc OK dlc-17" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-17" }
+if = { limit = { has_dlc = "Winds of Change" } log = "EU4RUN 77f4bab0b67467dc OK dlc-18" } else = { log = "EU4RUN 77f4bab0b67467dc FAIL dlc-18" } } }

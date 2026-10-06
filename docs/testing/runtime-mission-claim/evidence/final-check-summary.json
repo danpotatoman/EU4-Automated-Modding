@@ -1,0 +1,23 @@
+{
+  "recordedAtUtc": "2026-10-04T01:45:37.127Z",
+  "automatedTests": {
+    "command": "node --test tools/runtime-tests/*.test.mjs",
+    "normalProcessInspection": true,
+    "tests": 46,
+    "pass": 46,
+    "fail": 0,
+    "skipped": 0,
+    "exitCode": 0,
+    "durationMs": 15029.1716,
+    "evidenceType": "Summary transcribed from completed tool output; no additional native game run"
+  },
+  "documentation": {
+    "files": 12,
+    "localLinks": 133,
+    "issues": []
+  },
+  "trackedWhitespace": {
+    "command": "git -c safe.directory=X:/eu4-research diff --check",
+    "exitCode": 0
+  }
+}

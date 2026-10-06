@@ -1,0 +1,11 @@
+Operator report received 2026-10-03, after requested ordinary-button stage:
+
+After clicking The Nantes Market, Cloth for Sail is immediately available. The two provinces have a 15% permanent local goods produced modifier. On reopening the mission, Nantes remains completed. Its now still 11 nov 1444, Cloth for Sail is ready, modifier tooltips are present and correct, and save and exit were successful
+
+Context: requested actual Nantes mission button once, leave Cloth for Sail
+incomplete, inspect Demand for Breton Cloth in 169/4384, reopen mission panel,
+run nantes_completed.txt, save locally BRI_nantes_completed, close normally.
+Native log independently establishes observer execution; actual completed save
+and absent EU4 process independently corroborate save/exit. No separate screenshot
+or exact tooltip transcription supplied. Ordinary once-only observation is a
+completed node after panel reopen; no forced/native-toggle action attempted.

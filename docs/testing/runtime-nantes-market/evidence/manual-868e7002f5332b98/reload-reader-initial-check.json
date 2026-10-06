@@ -1,0 +1,10 @@
+{
+  "status": "FAIL",
+  "mechanism": "scenario save reader",
+  "assertion": "campaign_id equals initial native checkpoint campaign_id",
+  "initialCampaignId": "0cb36ae4-f222-4427-ac55-77a9f161b96e",
+  "reloadedCampaignId": "f129204c-79ae-468c-b237-037e1b66c30c",
+  "reloadedSaveGameField": "BRI_nantes_completed.eu4",
+  "classification": "Unsupported reader identity assumption contradicted by native metadata, not a production gameplay failure.",
+  "resolution": "Replace the unsupported UUID equality assumption for reload only with exact loaded-source basename, unchanged original and preserved predecessor SHA-256, same version, and independently parsed matching mission/province/flag state. Preserve all native observer assertions and failures. Do not generalize campaign ID behavior from this single reload."
+}

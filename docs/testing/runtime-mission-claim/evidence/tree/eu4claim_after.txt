@@ -1,0 +1,19 @@
+BRI = {
+ 169 = {
+ export_to_variable = { which = eu4claim_goods value = modifier:trade_goods_size_modifier }
+ 
+ if = { limit = { check_variable = { which = eu4claim_goods value = 0 } NOT = { check_variable = { which = eu4claim_goods value = 0.001 } } } log = "EU4RT a47d1ae562c92866 OK after-169" }
+else = { log = "EU4RT a47d1ae562c92866 FAIL after-169" }
+}
+4384 = {
+ export_to_variable = { which = eu4claim_goods value = modifier:trade_goods_size_modifier }
+ 
+ if = { limit = { check_variable = { which = eu4claim_goods value = 0 } NOT = { check_variable = { which = eu4claim_goods value = 0.001 } } } log = "EU4RT a47d1ae562c92866 OK after-4384" }
+else = { log = "EU4RT a47d1ae562c92866 FAIL after-4384" }
+}
+ if = { limit = { mission_completed = bri_nantes_market } log = "EU4RT a47d1ae562c92866 OBS console-completion true" }
+ else = { log = "EU4RT a47d1ae562c92866 OBS console-completion false" }
+ if = { limit = { mission_completed = bri_breton_textiles } log = "EU4RT a47d1ae562c92866 OBS console-textiles true" }
+ else = { log = "EU4RT a47d1ae562c92866 OBS console-textiles false" }
+}
+log = "EU4RT a47d1ae562c92866 END nantes-claim"

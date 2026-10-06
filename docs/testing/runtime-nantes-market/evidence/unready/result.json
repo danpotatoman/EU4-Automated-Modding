@@ -1,0 +1,235 @@
+{
+  "test": "nantes-market",
+  "nonce": "bc40e381eeeb9c32",
+  "status": "timeout-or-incomplete",
+  "behavioralPass": false,
+  "directory": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261003T194452286Z_bc40e381eeeb9c32",
+  "installedVersion": "EU4 v1.37.5.0 Inca (491d)",
+  "versionSource": "installed launcher-settings.json; running version must also be checked in logs",
+  "launcherConfiguration": {
+    "enabled_mods": [
+      "mod/brittany_missions_dev.mod"
+    ],
+    "disabled_dlcs": []
+  },
+  "dlcs": [
+    "Conquest of Paradise",
+    "Cradle of Civilization",
+    "Dharma",
+    "Domination",
+    "El Dorado",
+    "Emperor",
+    "Golden Century",
+    "King of Kings",
+    "Leviathan",
+    "Lions of the North",
+    "Mandate of Heaven",
+    "Mare Nostrum",
+    "Res Publica",
+    "Rule Britannia",
+    "The Cossacks",
+    "Third Rome",
+    "Wealth of Nations",
+    "Winds of Change"
+  ],
+  "stagedManifest": [
+    {
+      "path": "common/event_modifiers/BRI_mission_modifiers.txt",
+      "sha256": "3b8be834acc20de6490713efceaf4e0a84dca2132ec51bf221fc98545abf61fa"
+    },
+    {
+      "path": "common/government_reforms/BRI_government_reforms.txt",
+      "sha256": "3ab691c55eb9f88772f1927d10920c457518fe00b1c6fb29e533e927a3ddb110"
+    },
+    {
+      "path": "common/on_actions/zz_runtime_test.txt",
+      "sha256": "616ab36b1aa69445ce9c175d676169fbf66b2e0af72ca60274acd2782b1eb5cc"
+    },
+    {
+      "path": "common/powerprojection/BRI_power_projection.txt",
+      "sha256": "f7d2713a4d9d8fb27b484e8f93bb682e1f2931fa44c399296b46fb03b567e06f"
+    },
+    {
+      "path": "common/province_triggered_modifiers/BRI_metropole_modifiers.txt",
+      "sha256": "b7968f5fefb40ca8adcfcafa00f059ed756ba25c949fa2afae294c5bfef58199"
+    },
+    {
+      "path": "common/scripted_effects/zz_runtime_mission.txt",
+      "sha256": "0aec66dd498f4b865cbb277a232a2df6f6c7784c527b80b3d99e1d68c4837910"
+    },
+    {
+      "path": "common/scripted_triggers/BRI_mission_triggers.txt",
+      "sha256": "d22254415c431c090f90cb2cdb488a14965c6e631bcb865aa800ac884e153458"
+    },
+    {
+      "path": "decisions/Custom_Breton_Decisions.txt",
+      "sha256": "9c7e177033a43633e27358506a73cdf22cea51666c363773423edbca9b8982d2"
+    },
+    {
+      "path": "descriptor.mod",
+      "sha256": "c5415feddb9c35cc021f5e971ace261f50bf1f38c7a8854885d299dd2f64d3b3"
+    },
+    {
+      "path": "events/Custom_Breton_Events.txt",
+      "sha256": "4acd8cee030162866aa2a006faa7287c0da1d693a5e736cd739e95e7a3a93b13"
+    },
+    {
+      "path": "localisation/english/bri_missions_l_english.yml",
+      "sha256": "85d1d817ee0dd2ef1b43cd8a28358540805810903e18d0af10341985811417b9"
+    },
+    {
+      "path": "missions/Breton_Missions.txt",
+      "sha256": "96ebd2f1e10b225e1e2a73e8ae21cf9d780fcb092be15adbcd16fc22f459a7f8"
+    },
+    {
+      "path": "missions/Custom_Breton_Missions.txt",
+      "sha256": "cb4454a5ce6954728c513e8ec52a160a773219b0cca86853d7348e8859b2a5b1"
+    }
+  ],
+  "nativeCommandFiles": [
+    {
+      "path": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261003T194452286Z_bc40e381eeeb9c32\\profile\\prepare_ready.txt",
+      "sha256": "acc7e9ab0aaa59545736161c6cbbe819466ce379670d6d6f243fb6fece1e87e8"
+    },
+    {
+      "path": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261003T194452286Z_bc40e381eeeb9c32\\profile\\after_console.txt",
+      "sha256": "9bc4e239ee9c3d572cfea0e55756c358294dde0f97cd89144b489e205a64a8c0"
+    },
+    {
+      "path": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261003T194452286Z_bc40e381eeeb9c32\\profile\\commands.txt",
+      "sha256": "ad851cd04045a4995d7c6d39049958d3100d786cb288808d1cf6b6342e86e59b"
+    }
+  ],
+  "launchArgs": [
+    "-debug",
+    "-userdir=X:/eu4-research/tools/runtime-tests/work/20261003T194452286Z_bc40e381eeeb9c32/profile/",
+    "-start_tag=BRI",
+    "-auto_run=X:/eu4-research/tools/runtime-tests/work/20261003T194452286Z_bc40e381eeeb9c32/profile/commands.txt"
+  ],
+  "staticValidation": {
+    "production": {
+      "exitCode": 0,
+      "report": "X:\\eu4-research\\tools\\cwtools\\reports\\brittany_missions\\latest.json"
+    },
+    "staged": {
+      "exitCode": 0,
+      "report": "X:\\eu4-research\\tools\\cwtools\\reports\\brittany_runtime\\latest.json"
+    }
+  },
+  "automated": [
+    "isolated staging",
+    "CWTools",
+    "process launch",
+    "native startup hook (experimental)",
+    "log assertions",
+    "bounded owned-process cleanup"
+  ],
+  "manual": [],
+  "collectorRun": {
+    "id": "20261003T194542752Z_1ff1a3",
+    "directory": "X:\\eu4-research\\tools\\test-runs\\reports\\brittany_runtime\\20261003T194542752Z_1ff1a3",
+    "status": "running"
+  },
+  "pid": 47096,
+  "startedAtUtc": "2026-10-03T19:45:42.765Z",
+  "markers": [
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 BEGIN nantes-market",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK initial",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-1",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-2",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-3",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-4",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-5",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-6",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-7",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-8",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-9",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-10",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-11",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-12",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-13",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-14",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-15",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-16",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-17",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK dlc-18",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OK missing-building",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OBS script-completion recorded",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT bc40e381eeeb9c32 OBS script-rewards absent-or-incomplete"
+  ],
+  "expectedMarkers": [
+    "BEGIN nantes-market",
+    "OK initial",
+    "OK dlc-1",
+    "OK dlc-2",
+    "OK dlc-3",
+    "OK dlc-4",
+    "OK dlc-5",
+    "OK dlc-6",
+    "OK dlc-7",
+    "OK dlc-8",
+    "OK dlc-9",
+    "OK dlc-10",
+    "OK dlc-11",
+    "OK dlc-12",
+    "OK dlc-13",
+    "OK dlc-14",
+    "OK dlc-15",
+    "OK dlc-16",
+    "OK dlc-17",
+    "OK dlc-18",
+    "OK missing-building",
+    [
+      "OBS script-completion recorded",
+      "OBS script-completion rejected"
+    ],
+    [
+      "OBS script-rewards present",
+      "OBS script-rewards absent-or-incomplete"
+    ],
+    "OK reset-incomplete",
+    "OK rewards-absent-before-console",
+    "OK ready-building",
+    "OK console-completed",
+    [
+      "OBS console-rewards present",
+      "OBS console-rewards absent-or-incomplete"
+    ],
+    "OK downstream-completion-predicate",
+    [
+      "OBS reward-value-169 correct",
+      "OBS reward-value-169 not-0.15"
+    ],
+    [
+      "OBS reward-value-4384 correct",
+      "OBS reward-value-4384 not-0.15"
+    ],
+    "END nantes-market"
+  ],
+  "runningVersion": "EU4 v1.37.5.0 Inca",
+  "assertionFailures": [],
+  "missingOrDuplicateChecks": [
+    "reset-incomplete",
+    "rewards-absent-before-console",
+    "ready-building",
+    "console-completed",
+    "downstream-completion-predicate"
+  ],
+  "dateMatches": true,
+  "versionMatches": true,
+  "transcriptPass": false,
+  "relevantScriptErrors": [],
+  "stagedChanges": [],
+  "nativeProbeVerified": false,
+  "automationBoundary": "This probe observes completion/rewards, but has not established a native mission-readiness query or faithful normal completion semantics.",
+  "processExitCodeBeforeCleanup": null,
+  "cleanup": "window-close",
+  "logCapture": {
+    "id": "20261003T194542752Z_1ff1a3",
+    "report": "X:\\eu4-research\\tools\\test-runs\\reports\\brittany_runtime\\20261003T194542752Z_1ff1a3\\report.txt",
+    "outcome": "not-completed",
+    "newErrorMessages": 92,
+    "changedLogs": 25
+  },
+  "finishedAtUtc": "2026-10-03T19:48:46.446Z"
+}

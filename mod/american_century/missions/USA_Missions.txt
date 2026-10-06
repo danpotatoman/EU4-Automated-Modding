@@ -1,0 +1,2 @@
+# Intentionally replaces installed vanilla USA_Missions.txt.
+# Custom USA content is in AMC_USA_Missions.txt; vanilla formation is unchanged.

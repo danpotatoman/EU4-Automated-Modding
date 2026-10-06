@@ -1,0 +1,6 @@
+helplog
+mission bri_nantes_market
+run prepare_ready.effects
+mission bri_nantes_market
+savegame
+run after_console.effects

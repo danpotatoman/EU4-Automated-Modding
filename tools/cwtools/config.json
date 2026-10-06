@@ -1,0 +1,7 @@
+{
+  "gamePath": "C:/Program Files (x86)/Steam/steamapps/common/Europa Universalis IV",
+  "rulesPath": "tools/cwtools/rules-download/cwtools-eu4-config-master",
+  "languages": ["English"],
+  "timeoutSeconds": 300,
+  "experimental": true
+}

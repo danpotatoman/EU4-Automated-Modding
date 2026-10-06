@@ -1,0 +1,14 @@
+# Project-authored parser fixture from observed layout measurements.
+# Deliberately minimal; not a copy of the installed game's GUI definition.
+container = {
+ name = "countrymissionsview"
+ position = { x = 0 y = 140 }
+}
+container = {
+ name = "countrymissionsview_missions_gridbox_listbox"
+ position = { x = 10 y = 122 }
+}
+container = {
+ name = "countrymissionsview_missions_gridbox"
+ slotsize = { width = 104 height = 152 }
+}

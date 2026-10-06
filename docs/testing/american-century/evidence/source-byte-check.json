@@ -1,0 +1,59 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "path": "common/event_modifiers/AMC_modifiers.txt",
+      "actual": "08f9d4ca8f2b0534b17d9f85eeee3fc64ee9bef20aa425d2488ce492464b4871",
+      "staged": "08f9d4ca8f2b0534b17d9f85eeee3fc64ee9bef20aa425d2488ce492464b4871",
+      "passed": true
+    },
+    {
+      "path": "common/scripted_triggers/AMC_triggers.txt",
+      "actual": "8ba72aeeda903ee25efff63fcc5021405422c2a746b7559b307fea989cdf33f3",
+      "staged": "8ba72aeeda903ee25efff63fcc5021405422c2a746b7559b307fea989cdf33f3",
+      "passed": true
+    },
+    {
+      "path": "decisions/AMC_atlantic.txt",
+      "actual": "afbbd026cfaa5c0d40bf91386666541d781595f05a5d8ad4fd18ccdf4d38bbe7",
+      "staged": "afbbd026cfaa5c0d40bf91386666541d781595f05a5d8ad4fd18ccdf4d38bbe7",
+      "passed": true
+    },
+    {
+      "path": "descriptor.mod",
+      "actual": "49577e839ebe3b81a31627a5f23b54231c23dc6fcd150ac40317185a11e38ce0",
+      "staged": "57080a3949420e3338f2b729ad84789eab97bdb9640fe6eb0bdd56eb8a442b39",
+      "passed": false
+    },
+    {
+      "path": "events/AMC_constitution.txt",
+      "actual": "e8b5c9eb70bc89ac9b168f6172aa2b35382c1520b6058395472f0d4526f9525c",
+      "staged": "e8b5c9eb70bc89ac9b168f6172aa2b35382c1520b6058395472f0d4526f9525c",
+      "passed": true
+    },
+    {
+      "path": "localisation/english/amc_l_english.yml",
+      "actual": "2479adf58bfa6f8aa779fd00fb30eb12fa2d595a146d7e2baa91853081c9c5a5",
+      "staged": "2479adf58bfa6f8aa779fd00fb30eb12fa2d595a146d7e2baa91853081c9c5a5",
+      "passed": true
+    },
+    {
+      "path": "missions/AMC_colonial_origins.txt",
+      "actual": "c5ff9be0fe54bba2b5a297d0add4ea9ee1e0bc72342c405e1a4c2c3267aa1ba3",
+      "staged": "c5ff9be0fe54bba2b5a297d0add4ea9ee1e0bc72342c405e1a4c2c3267aa1ba3",
+      "passed": true
+    },
+    {
+      "path": "missions/AMC_USA_Missions.txt",
+      "actual": "c26da370ec8f96f9b8c1f1ef2c66cdd3389d6f004ca8bffa3240e1ad8fb69d98",
+      "staged": "c26da370ec8f96f9b8c1f1ef2c66cdd3389d6f004ca8bffa3240e1ad8fb69d98",
+      "passed": true
+    },
+    {
+      "path": "missions/USA_Missions.txt",
+      "actual": "43907a1ab99f9e22bef8c8b3df50473e52d94e7588a1e6552d42c6b0dd091e69",
+      "staged": "43907a1ab99f9e22bef8c8b3df50473e52d94e7588a1e6552d42c6b0dd091e69",
+      "passed": true
+    }
+  ]
+}

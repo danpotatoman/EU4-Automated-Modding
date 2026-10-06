@@ -1,0 +1,21 @@
+{
+  "status": "complete",
+  "validatedAt": "2026-10-04T10:47:04.252Z",
+  "project": "X:\\eu4-research\\mod\\american_century",
+  "cwtoolsVersion": "0.10.31",
+  "gameVersion": "v1.37.5.0",
+  "gamePath": "X:/eu4-game",
+  "rulesPath": "X:\\eu4-research\\tools\\cwtools\\rules-download\\cwtools-eu4-config-master",
+  "rulesSha256": "357448e28cb150a9280e07e4581a35f0d73cd863ea69ee9e6b6660b150ecf06e",
+  "ruleFileCount": 73,
+  "languages": [
+    "English"
+  ],
+  "projectFileCount": 8,
+  "summary": {
+    "errors": 0,
+    "warnings": 0,
+    "total": 0
+  },
+  "diagnostics": []
+}

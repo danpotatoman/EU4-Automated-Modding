@@ -1,0 +1,124 @@
+# Diagnostic only: actual completion semantics are deliberately not assumed.
+on_startup = {
+    if = {
+        limit = { tag = BRI }
+        log = "EU4RT @NONCE@ BEGIN nantes-market"
+        if = {
+            limit = {
+                is_subject = no
+                is_year = 1444
+                NOT = { is_year = 1445 }
+                NOT = { has_country_flag = bri_diplomacy_preview }
+                NOT = { has_country_flag = bri_french_sphere_path }
+                NOT = { has_country_flag = bri_autonomous_path }
+                has_mission = bri_nantes_market
+                has_mission = bri_breton_textiles
+                NOT = { mission_completed = bri_nantes_market }
+                NOT = { mission_completed = bri_breton_textiles }
+                172 = { owned_by = ROOT }
+                169 = { owned_by = ROOT NOT = { has_province_modifier = bri_demand_for_breton_cloth } }
+                4384 = { owned_by = ROOT NOT = { has_province_modifier = bri_demand_for_breton_cloth } }
+            }
+            log = "EU4RT @NONCE@ OK initial"
+        }
+        else = { log = "EU4RT @NONCE@ FAIL initial" }
+        @DLC_ASSERTIONS@
+        172 = {
+            remove_building = marketplace
+            remove_building = trade_depot
+            remove_building = stock_exchange
+        }
+        if = {
+            limit = { 172 = { has_trade_building_trigger = no } }
+            log = "EU4RT @NONCE@ OK missing-building"
+        }
+        else = { log = "EU4RT @NONCE@ FAIL missing-building" }
+        172 = { add_building = marketplace }
+        if = {
+            limit = { 172 = { has_building = marketplace } }
+            log = "EU4RT @NONCE@ OK fixture-marketplace"
+        }
+        else = { log = "EU4RT @NONCE@ FAIL fixture-marketplace" }
+        if = {
+            limit = {
+                NOT = { mission_completed = bri_nantes_market }
+                NOT = { mission_completed = bri_breton_textiles }
+            }
+            log = "EU4RT @NONCE@ OK incomplete-before-action"
+        }
+        else = { log = "EU4RT @NONCE@ FAIL incomplete-before-action" }
+        if = {
+            limit = {
+                169 = { NOT = { has_province_modifier = bri_demand_for_breton_cloth } }
+                4384 = { NOT = { has_province_modifier = bri_demand_for_breton_cloth } }
+            }
+            log = "EU4RT @NONCE@ OK rewards-absent-before-action"
+        }
+        else = { log = "EU4RT @NONCE@ FAIL rewards-absent-before-action" }
+
+        # Invoke the real mission ID. Never copy or invoke its effect body here.
+        complete_mission = bri_nantes_market
+        if = {
+            limit = { mission_completed = bri_nantes_market }
+            log = "EU4RT @NONCE@ OK mission-completed"
+        }
+        else = { log = "EU4RT @NONCE@ FAIL mission-completed" }
+        169 = {
+            if = {
+                limit = { has_province_modifier = bri_demand_for_breton_cloth }
+                log = "EU4RT @NONCE@ OBS modifier-169 present"
+            }
+            else = { log = "EU4RT @NONCE@ OBS modifier-169 absent" }
+        }
+        4384 = {
+            if = {
+                limit = { has_province_modifier = bri_demand_for_breton_cloth }
+                log = "EU4RT @NONCE@ OBS modifier-4384 present"
+            }
+            else = { log = "EU4RT @NONCE@ OBS modifier-4384 absent" }
+        }
+        if = {
+            limit = {
+                has_mission = bri_breton_textiles
+                NOT = { mission_completed = bri_breton_textiles }
+                mission_completed = bri_nantes_market
+            }
+            log = "EU4RT @NONCE@ OK downstream-parent-completed"
+        }
+        else = { log = "EU4RT @NONCE@ FAIL downstream-parent-completed" }
+        169 = {
+            export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+            if = {
+                limit = { check_variable = { which = eu4rt_goods value = 0.15 } NOT = { check_variable = { which = eu4rt_goods value = 0.151 } } }
+                log = "EU4RT @NONCE@ OBS reward-value-169 correct"
+            }
+            else_if = {
+                limit = { check_variable = { which = eu4rt_goods value = 0 } NOT = { check_variable = { which = eu4rt_goods value = 0.001 } } }
+                log = "EU4RT @NONCE@ OBS reward-value-169 zero"
+            }
+            else = { log = "EU4RT @NONCE@ OBS reward-value-169 other" }
+        }
+        4384 = {
+            export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+            if = {
+                limit = { check_variable = { which = eu4rt_goods value = 0.15 } NOT = { check_variable = { which = eu4rt_goods value = 0.151 } } }
+                log = "EU4RT @NONCE@ OBS reward-value-4384 correct"
+            }
+            else_if = {
+                limit = { check_variable = { which = eu4rt_goods value = 0 } NOT = { check_variable = { which = eu4rt_goods value = 0.001 } } }
+                log = "EU4RT @NONCE@ OBS reward-value-4384 zero"
+            }
+            else = { log = "EU4RT @NONCE@ OBS reward-value-4384 other" }
+        }
+        if = {
+            limit = {
+                NOT = { has_country_flag = bri_diplomacy_preview }
+                NOT = { has_country_flag = bri_french_sphere_path }
+                NOT = { has_country_flag = bri_autonomous_path }
+            }
+            log = "EU4RT @NONCE@ OK selector-flags-unchanged"
+        }
+        else = { log = "EU4RT @NONCE@ FAIL selector-flags-unchanged" }
+        log = "EU4RT @NONCE@ END nantes-market"
+    }
+}

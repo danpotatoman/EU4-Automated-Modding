@@ -1,0 +1,84 @@
+{
+  "nonce": "77f4bab0b67467dc",
+  "dir": "X:\\eu4-research\\tools\\runtime-tests\\work\\run-file_77f4bab0b67467dc",
+  "file": "eu4rt_simple_77f4bab0b67467dc.txt",
+  "command": "run eu4rt_simple_77f4bab0b67467dc.txt",
+  "launcher": {
+    "enabled_mods": [
+      "mod/brittany_missions_dev.mod"
+    ],
+    "disabled_dlcs": []
+  },
+  "dlcs": [
+    "Conquest of Paradise",
+    "Cradle of Civilization",
+    "Dharma",
+    "Domination",
+    "El Dorado",
+    "Emperor",
+    "Golden Century",
+    "King of Kings",
+    "Leviathan",
+    "Lions of the North",
+    "Mandate of Heaven",
+    "Mare Nostrum",
+    "Res Publica",
+    "Rule Britannia",
+    "The Cossacks",
+    "Third Rome",
+    "Wealth of Nations",
+    "Winds of Change"
+  ],
+  "status": "simple-evidence-reached",
+  "missionBehaviorPass": false,
+  "manual": [],
+  "launchArgs": [
+    "-debug",
+    "-userdir=X:/eu4-research/tools/runtime-tests/work/run-file_77f4bab0b67467dc/profile/",
+    "-start_tag=BRI",
+    "-auto_run=eu4rt_run.commands"
+  ],
+  "collectorRun": {
+    "id": "20261003T202717188Z_294e20",
+    "directory": "X:\\eu4-research\\tools\\test-runs\\reports\\brittany_runtime\\20261003T202717188Z_294e20",
+    "status": "running"
+  },
+  "pid": 20740,
+  "startedAtUtc": "2026-10-03T20:27:17.199Z",
+  "markers": [
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc READY simple",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-1",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-2",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-3",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-4",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-5",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-6",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-7",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-8",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-9",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-10",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-11",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-12",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-13",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-14",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-15",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-16",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-17",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK dlc-18",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc BEGIN simple profile-root",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK implicit-bri",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK prestige-before-zero",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc OK flag-and-prestige-seven",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN 77f4bab0b67467dc END simple"
+  ],
+  "runningVersion": "EU4 v1.37.5.0 Inca",
+  "cleanup": "window-close",
+  "logCapture": {
+    "id": "20261003T202717188Z_294e20",
+    "report": "X:\\eu4-research\\tools\\test-runs\\reports\\brittany_runtime\\20261003T202717188Z_294e20\\report.txt",
+    "outcome": "not-completed",
+    "newErrorMessages": 92,
+    "changedLogs": 25
+  },
+  "finishedAtUtc": "2026-10-03T20:27:57.419Z"
+}

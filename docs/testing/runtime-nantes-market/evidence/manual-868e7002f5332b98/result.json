@@ -1,0 +1,122 @@
+{
+  "verdict": "VERIFIED_MANUAL",
+  "conclusion": "faithful Nantes mission behavior verified",
+  "finishedAtUtc": "2026-10-03T23:25:15.644554+00:00",
+  "nonce": "868e7002f5332b98",
+  "sourceManifest": [
+    {
+      "path": "common/event_modifiers/BRI_mission_modifiers.txt",
+      "sha256": "3b8be834acc20de6490713efceaf4e0a84dca2132ec51bf221fc98545abf61fa"
+    },
+    {
+      "path": "common/government_reforms/BRI_government_reforms.txt",
+      "sha256": "3ab691c55eb9f88772f1927d10920c457518fe00b1c6fb29e533e927a3ddb110"
+    },
+    {
+      "path": "common/powerprojection/BRI_power_projection.txt",
+      "sha256": "f7d2713a4d9d8fb27b484e8f93bb682e1f2931fa44c399296b46fb03b567e06f"
+    },
+    {
+      "path": "common/province_triggered_modifiers/BRI_metropole_modifiers.txt",
+      "sha256": "b7968f5fefb40ca8adcfcafa00f059ed756ba25c949fa2afae294c5bfef58199"
+    },
+    {
+      "path": "common/scripted_effects/BRI_mission_effects.txt",
+      "sha256": "a9244ba4fc65d9a000dcbf90a7c5751871d0d7abd1a022bea9d89adacb93bd9c"
+    },
+    {
+      "path": "common/scripted_triggers/BRI_mission_triggers.txt",
+      "sha256": "d22254415c431c090f90cb2cdb488a14965c6e631bcb865aa800ac884e153458"
+    },
+    {
+      "path": "decisions/Custom_Breton_Decisions.txt",
+      "sha256": "9c7e177033a43633e27358506a73cdf22cea51666c363773423edbca9b8982d2"
+    },
+    {
+      "path": "events/Custom_Breton_Events.txt",
+      "sha256": "4acd8cee030162866aa2a006faa7287c0da1d693a5e736cd739e95e7a3a93b13"
+    },
+    {
+      "path": "localisation/english/bri_missions_l_english.yml",
+      "sha256": "85d1d817ee0dd2ef1b43cd8a28358540805810903e18d0af10341985811417b9"
+    },
+    {
+      "path": "missions/Breton_Missions.txt",
+      "sha256": "96ebd2f1e10b225e1e2a73e8ae21cf9d780fcb092be15adbcd16fc22f459a7f8"
+    },
+    {
+      "path": "missions/Custom_Breton_Missions.txt",
+      "sha256": "c7f42b80e6037c11fa988edbe1ae1f0c71da1f2e1a6f55fe8fcc85d1c08eb324"
+    }
+  ],
+  "sourceStagedConsoleHashesUnchanged": true,
+  "gameVersion": "EU4 1.37.5.0 Inca",
+  "date": "1444.11.11",
+  "evidenceKind": "operator UI reports + native saves + numerical observation logs",
+  "allRequiredDimensionsVerified": true,
+  "dimensions": {
+    "readiness": "verified",
+    "ordinaryCompletionRewardDispatch": "verified",
+    "cloth169IdentityValuePermanence": "verified",
+    "cloth4384IdentityValuePermanence": "verified",
+    "textilesReadinessUpdate": "verified",
+    "ordinaryOnceOnly": "verified",
+    "nativeSaveReloadPersistence": "verified",
+    "selectorFlagsUnchanged": "verified"
+  },
+  "checkpoints": [
+    {
+      "path": "tools/runtime-tests/work/nantes-manual-20261003T222727038Z-868e7002f5332b98/profile/save games/BRI_nantes_unready.eu4",
+      "snapshot": "tools/runtime-tests/work/nantes-manual-20261003T222727038Z-868e7002f5332b98/checkpoints/readiness/BRI_nantes_unready.eu4",
+      "sha256": "31998f062a60fa101ae2a8217c3e237bce67c295d625f11a6e5a8a1595bc9371"
+    },
+    {
+      "path": "tools/runtime-tests/work/nantes-manual-20261003T222727038Z-868e7002f5332b98/profile/save games/BRI_nantes_ready.eu4",
+      "snapshot": "tools/runtime-tests/work/nantes-manual-20261003T222727038Z-868e7002f5332b98/checkpoints/readiness/BRI_nantes_ready.eu4",
+      "sha256": "a18e0aa51d7de20139c892f0ffaa2866c917df3db694544fb7b52924cbafb204"
+    },
+    {
+      "path": "tools/runtime-tests/work/nantes-manual-20261003T222727038Z-868e7002f5332b98/profile/save games/BRI_nantes_completed.eu4",
+      "snapshot": "tools/runtime-tests/work/nantes-manual-20261003T222727038Z-868e7002f5332b98/checkpoints/completed/BRI_nantes_completed.eu4",
+      "sha256": "90117609cc7b7492e80a3b9056650f4e1d6ac3b40114775bd1fe5170fc428582"
+    },
+    {
+      "path": "tools/runtime-tests/work/nantes-manual-20261003T222727038Z-868e7002f5332b98/profile/save games/BRI_nantes_reloaded.eu4",
+      "snapshot": "tools/runtime-tests/work/nantes-manual-20261003T222727038Z-868e7002f5332b98/checkpoints/reloaded/BRI_nantes_reloaded.eu4",
+      "sha256": "483de08085aa18fa0263901ef271a15027d851cdedea0742a3bc04bb85cec4f2"
+    }
+  ],
+  "automatedMissionCompletionVerified": false,
+  "productionDefectDemonstrated": false,
+  "nativeObservationProbeStatus": "FAIL",
+  "retainedProbeFailures": [
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 FAIL completed-nantes-completed",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 FAIL reloaded-nantes-completed"
+  ],
+  "unresolvedMechanisms": [
+    "post-click/reload console mission_completed false despite native save/UI completion",
+    "named has_province_modifier false despite actual entries, UI and 0.150 contribution",
+    "native mission equivalence unestablished"
+  ],
+  "readerCorrection": "Initial reload campaign_id equality assumption failed; exact loaded-save metadata, unchanged predecessor hashes and relevant restored state establish provenance. Original reader failure retained.",
+  "operatorReports": [
+    "operator-completed.txt",
+    "operator-reloaded.txt"
+  ],
+  "evidence": [
+    "readiness-check.json",
+    "completed-check.json",
+    "reloaded-check.json",
+    "reload-reader-initial-check.json",
+    "completed-game.log",
+    "reloaded-game.log"
+  ],
+  "report": "../../faithful-completion-2026-10-03.md",
+  "productionGameplayChanged": false,
+  "scopeLimits": [
+    "one unchanged build/default environment/paused BRI scenario",
+    "Textiles reward dispatch untested",
+    "manual UI reports without screenshots",
+    "not whole-mod export certification"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "equivalent": true,
+  "compared": "complete ordered mission AST with both named calls expanded",
+  "proves": "structural extraction equivalence, not mission UI dispatch or tooltip rendering",
+  "originalSha256": "cb4454a5ce6954728c513e8ec52a160a773219b0cca86853d7348e8859b2a5b1",
+  "rewrittenSha256": "c7f42b80e6037c11fa988edbe1ae1f0c71da1f2e1a6f55fe8fcc85d1c08eb324",
+  "originalUtf8Bom": false,
+  "rewrittenUtf8Bom": false,
+  "newline": "LF",
+  "nativeComparison": {
+    "status": "pass",
+    "baseline": "baseline/result.json",
+    "after": "after/result.json",
+    "final": "final/result.json",
+    "assertions": "Same gameplay assertions passed before and after; constant diagnostic logs removed after baseline."
+  }
+}

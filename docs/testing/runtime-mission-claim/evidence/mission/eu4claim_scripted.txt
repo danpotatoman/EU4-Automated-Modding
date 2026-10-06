@@ -1,0 +1,2 @@
+BRI = { complete_mission = bri_nantes_market }
+

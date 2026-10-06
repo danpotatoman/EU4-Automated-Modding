@@ -1,0 +1,90 @@
+tools/cwtools/.cache/
+tools/cwtools/reports/
+tools/cwtools/rules-download/
+tools/cwtools/rules.zip
+tools/cwtools/*-reference.fs
+tools/cwtools/source-tree.json
+tools/deployment/state/
+tools/deployment/test-work/
+tools/test-runs/reports/
+tools/test-runs/test-work/
+tools/mission-inspector/reports/
+tools/mission-inspector/test-work/
+tools/checks/reports/
+tools/checks/test-work/
+tools/vanilla-reference/test-work/
+tools/runtime-tests/work/
+
+# Local configuration, audit originals and downloaded game-reference excerpts.
+.local/
+*.local.json
+docs/modding/examples/
+tools/vanilla-reference/examples/
+
+# Generated game data and workstation state, wherever a future tool puts it.
+*.eu4
+*.dmp
+*.mdmp
+*.cwb
+*.log
+*.pid
+*.lock
+save games/
+crashes/
+logs/
+node_modules/
+.cache/
+coverage/
+dist/
+build/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.bak
+*.swp
+*.swo
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Retained evidence logs are deliberate regression inputs. New evidence must be
+# sanitized and reviewed, then pass tools/publication/audit.mjs before staging.
+!docs/testing/**/evidence/**/*.log
+# Game-owned UI imagery is kept locally; reports explain the observation instead.
+docs/testing/**/*.png
+docs/testing/**/*.jpg
+docs/testing/**/*.jpeg
+docs/testing/**/*.webp
+# Generated operator launchers embed old machine paths; actual source lives in tools.
+docs/testing/**/evidence/**/launch.ps1
+docs/testing/**/evidence/**/watchdog.ps1
+# Bulk engine initialization dumps and unrelated collector diagnostics stay local.
+docs/testing/**/evidence/**/*setup.log
+docs/testing/**/evidence/**/*ai.log
+docs/testing/**/evidence/**/*code_revisions.log
+docs/testing/**/evidence/**/*text.log
+docs/testing/**/evidence/**/*memory.log
+docs/testing/**/evidence/**/*message.log
+docs/testing/**/evidence/**/*system_interface.log
+docs/testing/**/evidence/**/*time.log
+docs/testing/runtime-nantes-market/evidence/manual-*/completed-*.log
+docs/testing/runtime-nantes-market/evidence/manual-*/reloaded-*.log
+!docs/testing/runtime-nantes-market/evidence/manual-*/completed-game.log
+!docs/testing/runtime-nantes-market/evidence/manual-*/completed-error.log
+!docs/testing/runtime-nantes-market/evidence/manual-*/completed-setup_error.log
+!docs/testing/runtime-nantes-market/evidence/manual-*/completed-system.log
+!docs/testing/runtime-nantes-market/evidence/manual-*/reloaded-game.log
+!docs/testing/runtime-nantes-market/evidence/manual-*/reloaded-error.log
+!docs/testing/runtime-nantes-market/evidence/manual-*/reloaded-setup_error.log
+!docs/testing/runtime-nantes-market/evidence/manual-*/reloaded-system.log
+# Hardware diagnostic dumps/crash metadata are unnecessary for public replay.
+docs/testing/**/evidence/**/system.log
+docs/testing/**/evidence/**/*-system.log
+docs/testing/**/evidence/**/meta.yml

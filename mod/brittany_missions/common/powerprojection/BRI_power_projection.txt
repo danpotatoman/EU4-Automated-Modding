@@ -1,0 +1,6 @@
+bri_self_reliance_power_projection = {
+    max = 10
+    min = 0
+    power = 1
+    decay = no
+}

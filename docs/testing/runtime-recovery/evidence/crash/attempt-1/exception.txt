@@ -1,0 +1,25 @@
+Application: EUIV 
+Version: EU4 v1.37.5.0 Inca 
+Date/Time: 2026-10-03 17:09:11
+
+Stack Trace: 
+  1    eu4.exe                  (function-name not available) (+ 0)
+  2    eu4.exe                  (function-name not available) (+ 0)
+  3    eu4.exe                  (function-name not available) (+ 0)
+  4    eu4.exe                  (function-name not available) (+ 0)
+  5    eu4.exe                  (function-name not available) (+ 0)
+  6    eu4.exe                  (function-name not available) (+ 0)
+  7    eu4.exe                  (function-name not available) (+ 0)
+  8    eu4.exe                  (function-name not available) (+ 0)
+  9    eu4.exe                  (function-name not available) (+ 0)
+  10   eu4.exe                  (function-name not available) (+ 0)
+  11   eu4.exe                  (function-name not available) (+ 0)
+  12   eu4.exe                  (function-name not available) (+ 0)
+  13   eu4.exe                  (function-name not available) (+ 0)
+  14   eu4.exe                  (function-name not available) (+ 0)
+  15   eu4.exe                  (function-name not available) (+ 0)
+  16   eu4.exe                  PHYSFS_writeULE64 (+ 445178)
+  17   eu4.exe                  PHYSFS_writeULE64 (+ 162234)
+  18   KERNEL32.DLL             BaseThreadInitThunk (+ 23)
+  19   ntdll.dll                RtlUserThreadStart (+ 44)
+  20   ntdll.dll                RtlUserThreadStart (+ 44)

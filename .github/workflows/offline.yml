@@ -1,0 +1,19 @@
+name: Offline regression
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  offline:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node tools/test-offline.mjs
+      - run: node tools/publication/check-links.mjs
+      - run: node tools/publication/audit.mjs
+      - run: git diff --check

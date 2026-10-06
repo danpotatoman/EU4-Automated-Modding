@@ -1,0 +1,20 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { loadConfig } from './config.mjs';
+test('config precedence is environment > ignored override > public defaults', t => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(),'eu4-config-'));
+  t.after(() => fs.rmSync(root,{recursive:true,force:true}));
+  for (const kind of ['cwtools','deployment']) fs.mkdirSync(path.join(root,'tools',kind),{recursive:true});
+  const put=(kind,name,data)=>fs.writeFileSync(path.join(root,'tools',kind,name),JSON.stringify(data));
+  put('cwtools','config.json',{gamePath:'base',rulesPath:'rules',timeoutSeconds:300});
+  put('cwtools','config.local.json',{gamePath:'local'});
+  assert.equal(loadConfig('cwtools',root,{}).gamePath,'local');
+  assert.deepEqual(loadConfig('cwtools',root,{EU4_GAME_PATH:'env'}),{gamePath:'env',rulesPath:'rules',timeoutSeconds:300});
+  put('deployment','config.json',{gameModDirectory:'base',supportedVersion:'1.37.*'});
+  put('deployment','config.local.json',{gameModDirectory:'local'});
+  assert.equal(loadConfig('deployment',root,{}).gameModDirectory,'local');
+  assert.equal(loadConfig('deployment',root,{EU4_USER_DIR:'profile'}).gameModDirectory,path.join('profile','mod'));
+});

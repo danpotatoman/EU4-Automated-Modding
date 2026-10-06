@@ -1,0 +1,260 @@
+{
+  "id": "20261003T225952773Z_8db3e6",
+  "scenario": "Nantes ordinary-button completed native checkpoint reload persistence; nonce 868e7002f5332b98; no setup dispatch",
+  "outcome": "passed",
+  "outcomeSource": "operator supplied; logs do not establish gameplay success",
+  "notes": "Operator confirms exact completed save reloaded, Nantes completed/no second action, Cloth for Sail ready, both +15% permanent cloth rewards, no refresh and normal save/exit. Native reloaded save/probe confirms retained state and 0.150 values/deltas. mission_completed console observer FAIL retained separately as mechanism discrepancy; production bytes unchanged. Final manual report under docs/testing/runtime-nantes-market.",
+  "finishedAtUtc": "2026-10-03T23:18:18.580Z",
+  "baseline": null,
+  "changedLogs": 7,
+  "missingLogs": [],
+  "unstableCapture": false,
+  "deploymentChanges": null,
+  "files": [
+    {
+      "name": "ai.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "ai_budgeting.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "ai_priority.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "ai_spending.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "autotest.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "building_investment.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "code_revisions.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "custom_automated_stats.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "error.log",
+      "mode": "replaced-or-truncated",
+      "errorLog": true,
+      "messageCount": 5,
+      "messagesSha256": "262d7c8293d6c9bc7d4712004a3c07932a3987a71ef8377b08721d660962c3a0",
+      "comparisonSha256": "a0daf8e1e6492eb9542c91073e3a37d4077a0a1d03cec856abc6c9cb79e1b367"
+    },
+    {
+      "name": "game.log",
+      "mode": "replaced-or-truncated",
+      "errorLog": false,
+      "messageCount": 97,
+      "messagesSha256": "d5b17deab9c5c286c50bfd9dfe6a47b79fcb259840f1bb57c6f421434630cf52",
+      "comparisonSha256": "abcc8f96e97a9840b074db2db7b2ff127b5e530567771ceba869bc53c9771ad7"
+    },
+    {
+      "name": "graphics.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "local_temp.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "memory.log",
+      "mode": "replaced-or-truncated",
+      "errorLog": false,
+      "messageCount": 104,
+      "messagesSha256": "6e37c414c457ef10b5965870eebc394434386b6af6cabbb582d5a98c9ec826e4",
+      "comparisonSha256": "256e14b0757a280a5c09550dae7dd6f52904c17fd7ec5ec2266378c379ba07cd"
+    },
+    {
+      "name": "message.log",
+      "mode": "replaced-or-truncated",
+      "errorLog": false,
+      "messageCount": 9,
+      "messagesSha256": "d5d2af5b9faae5599807c22664bb49ea0d3d3277be214dfdcc3cfb306ec89093",
+      "comparisonSha256": "ebfe197080be7005ea872ab7ca63d7b9c35ce298af678dbac8a58a01c7de2bc0"
+    },
+    {
+      "name": "profiling.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "random.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "random02.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "receivedcommands.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "sentcommands.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "setup.log",
+      "mode": "replaced-or-truncated",
+      "errorLog": false,
+      "messageCount": 17878,
+      "messagesSha256": "8538f79b2f638b00a4bfda63dc47e2ca694e2c0f9a49e03564b1541b9bdcf67a",
+      "comparisonSha256": "5aef01e961f9249b35165f5df9bd7e26bd851acecd54a31409c68902f874c064"
+    },
+    {
+      "name": "setup_error.log",
+      "mode": "replaced-or-truncated",
+      "errorLog": true,
+      "messageCount": 2,
+      "messagesSha256": "8dac272c72ed7a41d2b382e84f33a1f4ad2d8fc18c94b089fb07e5ec3f1414a5",
+      "comparisonSha256": "98f1bdf17b8636ebbdae563c753b3b63c651d11b74d9cbdf4626e7c3225c20a2"
+    },
+    {
+      "name": "system.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "system_interface.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "text.log",
+      "mode": "unchanged",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "time.log",
+      "mode": "replaced-or-truncated",
+      "errorLog": false,
+      "messageCount": 18,
+      "messagesSha256": "83999561716c6e1c164bced9686e90e0db6a48624899ac29a4d2263d59da8c8c",
+      "comparisonSha256": "99dc014edecdc878a658b686c58767934d484e155a2ee599880851ab614e3a8a"
+    }
+  ],
+  "newErrorMessages": [
+    {
+      "log": "error.log",
+      "message": "[localize.cpp:671]: Localization hash collision found, more info in text.log! Language: l_english",
+      "count": 2,
+      "baselineCount": 0,
+      "additionalOccurrences": 2
+    },
+    {
+      "log": "error.log",
+      "message": "[news_banner.cpp:96]: Failed to get server data for key: 'steam_depot_id'",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "error.log",
+      "message": "[news_banner.cpp:185]: Failed to parse JSON",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "error.log",
+      "message": "[fixedwindow.cpp:2962]: interface/provinceview.gui: Missing Icon 'remove_parliament' in window 'top_section_window'.",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[gamestate.cpp:6277]: 1444.11.11 Synthetics has no primary culture specified.",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[gamestate.cpp:6286]: 1444.11.11 Synthetics has no religion specified.",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    }
+  ],
+  "publicationNote": "Public summary; bulk collector messages/comparisons retained only in the local original. Verdict, error list and capture metadata preserved."
+}

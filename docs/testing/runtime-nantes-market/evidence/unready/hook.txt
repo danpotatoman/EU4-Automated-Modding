@@ -1,0 +1,140 @@
+# Diagnostic only: actual completion semantics are deliberately not assumed.
+on_startup = {
+    if = {
+        limit = { tag = BRI }
+        log = "EU4RT bc40e381eeeb9c32 BEGIN nantes-market"
+        if = {
+            limit = {
+                is_subject = no
+                is_year = 1444
+                NOT = { is_year = 1445 }
+                NOT = { has_country_flag = bri_diplomacy_preview }
+                NOT = { has_country_flag = bri_french_sphere_path }
+                NOT = { has_country_flag = bri_autonomous_path }
+                has_mission = bri_nantes_market
+                has_mission = bri_breton_textiles
+                NOT = { mission_completed = bri_nantes_market }
+                NOT = { mission_completed = bri_breton_textiles }
+                172 = { owned_by = ROOT }
+                169 = { owned_by = ROOT NOT = { has_province_modifier = bri_demand_for_breton_cloth } }
+                4384 = { owned_by = ROOT NOT = { has_province_modifier = bri_demand_for_breton_cloth } }
+            }
+            log = "EU4RT bc40e381eeeb9c32 OK initial"
+        }
+        else = { log = "EU4RT bc40e381eeeb9c32 FAIL initial" }
+        if = {
+    limit = { has_dlc = "Conquest of Paradise" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-1"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-1" }
+if = {
+    limit = { has_dlc = "Cradle of Civilization" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-2"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-2" }
+if = {
+    limit = { has_dlc = "Dharma" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-3"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-3" }
+if = {
+    limit = { has_dlc = "Domination" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-4"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-4" }
+if = {
+    limit = { has_dlc = "El Dorado" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-5"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-5" }
+if = {
+    limit = { has_dlc = "Emperor" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-6"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-6" }
+if = {
+    limit = { has_dlc = "Golden Century" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-7"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-7" }
+if = {
+    limit = { has_dlc = "King of Kings" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-8"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-8" }
+if = {
+    limit = { has_dlc = "Leviathan" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-9"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-9" }
+if = {
+    limit = { has_dlc = "Lions of the North" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-10"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-10" }
+if = {
+    limit = { has_dlc = "Mandate of Heaven" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-11"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-11" }
+if = {
+    limit = { has_dlc = "Mare Nostrum" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-12"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-12" }
+if = {
+    limit = { has_dlc = "Res Publica" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-13"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-13" }
+if = {
+    limit = { has_dlc = "Rule Britannia" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-14"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-14" }
+if = {
+    limit = { has_dlc = "The Cossacks" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-15"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-15" }
+if = {
+    limit = { has_dlc = "Third Rome" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-16"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-16" }
+if = {
+    limit = { has_dlc = "Wealth of Nations" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-17"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-17" }
+if = {
+    limit = { has_dlc = "Winds of Change" }
+    log = "EU4RT bc40e381eeeb9c32 OK dlc-18"
+}
+else = { log = "EU4RT bc40e381eeeb9c32 FAIL dlc-18" }
+        172 = {
+            remove_building = marketplace
+            remove_building = trade_depot
+            remove_building = stock_exchange
+        }
+        if = {
+            limit = { 172 = { has_trade_building_trigger = no } }
+            log = "EU4RT bc40e381eeeb9c32 OK missing-building"
+        }
+        else = { log = "EU4RT bc40e381eeeb9c32 FAIL missing-building" }
+        complete_mission = bri_nantes_market
+        if = {
+            limit = { mission_completed = bri_nantes_market }
+            log = "EU4RT bc40e381eeeb9c32 OBS script-completion recorded"
+        }
+        else = { log = "EU4RT bc40e381eeeb9c32 OBS script-completion rejected" }
+        if = {
+            limit = {
+                169 = { has_province_modifier = bri_demand_for_breton_cloth }
+                4384 = { has_province_modifier = bri_demand_for_breton_cloth }
+            }
+            log = "EU4RT bc40e381eeeb9c32 OBS script-rewards present"
+        }
+        else = { log = "EU4RT bc40e381eeeb9c32 OBS script-rewards absent-or-incomplete" }
+    }
+}

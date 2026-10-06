@@ -1,0 +1,26 @@
+# This hook never calls the plain run-file body or its static wrapper.
+on_startup = {
+    if = {
+        limit = { tag = BRI }
+        log = "EU4RT @NONCE@ BEGIN run-effects"
+        if = {
+            limit = {
+                is_subject = no
+                is_year = 1444
+                NOT = { is_year = 1445 }
+                NOT = { has_country_flag = bri_diplomacy_preview }
+                NOT = { has_country_flag = bri_french_sphere_path }
+                NOT = { has_country_flag = bri_autonomous_path }
+                has_mission = bri_nantes_market
+                has_mission = bri_breton_textiles
+                NOT = { mission_completed = bri_nantes_market }
+                NOT = { mission_completed = bri_breton_textiles }
+                169 = { owned_by = ROOT NOT = { has_province_modifier = bri_demand_for_breton_cloth } }
+                4384 = { owned_by = ROOT NOT = { has_province_modifier = bri_demand_for_breton_cloth } }
+            }
+            log = "EU4RT @NONCE@ OK initial"
+        }
+        else = { log = "EU4RT @NONCE@ FAIL initial" }
+        @DLC_ASSERTIONS@
+    }
+}

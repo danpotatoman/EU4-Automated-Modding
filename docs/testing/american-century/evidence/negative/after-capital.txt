@@ -1,0 +1,96 @@
+-965={
+		name="New York"
+		owner="USA"
+		controller="USA"
+		previous_controller="ENG"
+		seat_in_parliament={
+		}
+		institutions={
+			100.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 
+		}
+		cores={
+			USA 
+		}
+		trade="chesapeake_bay"
+		unit={
+			id=61
+			type=54
+		}
+
+		original_culture=english
+		native_culture=english
+		culture=english
+		religion=catholic
+		original_religion=catholic
+		capital="New York City"
+		is_city=yes
+		garrison=1000.000
+		base_tax=5.000
+		original_tax=15.000
+		base_production=5.000
+		base_manpower=5.000
+		likely_rebels="noble_rebels"
+		trade_goods=grain
+		ub=no
+		history={
+			owner="ENG"
+			controller={
+				tag="ENG"
+			}
+			add_core="ENG"
+			culture=english
+			religion=catholic
+			is_city=yes
+			trade_goods=grain
+			base_tax=5.000
+			base_production=5.000
+			base_manpower=5.000
+			discovered_by="western"
+			1.1.1={
+				controller={
+					tag="USA"
+				}
+			}
+			1444.11.11={
+				advisor={
+					name="Richard Clinton"
+					type=philosopher
+					skill=2
+					location=965
+					culture=english
+					religion=catholic
+					date=1444.11.11
+					id={
+						id=2211
+						type=51
+					}
+
+				}
+			}
+			1444.11.11={
+				remove_core="ENG"
+			}
+			1444.11.12={
+				owner="ENG"
+			}
+			1444.11.12={
+				fake_owner="USA"
+			}
+			1444.11.12={
+				add_core="USA"
+			}
+		}
+		discovery_dates2={
+			1=1.1.1 2=1444.11.11 3=1444.11.11 4=1444.11.11 
+		}
+		discovery_religion_dates2={
+			1=1444.11.11 6=1444.11.11 7=1444.11.11 8=1444.11.11 9=1444.11.11 10=1444.11.11 
+		}
+		discovered_by={SWE DAN GOT NOR SHL ALB ATH BOS BYZ CRO CYP EPI KNI MOL NAX RAG SER WAL HUN TUR CNN ENG LEI MNS SCO TYR ULS DMS SLN KID ORD TRY FLY MCM LOI USA LIT LIV MAZ POL RIG TEU OKA ALS AMG AUV BOU BRI BUR FOI FRA NEV ORL PRO AAC ANH ANS AUG BAD BOH BRA BRE BRU EFR FRN HAB HAM HES KLE KOL LAU LOR LUN MAG MAI MKL MUN OLD PAL SAX SLZ SWI THU TRI ULM WBG WUR NUM MEM VER NSA RVA DTT ARA CAS GRA NAV POR FER GEN MAN MLO NAP PAP SAV SIE URB VEN MFA LUC LAN BRB FLA FRI GEL HOL LIE UTR GEO MOS NOV PSK RYA TVE YAR PRM FEO BLO RSO ADE ALH ANZ ARD DAW FAD HDR HED MDA MFL MHR NAJ NJR OMA RAS SHM SRV YAS YEM HSN BTL AKK CND DUL KAR SYR TRE RAM AVR MLK SME ARL MSY MAM MOR TUN TFL SOS TLC TGT GHD FZA MZB MRK AFG KHO QAR TIM TRS KRY CIR GAZ TAB ORM LRI SIS BPI FRS QOM BAL HSA UBV LBV ING PSS MBZ KNZ ROT BYT REG GNV TTL OPL GLG BLG SZO WOL STE GOS CLI HRZ TNT BRG MLH BAM PGA }
+		trade_power=5.250
+		rebel_faction={
+			id=809
+			type=50
+		}
+
+	}

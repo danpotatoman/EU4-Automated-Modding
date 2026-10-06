@@ -1,0 +1,58 @@
+[
+  {
+    "path": "launcher-settings.json",
+    "sha256": "71BC763B5DF4D9FC04DBC48655449F847BF4442D65FB195E5111739C08C5D572"
+  },
+  {
+    "path": "decisions/USANation.txt",
+    "sha256": "3729BBDAB1A9559F976F43D8E5986F03603049DE715357E276F9EF55E7F2CF28"
+  },
+  {
+    "path": "decisions/ColonialNations.txt",
+    "sha256": "B89FD2E24442D293460F512830EDE5A2890F48C9BC2A4F27EFE72DE1D8568FF6"
+  },
+  {
+    "path": "missions/USA_Missions.txt",
+    "sha256": "B9563F9EAFEBBE8509C1885B9E163932C39AA7DC6D998FD552B9E266F06E28FB"
+  },
+  {
+    "path": "missions/English_Missions.txt",
+    "sha256": "694B668CA63141B85E9803F5E81F4A5D964C8DE817E01D4A0BA3252AD2127C08"
+  },
+  {
+    "path": "missions/RB_English_Missions.txt",
+    "sha256": "D82044526AC1B617AC213BF4EBE90B38BDBEE60A20B74EC9D6A4C5BD921A4736"
+  },
+  {
+    "path": "events/AmericanRevolution.txt",
+    "sha256": "5A25D09150F71DE7707BE487DB304EF24A12139081DFE0D70DE72D75510341DF"
+  },
+  {
+    "path": "events/USADLC.txt",
+    "sha256": "83633A5C4FA725C83B666DCA517CAD69E87C9E07054980569BB1B8EFA17E382C"
+  },
+  {
+    "path": "events/ColonialNation.txt",
+    "sha256": "6A52F6A9231F5C9B361A6806CE33FBA0EFB529BCA18BD9C7FF59735884E46CE6"
+  },
+  {
+    "path": "common/government_reforms/02_government_reforms_republics.txt",
+    "sha256": "4BC5827895DFFFDDE5FE89D436C66C8EF9EE5E70CEC6A79419C72905D76C795F"
+  },
+  {
+    "path": "common/colonial_regions/00_colonial_regions.txt",
+    "sha256": "B1F47511B19948F7AC5F48B8A90C3BE3E43C36EB1E600284DB906E02056AB7D2"
+  },
+  {
+    "path": "map/area.txt",
+    "sha256": "51FD9F8C9BB177BBA2939171DCECB2A538E5F7C72527807C64D6B799DE94B44E"
+  },
+  {
+    "path": "map/region.txt",
+    "sha256": "91FE977CB6A8645B66ACABFFFDE7A35E6E050CD1FF9B2C8AFC838E45D4E45929"
+  },
+  {
+    "path": "interface/countrymissionsview.gui",
+    "sha256": "492157456D7047FA92A5F266A3AC2CBF74DB6F5010CC931FC2E9F211DB4C5B3F"
+  }
+]

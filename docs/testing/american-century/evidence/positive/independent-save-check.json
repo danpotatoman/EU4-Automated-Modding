@@ -1,0 +1,303 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "label": "same uninterrupted native campaign",
+      "passed": true
+    },
+    {
+      "label": "American culture and USA selection",
+      "passed": true
+    },
+    {
+      "label": "all production slice missions incomplete before claims",
+      "passed": true
+    },
+    {
+      "label": "no USA mission rewards before claims",
+      "passed": true
+    },
+    {
+      "label": "market fixture matches mode",
+      "passed": true
+    },
+    {
+      "label": "amc_liberty_at_last completion once",
+      "passed": true
+    },
+    {
+      "label": "amc_liberty_at_last real derived button input once",
+      "passed": true
+    },
+    {
+      "label": "amc_federal_compact completion once",
+      "passed": true
+    },
+    {
+      "label": "amc_federal_compact real derived button input once",
+      "passed": true
+    },
+    {
+      "label": "amc_free_harbors completion once",
+      "passed": true
+    },
+    {
+      "label": "amc_free_harbors real derived button input once",
+      "passed": true
+    },
+    {
+      "label": "amc_open_doors completion once",
+      "passed": true
+    },
+    {
+      "label": "amc_open_doors real derived button input once",
+      "passed": true
+    },
+    {
+      "label": "only expected USA missions completed",
+      "passed": true
+    },
+    {
+      "label": "amc_liberty_modifier once/exact expiry",
+      "passed": true
+    },
+    {
+      "label": "amc_enumerated_powers once/exact expiry",
+      "passed": true
+    },
+    {
+      "label": "amc_open_doors_modifier once/exact expiry",
+      "passed": true
+    },
+    {
+      "label": "permanent named harbor reward once",
+      "passed": true
+    },
+    {
+      "label": "exact harbor DIP delta",
+      "passed": true
+    },
+    {
+      "label": "exact liberty prestige delta",
+      "passed": true
+    },
+    {
+      "label": "exact immigration manpower delta",
+      "passed": true
+    },
+    {
+      "label": "exclusive constitution flags",
+      "passed": true
+    },
+    {
+      "label": "base republic government and reform",
+      "passed": true
+    },
+    {
+      "label": "native governing_capacity_modifier delta 0.1",
+      "passed": true
+    },
+    {
+      "label": "native state_maintenance_modifier delta -0.1",
+      "passed": true
+    },
+    {
+      "label": "native development_cost delta -0.1",
+      "passed": true
+    },
+    {
+      "label": "native global_colonial_growth delta 25",
+      "passed": true
+    },
+    {
+      "label": "native local trade power delta 0.15",
+      "passed": true
+    },
+    {
+      "label": "unrelated rewards absent",
+      "passed": true
+    },
+    {
+      "label": "readiness, choices and dialogs inspected",
+      "passed": true
+    },
+    {
+      "label": "actual formation decision inspected",
+      "passed": true
+    }
+  ],
+  "completionRecorded": true,
+  "before": {
+    "file": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T105823451Z_470def8e14de1db9\\attempts\\1\\before.eu4",
+    "sha256": "284117ad73b962f0e51b3ff58fb5b5aa215878dbf8944f101d3524d4f5c382db",
+    "campaignId": "4c01c9e4-52d2-420a-b486-b34c2a2632e3",
+    "tag": "USA",
+    "completed": [],
+    "modifiers": [
+      {
+        "name": "centralization_modifier",
+        "date": "1464.11.11"
+      }
+    ],
+    "provinces": {
+      "950": {
+        "owner": "USA"
+      },
+      "952": {
+        "owner": "USA"
+      },
+      "953": {
+        "owner": "USA"
+      },
+      "956": {
+        "owner": "USA"
+      },
+      "957": {
+        "owner": "USA"
+      },
+      "962": {
+        "owner": "USA"
+      },
+      "965": {
+        "owner": "USA"
+      },
+      "966": {
+        "owner": "USA"
+      },
+      "967": {
+        "owner": "USA"
+      },
+      "968": {
+        "owner": "USA"
+      }
+    },
+    "culture": "american",
+    "prestige": 33.947,
+    "dip": 70,
+    "government": "monarchy",
+    "reforms": [
+      "monarchy_mechanic",
+      "english_monarchy"
+    ],
+    "flags": [
+      "became_great_power_flag",
+      "eu4usa_started",
+      "was_not_former_colonial_nation",
+      "old_world_to_new_world_flag",
+      "no_colonial_nations",
+      "changed_from_colonial_nation"
+    ],
+    "variables": {
+      "eu4usa_development_cost": 0,
+      "eu4usa_global_colonial_growth": 0,
+      "eu4usa_governing_capacity_modifier": 0,
+      "eu4usa_state_maintenance_modifier": 0
+    },
+    "capitalManpower": 5,
+    "capitalVariables": {
+      "eu4usa_trade": 0.75
+    },
+    "capitalModifiers": [],
+    "buildings": [
+      "marketplace"
+    ]
+  },
+  "after": {
+    "file": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T105823451Z_470def8e14de1db9\\attempts\\1\\after.eu4",
+    "sha256": "bdeb7242470e35c3b8206465019bd8d92a5853e25ae3458919403fa17ddbd3b5",
+    "campaignId": "4c01c9e4-52d2-420a-b486-b34c2a2632e3",
+    "tag": "USA",
+    "completed": [
+      "amc_federal_compact",
+      "amc_free_harbors",
+      "amc_liberty_at_last",
+      "amc_open_doors"
+    ],
+    "modifiers": [
+      {
+        "name": "centralization_modifier",
+        "date": "1464.11.11"
+      },
+      {
+        "name": "amc_liberty_modifier",
+        "date": "1464.11.11"
+      },
+      {
+        "name": "amc_enumerated_powers",
+        "date": "-1.1.1"
+      },
+      {
+        "name": "amc_open_doors_modifier",
+        "date": "1464.11.11"
+      }
+    ],
+    "provinces": {
+      "950": {
+        "owner": "USA"
+      },
+      "952": {
+        "owner": "USA"
+      },
+      "953": {
+        "owner": "USA"
+      },
+      "956": {
+        "owner": "USA"
+      },
+      "957": {
+        "owner": "USA"
+      },
+      "962": {
+        "owner": "USA"
+      },
+      "965": {
+        "owner": "USA"
+      },
+      "966": {
+        "owner": "USA"
+      },
+      "967": {
+        "owner": "USA"
+      },
+      "968": {
+        "owner": "USA"
+      }
+    },
+    "culture": "american",
+    "prestige": 53.947,
+    "dip": 120,
+    "government": "republic",
+    "reforms": [
+      "republic_mechanic",
+      "oligarchy_reform"
+    ],
+    "flags": [
+      "became_great_power_flag",
+      "eu4usa_started",
+      "was_not_former_colonial_nation",
+      "old_world_to_new_world_flag",
+      "no_colonial_nations",
+      "changed_from_colonial_nation",
+      "amc_enumerated_powers_chosen"
+    ],
+    "variables": {
+      "eu4usa_development_cost": -0.1,
+      "eu4usa_global_colonial_growth": 25,
+      "eu4usa_governing_capacity_modifier": 0.1,
+      "eu4usa_state_maintenance_modifier": -0.1
+    },
+    "capitalManpower": 7,
+    "capitalVariables": {
+      "eu4usa_trade": 0.9
+    },
+    "capitalModifiers": [
+      {
+        "name": "amc_free_harbor",
+        "date": "-1.1.1"
+      }
+    ],
+    "buildings": [
+      "marketplace"
+    ]
+  }
+}

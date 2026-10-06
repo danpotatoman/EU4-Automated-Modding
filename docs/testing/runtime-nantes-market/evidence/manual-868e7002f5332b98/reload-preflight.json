@@ -1,0 +1,19 @@
+{
+    "status":  "reload-launched-awaiting-operator-load",
+    "checkedAtUtc":  "2026-10-03T23:05:40.3209771Z",
+    "ownedProcessVerified":  true,
+    "pid":  33880,
+    "watchdogPid":  54576,
+    "setupDispatchObserved":  false,
+    "version":  "EU4 v1.37.5.0 Inca",
+    "profile":  {
+                    "enabled_mods":  [
+                                         "mod/nantes_manual.mod"
+                                     ],
+                    "disabled_dlcs":  [
+
+                                      ]
+                },
+    "completedCheckpointSha256":  "90117609cc7b7492e80a3b9056650f4e1d6ac3b40114775bd1fe5170fc428582",
+    "deadlineUtc":  "2026-10-03T23:59:58.5892466Z"
+}

@@ -1,0 +1,4 @@
+[localize.cpp:671]: Localization hash collision found, more info in text.log! Language: l_english
+[localize.cpp:671]: Localization hash collision found, more info in text.log! Language: l_english
+[fixedwindow.cpp:2962]: interface/provinceview.gui: Missing Icon 'remove_parliament' in window 'top_section_window'.
+[fixedwindow.cpp:2962]: interface/unitpanel_card.gui: Missing Button 'unit4_type' in window 'land_units'.

@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "key": "campaignId",
+      "passed": true
+    },
+    {
+      "key": "completed",
+      "passed": true
+    },
+    {
+      "key": "modifiers",
+      "passed": true
+    },
+    {
+      "key": "government",
+      "passed": true
+    },
+    {
+      "key": "reforms",
+      "passed": true
+    },
+    {
+      "key": "flags",
+      "passed": true
+    },
+    {
+      "key": "capitalManpower",
+      "passed": true
+    },
+    {
+      "key": "capitalModifiers",
+      "passed": true
+    },
+    {
+      "key": "variables",
+      "passed": true
+    },
+    {
+      "key": "capitalVariables",
+      "passed": true
+    },
+    {
+      "key": "dip",
+      "passed": true
+    },
+    {
+      "key": "prestige",
+      "passed": true
+    }
+  ],
+  "afterSha": "f4c059e7b943266ad42d2bfd36ccd10ebdc67394e5651332e196bb338bc161f1",
+  "reloadSha": "10335e3a7585757d330c226941a8e0e8c7c369ff1cacde329702c2478d7fb20f"
+}

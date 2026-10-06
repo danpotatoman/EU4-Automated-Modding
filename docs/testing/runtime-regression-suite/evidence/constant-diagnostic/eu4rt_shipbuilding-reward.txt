@@ -1,0 +1,155 @@
+# Executes the real production reward after extraction; fixtures never copy it.
+BRI = {
+    170 = {
+        remove_building = shipyard
+        remove_building = grand_shipyard
+        remove_province_modifier = bri_brest_dockyards
+        export_to_variable = { which = eu4rt_cost_before value = modifier:local_ship_cost }
+        export_to_variable = { which = eu4rt_repair_before value = modifier:local_ship_repair }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = -0.0001 } NOT = { check_variable = { which = eu4rt_repair_before value = 0.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 0" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 0.0099 } NOT = { check_variable = { which = eu4rt_repair_before value = 0.0101 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_repair_before value = 0.2001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 0.2499 } NOT = { check_variable = { which = eu4rt_repair_before value = 0.2501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 0.4499 } NOT = { check_variable = { which = eu4rt_repair_before value = 0.4501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 0.4999 } NOT = { check_variable = { which = eu4rt_repair_before value = 0.5001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 0.6999 } NOT = { check_variable = { which = eu4rt_repair_before value = 0.7001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 0.9999 } NOT = { check_variable = { which = eu4rt_repair_before value = 1.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 1" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 19.9999 } NOT = { check_variable = { which = eu4rt_repair_before value = 20.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 20" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 24.9999 } NOT = { check_variable = { which = eu4rt_repair_before value = 25.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 25" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 44.9999 } NOT = { check_variable = { which = eu4rt_repair_before value = 45.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 45" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 49.9999 } NOT = { check_variable = { which = eu4rt_repair_before value = 50.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 50" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 99.9999 } NOT = { check_variable = { which = eu4rt_repair_before value = 100.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 100" }
+        if = { limit = { NOT = { has_building = shipyard } NOT = { has_building = grand_shipyard } } log = "EU4RT e399158461330965_1 OK empty-before" }
+else = { log = "EU4RT e399158461330965_1 FAIL empty-before" }
+    }
+    bri_shipbuilding_reward_effect = yes
+    170 = {
+        if = { limit = { has_building = shipyard NOT = { has_building = grand_shipyard } } log = "EU4RT e399158461330965_1 OK shipyard-granted" }
+else = { log = "EU4RT e399158461330965_1 FAIL shipyard-granted" }
+        export_to_variable = { which = eu4rt_cost_delta value = modifier:local_ship_cost }
+subtract_variable = { which = eu4rt_cost_delta which = eu4rt_cost_before }
+        if = { limit = { check_variable = { which = eu4rt_cost_delta value = -0.1001 } NOT = { check_variable = { which = eu4rt_cost_delta value = -0.0999 } } } log = "EU4RT e399158461330965_1 OK ship-cost-delta" }
+else = { log = "EU4RT e399158461330965_1 FAIL ship-cost-delta" }
+        export_to_variable = { which = eu4rt_repair_delta value = modifier:local_ship_repair }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 100" }
+subtract_variable = { which = eu4rt_repair_delta which = eu4rt_repair_before }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 100" }
+        # Installed shipyard contributes 0.25 repair; the reward contributes 0.20.
+        if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.4501 } } } log = "EU4RT e399158461330965_1 OK ship-repair-delta" }
+else = { log = "EU4RT e399158461330965_1 FAIL ship-repair-delta" }
+        remove_province_modifier = bri_brest_dockyards
+        export_to_variable = { which = eu4rt_cost_delta value = modifier:local_ship_cost }
+subtract_variable = { which = eu4rt_cost_delta which = eu4rt_cost_before }
+        export_to_variable = { which = eu4rt_repair_delta value = modifier:local_ship_repair }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 100" }
+subtract_variable = { which = eu4rt_repair_delta which = eu4rt_repair_before }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 100" }
+        if = { limit = { check_variable = { which = eu4rt_cost_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_cost_delta value = 0.0001 } } check_variable = { which = eu4rt_repair_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.2501 } } } log = "EU4RT e399158461330965_1 OK modifier-removed" }
+else = { log = "EU4RT e399158461330965_1 FAIL modifier-removed" }
+        remove_building = shipyard
+        add_building = grand_shipyard
+        export_to_variable = { which = eu4rt_repair_before value = modifier:local_ship_repair }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = -0.0001 } NOT = { check_variable = { which = eu4rt_repair_before value = 0.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 0" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 0.0099 } NOT = { check_variable = { which = eu4rt_repair_before value = 0.0101 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_repair_before value = 0.2001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 0.2499 } NOT = { check_variable = { which = eu4rt_repair_before value = 0.2501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 0.4499 } NOT = { check_variable = { which = eu4rt_repair_before value = 0.4501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 0.4999 } NOT = { check_variable = { which = eu4rt_repair_before value = 0.5001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 0.6999 } NOT = { check_variable = { which = eu4rt_repair_before value = 0.7001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 0.9999 } NOT = { check_variable = { which = eu4rt_repair_before value = 1.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 1" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 19.9999 } NOT = { check_variable = { which = eu4rt_repair_before value = 20.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 20" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 24.9999 } NOT = { check_variable = { which = eu4rt_repair_before value = 25.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 25" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 44.9999 } NOT = { check_variable = { which = eu4rt_repair_before value = 45.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 45" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 49.9999 } NOT = { check_variable = { which = eu4rt_repair_before value = 50.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 50" }
+if = { limit = { check_variable = { which = eu4rt_repair_before value = 99.9999 } NOT = { check_variable = { which = eu4rt_repair_before value = 100.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_before near 100" }
+        if = { limit = { has_building = grand_shipyard NOT = { has_building = shipyard } } log = "EU4RT e399158461330965_1 OK grand-before" }
+else = { log = "EU4RT e399158461330965_1 FAIL grand-before" }
+    }
+    bri_shipbuilding_reward_effect = yes
+    170 = {
+        if = { limit = { has_building = grand_shipyard NOT = { has_building = shipyard } } log = "EU4RT e399158461330965_1 OK grand-preserved" }
+else = { log = "EU4RT e399158461330965_1 FAIL grand-preserved" }
+        export_to_variable = { which = eu4rt_repair_delta value = modifier:local_ship_repair }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 100" }
+subtract_variable = { which = eu4rt_repair_delta which = eu4rt_repair_before }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_repair_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_1 eu4rt_repair_delta near 100" }
+        if = { limit = { check_variable = { which = eu4rt_repair_delta value = 0.1999 } NOT = { check_variable = { which = eu4rt_repair_delta value = 0.2001 } } } log = "EU4RT e399158461330965_1 OK grand-repair-delta" }
+else = { log = "EU4RT e399158461330965_1 FAIL grand-repair-delta" }
+    }
+    if = { limit = { NOT = { mission_completed = bri_breton_shipbuilding } } log = "EU4RT e399158461330965_1 OK mission-incomplete" }
+else = { log = "EU4RT e399158461330965_1 FAIL mission-incomplete" }
+}
+log = "EU4RT e399158461330965_1 END shipbuilding-reward"
+

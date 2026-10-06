@@ -1,0 +1,12 @@
+Operator report received 2026-10-03:
+
+Loaded **`BRI_nantes_completed`**  , nov 11 1444, all states you instructed me to check on have been restored properly. No refresh needed. Saving and exiting was successful
+
+Requested states before console observation: Nantes completed with no second
+ordinary completion action; Cloth for Sail incomplete/ready with parent cleared;
+Demand for Breton Cloth in Arvor (169) and Bro Roazhon (4384), +15% local goods
+produced, permanent. Requested subsequent actions: run nantes_reloaded.txt, save
+locally BRI_nantes_reloaded without overwriting predecessors, exit normally.
+Report confirms all requested states collectively; no screenshot/exact tooltip
+transcription supplied. Native log/save independently corroborate probe/save;
+source save hash remains unchanged and reloaded metadata names that loaded save.

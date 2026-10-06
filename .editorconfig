@@ -1,0 +1,13 @@
+root = true
+
+[*]
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{mjs,js,json,md,html,yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# Preserve existing game script/localisation encodings. Do not bulk-reencode mod/.
+[mod/**]
+trim_trailing_whitespace = false

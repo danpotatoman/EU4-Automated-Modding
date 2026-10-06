@@ -1,0 +1,4 @@
+run eu4claim_before.txt
+mission bri_nantes_market
+run eu4claim_after.txt
+helplog

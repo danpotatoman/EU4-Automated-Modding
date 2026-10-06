@@ -1,0 +1,9 @@
+﻿{
+    "inspectedAtUtc":  "2026-10-04T01:45:36.2749265Z",
+    "remnants":  [
+
+                 ],
+    "lifecycleLockPath":  "tools/runtime-tests/work/active-lifecycle.json",
+    "lifecycleLockPresent":  false,
+    "collectorOutput":  "{\n  \"status\": \"no-active-run\"\n}"
+}

@@ -1,0 +1,36 @@
+# Country-scope conditional mission rewards.
+bri_shipbuilding_reward_effect = {
+    170 = {
+        if = {
+            limit = {
+                has_shipyard_building_trigger = no
+            }
+            add_building = shipyard
+        }
+
+        add_province_modifier = {
+            name = "bri_brest_dockyards"
+            duration = -1
+        }
+    }
+}
+
+bri_secure_borders_reward_effect = {
+    add_country_modifier = {
+        name = bri_secure_the_borders_modifier
+        duration = 7300
+    }
+
+    custom_tooltip = bri_secure_the_borders_bonus_tt
+
+    hidden_effect = {
+        if = {
+            limit = {
+                NOT = {
+                    alliance_with = FRA
+                }
+            }
+            add_dip_power = 50
+        }
+    }
+}

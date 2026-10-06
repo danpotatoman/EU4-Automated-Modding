@@ -1,0 +1,1124 @@
+{
+  "status": "complete",
+  "validatedAt": "2026-10-04T01:24:40.774Z",
+  "project": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T012346136Z_da1fcc49d001d89a\\brittany_runtime",
+  "cwtoolsVersion": "0.10.31",
+  "gameVersion": "v1.37.5.0",
+  "gamePath": "X:/eu4-game",
+  "rulesPath": "X:\\eu4-research\\tools\\cwtools\\rules-download\\cwtools-eu4-config-master",
+  "rulesSha256": "357448e28cb150a9280e07e4581a35f0d73cd863ea69ee9e6b6660b150ecf06e",
+  "ruleFileCount": 73,
+  "languages": [
+    "English"
+  ],
+  "projectFileCount": 13,
+  "summary": {
+    "errors": 0,
+    "warnings": 58,
+    "total": 58
+  },
+  "diagnostics": [
+    {
+      "file": "common/scripted_effects/BRI_mission_effects.txt",
+      "line": 12,
+      "column": 13,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_brest_dockyards is not defined for English",
+      "range": {
+        "start": {
+          "line": 11,
+          "character": 12
+        },
+        "end": {
+          "line": 11,
+          "character": 16
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "common/scripted_effects/BRI_mission_effects.txt",
+      "line": 20,
+      "column": 9,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_secure_the_borders_modifier is not defined for English",
+      "range": {
+        "start": {
+          "line": 19,
+          "character": 8
+        },
+        "end": {
+          "line": 19,
+          "character": 12
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "events/Custom_Breton_Events.txt",
+      "line": 129,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_breton_fortress is not defined for English",
+      "range": {
+        "start": {
+          "line": 128,
+          "character": 16
+        },
+        "end": {
+          "line": 128,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "events/Custom_Breton_Events.txt",
+      "line": 147,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_breton_fortress is not defined for English",
+      "range": {
+        "start": {
+          "line": 146,
+          "character": 16
+        },
+        "end": {
+          "line": 146,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "events/Custom_Breton_Events.txt",
+      "line": 193,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_breton_fortress is not defined for English",
+      "range": {
+        "start": {
+          "line": 192,
+          "character": 16
+        },
+        "end": {
+          "line": 192,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "events/Custom_Breton_Events.txt",
+      "line": 239,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_breton_fortress is not defined for English",
+      "range": {
+        "start": {
+          "line": 238,
+          "character": 16
+        },
+        "end": {
+          "line": 238,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "events/Custom_Breton_Events.txt",
+      "line": 285,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_breton_fortress is not defined for English",
+      "range": {
+        "start": {
+          "line": 284,
+          "character": 16
+        },
+        "end": {
+          "line": 284,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "events/Custom_Breton_Events.txt",
+      "line": 304,
+      "column": 13,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key BRI_ARTILLERY_DEMAND is not defined for English",
+      "range": {
+        "start": {
+          "line": 303,
+          "character": 12
+        },
+        "end": {
+          "line": 303,
+          "character": 15
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 33,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_renaissance_growth is not defined for English",
+      "range": {
+        "start": {
+          "line": 32,
+          "character": 20
+        },
+        "end": {
+          "line": 32,
+          "character": 24
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 54,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_breton_renaissance_modifier is not defined for English",
+      "range": {
+        "start": {
+          "line": 53,
+          "character": 16
+        },
+        "end": {
+          "line": 53,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 92,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_flourishing_duchy_modifier is not defined for English",
+      "range": {
+        "start": {
+          "line": 91,
+          "character": 16
+        },
+        "end": {
+          "line": 91,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 150,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_breton_artillery_supremacy is not defined for English",
+      "range": {
+        "start": {
+          "line": 149,
+          "character": 16
+        },
+        "end": {
+          "line": 149,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 213,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_demand_for_breton_cloth is not defined for English",
+      "range": {
+        "start": {
+          "line": 212,
+          "character": 20
+        },
+        "end": {
+          "line": 212,
+          "character": 24
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 220,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_demand_for_breton_cloth is not defined for English",
+      "range": {
+        "start": {
+          "line": 219,
+          "character": 20
+        },
+        "end": {
+          "line": 219,
+          "character": 24
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 301,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_1 is not defined for English",
+      "range": {
+        "start": {
+          "line": 300,
+          "character": 20
+        },
+        "end": {
+          "line": 300,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 310,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_1 is not defined for English",
+      "range": {
+        "start": {
+          "line": 309,
+          "character": 20
+        },
+        "end": {
+          "line": 309,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 313,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_1 is not defined for English",
+      "range": {
+        "start": {
+          "line": 312,
+          "character": 20
+        },
+        "end": {
+          "line": 312,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 316,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_1 is not defined for English",
+      "range": {
+        "start": {
+          "line": 315,
+          "character": 20
+        },
+        "end": {
+          "line": 315,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 319,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_1 is not defined for English",
+      "range": {
+        "start": {
+          "line": 318,
+          "character": 20
+        },
+        "end": {
+          "line": 318,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 322,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_1 is not defined for English",
+      "range": {
+        "start": {
+          "line": 321,
+          "character": 20
+        },
+        "end": {
+          "line": 321,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 354,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_growing_economy_modifier is not defined for English",
+      "range": {
+        "start": {
+          "line": 353,
+          "character": 16
+        },
+        "end": {
+          "line": 353,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 452,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_2 is not defined for English",
+      "range": {
+        "start": {
+          "line": 451,
+          "character": 20
+        },
+        "end": {
+          "line": 451,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 460,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_1 is not defined for English",
+      "range": {
+        "start": {
+          "line": 459,
+          "character": 20
+        },
+        "end": {
+          "line": 459,
+          "character": 54
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 461,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_2 is not defined for English",
+      "range": {
+        "start": {
+          "line": 460,
+          "character": 20
+        },
+        "end": {
+          "line": 460,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 464,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_1 is not defined for English",
+      "range": {
+        "start": {
+          "line": 463,
+          "character": 20
+        },
+        "end": {
+          "line": 463,
+          "character": 54
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 465,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_2 is not defined for English",
+      "range": {
+        "start": {
+          "line": 464,
+          "character": 20
+        },
+        "end": {
+          "line": 464,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 468,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_1 is not defined for English",
+      "range": {
+        "start": {
+          "line": 467,
+          "character": 20
+        },
+        "end": {
+          "line": 467,
+          "character": 54
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 469,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_2 is not defined for English",
+      "range": {
+        "start": {
+          "line": 468,
+          "character": 20
+        },
+        "end": {
+          "line": 468,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 472,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_1 is not defined for English",
+      "range": {
+        "start": {
+          "line": 471,
+          "character": 20
+        },
+        "end": {
+          "line": 471,
+          "character": 54
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 473,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_2 is not defined for English",
+      "range": {
+        "start": {
+          "line": 472,
+          "character": 20
+        },
+        "end": {
+          "line": 472,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 476,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_1 is not defined for English",
+      "range": {
+        "start": {
+          "line": 475,
+          "character": 20
+        },
+        "end": {
+          "line": 475,
+          "character": 54
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 477,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_2 is not defined for English",
+      "range": {
+        "start": {
+          "line": 476,
+          "character": 20
+        },
+        "end": {
+          "line": 476,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 606,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_3 is not defined for English",
+      "range": {
+        "start": {
+          "line": 605,
+          "character": 20
+        },
+        "end": {
+          "line": 605,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 614,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_2 is not defined for English",
+      "range": {
+        "start": {
+          "line": 613,
+          "character": 20
+        },
+        "end": {
+          "line": 613,
+          "character": 54
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 615,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_3 is not defined for English",
+      "range": {
+        "start": {
+          "line": 614,
+          "character": 20
+        },
+        "end": {
+          "line": 614,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 618,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_2 is not defined for English",
+      "range": {
+        "start": {
+          "line": 617,
+          "character": 20
+        },
+        "end": {
+          "line": 617,
+          "character": 54
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 619,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_3 is not defined for English",
+      "range": {
+        "start": {
+          "line": 618,
+          "character": 20
+        },
+        "end": {
+          "line": 618,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 622,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_2 is not defined for English",
+      "range": {
+        "start": {
+          "line": 621,
+          "character": 20
+        },
+        "end": {
+          "line": 621,
+          "character": 54
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 623,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_3 is not defined for English",
+      "range": {
+        "start": {
+          "line": 622,
+          "character": 20
+        },
+        "end": {
+          "line": 622,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 626,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_2 is not defined for English",
+      "range": {
+        "start": {
+          "line": 625,
+          "character": 20
+        },
+        "end": {
+          "line": 625,
+          "character": 54
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 627,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_3 is not defined for English",
+      "range": {
+        "start": {
+          "line": 626,
+          "character": 20
+        },
+        "end": {
+          "line": 626,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 630,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_2 is not defined for English",
+      "range": {
+        "start": {
+          "line": 629,
+          "character": 20
+        },
+        "end": {
+          "line": 629,
+          "character": 54
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 631,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_metropole_3 is not defined for English",
+      "range": {
+        "start": {
+          "line": 630,
+          "character": 20
+        },
+        "end": {
+          "line": 630,
+          "character": 51
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 676,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_breton_hegemony_modifier is not defined for English",
+      "range": {
+        "start": {
+          "line": 675,
+          "character": 16
+        },
+        "end": {
+          "line": 675,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 749,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_breton_merchant_marine_modifier is not defined for English",
+      "range": {
+        "start": {
+          "line": 748,
+          "character": 16
+        },
+        "end": {
+          "line": 748,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 773,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_ocean_going_fleet_modifier is not defined for English",
+      "range": {
+        "start": {
+          "line": 772,
+          "character": 16
+        },
+        "end": {
+          "line": 772,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 841,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_brittany_rules_the_waves_modifier is not defined for English",
+      "range": {
+        "start": {
+          "line": 840,
+          "character": 16
+        },
+        "end": {
+          "line": 840,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 964,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_colonial_americas_modifier is not defined for English",
+      "range": {
+        "start": {
+          "line": 963,
+          "character": 16
+        },
+        "end": {
+          "line": 963,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 1001,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_breton_colonial_empire_modifier is not defined for English",
+      "range": {
+        "start": {
+          "line": 1000,
+          "character": 16
+        },
+        "end": {
+          "line": 1000,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 1033,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_malian_gold_modifier is not defined for English",
+      "range": {
+        "start": {
+          "line": 1032,
+          "character": 16
+        },
+        "end": {
+          "line": 1032,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 1232,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_atlantic_ambitions_modifier is not defined for English",
+      "range": {
+        "start": {
+          "line": 1231,
+          "character": 16
+        },
+        "end": {
+          "line": 1231,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 1534,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_spice_trade_modifier is not defined for English",
+      "range": {
+        "start": {
+          "line": 1533,
+          "character": 16
+        },
+        "end": {
+          "line": 1533,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 1575,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_noble_military_support is not defined for English",
+      "range": {
+        "start": {
+          "line": 1574,
+          "character": 16
+        },
+        "end": {
+          "line": 1574,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 1677,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_franco_breton_commercial_pact is not defined for English",
+      "range": {
+        "start": {
+          "line": 1676,
+          "character": 16
+        },
+        "end": {
+          "line": 1676,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 1683,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_breton_access_to_overseas_trade is not defined for English",
+      "range": {
+        "start": {
+          "line": 1682,
+          "character": 20
+        },
+        "end": {
+          "line": 1682,
+          "character": 24
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 1722,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_franco_breton_entente is not defined for English",
+      "range": {
+        "start": {
+          "line": 1721,
+          "character": 16
+        },
+        "end": {
+          "line": 1721,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 1728,
+      "column": 21,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_french_breton_naval_cooperation is not defined for English",
+      "range": {
+        "start": {
+          "line": 1727,
+          "character": 20
+        },
+        "end": {
+          "line": 1727,
+          "character": 24
+        }
+      },
+      "relatedInformation": []
+    },
+    {
+      "file": "missions/Custom_Breton_Missions.txt",
+      "line": 1800,
+      "column": 17,
+      "severity": "warning",
+      "code": "CW100",
+      "message": "Localisation key desc_bri_breton_statecraft is not defined for English",
+      "range": {
+        "start": {
+          "line": 1799,
+          "character": 16
+        },
+        "end": {
+          "line": 1799,
+          "character": 20
+        }
+      },
+      "relatedInformation": []
+    }
+  ]
+}

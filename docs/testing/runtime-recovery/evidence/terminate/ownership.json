@@ -1,0 +1,17 @@
+{
+  "profiles": [
+    "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T000537249Z_df0709546354b7ba\\profile",
+    "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T000537249Z_df0709546354b7ba\\attempts\\1\\profile",
+    "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T000537249Z_df0709546354b7ba\\attempts\\2\\profile"
+  ],
+  "known": [
+    {
+      "pid": 31684,
+      "parentPid": 37820,
+      "created": "2026-10-04T00:06:36.6230870Z",
+      "name": "eu4.exe",
+      "executable": "X:\\eu4-game\\eu4.exe",
+      "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000537249Z_df0709546354b7ba/attempts/2/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands"
+    }
+  ]
+}

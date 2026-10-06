@@ -1,0 +1,87 @@
+bri_metropole_1 = {
+    potential = {
+        owner = {
+            has_country_flag = bri_metropole_1_unlocked
+        }
+    }
+
+    trigger = {
+        custom_trigger_tooltip = {
+            tooltip = bri_metropole_compact_tt
+
+            owner = {
+                NOT = {
+                    num_of_owned_provinces_with = {
+                        continent = europe
+                        value = 10
+                    }
+                }
+            }
+        }
+    }
+
+    local_development_cost = -0.10
+    tax_income = 2
+    local_manpower = 0.5
+    land_forcelimit = 0.5
+}
+bri_metropole_2 = {
+    potential = {
+        owner = {
+            has_country_flag = bri_metropole_2_unlocked
+        }
+    }
+
+    trigger = {
+        custom_trigger_tooltip = {
+            tooltip = bri_metropole_compact_tt
+
+            owner = {
+                NOT = {
+                    num_of_owned_provinces_with = {
+                        continent = europe
+                        value = 10
+                    }
+                }
+            }
+        }
+    }
+
+    local_development_cost = -0.20
+    tax_income = 10
+    local_manpower = 2.5
+    land_forcelimit = 2.5
+    trade_goods_size = 1
+}
+bri_metropole_3 = {
+    potential = {
+        owner = {
+            has_country_flag = bri_metropole_3_unlocked
+        }
+    }
+
+    trigger = {
+        custom_trigger_tooltip = {
+            tooltip = bri_metropole_3_compact_tt
+
+            owner = {
+                OR = {
+                    has_country_flag = bri_metropole_unrestricted
+
+                    NOT = {
+                        num_of_owned_provinces_with = {
+                            continent = europe
+                            value = 10
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    local_development_cost = -0.50
+    tax_income = 24
+    local_manpower = 10
+    land_forcelimit = 10
+    trade_goods_size = 3
+}

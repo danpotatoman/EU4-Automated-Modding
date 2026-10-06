@@ -1,0 +1,148 @@
+{
+  "checkedAtUtc": "2026-10-04T11:23:32.0364304Z",
+  "protected": [
+    {
+      "path": "X:\\eu4-research\\mod\\brittany_missions\\common\\event_modifiers\\BRI_mission_modifiers.txt",
+      "expected": "3B8BE834ACC20DE6490713EFCEAF4E0A84DCA2132EC51BF221FC98545ABF61FA",
+      "actual": "3B8BE834ACC20DE6490713EFCEAF4E0A84DCA2132EC51BF221FC98545ABF61FA"
+    },
+    {
+      "path": "X:\\eu4-research\\mod\\brittany_missions\\common\\government_reforms\\BRI_government_reforms.txt",
+      "expected": "3AB691C55EB9F88772F1927D10920C457518FE00B1C6FB29E533E927A3DDB110",
+      "actual": "3AB691C55EB9F88772F1927D10920C457518FE00B1C6FB29E533E927A3DDB110"
+    },
+    {
+      "path": "X:\\eu4-research\\mod\\brittany_missions\\common\\powerprojection\\BRI_power_projection.txt",
+      "expected": "F7D2713A4D9D8FB27B484E8F93BB682E1F2931FA44C399296B46FB03B567E06F",
+      "actual": "F7D2713A4D9D8FB27B484E8F93BB682E1F2931FA44C399296B46FB03B567E06F"
+    },
+    {
+      "path": "X:\\eu4-research\\mod\\brittany_missions\\common\\province_triggered_modifiers\\BRI_metropole_modifiers.txt",
+      "expected": "B7968F5FEFB40CA8ADCFCAFA00F059ED756BA25C949FA2AFAE294C5BFEF58199",
+      "actual": "B7968F5FEFB40CA8ADCFCAFA00F059ED756BA25C949FA2AFAE294C5BFEF58199"
+    },
+    {
+      "path": "X:\\eu4-research\\mod\\brittany_missions\\common\\scripted_effects\\BRI_mission_effects.txt",
+      "expected": "A9244BA4FC65D9A000DCBF90A7C5751871D0D7ABD1A022BEA9D89ADACB93BD9C",
+      "actual": "A9244BA4FC65D9A000DCBF90A7C5751871D0D7ABD1A022BEA9D89ADACB93BD9C"
+    },
+    {
+      "path": "X:\\eu4-research\\mod\\brittany_missions\\common\\scripted_triggers\\BRI_mission_triggers.txt",
+      "expected": "D22254415C431C090F90CB2CDB488A14965C6E631BCB865AA800AC884E153458",
+      "actual": "D22254415C431C090F90CB2CDB488A14965C6E631BCB865AA800AC884E153458"
+    },
+    {
+      "path": "X:\\eu4-research\\mod\\brittany_missions\\decisions\\Custom_Breton_Decisions.txt",
+      "expected": "9C7E177033A43633E27358506A73CDF22CEA51666C363773423EDBCA9B8982D2",
+      "actual": "9C7E177033A43633E27358506A73CDF22CEA51666C363773423EDBCA9B8982D2"
+    },
+    {
+      "path": "X:\\eu4-research\\mod\\brittany_missions\\events\\Custom_Breton_Events.txt",
+      "expected": "4ACD8CEE030162866AA2A006FAA7287C0DA1D693A5E736CD739E95E7A3A93B13",
+      "actual": "4ACD8CEE030162866AA2A006FAA7287C0DA1D693A5E736CD739E95E7A3A93B13"
+    },
+    {
+      "path": "X:\\eu4-research\\mod\\brittany_missions\\localisation\\english\\bri_missions_l_english.yml",
+      "expected": "85D1D817EE0DD2EF1B43CD8A28358540805810903E18D0AF10341985811417B9",
+      "actual": "85D1D817EE0DD2EF1B43CD8A28358540805810903E18D0AF10341985811417B9"
+    },
+    {
+      "path": "X:\\eu4-research\\mod\\brittany_missions\\missions\\Breton_Missions.txt",
+      "expected": "96EBD2F1E10B225E1E2A73E8AE21CF9D780FCB092BE15ADBCD16FC22F459A7F8",
+      "actual": "96EBD2F1E10B225E1E2A73E8AE21CF9D780FCB092BE15ADBCD16FC22F459A7F8"
+    },
+    {
+      "path": "X:\\eu4-research\\mod\\brittany_missions\\missions\\Custom_Breton_Missions.txt",
+      "expected": "C7F42B80E6037C11FA988EDBE1AE1F0C71DA1F2E1A6F55FE8FCC85D1C08EB324",
+      "actual": "C7F42B80E6037C11FA988EDBE1AE1F0C71DA1F2E1A6F55FE8FCC85D1C08EB324"
+    },
+    {
+      "path": "X:\\eu4-user-data\\settings.txt",
+      "expected": "0FF626E8AADBA4A6B01C296E2F4B8C9D874D06C2B3D56B045A826E5E75CEEA91",
+      "actual": "0FF626E8AADBA4A6B01C296E2F4B8C9D874D06C2B3D56B045A826E5E75CEEA91"
+    },
+    {
+      "path": "X:\\eu4-user-data\\dlc_load.json",
+      "expected": "5CC846E60458A3D910ED013D9C7FA0704C9643D4980BE84FC0E0ACA740CD4BBB",
+      "actual": "5CC846E60458A3D910ED013D9C7FA0704C9643D4980BE84FC0E0ACA740CD4BBB"
+    },
+    {
+      "path": "X:\\eu4-user-data\\shortcuts.txt",
+      "expected": "2CF2C8C4957D1182349A88CE9ACFBA2DBDE6F5BB621788FEE79AB4085502D974",
+      "actual": "2CF2C8C4957D1182349A88CE9ACFBA2DBDE6F5BB621788FEE79AB4085502D974"
+    }
+  ],
+  "vanilla": [
+    {
+      "path": "X:\\eu4-game\\launcher-settings.json",
+      "expected": "71BC763B5DF4D9FC04DBC48655449F847BF4442D65FB195E5111739C08C5D572",
+      "actual": "71BC763B5DF4D9FC04DBC48655449F847BF4442D65FB195E5111739C08C5D572"
+    },
+    {
+      "path": "X:\\eu4-game\\decisions\\USANation.txt",
+      "expected": "3729BBDAB1A9559F976F43D8E5986F03603049DE715357E276F9EF55E7F2CF28",
+      "actual": "3729BBDAB1A9559F976F43D8E5986F03603049DE715357E276F9EF55E7F2CF28"
+    },
+    {
+      "path": "X:\\eu4-game\\decisions\\ColonialNations.txt",
+      "expected": "B89FD2E24442D293460F512830EDE5A2890F48C9BC2A4F27EFE72DE1D8568FF6",
+      "actual": "B89FD2E24442D293460F512830EDE5A2890F48C9BC2A4F27EFE72DE1D8568FF6"
+    },
+    {
+      "path": "X:\\eu4-game\\missions\\USA_Missions.txt",
+      "expected": "B9563F9EAFEBBE8509C1885B9E163932C39AA7DC6D998FD552B9E266F06E28FB",
+      "actual": "B9563F9EAFEBBE8509C1885B9E163932C39AA7DC6D998FD552B9E266F06E28FB"
+    },
+    {
+      "path": "X:\\eu4-game\\missions\\English_Missions.txt",
+      "expected": "694B668CA63141B85E9803F5E81F4A5D964C8DE817E01D4A0BA3252AD2127C08",
+      "actual": "694B668CA63141B85E9803F5E81F4A5D964C8DE817E01D4A0BA3252AD2127C08"
+    },
+    {
+      "path": "X:\\eu4-game\\missions\\RB_English_Missions.txt",
+      "expected": "D82044526AC1B617AC213BF4EBE90B38BDBEE60A20B74EC9D6A4C5BD921A4736",
+      "actual": "D82044526AC1B617AC213BF4EBE90B38BDBEE60A20B74EC9D6A4C5BD921A4736"
+    },
+    {
+      "path": "X:\\eu4-game\\events\\AmericanRevolution.txt",
+      "expected": "5A25D09150F71DE7707BE487DB304EF24A12139081DFE0D70DE72D75510341DF",
+      "actual": "5A25D09150F71DE7707BE487DB304EF24A12139081DFE0D70DE72D75510341DF"
+    },
+    {
+      "path": "X:\\eu4-game\\events\\USADLC.txt",
+      "expected": "83633A5C4FA725C83B666DCA517CAD69E87C9E07054980569BB1B8EFA17E382C",
+      "actual": "83633A5C4FA725C83B666DCA517CAD69E87C9E07054980569BB1B8EFA17E382C"
+    },
+    {
+      "path": "X:\\eu4-game\\events\\ColonialNation.txt",
+      "expected": "6A52F6A9231F5C9B361A6806CE33FBA0EFB529BCA18BD9C7FF59735884E46CE6",
+      "actual": "6A52F6A9231F5C9B361A6806CE33FBA0EFB529BCA18BD9C7FF59735884E46CE6"
+    },
+    {
+      "path": "X:\\eu4-game\\common\\government_reforms\\02_government_reforms_republics.txt",
+      "expected": "4BC5827895DFFFDDE5FE89D436C66C8EF9EE5E70CEC6A79419C72905D76C795F",
+      "actual": "4BC5827895DFFFDDE5FE89D436C66C8EF9EE5E70CEC6A79419C72905D76C795F"
+    },
+    {
+      "path": "X:\\eu4-game\\common\\colonial_regions\\00_colonial_regions.txt",
+      "expected": "B1F47511B19948F7AC5F48B8A90C3BE3E43C36EB1E600284DB906E02056AB7D2",
+      "actual": "B1F47511B19948F7AC5F48B8A90C3BE3E43C36EB1E600284DB906E02056AB7D2"
+    },
+    {
+      "path": "X:\\eu4-game\\map\\area.txt",
+      "expected": "51FD9F8C9BB177BBA2939171DCECB2A538E5F7C72527807C64D6B799DE94B44E",
+      "actual": "51FD9F8C9BB177BBA2939171DCECB2A538E5F7C72527807C64D6B799DE94B44E"
+    },
+    {
+      "path": "X:\\eu4-game\\map\\region.txt",
+      "expected": "91FE977CB6A8645B66ACABFFFDE7A35E6E050CD1FF9B2C8AFC838E45D4E45929",
+      "actual": "91FE977CB6A8645B66ACABFFFDE7A35E6E050CD1FF9B2C8AFC838E45D4E45929"
+    },
+    {
+      "path": "X:\\eu4-game\\interface\\countrymissionsview.gui",
+      "expected": "492157456D7047FA92A5F266A3AC2CBF74DB6F5010CC931FC2E9F211DB4C5B3F",
+      "actual": "492157456D7047FA92A5F266A3AC2CBF74DB6F5010CC931FC2E9F211DB4C5B3F"
+    }
+  ],
+  "passed": true
+}

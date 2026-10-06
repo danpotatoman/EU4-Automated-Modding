@@ -1,0 +1,139 @@
+EU4txt
+date=1444.11.11
+save_game=".eu4"
+player="BRI"
+displayed_country_name="Brittany"
+savegame_version={
+	first=1
+	second=37
+	third=5
+	forth=0
+	name="Inca"
+}
+savegame_versions={
+	"1.37.5.0"
+}
+dlc_enabled={
+	"Conquest of Paradise"
+	"Wealth of Nations"
+	"Res Publica"
+	"Art of War"
+	"El Dorado"
+	"Common Sense"
+	"The Cossacks"
+	"Mare Nostrum"
+	"Rights of Man"
+	"Mandate of Heaven"
+	"Third Rome"
+	"Cradle of Civilization"
+	"Rule Britannia"
+	"Dharma"
+	"Golden Century"
+	"Emperor"
+	"Leviathan"
+	"Lions of the North"
+	"Domination"
+	"King of Kings"
+	"Winds of Change"
+}
+mods_enabled_names={
+	{
+		filename="mod/nantes_manual.mod"
+		name="Brittany Nantes Manual Test (DO NOT EXPORT)"
+	}
+ 
+}
+multi_player=no
+not_observer=yes
+campaign_id="0cb36ae4-f222-4427-ac55-77a9f161b96e"
+campaign_length=0
+campaign_stats={
+{
+		id=0
+		comparison=1
+		key="game_country"
+		selector="BRI"
+		localization="Brittany"
+	}
+{
+		id=1
+		comparison=2
+		key="longest_reign"
+		localization="François I"
+	}
+{
+		id=2
+		comparison=2
+		key="wars_won"
+	}
+{
+		id=3
+		comparison=2
+		key="wars_lost"
+	}
+{
+		id=4
+		comparison=2
+		key="army_kills"
+	}
+{
+		id=5
+		comparison=2
+		key="army_losses"
+	}
+{
+		id=6
+		comparison=2
+		key="navy_kills"
+	}
+{
+		id=7
+		comparison=2
+		key="navy_losses"
+	}
+{
+		id=8
+		comparison=2
+		key="countries_removed"
+	}
+{
+		id=9
+		comparison=2
+		key="provs_taken"
+	}
+{
+		id=10
+		comparison=2
+		key="provs_lost"
+	}
+{
+		id=11
+		comparison=0
+		key="leader_count"
+	}
+{
+		id=12
+		comparison=0
+		key="best_leader"
+	}
+{
+		id=13
+		comparison=1
+		key="religion"
+		selector="catholic"
+		localization="Catholic"
+	}
+{
+		id=14
+		comparison=2
+		key="best_prov"
+		localization="Arvor"
+		value=12.000
+	}
+{
+		id=15
+		comparison=2
+		key="disasters"
+	}
+}
+checksum="48fd0fc2d1e786c3835957ebff8a3b9c"

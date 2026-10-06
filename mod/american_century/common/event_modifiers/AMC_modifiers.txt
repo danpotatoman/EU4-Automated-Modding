@@ -1,0 +1,12 @@
+amc_atlantic_settlement = { global_colonial_growth = 20 }
+amc_assembly_investment = { development_cost = -0.10 }
+amc_colonial_trade = { trade_efficiency = 0.10 }
+amc_liberty_modifier = { global_unrest = -1 stability_cost_modifier = -0.10 }
+amc_enumerated_powers = { governing_capacity_modifier = 0.10 state_maintenance_modifier = -0.10 }
+amc_local_guarantees = { num_accepted_cultures = 1 global_unrest = -1 }
+amc_durable_union = { republican_tradition = 0.3 reform_progress_growth = 0.10 }
+amc_free_harbor = { province_trade_power_modifier = 0.15 }
+amc_open_doors_modifier = { global_colonial_growth = 25 development_cost = -0.10 }
+amc_workshop_economy = { production_efficiency = 0.10 global_trade_goods_size_modifier = 0.05 }
+amc_citizen_army = { infantry_cost = -0.10 manpower_recovery_speed = 0.15 }
+amc_coastal_fleet = { global_ship_cost = -0.10 global_ship_repair = 0.20 }

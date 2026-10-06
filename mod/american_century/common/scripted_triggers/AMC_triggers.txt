@@ -1,0 +1,16 @@
+amc_eastern_ten_cores_trigger = {
+    num_of_owned_provinces_with = {
+        value = 10
+        colonial_region = colonial_eastern_america
+        is_city = yes
+        is_core = ROOT
+    }
+}
+
+amc_colonial_origin_trigger = {
+    NOT = { tag = USA }
+    NOT = { map_setup = map_setup_random }
+    culture_group = british
+    OR = { is_colonial_nation = yes is_former_colonial_nation = yes }
+    capital_scope = { colonial_region = colonial_eastern_america }
+}

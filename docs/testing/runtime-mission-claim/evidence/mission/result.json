@@ -1,0 +1,809 @@
+{
+  "test": "nantes-claim",
+  "nonce": "85626f6a0f420f02",
+  "status": "infrastructure-error",
+  "behavioralPass": false,
+  "directory": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T010451698Z_85626f6a0f420f02",
+  "installedVersion": "EU4 v1.37.5.0 Inca (491d)",
+  "versionSource": "installed launcher-settings.json; running version must also be checked in logs",
+  "launcherConfiguration": {
+    "enabled_mods": [
+      "mod/brittany_missions_dev.mod"
+    ],
+    "disabled_dlcs": []
+  },
+  "dlcs": [
+    "Conquest of Paradise",
+    "Cradle of Civilization",
+    "Dharma",
+    "Domination",
+    "El Dorado",
+    "Emperor",
+    "Golden Century",
+    "King of Kings",
+    "Leviathan",
+    "Lions of the North",
+    "Mandate of Heaven",
+    "Mare Nostrum",
+    "Res Publica",
+    "Rule Britannia",
+    "The Cossacks",
+    "Third Rome",
+    "Wealth of Nations",
+    "Winds of Change"
+  ],
+  "stagedManifest": [
+    {
+      "path": "common/event_modifiers/BRI_mission_modifiers.txt",
+      "sha256": "3b8be834acc20de6490713efceaf4e0a84dca2132ec51bf221fc98545abf61fa"
+    },
+    {
+      "path": "common/government_reforms/BRI_government_reforms.txt",
+      "sha256": "3ab691c55eb9f88772f1927d10920c457518fe00b1c6fb29e533e927a3ddb110"
+    },
+    {
+      "path": "common/on_actions/zz_runtime_test.txt",
+      "sha256": "54ce3a1980df9c7c19d65ffbd7ad83a4cbf3cc7fc0162c528d39ac000f69e23c"
+    },
+    {
+      "path": "common/powerprojection/BRI_power_projection.txt",
+      "sha256": "f7d2713a4d9d8fb27b484e8f93bb682e1f2931fa44c399296b46fb03b567e06f"
+    },
+    {
+      "path": "common/province_triggered_modifiers/BRI_metropole_modifiers.txt",
+      "sha256": "b7968f5fefb40ca8adcfcafa00f059ed756ba25c949fa2afae294c5bfef58199"
+    },
+    {
+      "path": "common/scripted_effects/BRI_mission_effects.txt",
+      "sha256": "a9244ba4fc65d9a000dcbf90a7c5751871d0d7abd1a022bea9d89adacb93bd9c"
+    },
+    {
+      "path": "common/scripted_effects/eu4claim_wrappers.txt",
+      "sha256": "3d448a4770ab599bb76314907772cedafd5874c3058e2d3d500a7930757590db"
+    },
+    {
+      "path": "common/scripted_triggers/BRI_mission_triggers.txt",
+      "sha256": "d22254415c431c090f90cb2cdb488a14965c6e631bcb865aa800ac884e153458"
+    },
+    {
+      "path": "decisions/Custom_Breton_Decisions.txt",
+      "sha256": "9c7e177033a43633e27358506a73cdf22cea51666c363773423edbca9b8982d2"
+    },
+    {
+      "path": "descriptor.mod",
+      "sha256": "c5415feddb9c35cc021f5e971ace261f50bf1f38c7a8854885d299dd2f64d3b3"
+    },
+    {
+      "path": "events/Custom_Breton_Events.txt",
+      "sha256": "4acd8cee030162866aa2a006faa7287c0da1d693a5e736cd739e95e7a3a93b13"
+    },
+    {
+      "path": "localisation/english/bri_missions_l_english.yml",
+      "sha256": "85d1d817ee0dd2ef1b43cd8a28358540805810903e18d0af10341985811417b9"
+    },
+    {
+      "path": "missions/Breton_Missions.txt",
+      "sha256": "96ebd2f1e10b225e1e2a73e8ae21cf9d780fcb092be15adbcd16fc22f459a7f8"
+    },
+    {
+      "path": "missions/Custom_Breton_Missions.txt",
+      "sha256": "c7f42b80e6037c11fa988edbe1ae1f0c71da1f2e1a6f55fe8fcc85d1c08eb324"
+    }
+  ],
+  "launchArgs": [
+    "-debug",
+    "-userdir=X:/eu4-research/tools/runtime-tests/work/20261004T010451698Z_85626f6a0f420f02/profile/",
+    "-start_tag=BRI",
+    "-auto_run=eu4rt_run.commands"
+  ],
+  "staticValidation": {
+    "production": {
+      "exitCode": 0,
+      "report": "X:\\eu4-research\\tools\\cwtools\\reports\\brittany_missions\\latest.json"
+    },
+    "staged": {
+      "exitCode": 0,
+      "report": "X:\\eu4-research\\tools\\cwtools\\reports\\brittany_runtime\\latest.json"
+    }
+  },
+  "wiring": {
+    "passed": true,
+    "layer": "WIRING",
+    "mode": "production definitions",
+    "findings": [],
+    "adapters": []
+  },
+  "inlineBaseline": false,
+  "negativeControl": false,
+  "nativeFiles": [
+    {
+      "file": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T010451698Z_85626f6a0f420f02\\profile\\eu4claim_before.txt",
+      "sha256": "35219f9553eed7451388a7481f9ef60de1ea16e397a64dc3732ed51e077a7c1d"
+    },
+    {
+      "file": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T010451698Z_85626f6a0f420f02\\profile\\eu4claim_after.txt",
+      "sha256": "9a0cc6f75da8a0189863461859b61493471e4da123adf38550ca4cfe07b9799a"
+    },
+    {
+      "file": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T010451698Z_85626f6a0f420f02\\profile\\eu4claim_scripted.txt",
+      "sha256": "ce280bd4b8cf91cef944c2196109027fde543b1a620ac7264c8d04eb0236649b"
+    },
+    {
+      "file": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T010451698Z_85626f6a0f420f02\\profile\\eu4rt_run.commands",
+      "sha256": "b8a4c5e0988a96fafce0e463ebdeba116eec7be0dd10af27e9da542d4ce7e213"
+    }
+  ],
+  "missionClaim": {
+    "files": [
+      "eu4claim_before.txt",
+      "eu4claim_after.txt",
+      "eu4claim_scripted.txt",
+      "eu4rt_run.commands"
+    ],
+    "geometry": {
+      "mission": "bri_nantes_market",
+      "series": "bri_commerce_missions",
+      "slot": 2,
+      "row": 1,
+      "origin": [
+        0,
+        140
+      ],
+      "list": [
+        10,
+        122
+      ],
+      "cell": [
+        104,
+        152
+      ],
+      "scale": 1,
+      "scroll": 0,
+      "point": {
+        "x": 166,
+        "y": 312
+      },
+      "assumptions": "1280x720 client, UI scale 1, initial tree scroll; verify screenshot before input"
+    },
+    "mode": "mission",
+    "driver": "Codex node_repl @oai/sky; no standalone input driver"
+  },
+  "recoveryPolicy": {
+    "retries": 0,
+    "maxAttempts": 1,
+    "timeoutSeconds": 600,
+    "progressTimeoutSeconds": 600
+  },
+  "caseDefinitions": [
+    {
+      "test": "nantes-claim",
+      "nonce": "85626f6a0f420f02",
+      "checks": [
+        "initial",
+        "dlc-1",
+        "dlc-2",
+        "dlc-3",
+        "dlc-4",
+        "dlc-5",
+        "dlc-6",
+        "dlc-7",
+        "dlc-8",
+        "dlc-9",
+        "dlc-10",
+        "dlc-11",
+        "dlc-12",
+        "dlc-13",
+        "dlc-14",
+        "dlc-15",
+        "dlc-16",
+        "dlc-17",
+        "dlc-18",
+        "fixture-membership",
+        "fixture-buildings",
+        "before-169",
+        "before-4384",
+        "after-169",
+        "after-4384"
+      ]
+    }
+  ],
+  "automated": [
+    "isolated staging",
+    "CWTools",
+    "process launch",
+    "native startup hook (experimental)",
+    "log assertions",
+    "bounded owned-process cleanup",
+    "native auto_run console batch",
+    "plain run-file production effect calls"
+  ],
+  "manual": [],
+  "behavioralScope": "production logic/effects plus static wiring; no normal mission dispatch",
+  "missionCompletionPass": false,
+  "preflightCleanup": {
+    "actions": [],
+    "remaining": [],
+    "clean": true,
+    "known": [
+      {
+        "pid": 25264,
+        "parentPid": 52764,
+        "created": "2026-10-04T00:03:48.7979520Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000259304Z_6cf755dc681f1c08/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands"
+      },
+      {
+        "pid": 31684,
+        "parentPid": 37820,
+        "created": "2026-10-04T00:06:36.6230870Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000537249Z_df0709546354b7ba/attempts/2/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands"
+      },
+      {
+        "pid": 35460,
+        "parentPid": 34172,
+        "created": "2026-10-04T00:08:33.3352700Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000741056Z_7fa89d6ec1683acb/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowTitle": ""
+      },
+      {
+        "pid": 32380,
+        "parentPid": 35460,
+        "created": "2026-10-04T00:09:11.9371230Z",
+        "name": "CrashReporter.exe",
+        "executable": "X:\\eu4-game\\crash_reporter\\binaries\\CrashReporter.exe",
+        "command": "CrashReporter.exe \"--crashdir=X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T000741056Z_7fa89d6ec1683acb\\attempts\\1\\profile\\crashes\\eu4_20261003_170911\" \"--uploadurl=http://crashdump.paradox.private/upload\"",
+        "windowTitle": "Paradox Crash Reporter"
+      },
+      {
+        "pid": 59116,
+        "parentPid": 34172,
+        "created": "2026-10-04T00:09:18.9723390Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000741056Z_7fa89d6ec1683acb/attempts/2/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowTitle": ""
+      },
+      {
+        "pid": 57288,
+        "parentPid": 22628,
+        "created": "2026-10-04T00:12:29.8618240Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T001132193Z_c96414309bb54aec/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowTitle": ""
+      },
+      {
+        "pid": 30308,
+        "parentPid": 19192,
+        "created": "2026-10-04T00:32:17.2378870Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T003119682Z_c80185f6448b063e/attempts/1/profile/ -start_tag=BRI",
+        "windowTitle": ""
+      },
+      {
+        "pid": 4136,
+        "parentPid": 19192,
+        "created": "2026-10-04T00:33:19.3702750Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T003119682Z_c80185f6448b063e/attempts/2/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowTitle": ""
+      },
+      {
+        "pid": 17520,
+        "parentPid": 4280,
+        "created": "2026-10-04T00:36:15.1909400Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T003517867Z_63d3faf7c6cafb65/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowTitle": ""
+      },
+      {
+        "pid": 6188,
+        "parentPid": 55440,
+        "created": "2026-10-04T00:56:36.6664150Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T005543217Z_ef908fa85a2caf26/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      }
+    ]
+  },
+  "activeAttempt": {
+    "number": 1,
+    "pid": 57188,
+    "profile": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T010451698Z_85626f6a0f420f02\\attempts\\1\\profile"
+  },
+  "nativeProbeVerified": true,
+  "caseResults": [
+    {
+      "test": "nantes-claim",
+      "nonce": "85626f6a0f420f02",
+      "markers": [
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 BEGIN nantes-claim",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK initial",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-1",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-2",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-3",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-4",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-5",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-6",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-7",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-8",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-9",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-10",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-11",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-12",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-13",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-14",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-15",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-16",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-17",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-18",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK fixture-membership",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK fixture-buildings",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK before-169",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK before-4384",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 UI_READY nantes-claim",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK after-169",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK after-4384",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OBS console-completion false",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OBS console-textiles false",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 END nantes-claim"
+      ],
+      "expectedMarkers": [
+        "BEGIN nantes-claim",
+        "OK initial",
+        "OK dlc-1",
+        "OK dlc-2",
+        "OK dlc-3",
+        "OK dlc-4",
+        "OK dlc-5",
+        "OK dlc-6",
+        "OK dlc-7",
+        "OK dlc-8",
+        "OK dlc-9",
+        "OK dlc-10",
+        "OK dlc-11",
+        "OK dlc-12",
+        "OK dlc-13",
+        "OK dlc-14",
+        "OK dlc-15",
+        "OK dlc-16",
+        "OK dlc-17",
+        "OK dlc-18",
+        "OK fixture-membership",
+        "OK fixture-buildings",
+        "OK before-169",
+        "OK before-4384",
+        "UI_READY nantes-claim",
+        "OK after-169",
+        "OK after-4384",
+        [
+          "OBS console-completion true",
+          "OBS console-completion false"
+        ],
+        [
+          "OBS console-textiles true",
+          "OBS console-textiles false"
+        ],
+        "END nantes-claim"
+      ],
+      "observations": {
+        "console-completion": "false",
+        "console-textiles": "false"
+      },
+      "runningVersion": "EU4 v1.37.5.0 Inca",
+      "assertionFailures": [],
+      "missingOrDuplicateChecks": [],
+      "dateMatches": true,
+      "versionMatches": true,
+      "transcriptPass": true,
+      "wiringPass": true,
+      "status": "pass"
+    }
+  ],
+  "collectorRun": {
+    "id": "20261004T010547461Z_d67473",
+    "directory": "X:\\eu4-research\\tools\\test-runs\\reports\\brittany_runtime\\20261004T010547461Z_d67473",
+    "status": "running"
+  },
+  "pid": 57188,
+  "startedAtUtc": "2026-10-04T01:05:45.409Z",
+  "lifecycleReason": "complete",
+  "markers": [
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 BEGIN nantes-claim",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK initial",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-1",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-2",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-3",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-4",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-5",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-6",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-7",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-8",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-9",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-10",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-11",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-12",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-13",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-14",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-15",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-16",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-17",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-18",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK fixture-membership",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK fixture-buildings",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK before-169",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK before-4384",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 UI_READY nantes-claim",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK after-169",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK after-4384",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OBS console-completion false",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OBS console-textiles false",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 END nantes-claim"
+  ],
+  "expectedMarkers": [
+    "BEGIN nantes-claim",
+    "OK initial",
+    "OK dlc-1",
+    "OK dlc-2",
+    "OK dlc-3",
+    "OK dlc-4",
+    "OK dlc-5",
+    "OK dlc-6",
+    "OK dlc-7",
+    "OK dlc-8",
+    "OK dlc-9",
+    "OK dlc-10",
+    "OK dlc-11",
+    "OK dlc-12",
+    "OK dlc-13",
+    "OK dlc-14",
+    "OK dlc-15",
+    "OK dlc-16",
+    "OK dlc-17",
+    "OK dlc-18",
+    "OK fixture-membership",
+    "OK fixture-buildings",
+    "OK before-169",
+    "OK before-4384",
+    "UI_READY nantes-claim",
+    "OK after-169",
+    "OK after-4384",
+    [
+      "OBS console-completion true",
+      "OBS console-completion false"
+    ],
+    [
+      "OBS console-textiles true",
+      "OBS console-textiles false"
+    ],
+    "END nantes-claim"
+  ],
+  "observations": {
+    "console-completion": "false",
+    "console-textiles": "false"
+  },
+  "runningVersion": "EU4 v1.37.5.0 Inca",
+  "assertionFailures": [],
+  "missingOrDuplicateChecks": [],
+  "dateMatches": true,
+  "versionMatches": true,
+  "transcriptPass": true,
+  "wiringPass": true,
+  "relevantScriptErrors": [],
+  "stagedChanges": [],
+  "nativeFileChanges": [],
+  "error": "ENOENT: no such file or directory, open 'X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T010451698Z_85626f6a0f420f02\\attempts\\1\\before.eu4'",
+  "logCapture": {
+    "id": "20261004T010547461Z_d67473",
+    "report": "X:\\eu4-research\\tools\\test-runs\\reports\\brittany_runtime\\20261004T010547461Z_d67473\\report.txt",
+    "outcome": "not-completed",
+    "newErrorMessages": 92,
+    "changedLogs": 25
+  },
+  "cleanup": {
+    "actions": [
+      {
+        "pid": 57188,
+        "created": "2026-10-04T01:05:47.4657990Z",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "action": "window-close"
+      }
+    ],
+    "remaining": [],
+    "clean": true,
+    "known": [
+      {
+        "pid": 57188,
+        "parentPid": 24196,
+        "created": "2026-10-04T01:05:47.4657990Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T010451698Z_85626f6a0f420f02/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      }
+    ]
+  },
+  "crashes": [],
+  "attempts": [
+    {
+      "number": 1,
+      "directory": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T010451698Z_85626f6a0f420f02\\attempts\\1",
+      "profile": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T010451698Z_85626f6a0f420f02\\attempts\\1\\profile",
+      "launchCommand": [
+        "X:\\eu4-game\\eu4.exe",
+        "-debug",
+        "-userdir=X:/eu4-research/tools/runtime-tests/work/20261004T010451698Z_85626f6a0f420f02/attempts/1/profile/",
+        "-start_tag=BRI",
+        "-auto_run=eu4rt_run.commands"
+      ],
+      "startedAtUtc": "2026-10-04T01:05:45.409Z",
+      "reason": "complete",
+      "recoverable": false,
+      "prelaunchCleanup": {
+        "actions": [],
+        "remaining": [],
+        "clean": true,
+        "known": [
+          {
+            "pid": 25264,
+            "parentPid": 52764,
+            "created": "2026-10-04T00:03:48.7979520Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000259304Z_6cf755dc681f1c08/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands"
+          },
+          {
+            "pid": 31684,
+            "parentPid": 37820,
+            "created": "2026-10-04T00:06:36.6230870Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000537249Z_df0709546354b7ba/attempts/2/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands"
+          },
+          {
+            "pid": 35460,
+            "parentPid": 34172,
+            "created": "2026-10-04T00:08:33.3352700Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000741056Z_7fa89d6ec1683acb/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowTitle": ""
+          },
+          {
+            "pid": 32380,
+            "parentPid": 35460,
+            "created": "2026-10-04T00:09:11.9371230Z",
+            "name": "CrashReporter.exe",
+            "executable": "X:\\eu4-game\\crash_reporter\\binaries\\CrashReporter.exe",
+            "command": "CrashReporter.exe \"--crashdir=X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T000741056Z_7fa89d6ec1683acb\\attempts\\1\\profile\\crashes\\eu4_20261003_170911\" \"--uploadurl=http://crashdump.paradox.private/upload\"",
+            "windowTitle": "Paradox Crash Reporter"
+          },
+          {
+            "pid": 59116,
+            "parentPid": 34172,
+            "created": "2026-10-04T00:09:18.9723390Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000741056Z_7fa89d6ec1683acb/attempts/2/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowTitle": ""
+          },
+          {
+            "pid": 57288,
+            "parentPid": 22628,
+            "created": "2026-10-04T00:12:29.8618240Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T001132193Z_c96414309bb54aec/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowTitle": ""
+          },
+          {
+            "pid": 30308,
+            "parentPid": 19192,
+            "created": "2026-10-04T00:32:17.2378870Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T003119682Z_c80185f6448b063e/attempts/1/profile/ -start_tag=BRI",
+            "windowTitle": ""
+          },
+          {
+            "pid": 4136,
+            "parentPid": 19192,
+            "created": "2026-10-04T00:33:19.3702750Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T003119682Z_c80185f6448b063e/attempts/2/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowTitle": ""
+          },
+          {
+            "pid": 17520,
+            "parentPid": 4280,
+            "created": "2026-10-04T00:36:15.1909400Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T003517867Z_63d3faf7c6cafb65/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowTitle": ""
+          },
+          {
+            "pid": 6188,
+            "parentPid": 55440,
+            "created": "2026-10-04T00:56:36.6664150Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T005543217Z_ef908fa85a2caf26/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          }
+        ]
+      },
+      "collectorRun": {
+        "id": "20261004T010547461Z_d67473",
+        "directory": "X:\\eu4-research\\tools\\test-runs\\reports\\brittany_runtime\\20261004T010547461Z_d67473",
+        "status": "running"
+      },
+      "pid": 57188,
+      "elapsedMs": 161474,
+      "exitCode": null,
+      "signalCode": null,
+      "lastSignal": "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 END nantes-claim",
+      "markerCount": 30,
+      "lastProgressElapsedMs": 40658,
+      "error": "ENOENT: no such file or directory, open 'X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T010451698Z_85626f6a0f420f02\\attempts\\1\\before.eu4'",
+      "diagnosticsBeforeCleanup": {
+        "game.log": {
+          "bytes": 30608
+        },
+        "error.log": {
+          "bytes": 198
+        },
+        "system.log": {
+          "bytes": 9681
+        },
+        "setup_error.log": {
+          "bytes": 95574
+        }
+      },
+      "cleanup": {
+        "actions": [
+          {
+            "pid": 57188,
+            "created": "2026-10-04T01:05:47.4657990Z",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "action": "window-close"
+          }
+        ],
+        "remaining": [],
+        "clean": true,
+        "known": [
+          {
+            "pid": 57188,
+            "parentPid": 24196,
+            "created": "2026-10-04T01:05:47.4657990Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T010451698Z_85626f6a0f420f02/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          }
+        ]
+      },
+      "crashes": [],
+      "logCapture": {
+        "id": "20261004T010547461Z_d67473",
+        "report": "X:\\eu4-research\\tools\\test-runs\\reports\\brittany_runtime\\20261004T010547461Z_d67473\\report.txt",
+        "outcome": "not-completed",
+        "newErrorMessages": 92,
+        "changedLogs": 25
+      },
+      "finishedAtUtc": "2026-10-04T01:08:34.993Z",
+      "elapsedSeconds": 169.58,
+      "status": "infrastructure-error",
+      "behavioralPass": false,
+      "caseResults": [
+        {
+          "test": "nantes-claim",
+          "nonce": "85626f6a0f420f02",
+          "markers": [
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 BEGIN nantes-claim",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK initial",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-1",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-2",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-3",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-4",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-5",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-6",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-7",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-8",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-9",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-10",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-11",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-12",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-13",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-14",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-15",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-16",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-17",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK dlc-18",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK fixture-membership",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK fixture-buildings",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK before-169",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK before-4384",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 UI_READY nantes-claim",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK after-169",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OK after-4384",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OBS console-completion false",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 OBS console-textiles false",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 85626f6a0f420f02 END nantes-claim"
+          ],
+          "expectedMarkers": [
+            "BEGIN nantes-claim",
+            "OK initial",
+            "OK dlc-1",
+            "OK dlc-2",
+            "OK dlc-3",
+            "OK dlc-4",
+            "OK dlc-5",
+            "OK dlc-6",
+            "OK dlc-7",
+            "OK dlc-8",
+            "OK dlc-9",
+            "OK dlc-10",
+            "OK dlc-11",
+            "OK dlc-12",
+            "OK dlc-13",
+            "OK dlc-14",
+            "OK dlc-15",
+            "OK dlc-16",
+            "OK dlc-17",
+            "OK dlc-18",
+            "OK fixture-membership",
+            "OK fixture-buildings",
+            "OK before-169",
+            "OK before-4384",
+            "UI_READY nantes-claim",
+            "OK after-169",
+            "OK after-4384",
+            [
+              "OBS console-completion true",
+              "OBS console-completion false"
+            ],
+            [
+              "OBS console-textiles true",
+              "OBS console-textiles false"
+            ],
+            "END nantes-claim"
+          ],
+          "observations": {
+            "console-completion": "false",
+            "console-textiles": "false"
+          },
+          "runningVersion": "EU4 v1.37.5.0 Inca",
+          "assertionFailures": [],
+          "missingOrDuplicateChecks": [],
+          "dateMatches": true,
+          "versionMatches": true,
+          "transcriptPass": true,
+          "wiringPass": true,
+          "status": "pass"
+        }
+      ],
+      "retryScheduled": false
+    }
+  ],
+  "retryExhausted": false,
+  "finalFailureReason": "infrastructure-error (lifecycle: complete); ENOENT: no such file or directory, open 'X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T010451698Z_85626f6a0f420f02\\attempts\\1\\before.eu4'",
+  "finishedAtUtc": "2026-10-04T01:08:34.995Z",
+  "elapsedSeconds": 223.3,
+  "nativeSeconds": 169.59,
+  "exitCode": 2
+}

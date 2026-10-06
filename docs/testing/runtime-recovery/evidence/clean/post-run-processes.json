@@ -1,0 +1,9 @@
+{
+    "atUtc":  "2026-10-04T00:19:47.9143560Z",
+    "remainingCount":  0,
+    "remaining":  [
+
+                  ],
+    "lockExists":  false,
+    "note":  "Repeated post-run inspection with explicit array serialization. Original snapshot retained separately; its empty pipeline serialized as an empty object."
+}

@@ -1,0 +1,1419 @@
+{
+  "date": "2026-10-05",
+  "note": "Public copies retain original verdicts; path provenance redacted to synthetic X: roots. Original hashes identify local originals, not redacted bytes. Original files are retained locally and excluded. Collector bulk arrays summarized; UI screenshots excluded pending ownership review.",
+  "files": [
+    {
+      "file": ".agent/plans/2026-10-03-documentation-bootstrap.md",
+      "originalSha256": "9da4b855ace6e1b91db7b1e7a62cd55fc792e717a70f14d33b768ea97a27648b",
+      "publicSha256": "1717903ea9c5f06b028ebf9aafd236e705d1546e23147120498dcedfa0002d37",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/README.md",
+      "originalSha256": "657c884e99838e2e569e3e476f7d74e74ab34d476f5f03d774dd21e55b5b167c",
+      "publicSha256": "2aa6ce9ecf349cc66e016aa300e66789385802834c7ec5d7f93b0c44f6b7cefa",
+      "changes": [
+        "local-artifact-reference"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/brittany-regression/cwtools-production.json",
+      "originalSha256": "8e5038792646eec0d6280b6be06cd10f6eac8e997d0938be7d3920d47de30f70",
+      "publicSha256": "7ba697ad5b0fec07d75b656f30d276629e46d206f982b1bb9ddbee9b1f558750",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/brittany-regression/cwtools-staged.json",
+      "originalSha256": "2fd5e3bf46033f3e2b5f08546654a43c7ac29d25e6d789892c631d5a96c2e6b4",
+      "publicSha256": "6993b83fefec0919e60971a5a5d6d795c2b60023e21ed4e33127533d0235c626",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/brittany-regression/result.json",
+      "originalSha256": "ac3be665cf2a88d44f2a38e7812de3699386d0ca45c0f187aedebdb2b8428796",
+      "publicSha256": "ca4f4fad8f11a4d81fdb25041142fbc10dfd3a8cedd0d6126fbefdf7838526db",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/claim-dialog-timeout/cwtools-production.json",
+      "originalSha256": "a074b749f04aaa954b8fb36f5ba80255067903814892020a2a2a00601feed864",
+      "publicSha256": "46ab548a113013d3d287ddee9e5b5e3930bb85ce071b747934f0d1e7ced7297e",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/claim-dialog-timeout/cwtools-staged.json",
+      "originalSha256": "8c57750802bee65fe09759ad23ec95ee1535d81ce18f55ef4bda2e703f56da6f",
+      "publicSha256": "260f3481ee21c6ed10818846c6191cbec6abbb1efb5a2a67b7900d917291afed",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/claim-dialog-timeout/result.json",
+      "originalSha256": "471cd7e691de17a02c8d216ec8eb67f662038eb9eb5ffcc100b96190f2aa2266",
+      "publicSha256": "4fbd67f4864fc9f07f011b94d6f8e70d844ae233dfa32e251d18c88169584428",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/claim-dialog-timeout/ui-actions.jsonl",
+      "originalSha256": "374084dee16bcca7eea2f7731e30af0a06ef0566bbf84074dfcf25dafb763a48",
+      "publicSha256": "d327dbcad81c6fa64be63d2ecbc5235f676525cc04700d29ff86b469747db64c",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/claim-timeout/result.json",
+      "originalSha256": "3718692347480471e0f4578c43eede1e2797d995ab3c43095a86976128eec248",
+      "publicSha256": "e966c2f31e302bd253c387ba3be31e3cdf9cc9b49da5127a50e49773b039a548",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/claim-timeout/ui-actions.jsonl",
+      "originalSha256": "2046d72aaeedd731e573b47eafd2da831517aaa988b7444462fcb13018c92af4",
+      "publicSha256": "5dd119f0b565ce4830922c3bc1eb4d7a605d1d58d1403c5ef499556b744dcd5e",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/input-abort/result.json",
+      "originalSha256": "40c94bfc9253efce8032fc1214fb8f685b1e4cb79f5be9b41d95eb29c17ed72d",
+      "publicSha256": "dd3832bef55a5994e914690df6d3e2981b8c6a366220e1b517d6fb0bc948c73f",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/input-abort/ui-actions.jsonl",
+      "originalSha256": "9c4ae6c21c1a57c63f307e787f7f3e67a3667c1ccdca3e2abe6349269cc81144",
+      "publicSha256": "49e0d44cd1377ca61d768252107c10b70c3fa9e69a400b3c8df447c6d30418ce",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/negative/cwtools-production.json",
+      "originalSha256": "3c88ec41fcb0e767bbe882343712207eae40d95d03d6c8c555a803313184febb",
+      "publicSha256": "2d51b1b935452bd5dd4222945412ace6442cc2451058a9577b1154aaad85d427",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/negative/cwtools-staged.json",
+      "originalSha256": "ae84b07528cbdd807ef5f8a2b057d543f78fe55136f51a6cbf92693e79b25af1",
+      "publicSha256": "782806a5c6e67214eee6443cd7ef3140f80b457ebe8e374e20a8bf1dc37a727a",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/negative/independent-save-check.json",
+      "originalSha256": "0d71aa483eaac3821eda117e7cd6c91577cbd5d39f71ec27a76343c976fe0986",
+      "publicSha256": "55cea449e19f1ec50f1c9fdf0f894327a054098029189f4ee904697db5b9a8a8",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/negative/result.json",
+      "originalSha256": "e559848e6f1a98db413e9775c1ea3772f1a5bf440a5c9a2a8473a8c604e0d2c8",
+      "publicSha256": "e8b0f4c78e661d4ce6cd770bd4fcac03ccf19432b6555a451dd9d5a0133b08d9",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/negative/ui-actions.jsonl",
+      "originalSha256": "17be0fd0bac75a11db16d2c629eed431e9a7401fd2ba038d4f2ac0b1db6da851",
+      "publicSha256": "44f07942376ba8f07ad81ff32ed1409cce796639466de024e08e0b07eb1eeb87",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/positive/cwtools-production.json",
+      "originalSha256": "70cca3e143631dbab3fae9d1f963000c838f3ad35a83a7c0c3ffb3672099b8f9",
+      "publicSha256": "ff592b6417833ce080515575ca002a9600ec88ca9bbde91a9aa925f8b89eef82",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/positive/cwtools-staged.json",
+      "originalSha256": "a64b555212d3590e6126114b5cce3117a134a9bdc4428e8524fb8e8cfbf5f18d",
+      "publicSha256": "4244ae7026caa0d50e8fa629252bb7bf7b11dff7667358607a97adf6952aefb2",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/positive/independent-save-check.json",
+      "originalSha256": "0d8f1d8ed57197585f3d148f0c7eda070b90d8d5cd41ead04abcd2adfb690bd7",
+      "publicSha256": "9274b6530b244344da0b4e1b9f14af3d8836b8220e1a0115b630b59eb15da9d1",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/positive/reload-check.json",
+      "originalSha256": "ca432d4c34a12d0d590a45ae14e9810e7692b3c05d8db9c646a631dd3ccfcf94",
+      "publicSha256": "b7d98d8be4bd2140973a736a67e28e769025ac95655cbc80720a5f694f4c8925",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/positive/result.json",
+      "originalSha256": "2535ece83d9a74d7ac8997fb86ccc456393b60a9487df67fce3ae5d76903cf2c",
+      "publicSha256": "ebbf6b76d443dbb0c66406c21f6229a61c3916f347267dcbfdf1cd24e650dfa6",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/positive/ui-actions.jsonl",
+      "originalSha256": "93d6089241d1584d0e4f31232bf3bf6d2cfd1a320df9320e54f5e015c51f6de7",
+      "publicSha256": "767462a69fc718e637c671105b873de5a0e72ba801352ca7c6d8e24204cedca2",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/progress-timeout/result.json",
+      "originalSha256": "88ab45bf2c6aa7e7aaf62df685760ca5a53a3073a8dedc27dc0c6c2dbb80da19",
+      "publicSha256": "9a30e0e5c21f4f4857e3f83bf4b6e20b482fb534a1ede7c0c94f600421326f30",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/progress-timeout/ui-actions.jsonl",
+      "originalSha256": "f4219474f49a3cb8189dfc394e85ff47997c31d0836dbea8ecea8b27410d4df4",
+      "publicSha256": "5f1ff1a8464d12fb340885162f3cf6c7c6652af376b5d54c5f7d24c743bbecff",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/reload-duplicate/independent-save-check.json",
+      "originalSha256": "55b9c62f839ae21f2fe0980ad589dab50d2f3430de9f74638ad3fd7df8fcfa84",
+      "publicSha256": "50f59413e77efde02b446fb21c8b9c018eb617aef403c53cff846c0001fad4ce",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/reload-duplicate/result.json",
+      "originalSha256": "79d73e74c538ea00b42ed1ca99a3ada16f2c9d92e4679aba6105ea6d4d79722b",
+      "publicSha256": "74a9c804ae613212755354964030cbfe42e34efd5a60a80ce1d2100e149484d8",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/reload-duplicate/ui-actions.jsonl",
+      "originalSha256": "9af5df5a699633197fb3b72fe15b4ffbbb63d7a168c67485d36d4ef269447de7",
+      "publicSha256": "1cf4468f8d352412b5948132cff9ccd04df6224b3d8c68ef3c42bf7c8a092cf5",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/reload-timeout/independent-save-check.json",
+      "originalSha256": "b3aafc3bf4d127544dc258dd5c5d7c2ea0b8b0adf0cbd62de412d5829d598701",
+      "publicSha256": "48c5db5de72764bd5e7c0e43f843c8869be50765972f0f07c71c47a622b86548",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/reload-timeout/result.json",
+      "originalSha256": "af4362fe38cb52da58fc9225ad453fec2b7a5168e12ab3b8091e79d8c7011414",
+      "publicSha256": "bc0f39d804590e78e4fa6ce6fe75fe7e98d18048d9d597cdef0636b21092a0cd",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/reload-timeout/ui-actions.jsonl",
+      "originalSha256": "4e3ac38d96a32122e03512d511c53b1d72f91e18a3df541e05757dbbac121553",
+      "publicSha256": "e81934b1863284b4f6e001605d847950618bc68e9fb984c736508b24cc0b4f6b",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/setup-capital/result.json",
+      "originalSha256": "0a0e36dcfb79d82da85ba4a7d3cb90f26f63d319015f1adee6497fae6dba919a",
+      "publicSha256": "54f29299c7f848bc4d6c1b32cb7425a1f3f79b828bbc6ec4d8461b3846f9a47a",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/evidence/setup-cn/result.json",
+      "originalSha256": "004733e477489545164e73b8307317a9abb046c075ea4718128eae02724a727d",
+      "publicSha256": "a7fd03932832cc3f2ea6c00428524492a442fd97efbb9c76628a76d4171100e1",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/protected-before.json",
+      "originalSha256": "4a91ac7be56f59471d2a7a3a106a94239657680a3b1614234b53324ae6455a84",
+      "publicSha256": "e764e4304718a78f4781392a0a96e4da99e4746dc068ba4102de65e3776afb5a",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/american-century/protection-check.json",
+      "originalSha256": "350a8735c562d1b3c7066536b86ec39bf2f72b47f82c119cb91b44fadfa9a1b1",
+      "publicSha256": "e198bb977915ee2a76909fc90286d6b540f69fcb41a3e6fc3cdc3e83cd096447",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/README.md",
+      "originalSha256": "0c9d8be456d19d05d22e5e10741d0f8d3c2ccee72e837cee7f5e5e17002afdfb",
+      "publicSha256": "c4ecd363c47dbc7fe57dd008f0f908cd15d775216cccfce8169324f8fafe7368",
+      "changes": [
+        "local-artifact-reference"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/clean/cwtools-production.json",
+      "originalSha256": "b9d5937d5722b356ddb3c9ae629e4a65a2b31ad1f1cf3f580d7d3ec5431e3ac8",
+      "publicSha256": "2634a9138e733bd021c7733be5ecd008e3ecbc3d206d5789a85222ee754387fa",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/clean/cwtools-staged.json",
+      "originalSha256": "6025b4a7b5bb9bca00f7dca578f3e797fd00f30f1e0647c521dd2cc6e8a3cd11",
+      "publicSha256": "47d40f4095097d6ab67982016d5a65b2da153cfc5cd8ce8fd29f5c11e25b3566",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/clean/result.json",
+      "originalSha256": "8a325d4dc707e6027cde954d4d31a6372efa417ae7c6da990cf0c0017611e6a5",
+      "publicSha256": "2335aabf4b1baf53aac469da813457a758080e42144697ef7e330c65bb37fd76",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/faithful/cwtools-production.json",
+      "originalSha256": "51188f85eab50b111c1ecedbb8aff17218ea3bdf07f7bf936622054466793adb",
+      "publicSha256": "a617ecab42bf1e9bd595dc3e40944f6603ca2798ae95ebf62b7c341e77e3b93c",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/faithful/cwtools-staged.json",
+      "originalSha256": "716b12da2fe9ab33e51142d519e976894784931f7a39976c3a3435c940892969",
+      "publicSha256": "fe3bf456c86f05342f0348b9c0295ad9537ca038d18ccafe4e2d0f5392f4e5a8",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/faithful/result.json",
+      "originalSha256": "e0772e86cb1eb9a2f5f37443ad622dc9e2c26e7bbfbc8d3a1f450722ec1fa6ee",
+      "publicSha256": "6d3a0e124c4af5911345f6e585ff2ba401c48be94b4656045b48369b22498c60",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/faithful/save-check.json",
+      "originalSha256": "456f3f5d2cb03a27caaf22c6d7943b0b9fe1adcbb30d40a37e1abe8f249fdb85",
+      "publicSha256": "4eecd4f4c5c86bf39df96c6ec4b5fa38af93086ae62e611c97f2ff49e6d2f387",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/faithful/ui-actions.jsonl",
+      "originalSha256": "943b4dcbbdf9227ee9a3db144fd31a341adfba2d00cea8e884b41aee771fc1db",
+      "publicSha256": "a0d83c1b206dfcb595d683c7bbc3e3f4a8e1d716c82778474b33d872e8ff9b02",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/faithful/ui-check-request.json",
+      "originalSha256": "807ac944febe930c46a1361f9093b8fad38b7011d5c56296b6ec490d8c6d2bfd",
+      "publicSha256": "a289e2fb35c71390c55be2dc83636f09aa466feb46b3aa352130546041c22ed1",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/faithful/ui-check-response.json",
+      "originalSha256": "d12bb3c9957f84e3137ff2a404f084bd8a51c9dcb05c6e1d5b710bb5e2b3940a",
+      "publicSha256": "59a922441a44dde4c7140e3eb237cf329881f50a426d9919b8b1fe18ed6ae51f",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/faithful/ui-lease.json",
+      "originalSha256": "f8435fc122173fb9eb634c49fab4172756995995178a7ffac8cca7d793e15f15",
+      "publicSha256": "c9b91adbf9d30f764a331dbd6d427b02165cd3b21b1c40a80d60efe35ac2d48a",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/final-check-summary.json",
+      "originalSha256": "1416dae28e0a1a3bf55ab692a340a0e9fef0b090f9a1fcb97e1bfec32bbd4eb2",
+      "publicSha256": "8e67146fffcbfdee43c0ff7f73ee8e733d8b5d75f36fbc69180a46eec55486c9",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/installed-sources.json",
+      "originalSha256": "0b5c0ed506a88765084e4d8c8abb27d7631ff9e223f3c9818ae939a1cbeb1232",
+      "publicSha256": "126a50760190a6482de5cfa3405205d2e3d79b48f67f89ee222e20750674e06f",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/mission/cwtools-production.json",
+      "originalSha256": "c7f4a1436848b1dd1dde7de6e078a6d9548d56c98fdd44d0bc0f0c159d77a636",
+      "publicSha256": "d49eac1fd45c599ef403d68fcceb72a7c42355c07ebd75035bc124fced6d4f8f",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/mission/cwtools-staged.json",
+      "originalSha256": "5ad6fa7c000b18f6cd517d142b8b7924c13a7e4336ddec00752fd9bd5f68b247",
+      "publicSha256": "17b08845525ea6e2bbdb4500fc3b76482e4da7ac5bd9221868bb9a6ebc84bb5c",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/mission/result.json",
+      "originalSha256": "c54af7cb6e05835e9a5a7eeead66aab34c536776c12c5541684ee3e111ede139",
+      "publicSha256": "f8b48a4878a53c9d5c44518c002f5c83baab4f80e21a0c0aac4a5349fbf02c73",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/mission/save-check.json",
+      "originalSha256": "548ac7c9233a324096b6d94fa8758e799aa9e81955495e13b0dc7c4258a70c99",
+      "publicSha256": "7ba23794ee6687804e36fc181dc63c741c9d1e7edce7b697f04da88386ba2d43",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/mission/ui-actions.jsonl",
+      "originalSha256": "92d1085ca0caca22b914b1dda6a2b5330b442a0cec34e0c3043e914e0b718792",
+      "publicSha256": "6cb7252640cfd6a364d4f9144c262892a6f1bc9d7db1d5fcf68715719946d598",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/mission/ui-lease.json",
+      "originalSha256": "f056b56f9a25101ef7807ba525eae12126e01065646696824498dd4acb86c7be",
+      "publicSha256": "4d739bb2cc988178eb08443c2e044d0d346f3f339531a4c2a6cc9e627a6dacb2",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/negative/cwtools-production.json",
+      "originalSha256": "be0d82b58d9961018b7e1b664588ed636e2dda49145fab5ef4c74db640a380a3",
+      "publicSha256": "8d185e750d0096c3993d07fdce59f87a6062a022b4d7c9f9054b532671550a38",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/negative/cwtools-staged.json",
+      "originalSha256": "1823ffa1ec0bd8b60e96b71257d605526d764cff5ca3f19939da902dc6845275",
+      "publicSha256": "6d77ff630d084f3d91c1d60d20f9f63e5127a4804b7fa7ab9565628e953349ba",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/negative/result.json",
+      "originalSha256": "5a5f7201b7c71e588c9b36353dc43d41afb2c311509f9d22b3089be0573b15ac",
+      "publicSha256": "0dc95951fddc655a9e4e6caecbfffb264b47e1b9c8038d247b39f8928daa3cba",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/negative/save-check.json",
+      "originalSha256": "fd6dd48fc7231d9d38d637524fed04d86a5923db73c0d0a8cd68c89d46dea6f6",
+      "publicSha256": "51bf14c9b53f2fc28f10302f5dd1b0cc7930425aa41a839545ee076b58a1b1cd",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/negative/ui-actions.jsonl",
+      "originalSha256": "a28f198aa8a4938d22b3b30b231a1f47b51eb0dbcd543cbc37ed8a44801cf743",
+      "publicSha256": "687fe5e980c7a88b2ca677fbf3705e4fcb70758ee5771817520af96c1a3efb45",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/negative/ui-check-request.json",
+      "originalSha256": "cf2d55a8dffd42a2357b0d00193c3d82c9246b6ece9af400e49956cea3ec803b",
+      "publicSha256": "07aae6f09ffbf72ca6e8b29d62bff507b0068ed670c6b16aee6002b29b47a69e",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/negative/ui-check-response.json",
+      "originalSha256": "6cb4ed3a9a1ec74c69edd10ad8fd014093c0f5ab8fe66f127ed1f68969225b70",
+      "publicSha256": "18f6f933d68d23a1ee0352399ce54e14d78ab3d307c1d899e2924c77b7e2d06a",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/negative/ui-lease.json",
+      "originalSha256": "9a1c1e9b692dbce98cc0cfa72d6c028e82950e71864205c19eb54f641d9685dd",
+      "publicSha256": "bc211b7bf75ad11b6e359e725643da0929248c2538e6890bee644c1b192a3ea6",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/pilots/ready-inspection-result.json",
+      "originalSha256": "54644dbd86b16f55d073d0bb47c93c114bf0b46d08b01c5134c5ef622182a494",
+      "publicSha256": "0c52e0c3644c3f8b8e82fe6c0cd9e036b39bf07d341bd27c520600e254a431be",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/pilots/superseded-claim-result.json",
+      "originalSha256": "8182656b03eaeef7f2d4c50ed6a9adf5e38e66e3bd7dfa56e68ab97e28db5225",
+      "publicSha256": "2fdd8787181939ae81b53512edb61ee3d93839c9a8350190b217dec845f9d0b1",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/protected-after.json",
+      "originalSha256": "c0f29d8256d9aa47aa2b5736ca36d74477d704063c7a5b1a3714561add58928a",
+      "publicSha256": "b0c71a232641ffb9d99beda11489117b1873e718214ef7d7768548277d7cd8b7",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/protected-before.json",
+      "originalSha256": "9c982f5f4d889def843a045cb28b2e40d7b3d10e1a1d1a6fa3d21923b5492402",
+      "publicSha256": "e74e26ce4cdca1376896ebd62708112041431232060718b7c56df06f9657f001",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/scripted/cwtools-production.json",
+      "originalSha256": "6aef6575ef0aaf53353cfe55ff23993bcc50a1caf42bfe967ae6e6a3ed902284",
+      "publicSha256": "4b4f37df26069c6845ed379436c6debf3513754ca0fb2e6edcfb6ca7bd78f4fd",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/scripted/cwtools-staged.json",
+      "originalSha256": "144755c44121e1319eaecc2a8d04e556cacd50b3881c4fd187f281ebf90bc319",
+      "publicSha256": "632291401b41e69bed6548aeedf42a53472c74669d4df55f456a3ef64572d56d",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/scripted/result.json",
+      "originalSha256": "55c3de3dbe6ca11c3446eb947e507d9d1a3172dd79218e9d8953361ca562be1c",
+      "publicSha256": "0d10649612f90e0133608b2e37b5ffc5a9f0cda8d0e285d2c8956349122a7f10",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/scripted/save-check.json",
+      "originalSha256": "6a140f4ad84593d255812906d8f16cab97efb8970937fd223edd33e9ae66cab0",
+      "publicSha256": "bd8c2c5876f57457b27d903400ee795064772f1f7a717e0c9824e5278936d039",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/scripted/ui-actions.jsonl",
+      "originalSha256": "a4c55f9284cdaca67f90bf30d4e81f524bb6b2a16f93b2563358e59685ef2aab",
+      "publicSha256": "213115bb8730dcc5ccf74b4f6b0f8b52018cb5ab23dd6bae791150a51086b144",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/scripted/ui-lease.json",
+      "originalSha256": "1ef2d92aa97e62e3ba3bf93b4aad68100cd270da0d350d852b7a5701b5f1ce84",
+      "publicSha256": "0f5d7abc746998be5475d721a1a96bf95cc9e0961f1b92a2667bd02267edd296",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/tree/cwtools-production.json",
+      "originalSha256": "b94ba86cf97765837f96c7f4a33e4f13f1b4f82c523859e50e4226137dc2b4d7",
+      "publicSha256": "afe43ed4557c6479fcfaf411671fb8add2172a3bdc38fd39bae15f2a325108cb",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/tree/cwtools-staged.json",
+      "originalSha256": "792dfa342bd1909081775fd6cf532872ecada3049be8e21412b51f44caea19da",
+      "publicSha256": "e475c5742c1fcadbb636a43759bf19ed8fd3eb5bbc9ae185cb3eb9b54618e198",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/tree/result.json",
+      "originalSha256": "bf116586889da9c657066f222eb837716225d5f5c8fd400a17ed5916b8fea54a",
+      "publicSha256": "a060802ab46fb68cf47505c86576eec4486034038ab0320388bd1fcb02227999",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/tree/save-check.json",
+      "originalSha256": "94e5eccce659299cab0c47c48f2108af567c2d99c301139407847dd0f35eef0c",
+      "publicSha256": "82401a33587662623ec1ed328549445e6ce990837284d184c34ea6354848faea",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/tree/ui-actions.jsonl",
+      "originalSha256": "239cfbed2d9049a0bf1f955cb25532986098540695d8a1e3378e1160a0771d2a",
+      "publicSha256": "cc0094e4da89145f3142ad7e3905e3ccd2d1de961266141c12930fd980700bd9",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-mission-claim/evidence/tree/ui-lease.json",
+      "originalSha256": "985940014d9c91511fe9d92d9f808042dc9755a2b91cac6158db12cb3d9d09cb",
+      "publicSha256": "b7b142ee8492db0fd7c1b58fb37fd4013e59050692e1e06bf6f4cebd80b50b39",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/console-batch/result.json",
+      "originalSha256": "be81bd865184e683d6062ad172e3bdaecb045af622ab30414034484114f2d431",
+      "publicSha256": "ae35ab0467466ce3cf7e9f1d3882b75816cf1477d93a6f9556ee39d0fc31eb59",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/manual-868e7002f5332b98/completed-collector-report.json",
+      "originalSha256": "5b81394b27ce7b320f4934dc9501494f483e9d3141fc6b8f4c9f7b35fa6649e1",
+      "publicSha256": "09c259c2a5a71af646d229a1e8b3e8456ac1a5abb55f0b328439b46bc8ac27f9",
+      "changes": [
+        "collector-summary"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/manual-868e7002f5332b98/completed-collector-run.json",
+      "originalSha256": "0b6cf1863a21223778455b112d6626ef7a965e3c91ef0e51e97a0f6263f5da3e",
+      "publicSha256": "63ef9b4c6b3e95871a9d16a26f2e3e6d9f086553ef8cee77f0b4cd0d24f0905b",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/manual-868e7002f5332b98/cwtools-staged.json",
+      "originalSha256": "6cc89fe4141375728bd9121c27bfbbd8fd75300229b66b7bd04233131fdf68da",
+      "publicSha256": "a307ad9ae5da933aaf69f79f00171008becafdd999324a3a0f45904a53600603",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/manual-868e7002f5332b98/launch.json",
+      "originalSha256": "e8c38bc161331500cde3d9e53325c90bd34eded248a9d40dea20a0b82d004316",
+      "publicSha256": "11eb6885c47d3029fbd482bc9f84c5b7762c6c90210496fa10c4b4c977819d8b",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/manual-868e7002f5332b98/preparation.json",
+      "originalSha256": "1e34b1464105577874f236e251057968eace1fe504c82202f1fd209d200fcce7",
+      "publicSha256": "75eecc37b03f2fbea9eb91f679e13d6bdddbd75668c74c370c5c7334cfa0e8e9",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/manual-868e7002f5332b98/regression-result.json",
+      "originalSha256": "6bc8937cf57c75bf2c1d3d8232328219d846fa7599eed54774a35648e9207e42",
+      "publicSha256": "6c706e9938137c93c8bd407902f11a5213f2aa88c8b7f2317606adae33620ca2",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/manual-868e7002f5332b98/reload-launch.json",
+      "originalSha256": "7a78241f561151c0d0f99ca1b2151c36a3c38c72230cba38bc4ee45b4224cba9",
+      "publicSha256": "f56257b0a60d602a2b954552b3c46a63d250651875bda32f801a805c7e4a53e4",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/manual-868e7002f5332b98/reloaded-collector-report.json",
+      "originalSha256": "19123e09f9449d33c0459f5e0f359b2ba60d42ab173ff034149b61d69e933c5a",
+      "publicSha256": "6d7292e2e78f245b2c0a2da23dbd56b960540e3a79001384d892a38b39efcc0f",
+      "changes": [
+        "collector-summary"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/manual-868e7002f5332b98/reloaded-collector-run.json",
+      "originalSha256": "de024cb41d3e908e23829b4fbb23de1def062697bb4f81bc57152dd36028a94f",
+      "publicSha256": "c0bc37538421ca43e4a59d6e0d35ae2ce57c57a74279fd3c9f7ee4490bb5e57f",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/native-console/cwtools-staged.json",
+      "originalSha256": "90cd04aea932749fe02787906351d14ba9d493dd14c4845e429f5a938d7abf98",
+      "publicSha256": "501c808f86370b3c89e0bd3d0e3e6bd442cfb9a23e8a9a7bfbee12124081e200",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/native-console/experiment-source.mjs",
+      "originalSha256": "72a47d1f985842a5af739780e2ebec1f11d17dbae45eeaa82374e5f8d3260f16",
+      "publicSha256": "76bdb73b53ac43c4f65dcb677dacf5a60e32b20d3df33dc339b4660a5d98cc9c",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/native-console/result.json",
+      "originalSha256": "813f89f948a1e241ac1f54e6ed13cd3ecced4508127a1c1a87b09e3d5ce8e89c",
+      "publicSha256": "60c4b1b05ebd744be79f8dc8ded5d151482d0199467a81cd276d1c97af75740a",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/preview-regression/cwtools-production.json",
+      "originalSha256": "5d5452123009bca89fe5737470dac4cc4642872c9f3c7506f167e7c0f79075e0",
+      "publicSha256": "9211e270a06e26255bc8c1b3152e7c5219ac81bc9f4507338ffcbb04eeb8a439",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/preview-regression/cwtools-staged.json",
+      "originalSha256": "1a82862fa87d3abef936ce4a98cb98fd9af8ae31ac7bdc7d5fa7da0856bcc4f0",
+      "publicSha256": "30a5ab30969dba3fbb570224148aef9cf120abfded87f2f63179ffdb41773376",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/preview-regression/result.json",
+      "originalSha256": "8f606af6c5f8560ad1670114fac4ed43e19bdb172e2659d4f5e43e19bc23523a",
+      "publicSha256": "5a97f2a1e7c50a012e01adf5757d2b17ab2ce5f882d2a15336227f19abd2a63f",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/ready/cwtools-production.json",
+      "originalSha256": "a9e01783370eb64517c256a1ece52b41d05f77cd5958ad9a278e0203b1b37ab3",
+      "publicSha256": "87fc3fb55827f2213056b12c1f675360bb03ce7001509d159eb883e8574fb648",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/ready/cwtools-staged.json",
+      "originalSha256": "16b42d807e6c54847f83ce2666de7e3ac10add9491fcb608249b05641e748e34",
+      "publicSha256": "09aa5d919f591da8f9abdeff7e82f7d3fda52cbfa1b577f3eb2a82e6f8f7c044",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/ready/result.json",
+      "originalSha256": "5016265e821294449c0afa493dbb43ecced0740e667e2a930cbb90cb07d45cd7",
+      "publicSha256": "e70056c6a993e192292f079dd8a6e2fb9c8adcd625dcfeb16ceccf1b6c52e53a",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-nantes-market/evidence/unready/result.json",
+      "originalSha256": "6f3067c40156310ef9f2a13ea54e2ea90bdae8a63bf8778dbeba066b719845c0",
+      "publicSha256": "2413258ca10c5bc4a0997984bd47a8ee777c5573cdff3e0756354cb87c26a3d8",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-preview-gate/evidence/cwtools-production.json",
+      "originalSha256": "a1323748295ce1d2afb5508503c6d0ed7aa270ed0e2e4e891f4c6dffba0ee862",
+      "publicSha256": "c85621e6d27136516fea233f84374b784afa17723a09ce8bd6eed584f6c39372",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-preview-gate/evidence/cwtools-staged.json",
+      "originalSha256": "eb35a04adfb946ac7172ef8f3fea9fa4a372c38fb0f0a6f41f4db85205d87e9f",
+      "publicSha256": "1228f3adecf1638d42a0acd5ab97c9f8c7fd0b962bea5934d8b0b419dd671441",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-preview-gate/evidence/result.json",
+      "originalSha256": "c211c086a49e84c72dcfd846451c630cc2dfa9f565627255f91001b7c975303b",
+      "publicSha256": "452e087fe5ebc8378a31cd1c82a42aab39954c3e152924e16f7986b5feeff7b4",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/clean/cwtools-production.json",
+      "originalSha256": "4e092f6f9890fd2e30760969febd9265c16d49e78ae3fd84e60d67c828c3e809",
+      "publicSha256": "9bea20db669a4ae4e46fb5c56f7d01210dcdbe71c286ecc14775a29b328e16d6",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/clean/cwtools-staged.json",
+      "originalSha256": "4cbbc1f34af95b0c28c334a75908cfcb10229d944daa75ea182fd1614a18e10e",
+      "publicSha256": "d01276e9a4ecbcdf976da325018893c9565c8de004e7953dbe360bfdaffc2973",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/clean/ownership.json",
+      "originalSha256": "e104d1e3ca85e2232b66ed75810d659a856f68e8e57acf0c07755d78b357d62e",
+      "publicSha256": "114e83dee08b702fd06f8139919db8a9d83c31a1b13699b32fe6382adecb6c95",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/clean/post-run-processes-original.json",
+      "originalSha256": "0cd1385697c5b83ff3fb101f1a73a5bc2951c3b0f29e3231d0635d121a46ca96",
+      "publicSha256": "db437fd3dd7d53dc37039ed27a935a7fcefccb069d615677732d47edef908ecf",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/clean/result.json",
+      "originalSha256": "ec13f9410dc9fff929169c1df72c6c2a3856d23c2c3883e13872d848056aa130",
+      "publicSha256": "be290c2ae4e0ddb73319b994fe51fba6428d0f4e33f39ee26ef450f8f372d694",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/crash/cwtools-production.json",
+      "originalSha256": "01362745f1d8228e566fd25cea7884e6f2c4a1fe49de185aa3a16dc71c3f16eb",
+      "publicSha256": "ae902508b5029597290a97cdec4f31b4272b338179bbc93f3e7c38992a257b6a",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/crash/cwtools-staged.json",
+      "originalSha256": "c51d6d69c2da7ffc47e24a5cb5f3e9397fbf142799702ebec17d9876254b82cd",
+      "publicSha256": "5063bc8cec3c02495e6fba92fda0e3e9d3aafe18e1a10f601077e5e96b827269",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/crash/ownership.json",
+      "originalSha256": "b129407d84a1d283c1f2eea241bfdb877f45a01f9536ed84f2d552a8e03fd47c",
+      "publicSha256": "e93415709af46a2f96fa8bc6b0ec6bbf4115939bd5f300f07ea0d2e1d2b6f014",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/crash/result.json",
+      "originalSha256": "9eb2636e935288cb75f45b4e93b3d75a1d1d050d542be58c05070c9e97131ff2",
+      "publicSha256": "5092fe2d4b6c8c4cb33162c9f16a992790885b05f4d8f702f6eb1eb19648481a",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/freeze-clean/cwtools-production.json",
+      "originalSha256": "3ff56a4f54e6ec9f0ae81dc456180fd74bf5bdd7d254bffa5b1ede6bfeb4b107",
+      "publicSha256": "2421f9fd2ba0f17d6a650ef6390230dae68794faf20051a30a71b9f8b0ae08a8",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/freeze-clean/cwtools-staged.json",
+      "originalSha256": "122744edae5f9134a8db8a1a80e9cc57ea885b5ee8b4ac40e53054f77b8d03fc",
+      "publicSha256": "5dde566f9a4833b5a73da816eaddcf46b607e6ee87a61bf77bfe6101db9a2878",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/freeze-clean/integrity-after.json",
+      "originalSha256": "d237a0521dccb19e881437c4ae8267a2cd26347876f3c75543c48f33e56f2298",
+      "publicSha256": "5e026c209474bf3341b4e7047177dc2761ee6bb19d4da9e880b70e5ab1522738",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/freeze-clean/ownership.json",
+      "originalSha256": "88279a6bb9ce5014b6275c45f54378f6882286138a5ea33b68cfe156dd60fa0e",
+      "publicSha256": "ece70650cc2aec55b0fa048268cd40af712e14c8a86af9ec7e3789cd591cb6a2",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/freeze-clean/result.json",
+      "originalSha256": "e49c548441a416a37bc0b601e47853728474150c5900f612507eda430c9ecc83",
+      "publicSha256": "4c90fb0c5421e551356cc05a754ee746fd6887e2f2681975fd3fcc49932987a6",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/freeze/cwtools-production.json",
+      "originalSha256": "d1f5ff122e03643a05b26e7314166877aea8c5aec0dea2cb151e4ce55502c63d",
+      "publicSha256": "be17cf7faf0d354cc08bd9fa7da846043e02584cc19eba5aa3b15de23f0db325",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/freeze/cwtools-staged.json",
+      "originalSha256": "5c29a1f03d4d5093bf914e88269efb674a2aec8ff3d3e6faf0a721c238f55704",
+      "publicSha256": "13d0a7c3c911ecfc910ef07d70c2c86b7d1df57756e259be07fa2a9d3786f3c9",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/freeze/harness-lock-during-run.json",
+      "originalSha256": "9c84d6972f1ff57519f1823f773eb15a0cacd489051f48f96ade6a0db078cd64",
+      "publicSha256": "7d62caea7c5115e89eea248701e70e1b69b2356a85ae88d1e3a41f218d429831",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/freeze/integrity-before.json",
+      "originalSha256": "361add7f56d1e0687d4d2f3ab941dfe7b0c4945b81d8f20ba82b8f9087f18237",
+      "publicSha256": "d68323cb5876a7d0dcbdd98d825bdfa5d71ff211d4f4e8eccebc4221da7db773",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/freeze/ownership.json",
+      "originalSha256": "2bdb60c98c1447a6ca008f2987bae580eddb5159f733520bff18600d45b8d5e5",
+      "publicSha256": "2c9944c9ea0e7caca37f385a86f6da06e1540cc547db65bb7d2dba0ca04facac",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/freeze/post-run-processes.json",
+      "originalSha256": "be8eeb3e32bd8b20cfd917d50be6d5fb521c4e839899463883ccac40127e6ee1",
+      "publicSha256": "91d58e851bf63967aaf093d8b12a358ad6ab03545fe07c8222bbccb16265d79a",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/freeze/result.json",
+      "originalSha256": "6a880413b72c0661dd9f67a4e59322029a4dfb08ef72066642e2c677e4b45fb3",
+      "publicSha256": "9877760de35bf5f05798771e69a0c8043d959f83dd169d3549679a6631e85262",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/terminate/cwtools-production.json",
+      "originalSha256": "cf22e6a2fe4602a8214fac29d6ffdf4039af25285b7c2f3bb6cddbb530ca9f01",
+      "publicSha256": "88626a72fb3b764da9085665460818e8d87d78870cd04943458884b3d8aeac6f",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/terminate/cwtools-staged.json",
+      "originalSha256": "9710a6805517c1e3aa3df5e8c3b7e7ea9c97989b44a320a57e8adf2a69829dcc",
+      "publicSha256": "38eb46a3c665aa66a7282a1e053129b767469308edbc93de1c9c426f69b16ea9",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/terminate/ownership.json",
+      "originalSha256": "1f49cdec82f6013ac09b7d2c1d2233d3a91c0907aa1da62facdcc5933c2d23e1",
+      "publicSha256": "dc676f824700fb997e7ac4dd9baa239d6ade668b9ea35dfbacc2998dd5fa623b",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-recovery/evidence/terminate/result.json",
+      "originalSha256": "2df3406136d48cd890893fb7213c3cf307143afacb9d3243260a54878e69a431",
+      "publicSha256": "4629f2de20674b4dcf6f8e9ca8f887e3de53d825c008ff40872b2b6c1ea25025",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/after/cwtools-production.json",
+      "originalSha256": "535bb962b7b528d8198454f49c86c799cd7b958a8f32ef51eb3e597fdbb396ad",
+      "publicSha256": "fcfdb56689f3459cfa596025cc3f748cb0850d906fab219d3ae036b2f415d8f9",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/after/cwtools-staged.json",
+      "originalSha256": "4a9918f6d7cec8a2dfcdea35913131e491e61f37ca29817db4376318bb6fd738",
+      "publicSha256": "9f6ab1624e27e93cfa72de004f68fd90cccb75befc571e6de40d703bc2a7481d",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/after/provenance.json",
+      "originalSha256": "56d01c10de7c40d2c7c3e6a2499d241ceb7f74b48b518f0dccdaabb640fea72f",
+      "publicSha256": "2c7ee7d4a8cad1fe8c441d5e25d227951051f4bbe34073983d92478b8247af87",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/after/result.json",
+      "originalSha256": "96e8733ed0d4ee92aa37cb594549da8097b19453673a17af424f2efb1dd6756a",
+      "publicSha256": "f7a48be1e1cba5a05b60a05589db8e8204a1789f7f4289b6d3e0ae24fdc8808b",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/assertion-draft/cwtools-production.json",
+      "originalSha256": "7e4911966420c9539ee0e19548741b08d0c595e59f2637a160d19c2ac3f6b394",
+      "publicSha256": "45cecc9f5dcb5065d6ca992126fbfbdcc6320679ae3d53a1f9d410a6b53412a8",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/assertion-draft/cwtools-staged.json",
+      "originalSha256": "a6cb036a93e062a5b34f62bc923a129d0150ed40494aa624357b22b41e7a6800",
+      "publicSha256": "f45bc6ee72688b064f39a58e8b769f331ba35c022c78e777912d402957f1897f",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/assertion-draft/provenance.json",
+      "originalSha256": "1fced469b8a1e1959c9582677e6ebf18d7d9f7dadee4daf1e8f283d945b51522",
+      "publicSha256": "1dbd444ef6550af2f9838dc8b14c991ec5dd2cd2f07fc640b9d07ca2c33c1ad1",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/assertion-draft/result.json",
+      "originalSha256": "da56431435bedce4c077a61a3a897de0005825b4dd947fa59e35fadadc1ddc1e",
+      "publicSha256": "8fbbef3cdcd2fcc5ad6bc09888f7ee7bc4e84b6470c7400340fe41f0e90be53b",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/baseline/cwtools-production.json",
+      "originalSha256": "8a5f62af45fa8adc5ec35ecd0ff87fef0702059b3e3559800ddec00cf57c08c5",
+      "publicSha256": "a774f91c4e5195bcee27c613904a4dd83d827238d63f0284a21a262fab29f09e",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/baseline/cwtools-staged.json",
+      "originalSha256": "ddd85f1abc2b0c2b9d2f04fb072db4fd6c97aca5797d3147eb3f0cf655b7f982",
+      "publicSha256": "8652c0e39351d01a5de8dc3e83db328c131179f7c80acc8af2ba6885c637b1a0",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/baseline/result.json",
+      "originalSha256": "d3e965dd8854ec76cc0555e294f6583a3c189d259b304c553da27031e98be026",
+      "publicSha256": "bcccb7de94f0b7c29652063d9f58fc1715f0e92b0b467e2644d4124cbc362dda",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/constant-diagnostic/cwtools-production.json",
+      "originalSha256": "183693e1b2c79bf6c203ac47f770decd589e840843eb03653d9f479997ca52f6",
+      "publicSha256": "b3d6ac026e968bacd75b73911ff67b190760ec223c23246764481a5ddddc4b07",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/constant-diagnostic/cwtools-staged.json",
+      "originalSha256": "3cbdeeca45c9471ddac9aaa1c2a85fb8381b649817f47db33fa7adda91945e63",
+      "publicSha256": "1e2a9de0569c8c28a9f1806abdfb918106433fea956ff1e8e6ce7b3aedbe1b5a",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/constant-diagnostic/provenance.json",
+      "originalSha256": "36a78e21516edc6a06440a40311302d78e2d56c79762401c0b01267d76a8c43c",
+      "publicSha256": "f692f401a4d912d9423322489e1dbe17984ed3678cf9d4949fd9f02fa4be8cc2",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/constant-diagnostic/result.json",
+      "originalSha256": "42b71b7c561d72493e3ae79df29a6e0003797a19b1991219042cb71ceb1b02b1",
+      "publicSha256": "15e37e86f689197c76f5e41be70d15bc21a8873521f46a53ae642fb5a3e6979f",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/crash/cwtools-production.json",
+      "originalSha256": "2e003780b61e4ddcf8b057979865019fc599dacb09da0a602295f80e94126a94",
+      "publicSha256": "f282e9e17b83ad9e2ca0bbce7d8fbeaf4671a615178a3e9df382d20f0d6862e9",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/crash/cwtools-staged.json",
+      "originalSha256": "4ff9fbbd57c8cdf83c557b54f1f3dfd8d91e54b8149742913c3b44bb624b90fc",
+      "publicSha256": "619f4bcf0ff3f54f621687fa32b6fd02da637fdb5e29d5a809532024f400c24d",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/crash/provenance.json",
+      "originalSha256": "65be1ee5832905870b0b8decfe243028a69a434d66fbf5973593a63c4a8ce60b",
+      "publicSha256": "b41afe1779412636e8fd7d6e82a2bcf379d3bbbe0e183be7b58e14afd3307b96",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/crash/result.json",
+      "originalSha256": "857b41f435c49d6faffb8c659ed254ad8b215fde5e51e44679454ebfa054f360",
+      "publicSha256": "47ebeec7c5178e3812ad138c311b79d2cc206d7333697fa148373af0cc6b5019",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/final/cwtools-production.json",
+      "originalSha256": "5acc58e5cbbce289c575fa084aeb58d6149cb694025734bef24e8abf6a2707fd",
+      "publicSha256": "3bb6b9f69bb643f8bcaa767ff24833a96d44214d9d45a7b14a780dc6b56db49e",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/final/cwtools-staged.json",
+      "originalSha256": "1a8e943e49bdf597be79f190fe9fc877e0933c8cc74a535caf4a8b5cd93e656c",
+      "publicSha256": "a0f96a73f87924448d4f46fc1c75c3d12a5b6074f1c3b62183296717c9455e49",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/final/provenance.json",
+      "originalSha256": "537a94b0f928119360e3e0bd9221b4a905a2d4fb34b2b6265aa8649bd5eec006",
+      "publicSha256": "c01236380557502f2d975563dc534342367eb859937b7ad1d4315f715ebbb023",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/final/result.json",
+      "originalSha256": "b3a41b7abee2f934f6e69fa6df97f3de4cbaa71444b5a2cb48240098f4d73496",
+      "publicSha256": "48d5f0d9267b060d9d9bc70a552a83ca11099988e3b775603c7c6686e7eb9475",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/negative-control/cwtools-production.json",
+      "originalSha256": "37858a6712482058db53246948bae420226b80aca1e1aa598e5bf41a68a9931a",
+      "publicSha256": "e38c100957dd88d64e020be5203a4b1e49a4144964197d5a72ac98c7f3385714",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/negative-control/cwtools-staged.json",
+      "originalSha256": "845a2e81aaae74b9f0ba0f6b531355a999dc84da33ef7504b8ffd4c5794d28e1",
+      "publicSha256": "57a512136d0ca0c4a1c29ec7376473491e2af7946e319929742b8ee04be5b906",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/negative-control/provenance.json",
+      "originalSha256": "242d4801c9183554002b369799caa961aa54e7e326650391bef0dc11fb3f2ecb",
+      "publicSha256": "fc4a3fbb710a939f37b35a624003b0e9550469d76ee7fe5d55702ed8b3e790f9",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-regression-suite/evidence/negative-control/result.json",
+      "originalSha256": "8b6a01e0ab21f6c00bb3ed145e475fe231d6874319f5b66e4510bf1f378fd2a4",
+      "publicSha256": "c02aa741fb58d8e2b196fc98d27e6ed4eef9cdc7189957158c3e083eff612ba2",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/immediate-query/cwtools-production.json",
+      "originalSha256": "c214c8a0f4d49d98f0c9644aeefd4a340de163f6980cca8bbffc68cc3e65497e",
+      "publicSha256": "6dec5775930057324df6ff2a2ba38d06121cd6d36134ac6df7c0e56c3aa756d4",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/immediate-query/cwtools-staged.json",
+      "originalSha256": "bc8d0041dceb1624844ac45049a8fb373cf6bd8ebad55dfd7119713aaa2f9c08",
+      "publicSha256": "3e3c10148f519ef41c5e0b0a6167f1505db9f51946f7fdbdb0d8aa91bf226217",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/immediate-query/result.json",
+      "originalSha256": "2b6aac61396f8931f88c602452f9e8f8d780c1b56a2aed3cf8c6b875b4b26ce3",
+      "publicSha256": "e19dc8d81317b7c2bbffa255600115e78b1742e6265e091de650290c8a24e085",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/preview-regression/cwtools-production.json",
+      "originalSha256": "428cafe1eab0a572ee0272ed786c29c2765b61a51340681e99b32459ae45d108",
+      "publicSha256": "270b198c75a70847b1757162b04027eb016c1ee8463cfc2d8bb98746c98e2723",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/preview-regression/cwtools-staged.json",
+      "originalSha256": "dbcfad92021c88bc10e42ef77faa5073547687f678ff9f5968a1ff7b2cdc06e2",
+      "publicSha256": "b547a00cc9c1584db5961d9c887d24d3ad0cfe65f92657108301209e7b5326e8",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/preview-regression/result.json",
+      "originalSha256": "ac870a073bbabd6efe1fe02219a1441af9b9299ff2f0ac9269f881a4f41e1325",
+      "publicSha256": "18b500ea943b862c094135a7d836e54e1e6c1c57903d1f78ab9944cde55571a3",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/separate-query/cwtools-production.json",
+      "originalSha256": "c73c553cf68d66b0280c4c7c5576516c0cc0f38c91a745cab104bb9625a1a27b",
+      "publicSha256": "5898c1dd06419d917423351bdaaa86bea05dc3e4ac3ba258a48010c3935e6fbf",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/separate-query/cwtools-staged.json",
+      "originalSha256": "5edb03c740a9388732af6c170f1a57d233a7137712d6431a7611514aa94414dc",
+      "publicSha256": "d5a0482b7e934d2f6870f34ca9df2a5bfb7fcaaa0f5691b9440bd6cb26c1fc10",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/separate-query/result.json",
+      "originalSha256": "f4644635a14fe4b41c4dfb0ba320309254bb5d3f7c3447d317d747ab852af8db",
+      "publicSha256": "3e8df3aeae62ccf5d6d7c385e458c4ef58ffe6a982859000dc1b653f98891f1c",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/simple/cwtools-staged.json",
+      "originalSha256": "a7f59be312f5b23c8dc1cdad767e3c3c23447b6ceeb7284f6f9b566ba7f73109",
+      "publicSha256": "6a4e8174171a2fe3691b987987537b98c50cb5fbb9b4c58e9fb1ca39e9b7ff21",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/simple/experiment-source.mjs",
+      "originalSha256": "d87b29cabef9967ec2e9c7511bd0a5567ac1deded45746c920c87bfa4246617b",
+      "publicSha256": "9f5c8c4111a6faacf2a0b3be45a372783f0039e76236b084c28578378ab6e939",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/simple/result.json",
+      "originalSha256": "6a1737a59416414c16a0e3dabb8227a7686ad8ab27e102a8f3b98d979669cd0e",
+      "publicSha256": "91e19010a75b9fd17c0358560f7ea5988e58542011c37fa65e3c84cb4f811bbd",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/static-draft/cwtools-staged.json",
+      "originalSha256": "41913ae9c6897fdff3c487c12e036b52930843a686f3e952c5aec6e95220b7b7",
+      "publicSha256": "1dafd61d701e3097fce065e13564e1739aa8c5326e53197fb720e0911367a53f",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/value-calibration/cwtools-production.json",
+      "originalSha256": "1b16908666fb144ea992082e867f27780d4534e934f990c606608fa15d2b7c9e",
+      "publicSha256": "57d81343e1383f372030b0ec2661002e5f5728cbcc20ea45d1ac956b01ce3e5b",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/value-calibration/cwtools-staged.json",
+      "originalSha256": "c583c713652dd082e8095aa7b07ab40d0de392f7cca68abb80a3a9f049b90175",
+      "publicSha256": "f0782c2fe4dbd5b09f7e75dccc9655c28f9fb77fe464ecc1ddc89588f6ec42bd",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/runtime-run-effects/evidence/value-calibration/result.json",
+      "originalSha256": "34c4a0da4bb77d65f1ff6acae32b551530a36cd1e1ae9aab53abba1ff48dec55",
+      "publicSha256": "91825665e2ebd1c8d9a97401d467d4d2756a348e10c658d37f8913dbbd3d33f5",
+      "changes": [
+        "path-redaction"
+      ]
+    },
+    {
+      "file": "docs/testing/publication-checks/evidence/result.json",
+      "originalSha256": "0d8ca41585be385f658f6a96b7207c55a7bc762268a1db065e6faa4706e901df",
+      "publicSha256": "2b2925cb4e79cf0da57d1ee93053fe483637412904e4b4bb040f265d44621497",
+      "changes": [
+        "path-redaction",
+        "new-publication-validation-evidence"
+      ]
+    },
+    {
+      "file": "docs/testing/publication-checks/evidence/cwtools-production.json",
+      "originalSha256": "75dac12ec4c055970c560a6242281d37eccd4d714a9fcf64d908ccf0d0fe3fdd",
+      "publicSha256": "5c364377575052fcf1b97451cdf8de176edb19c267458afb024a65c39de9a7c8",
+      "changes": [
+        "path-redaction",
+        "new-publication-validation-evidence"
+      ]
+    },
+    {
+      "file": "docs/testing/publication-checks/evidence/cwtools-staged.json",
+      "originalSha256": "b994a7461e2b0d08a194500ccd8b9d7463fc1764cb72035f2394bbde09459445",
+      "publicSha256": "ee6a6b120c0e1b8a900f1360e13b27d4f4295792f11d500f747fc29e7c352479",
+      "changes": [
+        "path-redaction",
+        "new-publication-validation-evidence"
+      ]
+    },
+    {
+      "file": "docs/testing/publication-checks/evidence/game.log",
+      "originalSha256": "ed81d4518ceea762b18faa4f02f232da04f28a68fb777883e25c5667f2f2afc3",
+      "publicSha256": "ed81d4518ceea762b18faa4f02f232da04f28a68fb777883e25c5667f2f2afc3",
+      "changes": [
+        "path-redaction",
+        "new-publication-validation-evidence"
+      ]
+    },
+    {
+      "file": "docs/testing/publication-checks/evidence/cwtools-usa.json",
+      "originalSha256": "39f9169166e516a7c9278e3769ca3d4c27794464d122c3b24ea9f1e6a7f403fa",
+      "publicSha256": "5c6267e3a045c788fb7ec7c1a99adaba59c05b7a91f5c474da122b76f8777315",
+      "changes": [
+        "path-redaction",
+        "new-publication-validation-evidence"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+# Test-only. The runner stages this outside the production mod directory.
+on_startup = {
+    if = {
+        limit = { tag = BRI }
+        log = "EU4RT @NONCE@ BEGIN preview-gate"
+        if = {
+            limit = {
+                is_subject = no
+                is_year = 1444
+                NOT = { is_year = 1445 }
+                NOT = { has_country_flag = bri_diplomacy_preview }
+                NOT = { has_country_flag = bri_french_sphere_path }
+                NOT = { has_country_flag = bri_autonomous_path }
+            }
+            log = "EU4RT @NONCE@ OK initial"
+        }
+        else = { log = "EU4RT @NONCE@ FAIL initial" }
+
+        @DLC_ASSERTIONS@
+
+        if = {
+            limit = { bri_diplomacy_preview_trigger = yes }
+            log = "EU4RT @NONCE@ OK initial-allowed"
+        }
+        else = { log = "EU4RT @NONCE@ FAIL initial-allowed" }
+
+        set_country_flag = bri_french_sphere_path
+        set_country_flag = bri_diplomacy_preview
+        if = {
+            limit = { bri_diplomacy_preview_trigger = yes }
+            log = "EU4RT @NONCE@ FAIL french-preview-blocked"
+        }
+        else = { log = "EU4RT @NONCE@ OK french-preview-blocked" }
+
+        clr_country_flag = bri_french_sphere_path
+        set_country_flag = bri_autonomous_path
+        if = {
+            limit = { bri_diplomacy_preview_trigger = yes }
+            log = "EU4RT @NONCE@ FAIL autonomous-preview-blocked"
+        }
+        else = { log = "EU4RT @NONCE@ OK autonomous-preview-blocked" }
+
+        clr_country_flag = bri_diplomacy_preview
+        if = {
+            limit = { bri_diplomacy_preview_trigger = yes }
+            log = "EU4RT @NONCE@ OK locked-allowed"
+        }
+        else = { log = "EU4RT @NONCE@ FAIL locked-allowed" }
+
+        if = {
+            limit = {
+                has_country_flag = bri_autonomous_path
+                NOT = { has_country_flag = bri_french_sphere_path }
+                NOT = { has_country_flag = bri_diplomacy_preview }
+            }
+            log = "EU4RT @NONCE@ OK final-flags"
+        }
+        else = { log = "EU4RT @NONCE@ FAIL final-flags" }
+        log = "EU4RT @NONCE@ END preview-gate"
+    }
+}

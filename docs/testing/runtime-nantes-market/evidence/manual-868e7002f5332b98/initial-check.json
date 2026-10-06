@@ -1,0 +1,43 @@
+{
+    "nonce":  "868e7002f5332b98",
+    "status":  "fixture-verified-awaiting-operator",
+    "markerCount":  28,
+    "assertions":  24,
+    "nativeDate":  "1444.11.11",
+    "runningVersion":  "EU4 v1.37.5.0 Inca",
+    "relevantScriptErrors":  [
+
+                             ],
+    "missionReadinessVerified":  false,
+    "ordinaryCompletionVerified":  false,
+    "markers":  [
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 BEGIN setup",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK initial",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-1",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-2",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-3",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-4",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-5",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-6",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-7",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-8",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-9",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-10",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-11",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-12",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-13",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-14",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-15",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-16",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-17",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK dlc-18",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK missing-trade-building",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK textiles-other-buildings",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK setup-value-169",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OBS setup-named-169 query-false",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK setup-value-4384",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OBS setup-named-4384 query-false",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK setup-missions-flags-untouched",
+                    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 END setup"
+                ]
+}

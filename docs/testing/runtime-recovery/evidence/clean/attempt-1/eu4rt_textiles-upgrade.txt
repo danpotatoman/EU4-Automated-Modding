@@ -1,0 +1,22 @@
+# The exact installed helper referenced by bri_breton_textiles, not a copy.
+BRI = {
+    169 = { remove_building = workshop remove_building = counting_house set_base_production = 4 }
+    4384 = { remove_building = workshop remove_building = counting_house add_building = workshop set_base_production = 4 }
+    if = { limit = { 169 = { NOT = { has_building = workshop } NOT = { has_building = counting_house } base_production = 4 NOT = { base_production = 5 } } 4384 = { has_building = workshop NOT = { has_building = counting_house } base_production = 4 NOT = { base_production = 5 } } } log = "EU4RT c96414309bb54aec_3 OK buildings-before" }
+else = { log = "EU4RT c96414309bb54aec_3 FAIL buildings-before" }
+    169 = { add_or_upgrade_production_building = yes }
+    4384 = { add_or_upgrade_production_building = yes }
+    if = { limit = { 169 = { has_building = workshop NOT = { has_building = counting_house } base_production = 4 NOT = { base_production = 5 } } 4384 = { has_building = counting_house NOT = { has_building = workshop } base_production = 4 NOT = { base_production = 5 } } } log = "EU4RT c96414309bb54aec_3 OK first-building-branches" }
+else = { log = "EU4RT c96414309bb54aec_3 FAIL first-building-branches" }
+    169 = { add_or_upgrade_production_building = yes }
+    4384 = { add_or_upgrade_production_building = yes }
+    if = { limit = { 169 = { has_building = counting_house NOT = { has_building = workshop } base_production = 4 NOT = { base_production = 5 } } 4384 = { has_building = counting_house base_production = 6 NOT = { base_production = 7 } } } log = "EU4RT c96414309bb54aec_3 OK second-upgrade-and-development" }
+else = { log = "EU4RT c96414309bb54aec_3 FAIL second-upgrade-and-development" }
+    169 = { add_or_upgrade_production_building = yes }
+    if = { limit = { 169 = { has_building = counting_house base_production = 6 NOT = { base_production = 7 } } 4384 = { has_building = counting_house base_production = 6 NOT = { base_production = 7 } } } log = "EU4RT c96414309bb54aec_3 OK third-development" }
+else = { log = "EU4RT c96414309bb54aec_3 FAIL third-development" }
+    if = { limit = { NOT = { mission_completed = bri_breton_textiles } } log = "EU4RT c96414309bb54aec_3 OK mission-incomplete" }
+else = { log = "EU4RT c96414309bb54aec_3 FAIL mission-incomplete" }
+}
+log = "EU4RT c96414309bb54aec_3 END textiles-upgrade"
+

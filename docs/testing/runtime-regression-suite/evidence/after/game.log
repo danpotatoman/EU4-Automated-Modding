@@ -1,0 +1,210 @@
+[main.cpp:527]: 
+Game Version: EU4 v1.37.5.0 Inca
+Time:2026-10-03 14:38
+Configuration: Release
+[trigger.cpp:4874]: Loaded trigger optimization profile with 6870 entries
+[history.cpp:468]: Executing History from -1.01.01 to  2.01.01
+[history.cpp:468]: Executing History from 2.01.01 to  1444.11.11
+[pdx_dlc.cpp:128]: Setting up DLC Star and Crescent : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC American Dream : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Purple Phoenix : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Conquest of Paradise : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Wealth of Nations : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Res Publica : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Art of War : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC El Dorado : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Women in History : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Common Sense : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC The Cossacks : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Muslim Advisor Portraits : Disabled
+[pdx_dlc.cpp:128]: Setting up DLC National Monuments : Disabled
+[pdx_dlc.cpp:128]: Setting up DLC National Monuments II : Disabled
+[pdx_dlc.cpp:128]: Setting up DLC Mare Nostrum : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Rights of Man : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Mandate of Heaven : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Third Rome : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Cradle of Civilization : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Rule Britannia : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Dharma : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Dharma - Indian Sultanate Pack : Disabled
+[pdx_dlc.cpp:128]: Setting up DLC Dharma - Hindu Unit Pack : Disabled
+[pdx_dlc.cpp:128]: Setting up DLC Golden Century : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Emperor : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Leviathan : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Origins : Disabled
+[pdx_dlc.cpp:128]: Setting up DLC Lions of the North : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Domination : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC King of Kings : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Winds of Change : Enabled
+[gamesetup.cpp:3784]: Hosting new MP game, Nakama ID : 
+[pdx_dlc.cpp:128]: Setting up DLC Star and Crescent : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC American Dream : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Purple Phoenix : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Conquest of Paradise : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Wealth of Nations : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Res Publica : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Art of War : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC El Dorado : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Women in History : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Common Sense : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC The Cossacks : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Muslim Advisor Portraits : Disabled
+[pdx_dlc.cpp:128]: Setting up DLC National Monuments : Disabled
+[pdx_dlc.cpp:128]: Setting up DLC National Monuments II : Disabled
+[pdx_dlc.cpp:128]: Setting up DLC Mare Nostrum : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Rights of Man : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Mandate of Heaven : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Third Rome : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Cradle of Civilization : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Rule Britannia : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Dharma : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Dharma - Indian Sultanate Pack : Disabled
+[pdx_dlc.cpp:128]: Setting up DLC Dharma - Hindu Unit Pack : Disabled
+[pdx_dlc.cpp:128]: Setting up DLC Golden Century : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Emperor : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Leviathan : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Origins : Disabled
+[pdx_dlc.cpp:128]: Setting up DLC Lions of the North : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Domination : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC King of Kings : Enabled
+[pdx_dlc.cpp:128]: Setting up DLC Winds of Change : Enabled
+[controlcommands.cpp:160]: Human Player set as primary local, no one before was primary local of Brittany
+[frontend.cpp:1435]: 
+
+		[[ Launching SINGLEPLAYER-game ]]
+	Start-date: 1444.11.11
+
+[history.cpp:580]: Executing Late History from -1.01.01 to  2.01.01
+[history.cpp:580]: Executing Late History from 2.01.01 to  1444.11.11
+[ingameidler.cpp:4971]: Start RestoreDeviceObjects
+[ingamelobby.cpp:320]: Making Lobby Human Item for: Player(1)
+[ingamelobby.cpp:347]: Adding player Player to list
+[ingamelobby.cpp:372]: constr: Local player is Player session id is 1
+[ingamelobby.cpp:837]: Onchat:Local player is Player session id is 1
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 BEGIN preview-gate
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK initial
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-1
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-2
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-3
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-4
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-5
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-6
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-7
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-8
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-9
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-10
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-11
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-12
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-13
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-14
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-15
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-16
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-17
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK dlc-18
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK initial-allowed
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK french-preview-blocked
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK autonomous-preview-blocked
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK locked-allowed
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 OK final-flags
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_0 END preview-gate
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 BEGIN shipbuilding-reward
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK initial
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-1
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-2
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-3
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-4
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-5
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-6
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-7
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-8
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-9
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-10
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-11
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-12
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-13
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-14
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-15
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-16
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-17
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK dlc-18
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 BEGIN borders-reward
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK initial
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-1
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-2
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-3
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-4
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-5
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-6
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-7
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-8
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-9
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-10
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-11
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-12
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-13
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-14
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-15
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-16
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-17
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK dlc-18
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 BEGIN textiles-upgrade
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK initial
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-1
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-2
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-3
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-4
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-5
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-6
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-7
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-8
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-9
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-10
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-11
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-12
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-13
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-14
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-15
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-16
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-17
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK dlc-18
+[gamestate.cpp:5196]: CAS is a 'lucky' nation (historical).
+[gamestate.cpp:5196]: TUR is a 'lucky' nation (historical).
+[gamestate.cpp:5196]: MOS is a 'lucky' nation (historical).
+[gamestate.cpp:5196]: ENG is a 'lucky' nation (historical).
+[gamestate.cpp:5196]: FRA is a 'lucky' nation (historical).
+[gamestate.cpp:5196]: HAB is a 'lucky' nation (historical).
+[gamestate.cpp:5196]: POR is a 'lucky' nation (historical).
+[gamestate.cpp:5196]: MJZ is a 'lucky' nation (historical).
+[ingameidler.cpp:5565]: End RestoreDeviceObjects
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK empty-before
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK shipyard-granted
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK ship-cost-delta
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK ship-repair-delta
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK modifier-removed
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK grand-before
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK grand-preserved
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK grand-repair-delta
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 OK mission-incomplete
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_1 END shipbuilding-reward
+[ingamelobby.cpp:565]: A player has arrived. Name: Player, ID: 1
+[ingamelobby.cpp:581]: Found Player
+[ingamelobby.cpp:837]: Onchat:Local player is Player session id is 1
+[ingamelobby.cpp:594]: PlrArrived2: Local player is Brittany
+[ingamelobby.cpp:837]: Onchat:Local player is Player session id is 1
+[ingamelobby.cpp:631]: PlayerArrived3: Local player is Player session id is 1
+[effectimplementation.cpp:25901]: SetReligiousSchoolEffect, muslim, hanafi_school, 1, ---, 0, 1
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK unallied-before
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK unallied-dip-plus-50
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK unallied-reputation-one
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK unallied-modifier-removed
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK allied-before
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK allied-dip-unchanged
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK allied-reputation-one
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 OK mission-incomplete
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_2 END borders-reward
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK buildings-before
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK first-building-branches
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK second-upgrade-and-development
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK third-development
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 OK mission-incomplete
+[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 3db6c6eaa04d311a_3 END textiles-upgrade

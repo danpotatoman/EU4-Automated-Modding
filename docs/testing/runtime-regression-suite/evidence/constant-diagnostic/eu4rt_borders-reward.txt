@@ -1,0 +1,183 @@
+# Calls the country reward; does not complete the mission.
+BRI = {
+    remove_country_modifier = bri_secure_the_borders_modifier
+    break_alliance = FRA
+    export_to_variable = { which = eu4rt_dip_before value = trigger_value:dip_power }
+    export_to_variable = { which = eu4rt_rep_before value = modifier:diplomatic_reputation }
+if = { limit = { check_variable = { which = eu4rt_rep_before value = -0.0001 } NOT = { check_variable = { which = eu4rt_rep_before value = 0.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_before near 0" }
+if = { limit = { check_variable = { which = eu4rt_rep_before value = 0.0099 } NOT = { check_variable = { which = eu4rt_rep_before value = 0.0101 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_before near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_rep_before value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_rep_before value = 0.2001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_before near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_rep_before value = 0.2499 } NOT = { check_variable = { which = eu4rt_rep_before value = 0.2501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_before near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_rep_before value = 0.4499 } NOT = { check_variable = { which = eu4rt_rep_before value = 0.4501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_before near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_rep_before value = 0.4999 } NOT = { check_variable = { which = eu4rt_rep_before value = 0.5001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_before near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_rep_before value = 0.6999 } NOT = { check_variable = { which = eu4rt_rep_before value = 0.7001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_before near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_rep_before value = 0.9999 } NOT = { check_variable = { which = eu4rt_rep_before value = 1.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_before near 1" }
+if = { limit = { check_variable = { which = eu4rt_rep_before value = 19.9999 } NOT = { check_variable = { which = eu4rt_rep_before value = 20.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_before near 20" }
+if = { limit = { check_variable = { which = eu4rt_rep_before value = 24.9999 } NOT = { check_variable = { which = eu4rt_rep_before value = 25.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_before near 25" }
+if = { limit = { check_variable = { which = eu4rt_rep_before value = 44.9999 } NOT = { check_variable = { which = eu4rt_rep_before value = 45.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_before near 45" }
+if = { limit = { check_variable = { which = eu4rt_rep_before value = 49.9999 } NOT = { check_variable = { which = eu4rt_rep_before value = 50.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_before near 50" }
+if = { limit = { check_variable = { which = eu4rt_rep_before value = 99.9999 } NOT = { check_variable = { which = eu4rt_rep_before value = 100.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_before near 100" }
+    if = { limit = { NOT = { alliance_with = FRA } dip_power = 0 NOT = { dip_power = 800 } } log = "EU4RT e399158461330965_2 OK unallied-before" }
+else = { log = "EU4RT e399158461330965_2 FAIL unallied-before" }
+    bri_secure_borders_reward_effect = yes
+    export_to_variable = { which = eu4rt_dip_delta value = trigger_value:dip_power }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 100" }
+    subtract_variable = { which = eu4rt_dip_delta which = eu4rt_dip_before }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 100" }
+    if = { limit = { check_variable = { which = eu4rt_dip_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 50.0001 } } } log = "EU4RT e399158461330965_2 OK unallied-dip-plus-50" }
+else = { log = "EU4RT e399158461330965_2 FAIL unallied-dip-plus-50" }
+    export_to_variable = { which = eu4rt_rep_delta value = modifier:diplomatic_reputation }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 100" }
+subtract_variable = { which = eu4rt_rep_delta which = eu4rt_rep_before }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 100" }
+    if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 1.0001 } } } log = "EU4RT e399158461330965_2 OK unallied-reputation-one" }
+else = { log = "EU4RT e399158461330965_2 FAIL unallied-reputation-one" }
+    remove_country_modifier = bri_secure_the_borders_modifier
+    export_to_variable = { which = eu4rt_rep_delta value = modifier:diplomatic_reputation }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 100" }
+subtract_variable = { which = eu4rt_rep_delta which = eu4rt_rep_before }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 100" }
+    if = { limit = { check_variable = { which = eu4rt_rep_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.0001 } } } log = "EU4RT e399158461330965_2 OK unallied-modifier-removed" }
+else = { log = "EU4RT e399158461330965_2 FAIL unallied-modifier-removed" }
+    create_alliance = FRA
+    export_to_variable = { which = eu4rt_dip_before value = trigger_value:dip_power }
+    if = { limit = { alliance_with = FRA dip_power = 0 NOT = { dip_power = 800 } } log = "EU4RT e399158461330965_2 OK allied-before" }
+else = { log = "EU4RT e399158461330965_2 FAIL allied-before" }
+    bri_secure_borders_reward_effect = yes
+    export_to_variable = { which = eu4rt_dip_delta value = trigger_value:dip_power }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 100" }
+    subtract_variable = { which = eu4rt_dip_delta which = eu4rt_dip_before }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_dip_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_dip_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_dip_delta near 100" }
+    if = { limit = { check_variable = { which = eu4rt_dip_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.0001 } } } log = "EU4RT e399158461330965_2 OK allied-dip-unchanged" }
+else = { log = "EU4RT e399158461330965_2 FAIL allied-dip-unchanged" }
+    export_to_variable = { which = eu4rt_rep_delta value = modifier:diplomatic_reputation }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 100" }
+subtract_variable = { which = eu4rt_rep_delta which = eu4rt_rep_before }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = -0.0001 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.0099 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.0101 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.01" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.19990000000000002 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.2001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.2" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.2499 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.2501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.25" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.4499 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.4501 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.45" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.4999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.5001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.5" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.6999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.7001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 0.7" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 1.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 1" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 19.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 20.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 20" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 24.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 25.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 25" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 44.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 45.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 45" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 49.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 50.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 50" }
+if = { limit = { check_variable = { which = eu4rt_rep_delta value = 99.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 100.0001 } } } log = "EU4VALUE e399158461330965_2 eu4rt_rep_delta near 100" }
+    if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.9999 } NOT = { check_variable = { which = eu4rt_rep_delta value = 1.0001 } } } log = "EU4RT e399158461330965_2 OK allied-reputation-one" }
+else = { log = "EU4RT e399158461330965_2 FAIL allied-reputation-one" }
+    if = { limit = { NOT = { mission_completed = bri_secure_the_borders } } log = "EU4RT e399158461330965_2 OK mission-incomplete" }
+else = { log = "EU4RT e399158461330965_2 FAIL mission-incomplete" }
+}
+log = "EU4RT e399158461330965_2 END borders-reward"
+

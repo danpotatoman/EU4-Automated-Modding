@@ -1,0 +1,20 @@
+{
+    "atUtc":  "2026-10-04T00:38:46.0495983Z",
+    "remainingCount":  0,
+    "remaining":  [
+
+                  ],
+    "harnessRemainingCount":  0,
+    "harnessRemaining":  [
+
+                         ],
+    "lockExists":  false,
+    "collectorActive":  false,
+    "steam":  [
+                  {
+                      "pid":  43684,
+                      "created":  "2026-10-03T18:59:55.3349540Z",
+                      "executable":  "C:\\Program Files (x86)\\Steam\\steam.exe"
+                  }
+              ]
+}

@@ -1,0 +1,155 @@
+{
+  "status": "prepared-not-launched",
+  "nonce": "868e7002f5332b98",
+  "session": "X:\\eu4-research\\tools\\runtime-tests\\work\\nantes-manual-20261003T222727038Z-868e7002f5332b98",
+  "staged": "X:\\eu4-research\\tools\\runtime-tests\\work\\nantes-manual-20261003T222727038Z-868e7002f5332b98\\brittany_nantes_manual",
+  "profile": "X:\\eu4-research\\tools\\runtime-tests\\work\\nantes-manual-20261003T222727038Z-868e7002f5332b98\\profile",
+  "source": "X:\\eu4-research\\mod\\brittany_missions",
+  "installedVersion": "EU4 v1.37.5.0 Inca (491d)",
+  "normalLauncher": {
+    "enabled_mods": [
+      "mod/brittany_missions_dev.mod"
+    ],
+    "disabled_dlcs": []
+  },
+  "dlcs": [
+    "Conquest of Paradise",
+    "Cradle of Civilization",
+    "Dharma",
+    "Domination",
+    "El Dorado",
+    "Emperor",
+    "Golden Century",
+    "King of Kings",
+    "Leviathan",
+    "Lions of the North",
+    "Mandate of Heaven",
+    "Mare Nostrum",
+    "Res Publica",
+    "Rule Britannia",
+    "The Cossacks",
+    "Third Rome",
+    "Wealth of Nations",
+    "Winds of Change"
+  ],
+  "sourceManifest": [
+    {
+      "path": "common/event_modifiers/BRI_mission_modifiers.txt",
+      "sha256": "3b8be834acc20de6490713efceaf4e0a84dca2132ec51bf221fc98545abf61fa"
+    },
+    {
+      "path": "common/government_reforms/BRI_government_reforms.txt",
+      "sha256": "3ab691c55eb9f88772f1927d10920c457518fe00b1c6fb29e533e927a3ddb110"
+    },
+    {
+      "path": "common/powerprojection/BRI_power_projection.txt",
+      "sha256": "f7d2713a4d9d8fb27b484e8f93bb682e1f2931fa44c399296b46fb03b567e06f"
+    },
+    {
+      "path": "common/province_triggered_modifiers/BRI_metropole_modifiers.txt",
+      "sha256": "b7968f5fefb40ca8adcfcafa00f059ed756ba25c949fa2afae294c5bfef58199"
+    },
+    {
+      "path": "common/scripted_effects/BRI_mission_effects.txt",
+      "sha256": "a9244ba4fc65d9a000dcbf90a7c5751871d0d7abd1a022bea9d89adacb93bd9c"
+    },
+    {
+      "path": "common/scripted_triggers/BRI_mission_triggers.txt",
+      "sha256": "d22254415c431c090f90cb2cdb488a14965c6e631bcb865aa800ac884e153458"
+    },
+    {
+      "path": "decisions/Custom_Breton_Decisions.txt",
+      "sha256": "9c7e177033a43633e27358506a73cdf22cea51666c363773423edbca9b8982d2"
+    },
+    {
+      "path": "events/Custom_Breton_Events.txt",
+      "sha256": "4acd8cee030162866aa2a006faa7287c0da1d693a5e736cd739e95e7a3a93b13"
+    },
+    {
+      "path": "localisation/english/bri_missions_l_english.yml",
+      "sha256": "85d1d817ee0dd2ef1b43cd8a28358540805810903e18d0af10341985811417b9"
+    },
+    {
+      "path": "missions/Breton_Missions.txt",
+      "sha256": "96ebd2f1e10b225e1e2a73e8ae21cf9d780fcb092be15adbcd16fc22f459a7f8"
+    },
+    {
+      "path": "missions/Custom_Breton_Missions.txt",
+      "sha256": "c7f42b80e6037c11fa988edbe1ae1f0c71da1f2e1a6f55fe8fcc85d1c08eb324"
+    }
+  ],
+  "stagedManifest": [
+    {
+      "path": "common/event_modifiers/BRI_mission_modifiers.txt",
+      "sha256": "3b8be834acc20de6490713efceaf4e0a84dca2132ec51bf221fc98545abf61fa"
+    },
+    {
+      "path": "common/government_reforms/BRI_government_reforms.txt",
+      "sha256": "3ab691c55eb9f88772f1927d10920c457518fe00b1c6fb29e533e927a3ddb110"
+    },
+    {
+      "path": "common/powerprojection/BRI_power_projection.txt",
+      "sha256": "f7d2713a4d9d8fb27b484e8f93bb682e1f2931fa44c399296b46fb03b567e06f"
+    },
+    {
+      "path": "common/province_triggered_modifiers/BRI_metropole_modifiers.txt",
+      "sha256": "b7968f5fefb40ca8adcfcafa00f059ed756ba25c949fa2afae294c5bfef58199"
+    },
+    {
+      "path": "common/scripted_effects/BRI_mission_effects.txt",
+      "sha256": "a9244ba4fc65d9a000dcbf90a7c5751871d0d7abd1a022bea9d89adacb93bd9c"
+    },
+    {
+      "path": "common/scripted_effects/eu4nf_static_wrappers.txt",
+      "sha256": "ac8f655d63d6d19f4631c3173fb4b7321d228742077096514b4994880dca8243"
+    },
+    {
+      "path": "common/scripted_triggers/BRI_mission_triggers.txt",
+      "sha256": "d22254415c431c090f90cb2cdb488a14965c6e631bcb865aa800ac884e153458"
+    },
+    {
+      "path": "decisions/Custom_Breton_Decisions.txt",
+      "sha256": "9c7e177033a43633e27358506a73cdf22cea51666c363773423edbca9b8982d2"
+    },
+    {
+      "path": "descriptor.mod",
+      "sha256": "5cae6dade98bbfef5539a93bb1e0419e2b9c0715332777af1c13e016a4d2ffe3"
+    },
+    {
+      "path": "events/Custom_Breton_Events.txt",
+      "sha256": "4acd8cee030162866aa2a006faa7287c0da1d693a5e736cd739e95e7a3a93b13"
+    },
+    {
+      "path": "localisation/english/bri_missions_l_english.yml",
+      "sha256": "85d1d817ee0dd2ef1b43cd8a28358540805810903e18d0af10341985811417b9"
+    },
+    {
+      "path": "missions/Breton_Missions.txt",
+      "sha256": "96ebd2f1e10b225e1e2a73e8ae21cf9d780fcb092be15adbcd16fc22f459a7f8"
+    },
+    {
+      "path": "missions/Custom_Breton_Missions.txt",
+      "sha256": "c7f42b80e6037c11fa988edbe1ae1f0c71da1f2e1a6f55fe8fcc85d1c08eb324"
+    }
+  ],
+  "consoleFiles": [
+    {
+      "file": "nantes_setup.txt",
+      "sha256": "d3d9a6f3f8d913317afdc3378cc2a019ffeece4ac23a97561ebddf0fbce29389"
+    },
+    {
+      "file": "nantes_ready.txt",
+      "sha256": "1273ab3391783e947bd30591944c1fd8de621ed428fe6008a11bb3cc588a1245"
+    },
+    {
+      "file": "nantes_completed.txt",
+      "sha256": "d525835e83b7b4f9482e0cf480c151cf617dfb5bf73b700bfb6dbc34c8e09891"
+    },
+    {
+      "file": "nantes_reloaded.txt",
+      "sha256": "ca1538c9b6177778167d241754b605241140226308cb383b6fe64307a11b3fb2"
+    }
+  ],
+  "commandSha256": "10516af323de6748b897e8b3f393a3ca558469bdc0c96ad62c944c36d91c1c5d",
+  "missionBehaviorVerified": false
+}

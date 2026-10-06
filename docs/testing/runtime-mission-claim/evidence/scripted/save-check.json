@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "completionRecorded": true,
+  "rewardExecuted": false,
+  "nativeMechanism": "scripted",
+  "baselineEvidence": "current-nonce native pre-action assertions; no before save for startup diagnostic",
+  "before": null,
+  "after": {
+    "file": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T010845845Z_e519856e4e96568a\\attempts\\1\\after.eu4",
+    "sha256": "90ecd745bd3c5038c7e2cada43422ec0407db3e79a2fdd30a6604faf01642030",
+    "bytes": 34227534,
+    "completed": [
+      "bri_nantes_market"
+    ],
+    "provinces": {
+      "169": {
+        "buildings": [
+          "workshop"
+        ],
+        "rewardCount": 0,
+        "expiry": [],
+        "variables": {
+          "eu4claim_before": "0.000",
+          "eu4claim_goods": "0.000"
+        }
+      },
+      "172": {
+        "buildings": [
+          "marketplace"
+        ],
+        "rewardCount": 0,
+        "expiry": [],
+        "variables": {}
+      },
+      "4384": {
+        "buildings": [
+          "workshop"
+        ],
+        "rewardCount": 0,
+        "expiry": [],
+        "variables": {
+          "eu4claim_before": "0.000",
+          "eu4claim_goods": "0.000"
+        }
+      }
+    },
+    "date": "1444.11.11",
+    "version": "1.37.5.0",
+    "paused": true
+  }
+}

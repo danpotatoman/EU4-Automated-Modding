@@ -1,0 +1,7 @@
+mods_enabled_names={
+	{
+		filename="mod/runtime_test.mod"
+		name="Brittany Runtime Test (DO NOT EXPORT)"
+	}
+ 
+}

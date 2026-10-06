@@ -1,0 +1,13 @@
+{
+    "pid":  30724,
+    "startTicks":  639266634546035090,
+    "startedAtUtc":  "2026-10-03T22:30:54.6135740Z",
+    "deadlineUtc":  "2026-10-03T23:30:54.6176582Z",
+    "mode":  "fresh-setup",
+    "arguments":  [
+                      "-debug",
+                      "-userdir=\"X:/eu4-research/tools/runtime-tests/work/nantes-manual-20261003T222727038Z-868e7002f5332b98/profile/\"",
+                      "-start_tag=BRI",
+                      "-auto_run=nantes_setup.commands"
+                  ]
+}

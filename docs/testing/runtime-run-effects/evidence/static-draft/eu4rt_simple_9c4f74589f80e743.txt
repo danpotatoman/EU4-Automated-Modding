@@ -1,0 +1,14 @@
+log = "EU4RUN 9c4f74589f80e743 BEGIN simple profile-root"
+if = { limit = { tag = BRI } log = "EU4RUN 9c4f74589f80e743 OK implicit-bri" }
+else = { log = "EU4RUN 9c4f74589f80e743 FAIL implicit-bri" }
+BRI = {
+    add_prestige = -1000
+    add_prestige = 100
+    if = { limit = { prestige = 0 NOT = { prestige = 0.001 } } log = "EU4RUN 9c4f74589f80e743 OK prestige-before-zero" }
+    else = { log = "EU4RUN 9c4f74589f80e743 FAIL prestige-before-zero" }
+    set_country_flag = eu4rt_run_simple_9c4f74589f80e743
+    add_prestige = 7
+    if = { limit = { has_country_flag = eu4rt_run_simple_9c4f74589f80e743 prestige = 7 NOT = { prestige = 7.001 } } log = "EU4RUN 9c4f74589f80e743 OK flag-and-prestige-seven" }
+    else = { log = "EU4RUN 9c4f74589f80e743 FAIL flag-and-prestige-seven" }
+}
+log = "EU4RUN 9c4f74589f80e743 END simple"

@@ -1,0 +1,56 @@
+country_decisions = {
+    amc_atlantic_foothold = {
+        major = yes
+        potential = {
+            OR = { tag = ENG tag = GBR }
+            NOT = { map_setup = map_setup_random }
+            NOT = { has_country_flag = amc_atlantic_foothold_done }
+        }
+        allow = {
+            is_at_war = no
+            OR = {
+                num_of_owned_provinces_with = { value = 3 colonial_region = colonial_eastern_america is_city = yes }
+                any_subject_country = {
+                    is_colonial_nation_of = ROOT
+                    num_of_owned_provinces_with = { value = 3 colonial_region = colonial_eastern_america is_city = yes }
+                }
+            }
+        }
+        effect = {
+            set_country_flag = amc_atlantic_foothold_done
+            add_country_modifier = { name = amc_atlantic_settlement duration = 5475 }
+        }
+        ai_will_do = { factor = 1 }
+    }
+    amc_sponsor_assembly = {
+        major = yes
+        potential = {
+            OR = { tag = ENG tag = GBR }
+            has_country_flag = amc_atlantic_foothold_done
+            NOT = { has_country_flag = amc_sponsor_assembly_done }
+        }
+        allow = {
+            is_at_war = no
+            any_subject_country = {
+                is_colonial_nation_of = ROOT
+                capital_scope = { colonial_region = colonial_eastern_america }
+                num_of_owned_provinces_with = { value = 10 colonial_region = colonial_eastern_america is_city = yes }
+            }
+        }
+        effect = {
+            set_country_flag = amc_sponsor_assembly_done
+            every_subject_country = {
+                limit = {
+                    is_colonial_nation_of = ROOT
+                    capital_scope = { colonial_region = colonial_eastern_america }
+                    num_of_owned_provinces_with = { value = 10 colonial_region = colonial_eastern_america is_city = yes }
+                }
+                set_country_flag = amc_english_assembly_sponsored
+                capital_scope = { add_base_tax = 1 add_base_manpower = 1 }
+                add_country_modifier = { name = amc_assembly_investment duration = 7300 }
+            }
+            custom_tooltip = amc_transition_tt
+        }
+        ai_will_do = { factor = 1 }
+    }
+}

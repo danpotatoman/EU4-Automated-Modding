@@ -1,0 +1,5 @@
+# Preserve source/fixture encodings and newlines exactly across clone/checkout.
+* -text
+# CRLF is intentional in preserved Windows/native evidence, not trailing content.
+* whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/publication/hooks/pre-commit text eol=lf

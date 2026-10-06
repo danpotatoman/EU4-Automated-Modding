@@ -1,0 +1,91 @@
+{
+  "nonce": "d2e4c2808be44e94",
+  "dir": "X:\\eu4-research\\tools\\runtime-tests\\work\\run-file_d2e4c2808be44e94",
+  "file": "eu4rt_simple_d2e4c2808be44e94.txt",
+  "command": "run eu4rt_simple_d2e4c2808be44e94.txt",
+  "candidate": "native console mission followed by savegame and run assertions",
+  "launcher": {
+    "enabled_mods": [
+      "mod/brittany_missions_dev.mod"
+    ],
+    "disabled_dlcs": []
+  },
+  "dlcs": [
+    "Conquest of Paradise",
+    "Cradle of Civilization",
+    "Dharma",
+    "Domination",
+    "El Dorado",
+    "Emperor",
+    "Golden Century",
+    "King of Kings",
+    "Leviathan",
+    "Lions of the North",
+    "Mandate of Heaven",
+    "Mare Nostrum",
+    "Res Publica",
+    "Rule Britannia",
+    "The Cossacks",
+    "Third Rome",
+    "Wealth of Nations",
+    "Winds of Change"
+  ],
+  "status": "fail",
+  "missionBehaviorPass": false,
+  "manual": [],
+  "launchArgs": [
+    "-debug",
+    "-userdir=X:/eu4-research/tools/runtime-tests/work/run-file_d2e4c2808be44e94/profile/",
+    "-start_tag=BRI",
+    "-auto_run=eu4rt_run.commands"
+  ],
+  "collectorRun": {
+    "id": "20261003T204059396Z_e042bf",
+    "directory": "X:\\eu4-research\\tools\\test-runs\\reports\\brittany_runtime\\20261003T204059396Z_e042bf",
+    "status": "running"
+  },
+  "pid": 59808,
+  "startedAtUtc": "2026-10-03T20:40:59.409Z",
+  "markers": [
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 READY simple",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-1",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-2",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-3",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-4",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-5",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-6",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-7",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-8",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-9",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-10",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-11",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-12",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-13",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-14",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-15",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-16",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-17",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK dlc-18",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK mission-initial",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK missing-building",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OK fixture-marketplace",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 BEGIN simple profile-root",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 FAIL console-mission-completed",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 FAIL downstream-parent-completed",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OBS modifier-169 query-false",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OBS value-169 zero",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OBS modifier-4384 query-false",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 OBS value-4384 zero",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RUN d2e4c2808be44e94 END simple"
+  ],
+  "runningVersion": "EU4 v1.37.5.0 Inca",
+  "cleanup": "window-close",
+  "logCapture": {
+    "id": "20261003T204059396Z_e042bf",
+    "report": "X:\\eu4-research\\tools\\test-runs\\reports\\brittany_runtime\\20261003T204059396Z_e042bf\\report.txt",
+    "outcome": "not-completed",
+    "newErrorMessages": 92,
+    "changedLogs": 25
+  },
+  "finishedAtUtc": "2026-10-03T20:41:40.656Z"
+}

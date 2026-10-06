@@ -1,0 +1,45 @@
+{
+  "note": "Final working sources; post-proof guard hardening is disclosed in the report. Not a claim that each final hash was loaded by the earlier native proof.",
+  "sources": [
+    {
+      "path": "tools/run-eu4-test.ps1",
+      "sha256": "6d8821aec9b80ae5a1edf9871aa4c735b835ba39ddcd3e974ef563ccbc9526a7"
+    },
+    {
+      "path": "tools/runtime-tests/run.mjs",
+      "sha256": "d41429977593777bdb8261502d178ce60d35f87cee959c17e912133fb57d1a87"
+    },
+    {
+      "path": "tools/runtime-tests/evaluate.mjs",
+      "sha256": "116832ffee64919d11d674a540bbdf08567cb6e2725c9ef2d6b5dc7db8bebaad"
+    },
+    {
+      "path": "tools/runtime-tests/processes.ps1",
+      "sha256": "5edba9fb638f75bdf95a9a22db520003e2c9892e2bbed40b13feb654457d2c13"
+    },
+    {
+      "path": "tools/runtime-tests/mission-claim.mjs",
+      "sha256": "65172ff0c03740bf4bfb82bfadd773d99779a9269182224eb2061a53baa6c2d6"
+    },
+    {
+      "path": "tools/runtime-tests/claim-save.mjs",
+      "sha256": "c8fb523711c05c1f56a0a8c2b7741ce692816c57dc1762bc8a0865b2171e0077"
+    },
+    {
+      "path": "tools/runtime-tests/codex-input.mjs",
+      "sha256": "dc0e647754bbe356a2f73cec6896e60322e98ea4ce411e87ae261f5777be9b5f"
+    },
+    {
+      "path": "tools/runtime-tests/retain-claim.mjs",
+      "sha256": "1db2b43f4a8a2b60d27b8ee7917af359fb3370a935c1a25388914fc136585f7f"
+    },
+    {
+      "path": "tools/runtime-tests/mission-claim.test.mjs",
+      "sha256": "ed991cdbaeb445d251bf85596548e11ff9eafe905bbe370da343cbd3c85f59d7"
+    },
+    {
+      "path": "tools/runtime-tests/claim-evidence.test.mjs",
+      "sha256": "534506020793f51e981e15499c9cce5bb369b2855fbd31e78da994880897ac21"
+    }
+  ]
+}

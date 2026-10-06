@@ -1,0 +1,67 @@
+eu4rt_nantes_prepare_ready = {
+    if = {
+        limit = { NOT = { mission_completed = bri_nantes_market } }
+        log = "EU4RT d1daf1ab2d78a539 OK reset-incomplete"
+    }
+    else = { log = "EU4RT d1daf1ab2d78a539 FAIL reset-incomplete" }
+    # A fresh fixture after the destructive diagnostic, not copied reward logic.
+    169 = { remove_province_modifier = bri_demand_for_breton_cloth add_building = workshop }
+    4384 = { remove_province_modifier = bri_demand_for_breton_cloth add_building = workshop }
+    if = {
+        limit = {
+            169 = { NOT = { has_province_modifier = bri_demand_for_breton_cloth } }
+            4384 = { NOT = { has_province_modifier = bri_demand_for_breton_cloth } }
+        }
+        log = "EU4RT d1daf1ab2d78a539 OK rewards-absent-before-console"
+    }
+    else = { log = "EU4RT d1daf1ab2d78a539 FAIL rewards-absent-before-console" }
+    172 = { add_building = marketplace }
+    if = {
+        limit = { 172 = { has_building = marketplace } }
+        log = "EU4RT d1daf1ab2d78a539 OK ready-building"
+    }
+    else = { log = "EU4RT d1daf1ab2d78a539 FAIL ready-building" }
+}
+
+eu4rt_nantes_after_console = {
+    if = {
+        limit = { mission_completed = bri_nantes_market }
+        log = "EU4RT d1daf1ab2d78a539 OK console-completed"
+    }
+    else = { log = "EU4RT d1daf1ab2d78a539 FAIL console-completed" }
+    if = {
+        limit = {
+            169 = { has_province_modifier = bri_demand_for_breton_cloth }
+            4384 = { has_province_modifier = bri_demand_for_breton_cloth }
+        }
+        log = "EU4RT d1daf1ab2d78a539 OBS console-rewards present"
+    }
+    else = { log = "EU4RT d1daf1ab2d78a539 OBS console-rewards absent-or-incomplete" }
+    if = {
+        limit = {
+            has_mission = bri_breton_textiles
+            NOT = { mission_completed = bri_breton_textiles }
+            mission_completed = bri_nantes_market
+        }
+        log = "EU4RT d1daf1ab2d78a539 OK downstream-completion-predicate"
+    }
+    else = { log = "EU4RT d1daf1ab2d78a539 FAIL downstream-completion-predicate" }
+    # Diagnose the current engine value, without supplying any reward ourselves.
+    169 = {
+        export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+        if = {
+            limit = { check_variable = { which = eu4rt_goods value = 0.15 } NOT = { check_variable = { which = eu4rt_goods value = 0.151 } } }
+            log = "EU4RT d1daf1ab2d78a539 OBS reward-value-169 correct"
+        }
+        else = { log = "EU4RT d1daf1ab2d78a539 OBS reward-value-169 not-0.15" }
+    }
+    4384 = {
+        export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+        if = {
+            limit = { check_variable = { which = eu4rt_goods value = 0.15 } NOT = { check_variable = { which = eu4rt_goods value = 0.151 } } }
+            log = "EU4RT d1daf1ab2d78a539 OBS reward-value-4384 correct"
+        }
+        else = { log = "EU4RT d1daf1ab2d78a539 OBS reward-value-4384 not-0.15" }
+    }
+    log = "EU4RT d1daf1ab2d78a539 END nantes-market"
+}

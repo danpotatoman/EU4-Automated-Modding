@@ -1,0 +1,19 @@
+on_startup = {
+    if = {
+        limit = { tag = BRI }
+        log = "EU4RT @NONCE@ BEGIN @TEST@"
+        if = {
+            limit = {
+                is_subject = no
+                is_year = 1444
+                NOT = { is_year = 1445 }
+                169 = { owned_by = ROOT }
+                170 = { owned_by = ROOT }
+                4384 = { owned_by = ROOT }
+            }
+            log = "EU4RT @NONCE@ OK initial"
+        }
+        else = { log = "EU4RT @NONCE@ FAIL initial" }
+        @DLC_ASSERTIONS@
+    }
+}

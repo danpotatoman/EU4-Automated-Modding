@@ -1,0 +1,61 @@
+# Plain console run-file effects; no enclosing event or on_action.
+# Native auto_run executes this only after startup fixture assertions.
+if = { limit = { tag = BRI } log = "EU4RT 73edc51c4d8b76e3 OK implicit-bri" }
+else = { log = "EU4RT 73edc51c4d8b76e3 FAIL implicit-bri" }
+BRI = {
+    add_prestige = -1000
+    add_prestige = 100
+    export_to_variable = { which = eu4rt_prestige value = prestige }
+    if = {
+        limit = { check_variable = { which = eu4rt_prestige value = 0 } NOT = { check_variable = { which = eu4rt_prestige value = 0.001 } } }
+        log = "EU4RT 73edc51c4d8b76e3 OK prestige-before-zero"
+    }
+    else = { log = "EU4RT 73edc51c4d8b76e3 FAIL prestige-before-zero" }
+    set_country_flag = eu4rt_simple_73edc51c4d8b76e3
+    add_prestige = 7
+    export_to_variable = { which = eu4rt_prestige value = prestige }
+    if = {
+        limit = { has_country_flag = eu4rt_simple_73edc51c4d8b76e3 check_variable = { which = eu4rt_prestige value = 7 } NOT = { check_variable = { which = eu4rt_prestige value = 7.001 } } }
+        log = "EU4RT 73edc51c4d8b76e3 OK flag-and-prestige-seven"
+    }
+    else = { log = "EU4RT 73edc51c4d8b76e3 FAIL flag-and-prestige-seven" }
+    if = {
+        limit = { NOT = { has_country_flag = eu4rt_scripted_73edc51c4d8b76e3 } }
+        log = "EU4RT 73edc51c4d8b76e3 OK scripted-flag-before"
+    }
+    else = { log = "EU4RT 73edc51c4d8b76e3 FAIL scripted-flag-before" }
+    eu4rt_named_probe_73edc51c4d8b76e3 = yes
+    if = {
+        limit = { has_country_flag = eu4rt_scripted_73edc51c4d8b76e3 }
+        log = "EU4RT 73edc51c4d8b76e3 OK scripted-flag-after"
+    }
+    else = { log = "EU4RT 73edc51c4d8b76e3 FAIL scripted-flag-after" }
+
+    # Call the real installed scripted effect also used by bri_flourishing_duchy.
+    # This verifies one effect's invocation, not that mission's completion/reward.
+    add_stability = -10
+    add_stability = 3
+    if = {
+        limit = { stability = 0 NOT = { stability = 1 } }
+        log = "EU4RT 73edc51c4d8b76e3 OK stability-before-zero"
+    }
+    else = { log = "EU4RT 73edc51c4d8b76e3 FAIL stability-before-zero" }
+    add_stability_or_adm_power = yes
+    if = {
+        limit = { stability = 1 NOT = { stability = 2 } }
+        log = "EU4RT 73edc51c4d8b76e3 OK production-scripted-stability-one"
+    }
+    else = { log = "EU4RT 73edc51c4d8b76e3 FAIL production-scripted-stability-one" }
+
+    # Calibrate one province effect and its value. Nantes's two-province inline
+    # mission reward is not independently invoked or duplicated here.
+    169 = {
+        export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+        if = {
+            limit = { NOT = { has_province_modifier = bri_demand_for_breton_cloth } check_variable = { which = eu4rt_goods value = 0 } NOT = { check_variable = { which = eu4rt_goods value = 0.001 } } }
+            log = "EU4RT 73edc51c4d8b76e3 OK province-reward-before"
+        }
+        else = { log = "EU4RT 73edc51c4d8b76e3 FAIL province-reward-before" }
+        add_province_modifier = { name = bri_demand_for_breton_cloth duration = -1 }
+    }
+}

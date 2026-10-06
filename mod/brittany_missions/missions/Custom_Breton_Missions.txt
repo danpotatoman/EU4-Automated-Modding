@@ -1,0 +1,1843 @@
+bri_homeland_missions = {
+    slot = 1
+    generic = no
+    ai = yes
+
+    potential = {
+        NOT = { map_setup = map_setup_random }
+        tag = BRI
+    }
+
+    has_country_shield = yes
+
+    bri_seeds_of_the_renaissance = {
+        icon = renaissance_city
+        position = 1
+
+        provinces_to_highlight = {
+            is_capital = yes
+            owned_by = ROOT
+        }
+
+        trigger = {
+            stability = 1
+
+            capital_scope = {
+                renaissance = 25
+            }
+        }
+
+        effect = {
+            capital_scope = {
+                add_province_modifier = {
+                    name = bri_renaissance_growth
+                    duration = 3650
+                }
+            }
+        }
+    }
+
+    bri_breton_renaissance = {
+        icon = continue_the_renaissance
+        position = 2
+
+        required_missions = {
+            bri_seeds_of_the_renaissance
+        }
+
+        trigger = {
+            has_institution = renaissance
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = bri_breton_renaissance_modifier
+                duration = 7300
+            }
+        }
+    }
+
+    bri_flourishing_duchy = {
+        icon = prosperity_for_all
+        position = 4
+
+        required_missions = {
+            bri_breton_metropole_1
+        }
+
+        trigger = {
+            brittany_area = {
+                type = all
+                owned_by = ROOT
+
+                NOT = {
+                    local_autonomy_above_min = 5
+                }
+            }
+
+            172 = {
+                if = {
+                    limit = {
+                        has_dlc = "Mandate of Heaven"
+                    }
+                    is_prosperous = yes
+                }
+            }
+
+            stability = 2
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = bri_flourishing_duchy_modifier
+                duration = 7300
+            }
+
+            add_stability_or_adm_power = yes
+        }
+    }
+
+    bri_cities_of_brittany = {
+        icon = promote_urbanization
+        position = 5
+
+        required_missions = {
+            bri_flourishing_duchy
+        }
+
+        trigger = {
+            brittany_area = {
+                type = all
+                owned_by = ROOT
+                development = 25
+                num_of_buildings_in_province = 3
+            }
+        }
+
+        effect = {
+            171 = {
+                change_trade_goods = cloth
+                add_base_production = 2
+            }
+
+            172 = {
+                change_trade_goods = paper
+                add_base_production = 2
+            }
+        }
+    }
+
+    bri_first_among_nations = {
+        icon = mission_cannons_firing
+        position = 7
+
+        required_missions = {
+            bri_breton_metropole_2
+        }
+
+        trigger = {
+            NOT = {
+                great_power_rank = 2
+            }
+
+            army_size = 150
+            artillery_fraction = 0.3
+            army_professionalism = 0.50
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = bri_breton_artillery_supremacy
+                duration = -1
+            }
+
+            country_event = {
+                id = bri_missions.3
+            }
+        }
+    }
+
+    bri_question_of_france = {
+        icon = a_question_of_spain
+        position = 10
+
+        trigger = {
+            is_subject = no
+        }
+
+        effect = {
+            set_country_flag = bri_diplomacy_preview
+
+            country_event = {
+                id = bri_missions.1
+            }
+        }
+    }
+}
+
+
+bri_commerce_missions = {
+    slot = 2
+    generic = no
+    ai = yes
+
+    potential = {
+        NOT = { map_setup = map_setup_random }
+        tag = BRI
+    }
+
+    has_country_shield = yes
+
+    bri_nantes_market = {
+        icon = fra_develop_trade
+        position = 1
+
+        provinces_to_highlight = {
+            province_id = 172
+            OR = {
+                NOT = { owned_by = ROOT }
+                has_trade_building_trigger = no
+            }
+        }
+
+        trigger = {
+            172 = {
+                owned_by = ROOT
+                has_trade_building_trigger = yes
+            }
+        }
+
+        effect = {
+            169 = {
+                add_province_modifier = {
+                    name = "bri_demand_for_breton_cloth"
+                    duration = -1
+                }
+            }
+
+            4384 = {
+                add_province_modifier = {
+                    name = "bri_demand_for_breton_cloth"
+                    duration = -1
+                }
+            }
+        }
+    }
+
+    bri_breton_textiles = {
+        icon = mission_expand_textile_industry
+        position = 2
+
+        required_missions = {
+            bri_nantes_market
+        }
+
+        provinces_to_highlight = {
+            owned_by = ROOT
+            OR = {
+                province_id = 169
+                province_id = 4384
+            }
+        }
+
+        trigger = {
+            169 = {
+                owned_by = ROOT
+                has_production_building_trigger = yes
+            }
+
+            4384 = {
+                owned_by = ROOT
+                has_production_building_trigger = yes
+            }
+        }
+
+        effect = {
+            169 = {
+                add_or_upgrade_production_building = yes
+            }
+
+            4384 = {
+                add_or_upgrade_production_building = yes
+            }
+        }
+    }
+
+    bri_breton_metropole_1 = {
+        icon = develop_our_capital
+        position = 3
+
+        required_missions = {
+            bri_breton_renaissance
+            bri_breton_textiles
+            bri_breton_merchant_marine
+        }
+
+        provinces_to_highlight = {
+            area = brittany_area
+            NOT = { owned_by = ROOT }
+        }
+
+        trigger = {
+            development_in_provinces = {
+                value = 70
+                area = brittany_area
+            }
+
+            brittany_area = {
+                type = all
+                owned_by = ROOT
+            }
+        }
+
+        effect = {
+            set_country_flag = bri_metropole_1_unlocked
+
+            # Clean player-facing reward tooltip
+            custom_tooltip = bri_metropole_1_each_province_tt
+
+            tooltip = {
+                169 = {
+                    add_province_triggered_modifier = bri_metropole_1
+                }
+            }
+
+            custom_tooltip = bri_breton_metropole_reward_tt
+
+            # Actual effects
+            hidden_effect = {
+                169 = {
+                    add_province_triggered_modifier = bri_metropole_1
+                }
+                170 = {
+                    add_province_triggered_modifier = bri_metropole_1
+                }
+                171 = {
+                    add_province_triggered_modifier = bri_metropole_1
+                }
+                172 = {
+                    add_province_triggered_modifier = bri_metropole_1
+                }
+                4384 = {
+                    add_province_triggered_modifier = bri_metropole_1
+                }
+            }
+        }
+    }
+
+    bri_growing_economy = {
+        icon = dominant_economy
+        position = 4
+
+        required_missions = {
+            bri_breton_metropole_1
+        }
+
+        provinces_to_highlight = {
+            area = brittany_area
+            owned_by = ROOT
+            NOT = {
+                base_production = 6
+            }
+        }
+
+        trigger = {
+            brittany_area = {
+                type = all
+                owned_by = ROOT
+                base_production = 6
+            }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = bri_growing_economy_modifier
+                duration = 7300
+            }
+
+            define_advisor = {
+                type = treasurer
+                skill = 2
+                culture = ROOT
+                religion = ROOT
+                cost_multiplier = 0.25
+            }
+        }
+    }
+
+    bri_breton_manufactures = {
+        icon = mission_have_manufactories
+        position = 5
+
+        required_missions = {
+            bri_growing_economy
+        }
+
+        provinces_to_highlight = {
+            area = brittany_area
+            owned_by = ROOT
+            NOT = {
+                has_manufactory_trigger = yes
+            }
+        }
+
+        trigger = {
+            num_of_owned_provinces_with = {
+                value = 3
+                area = brittany_area
+                has_manufactory_trigger = yes
+            }
+        }
+
+        effect = {
+            brittany_area = {
+                limit = {
+                    owned_by = ROOT
+                }
+                add_base_production = 1
+            }
+
+            add_years_of_owned_provinces_production_income = {
+                years = 2
+
+                trigger = {
+                    area = brittany_area
+                }
+
+                custom_tooltip = bri_brittany_production_income_desc
+            }
+        }
+    }
+
+    bri_breton_metropole_2 = {
+        icon = imperial_capitals
+        position = 6
+
+        required_missions = {
+            bri_cities_of_brittany
+            bri_breton_manufactures
+            bri_gateway_to_the_atlantic
+        }
+
+        provinces_to_highlight = {
+            area = brittany_area
+            NOT = { owned_by = ROOT }
+        }
+
+        trigger = {
+            development_in_provinces = {
+                value = 150
+                area = brittany_area
+            }
+
+            brittany_area = {
+                type = all
+                owned_by = ROOT
+            }
+
+            has_adm_advisor_3 = yes
+            has_dip_advisor_3 = yes
+
+            monthly_income = 50
+        }
+
+        effect = {
+            clr_country_flag = bri_metropole_1_unlocked
+            set_country_flag = bri_metropole_2_unlocked
+
+            custom_tooltip = bri_metropole_2_each_province_tt
+
+            tooltip = {
+                169 = {
+                    add_province_triggered_modifier = bri_metropole_2
+                }
+            }
+
+            custom_tooltip = bri_breton_metropole_2_reward_tt
+
+            hidden_effect = {
+                169 = {
+                    remove_province_triggered_modifier = bri_metropole_1
+                    add_province_triggered_modifier = bri_metropole_2
+                }
+                170 = {
+                    remove_province_triggered_modifier = bri_metropole_1
+                    add_province_triggered_modifier = bri_metropole_2
+                }
+                171 = {
+                    remove_province_triggered_modifier = bri_metropole_1
+                    add_province_triggered_modifier = bri_metropole_2
+                }
+                172 = {
+                    remove_province_triggered_modifier = bri_metropole_1
+                    add_province_triggered_modifier = bri_metropole_2
+                }
+                4384 = {
+                    remove_province_triggered_modifier = bri_metropole_1
+                    add_province_triggered_modifier = bri_metropole_2
+                }
+            }
+        }
+    }
+
+    bri_atlantic_monopoly = {
+        icon = mission_dominate_home_trade_node
+        position = 7
+
+        required_missions = {
+            bri_breton_metropole_2
+        }
+
+        provinces_to_highlight = {
+            province_id = 1276
+        }
+
+        trigger = {
+            1276 = {
+                trade_share = {
+                    country = ROOT
+                    share = 90
+                }
+
+                highest_value_trade_node = yes
+
+                trade_node_value = 150
+            }
+        }
+
+        effect = {
+            if = {
+                limit = {
+                    has_dlc = "Mandate of Heaven"
+                }
+
+                custom_tooltip = bri_atlantic_monopoly_golden_age_tt
+
+                if = {
+                    limit = {
+                        has_had_golden_age = yes
+                    }
+                    reset_golden_age = yes
+                }
+                else_if = {
+                    limit = {
+                        in_golden_age = yes
+                    }
+                    extend_golden_age = 600
+                }
+            }
+        }
+    }
+
+    bri_breton_metropole_3 = {
+        icon = ven_capital_of_europe
+        position = 8
+
+        required_missions = {
+            bri_brittany_rules_the_waves
+            bri_atlantic_monopoly
+            bri_first_among_nations
+        }
+
+        provinces_to_highlight = {
+            area = brittany_area
+            OR = {
+                NOT = { owned_by = ROOT }
+                NOT = { development = 40 }
+                NOT = { num_of_buildings_in_province = 6 }
+            }
+        }
+
+        trigger = {
+            development_in_provinces = {
+                value = 250
+                area = brittany_area
+            }
+
+            brittany_area = {
+                type = all
+                owned_by = ROOT
+                development = 40
+                num_of_buildings_in_province = 6
+            }
+
+            custom_trigger_tooltip = {
+                tooltip = bri_has_adm_advisor_5_tooltip
+
+                hidden_trigger = {
+                    employed_advisor = {
+                        category = adm
+                        skill = 5
+                    }
+                }
+            }
+
+            custom_trigger_tooltip = {
+                tooltip = bri_has_dip_advisor_5_tooltip
+
+                hidden_trigger = {
+                    employed_advisor = {
+                        category = dip
+                        skill = 5
+                    }
+                }
+            }
+
+            custom_trigger_tooltip = {
+                tooltip = bri_has_mil_advisor_5_tooltip
+
+                hidden_trigger = {
+                    employed_advisor = {
+                        category = mil
+                        skill = 5
+                    }
+                }
+            }
+        }
+
+        effect = {
+            clr_country_flag = bri_metropole_2_unlocked
+            set_country_flag = bri_metropole_3_unlocked
+
+            custom_tooltip = bri_metropole_3_each_province_tt
+
+            tooltip = {
+                169 = {
+                    add_province_triggered_modifier = bri_metropole_3
+                }
+            }
+
+            custom_tooltip = bri_breton_metropole_3_reward_tt
+
+            hidden_effect = {
+                169 = {
+                    remove_province_triggered_modifier = bri_metropole_2
+                    add_province_triggered_modifier = bri_metropole_3
+                }
+                170 = {
+                    remove_province_triggered_modifier = bri_metropole_2
+                    add_province_triggered_modifier = bri_metropole_3
+                }
+                171 = {
+                    remove_province_triggered_modifier = bri_metropole_2
+                    add_province_triggered_modifier = bri_metropole_3
+                }
+                172 = {
+                    remove_province_triggered_modifier = bri_metropole_2
+                    add_province_triggered_modifier = bri_metropole_3
+                }
+                4384 = {
+                    remove_province_triggered_modifier = bri_metropole_2
+                    add_province_triggered_modifier = bri_metropole_3
+                }
+            }
+        }
+    }
+
+    bri_no_rivals_remain = {
+        icon = mission_plc_proclaim_polish_hegemony
+        position = 9
+
+        required_missions = {
+            bri_breton_metropole_3
+        }
+
+        trigger = {
+            if = {
+                limit = {
+                    has_dlc = "Emperor"
+                }
+                is_hegemon = yes
+            }
+
+            NOT = {
+                any_other_great_power = {
+                    monthly_income = ROOT
+                }
+            }
+
+            NOT = {
+                any_other_great_power = {
+                    army_size = ROOT
+                }
+            }
+
+            NOT = {
+                any_other_great_power = {
+                    num_of_heavy_ship = ROOT
+                }
+            }
+        }
+
+        effect = {
+            set_country_flag = bri_metropole_unrestricted
+
+            add_country_modifier = {
+                name = bri_breton_hegemony_modifier
+                duration = -1
+            }
+
+            custom_tooltip = bri_no_rivals_remain_reward_tt
+        }
+    }
+}
+
+
+bri_maritime_missions = {
+    slot = 3
+    generic = no
+    ai = yes
+
+    potential = {
+        NOT = { map_setup = map_setup_random }
+        tag = BRI
+    }
+
+    has_country_shield = yes
+
+    bri_breton_shipbuilding = {
+        icon = mission_shipyards_of_gujarat
+        position = 1
+
+        provinces_to_highlight = {
+            province_id = 170
+            OR = {
+                NOT = { owned_by = ROOT }
+                has_dock_building_trigger = no
+                if = {
+                    limit = {
+                        has_dlc = "Leviathan"
+                    }
+                    num_of_times_expanded_infrastructure = 0
+                }
+            }
+        }
+
+        trigger = {
+            170 = {
+                owned_by = ROOT
+                has_dock_building_trigger = yes
+
+                if = {
+                    limit = {
+                        has_dlc = "Leviathan"
+                    }
+                    num_of_times_expanded_infrastructure = 1
+                }
+            }
+        }
+
+        effect = {
+            bri_shipbuilding_reward_effect = yes
+        }
+    }
+
+    bri_breton_merchant_marine = {
+        icon = mission_merchant_of_gujarat
+        position = 2
+
+        required_missions = {
+            bri_breton_shipbuilding
+        }
+
+        trigger = {
+            num_of_light_ship = 10
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = "bri_breton_merchant_marine_modifier"
+                duration = 7300
+            }
+        }
+    }
+
+    
+
+    bri_ocean_going_fleet = {
+        icon = mission_rb_a_mighty_fleet
+        position = 4
+
+        required_missions = {
+            bri_breton_metropole_1
+        }
+
+        trigger = {
+            num_of_heavy_ship = 5
+            num_of_light_ship = 20
+            has_flagship = yes
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = bri_ocean_going_fleet_modifier
+                duration = 7300
+            }
+
+            create_admiral = {
+                tradition = 80
+            }
+        }
+    }
+
+    bri_gateway_to_the_atlantic = {
+        icon = mission_hanseatic_city
+        position = 5
+
+        required_missions = {
+            bri_ocean_going_fleet
+            bri_colonial_americas
+        }
+
+        provinces_to_highlight = {
+            province_id = 172
+            OR = {
+                NOT = { owned_by = ROOT }
+                NOT = { development = 30 }
+            }
+        }
+
+        trigger = {
+            172 = {
+                owned_by = ROOT
+                development = 30
+            }
+
+            1276 = {
+                trade_share = {
+                    country = ROOT
+                    share = 50
+                }
+            }
+        }
+
+        effect = {
+            172 = {
+                center_of_trade = 1
+            }
+        }
+    }
+
+    bri_brittany_rules_the_waves = {
+        icon = mission_launch_a_flagship
+        position = 7
+
+        required_missions = {
+            bri_breton_metropole_2
+        }
+
+        trigger = {
+            num_of_heavy_ship = 50
+
+            NOT = {
+                any_known_country = {
+                    num_of_heavy_ship = ROOT
+                }
+            }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = bri_brittany_rules_the_waves_modifier
+                duration = -1
+            }
+        }
+    }
+
+    bri_the_breton_burghers = {
+        icon = mission_guilds_of_barcelona
+        position = 11
+
+        required_missions = {
+            bri_the_breton_estates
+        }
+
+        trigger = {
+            estate_influence = {
+                estate = estate_burghers
+                influence = 50
+            }
+
+            if = {
+                limit = {
+                    has_estate = estate_burghers
+                }
+
+                num_of_estate_agendas_completed = {
+                    estate = estate_burghers
+                    value = 3
+                }
+            }
+            else = {
+                NOT = {
+                    has_estate = estate_burghers
+                }
+            }
+        }
+
+        effect = {
+            change_government_reform_progress = 50
+            add_mercantilism = 5
+        }
+    }
+}
+
+
+bri_missions_slot_4 = {
+    slot = 4
+    generic = no
+    ai = yes
+
+    potential = {
+        tag = BRI
+    }
+
+    bri_prepare_the_defenses = {
+        icon = per_reform_our_defenses
+        position = 1
+
+        trigger = {
+            custom_trigger_tooltip = {
+                tooltip = bri_prepare_the_defenses_trigger_tt
+
+                hidden_trigger = {
+                    OR = {
+                        169 = {
+                            owned_by = ROOT
+                            base_manpower = 6
+                        }
+
+                        170 = {
+                            owned_by = ROOT
+                            base_manpower = 6
+                        }
+
+                        171 = {
+                            owned_by = ROOT
+                            base_manpower = 5
+                        }
+
+                        172 = {
+                            owned_by = ROOT
+                            base_manpower = 6
+                        }
+
+                        4384 = {
+                            owned_by = ROOT
+                            base_manpower = 6
+                        }
+                    }
+                }
+            }
+        }
+
+        effect = {
+            country_event = {
+                id = bri_missions.2
+            }
+        }
+    }
+
+    bri_colonial_americas = {
+        icon = mission_rb_the_thirteen_colonies
+        position = 4
+
+        required_missions = {
+            bri_breton_foothold
+        }
+
+        trigger = {
+            num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+                value = 10
+
+                OR = {
+                    continent = north_america
+                    continent = south_america
+                }
+
+                is_city = yes
+            }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = bri_colonial_americas_modifier
+                duration = 7300
+            }
+        }
+    }
+
+    bri_breton_colonial_empire = {
+        icon = mission_ruler_of_north_america
+        position = 5
+
+        required_missions = {
+            bri_colonial_americas
+        }
+
+        trigger = {
+            custom_trigger_tooltip = {
+                tooltip = bri_five_colonial_nations_tt
+
+                hidden_trigger = {
+                    calc_true_if = {
+                        all_subject_country = {
+                            OR = {
+                                is_subject_of_type = colony
+                                is_subject_of_type = crown_colony
+                                is_subject_of_type = private_enterprise
+                                is_subject_of_type = self_governing_colony
+                                is_subject_of_type = european_colony
+                            }
+                        }
+                        amount = 5
+                    }
+                }
+            }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = bri_breton_colonial_empire_modifier
+                duration = -1
+            }
+
+            change_government_reform_progress = 100
+        }
+    }
+
+    bri_gold_of_mali = {
+        icon = mission_african_gold
+        position = 6
+
+        required_missions = {
+            bri_guinea_trade
+        }
+
+        provinces_to_highlight = {
+            area = manding_area
+            NOT = { owned_by = ROOT }
+        }
+
+        trigger = {
+            manding_area = {
+                type = all
+                owned_by = ROOT
+            }
+        }
+
+        effect = {
+            add_treasury = 1000
+
+            add_country_modifier = {
+                name = bri_malian_gold_modifier
+                duration = 7300
+            }
+        }
+    }
+
+    bri_the_breton_estates = {
+        icon = balance_the_estates
+        position = 10
+
+        required_missions = { }
+
+        trigger = {
+            if = {
+                limit = {
+                    has_estate = estate_church
+                }
+                OR = {
+                    estate_loyalty = {
+                        estate = estate_church
+                        loyalty = 60
+                    }
+                    num_of_estate_privileges = {
+                        estate = estate_church
+                        value = 3
+                    }
+                }
+            }
+
+            if = {
+                limit = {
+                    has_estate = estate_nobles
+                }
+                OR = {
+                    estate_loyalty = {
+                        estate = estate_nobles
+                        loyalty = 60
+                    }
+                    num_of_estate_privileges = {
+                        estate = estate_nobles
+                        value = 3
+                    }
+                }
+            }
+
+            if = {
+                limit = {
+                    has_estate = estate_burghers
+                }
+                OR = {
+                    estate_loyalty = {
+                        estate = estate_burghers
+                        loyalty = 60
+                    }
+                    num_of_estate_privileges = {
+                        estate = estate_burghers
+                        value = 3
+                    }
+                }
+            }
+        }
+
+        effect = {
+            change_estate_land_share = {
+                estate = all
+                share = -5
+            }
+        }
+    }
+
+    bri_the_breton_clergy = {
+        icon = influence_the_church
+        position = 11
+
+        required_missions = {
+            bri_the_breton_estates
+        }
+
+        trigger = {
+            estate_influence = {
+                estate = estate_church
+                influence = 50
+            }
+
+            if = {
+                limit = {
+                    has_estate = estate_church
+                }
+
+                num_of_estate_agendas_completed = {
+                    estate = estate_church
+                    value = 3
+                }
+            }
+            else = {
+                NOT = {
+                    has_estate = estate_church
+                }
+            }
+        }
+
+        effect = {
+            change_government_reform_progress = 50
+            add_stability_or_adm_power = yes
+        }
+    }
+
+    bri_constitutional_settlement = {
+        icon = reform_the_state
+        position = 12
+
+        required_missions = {
+            bri_the_breton_clergy
+            bri_the_breton_nobility
+            bri_the_breton_burghers
+        }
+
+        trigger = {
+            stability = 2
+            crown_land_share = 50
+
+            estate_loyalty = {
+                estate = estate_church
+                loyalty = 60
+            }
+            NOT = {
+                estate_influence = {
+                    estate = estate_church
+                    influence = 80
+                }
+            }
+
+            estate_loyalty = {
+                estate = estate_nobles
+                loyalty = 60
+            }
+            NOT = {
+                estate_influence = {
+                    estate = estate_nobles
+                    influence = 80
+                }
+            }
+
+            estate_loyalty = {
+                estate = estate_burghers
+                loyalty = 60
+            }
+            NOT = {
+                estate_influence = {
+                    estate = estate_burghers
+                    influence = 80
+                }
+            }
+        }
+
+        effect = {
+            add_government_reform = bri_constitutional_settlement_reform
+
+            hidden_effect = {
+                unlock_government_reform = {
+                    government_reform = bri_constitutional_settlement_reform
+                }
+            }
+        }
+    }
+}
+
+
+bri_diplomacy_missions = {
+    slot = 5
+    generic = no
+    ai = yes
+
+    potential = {
+        NOT = { map_setup = map_setup_random }
+        tag = BRI
+    }
+
+    has_country_shield = yes
+
+    bri_atlantic_ambitions = {
+        icon = mission_exploration
+        position = 2
+
+        trigger = {
+            num_of_colonists = 1
+        }
+
+        effect = {
+            define_advisor = {
+                name = "Yann Kerne"
+                culture = ROOT
+                religion = ROOT
+                type = navigator
+                skill = 1
+                cost_multiplier = 0.5
+            }
+
+            add_country_modifier = {
+                name = bri_atlantic_ambitions_modifier
+                duration = 7300
+            }
+        }
+    }
+
+    bri_breton_foothold = {
+        icon = mission_african_trade_post
+        position = 3
+
+        required_missions = {
+            bri_atlantic_ambitions
+        }
+
+        trigger = {
+            custom_trigger_tooltip = {
+                tooltip = bri_breton_foothold_trigger_tt
+
+                hidden_trigger = {
+                    any_owned_province = {
+                        NOT = {
+                            continent = europe
+                        }
+                        is_core = ROOT
+                    }
+                }
+            }
+        }
+
+    effect = {
+        add_dip_power = 100
+        add_prestige = 20
+
+        custom_tooltip = bri_breton_foothold_claims_tt
+
+        hidden_effect = {
+            guinea_region = {
+                limit = {
+                    OR = {
+                        province_has_center_of_trade_of_level = 1
+                        has_river_estuary_trigger = yes
+                    }
+                    NOT = { owned_by = ROOT }
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+}
+
+    bri_guinea_trade = {
+        icon = mission_trade_in_gold_coast
+        position = 5
+
+        required_missions = {
+            bri_breton_foothold
+        }
+
+        trigger = {
+            num_of_owned_provinces_with = {
+                value = 2
+                region = guinea_region
+
+                OR = {
+                    province_has_center_of_trade_of_level = 1
+                    has_river_estuary_trigger = yes
+                }
+            }
+        }
+
+        effect = {
+            manding_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+
+            cape_of_good_hope_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+
+    bri_round_the_cape = {
+        icon = colonize_the_cape
+        position = 6
+
+        required_missions = {
+            bri_guinea_trade
+        }
+
+        provinces_to_highlight = {
+            area = cape_of_good_hope_area
+            OR = {
+                NOT = { owned_by = ROOT }
+                NOT = { is_core = ROOT }
+            }
+        }
+
+        trigger = {
+            cape_of_good_hope_area = {
+                owned_by = ROOT
+                is_core = ROOT
+            }
+        }
+
+        effect = {
+            quelimane_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+
+            sakalava_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+
+            betsimasaraka_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+
+            madagascar_highlands_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+
+            southern_madagascar = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+
+    bri_western_indian_ocean = {
+        icon = mission_indian_ocean_supremacy
+        position = 7
+
+        required_missions = {
+            bri_round_the_cape
+        }
+
+        trigger = {
+            calc_true_if = {
+                amount = 5
+
+                all_owned_province = {
+                    OR = {
+                        area = quelimane_area
+                        area = sakalava_area
+                        area = betsimasaraka_area
+                        area = madagascar_highlands_area
+                        area = southern_madagascar
+                    }
+                }
+            }
+        }
+
+        effect = {
+            1201 = {
+                if = {
+                    limit = {
+                        NOT = { is_core = ROOT }
+                        NOT = { is_permanent_claim = ROOT }
+                    }
+                    add_permanent_claim = ROOT
+                }
+            }
+
+            lanka_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+
+            south_lanka_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+
+    bri_conquer_ceylon = {
+        icon = seize_ceylon
+        position = 8
+
+        required_missions = {
+            bri_western_indian_ocean
+        }
+
+        provinces_to_highlight = {
+            OR = {
+                area = lanka_area
+                area = south_lanka_area
+            }
+            NOT = { owned_by = ROOT }
+        }
+
+        trigger = {
+            lanka_area = {
+                type = all
+                owned_by = ROOT
+            }
+
+            south_lanka_area = {
+                type = all
+                owned_by = ROOT
+            }
+        }
+
+        effect = {
+            west_bengal_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+
+            east_bengal_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+
+            malacca_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+
+            malaya_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+
+            johor_area = {
+                limit = {
+                    NOT = { is_core = ROOT }
+                    NOT = { is_permanent_claim = ROOT }
+                }
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+
+    bri_spice_trade = {
+        icon = mam_harness_spice_trade
+        position = 9
+
+        required_missions = {
+            bri_conquer_ceylon
+        }
+
+        trigger = {
+            num_of_owned_provinces_with = {
+                value = 8
+
+                OR = {
+                    trade_goods = spices
+                    trade_goods = cloves
+                }
+            }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = bri_spice_trade_modifier
+                duration = -1
+            }
+        }
+    }
+
+    bri_the_breton_nobility = {
+        icon = mission_noble_council
+        position = 11
+
+        required_missions = {
+            bri_the_breton_estates
+        }
+
+        trigger = {
+            estate_influence = {
+                estate = estate_nobles
+                influence = 50
+            }
+
+            if = {
+                limit = {
+                    has_estate = estate_nobles
+                }
+
+                num_of_estate_agendas_completed = {
+                    estate = estate_nobles
+                    value = 3
+                }
+            }
+            else = {
+                NOT = {
+                    has_estate = estate_nobles
+                }
+            }
+        }
+
+        effect = {
+            change_government_reform_progress = 50
+
+            add_country_modifier = {
+                name = bri_noble_military_support
+                duration = 5475
+            }
+        }
+    }
+}
+
+bri_diplomacy_french = {
+    slot = 1
+    generic = no
+    ai = yes
+
+    potential = {
+        tag = BRI
+        NOT = { map_setup = map_setup_random }
+        has_country_flag = bri_french_sphere_path
+        NOT = { has_country_flag = bri_autonomous_path }
+    }
+
+    has_country_shield = yes
+
+    bri_franco_breton_friendship = {
+        icon = friends_in_high_places
+        position = 11
+
+        required_missions = {
+            bri_question_of_france
+        }
+
+        provinces_to_highlight = {
+            is_capital = yes
+            owner = {
+                tag = FRA
+            }
+        }
+
+        trigger = {
+            bri_diplomacy_preview_trigger = yes
+
+            FRA = {
+                alliance_with = ROOT
+
+                has_opinion = {
+                    who = ROOT
+                    value = 150
+                }
+            }
+        }
+
+        effect = {
+            tooltip = {
+                FRA = {
+                    add_historical_friend = ROOT
+                }
+
+                add_historical_friend = FRA
+            }
+
+            hidden_effect = {
+                FRA = {
+                    add_historical_friend = ROOT
+                }
+
+                add_historical_friend = FRA
+            }
+        }
+    }
+
+    bri_franco_breton_commercial_pact = {
+        icon = mam_mercantile_relationship
+        position = 12
+
+        required_missions = {
+            bri_franco_breton_friendship
+        }
+
+        provinces_to_highlight = {
+            province_id = 1276
+        }
+
+        trigger = {
+            bri_diplomacy_preview_trigger = yes
+
+            FRA = {
+                OR = {
+                    alliance_with = ROOT
+                    is_subject_of = ROOT
+                }
+            }
+
+            1276 = {
+                trade_node_value = 25
+
+                trade_share = {
+                    country = ROOT
+                    share = 50
+                }
+            }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = bri_franco_breton_commercial_pact
+                duration = -1
+            }
+
+            FRA = {
+                add_country_modifier = {
+                    name = bri_breton_access_to_overseas_trade
+                    duration = -1
+                }
+            }
+        }
+    }
+
+    bri_franco_breton_entente = {
+        icon = mission_alliances
+        position = 13
+
+        required_missions = {
+            bri_franco_breton_commercial_pact
+        }
+
+        provinces_to_highlight = {
+            is_capital = yes
+            owned_by = ROOT
+        }
+
+        trigger = {
+            bri_diplomacy_preview_trigger = yes
+
+            is_great_power = yes
+
+            OR = {
+                FRA = {
+                    is_great_power = yes
+                    alliance_with = ROOT
+                }
+
+                FRA = {
+                    is_subject_of = ROOT
+                }
+            }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = bri_franco_breton_entente
+                duration = -1
+            }
+
+            FRA = {
+                add_country_modifier = {
+                    name = bri_french_breton_naval_cooperation
+                    duration = -1
+                }
+            }
+        }
+    }
+}
+
+bri_diplomacy_autonomous = {
+    slot = 1
+    generic = no
+    ai = yes
+
+    potential = {
+        tag = BRI
+        NOT = { map_setup = map_setup_random }
+        has_country_flag = bri_autonomous_path
+        NOT = { has_country_flag = bri_french_sphere_path }
+    }
+
+    has_country_shield = yes
+
+    bri_secure_the_borders = {
+        icon = friends_in_high_places
+        position = 11
+
+        required_missions = {
+            bri_question_of_france
+        }
+
+        trigger = {
+            bri_diplomacy_preview_trigger = yes
+
+            num_of_allies = 2
+
+            any_ally = {
+                army_strength = {
+                    who = ROOT
+                    value = 1.5
+                }
+            }         
+        }
+
+        effect = {
+            bri_secure_borders_reward_effect = yes
+        }
+    }
+
+    bri_balance_of_power = {
+        icon = the_balance_of_power
+        position = 12
+
+        required_missions = {
+            bri_secure_the_borders
+        }
+
+        trigger = {
+            bri_diplomacy_preview_trigger = yes
+
+            is_great_power = yes
+
+            any_rival_country = {
+                is_great_power = yes
+            }
+
+            any_ally = {
+                is_great_power = yes
+            }
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = bri_breton_statecraft
+                duration = -1
+            }
+        }
+    }
+
+    bri_military_self_reliance = {
+        icon = military_self_reliance
+        position = 13
+
+        required_missions = {
+            bri_balance_of_power
+        }
+
+        provinces_to_highlight = {
+            is_capital = yes
+            owner = {
+                is_neighbor_of = ROOT
+                army_size = ROOT
+            }
+        }
+
+        trigger = {
+            bri_diplomacy_preview_trigger = yes
+
+            is_subject = no
+
+            all_neighbor_country = {
+                NOT = {
+                    army_size = ROOT
+                }
+            }
+        }
+
+        effect = {
+            add_mil_power = 100
+
+            add_permanent_power_projection = {
+                type = bri_self_reliance_power_projection
+                amount = 10
+            }
+        }
+    }
+}

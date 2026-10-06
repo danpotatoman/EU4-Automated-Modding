@@ -1,0 +1,7 @@
+# Country scope: preview missions unlock only after committing to a branch.
+bri_diplomacy_preview_trigger = {
+    custom_trigger_tooltip = {
+        tooltip = bri_diplomacy_preview_trigger
+        NOT = { has_country_flag = bri_diplomacy_preview }
+    }
+}

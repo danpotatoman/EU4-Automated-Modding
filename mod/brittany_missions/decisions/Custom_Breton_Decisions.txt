@@ -1,0 +1,31 @@
+country_decisions = {
+    bri_review_diplomatic_path = {
+        major = yes
+
+        potential = {
+            has_country_flag = bri_diplomacy_preview
+
+            OR = {
+                has_country_flag = bri_french_sphere_path
+                has_country_flag = bri_autonomous_path
+            }
+        }
+
+        provinces_to_highlight = {
+        }
+
+        allow = {
+            always = yes
+        }
+
+        effect = {
+            country_event = {
+                id = bri_missions.1
+            }
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+}

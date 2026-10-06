@@ -1,0 +1,30 @@
+{
+    "atUtc":  "2026-10-04T00:35:17.4226917Z",
+    "remainingCount":  0,
+    "remaining":  [
+
+                  ],
+    "harnessRemainingCount":  0,
+    "harnessRemaining":  [
+
+                         ],
+    "recordedHarnessOwner":  {
+                                 "pid":  19192,
+                                 "parentPid":  19548,
+                                 "created":  "2026-10-04T00:31:19.6284230Z",
+                                 "name":  "node.exe",
+                                 "executable":  "X:\\developer-home\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+                                 "command":  "\"X:\\developer-home\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe\" X:\\eu4-research\\tools\\runtime-tests\\run.mjs --test all --timeout 150 --retries 1 --progress-timeout 15 --exercise-freeze-first",
+                                 "windowTitle":  ""
+                             },
+    "recordedHarnessOwnerStillPresent":  false,
+    "lockExists":  false,
+    "collectorActive":  false,
+    "steam":  [
+                  {
+                      "pid":  43684,
+                      "created":  "2026-10-03T18:59:55.3349540Z",
+                      "executable":  "C:\\Program Files (x86)\\Steam\\steam.exe"
+                  }
+              ]
+}

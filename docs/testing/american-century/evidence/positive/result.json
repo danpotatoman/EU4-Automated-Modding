@@ -1,0 +1,1500 @@
+{
+  "test": "usa-slice",
+  "nonce": "470def8e14de1db9",
+  "status": "pass",
+  "behavioralPass": true,
+  "directory": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T105823451Z_470def8e14de1db9",
+  "installedVersion": "EU4 v1.37.5.0 Inca (491d)",
+  "versionSource": "installed launcher-settings.json; running version must also be checked in logs",
+  "launcherConfiguration": {
+    "enabled_mods": [
+      "mod/brittany_missions_dev.mod"
+    ],
+    "disabled_dlcs": []
+  },
+  "dlcs": [
+    "Conquest of Paradise",
+    "Cradle of Civilization",
+    "Dharma",
+    "Domination",
+    "El Dorado",
+    "Emperor",
+    "Golden Century",
+    "King of Kings",
+    "Leviathan",
+    "Lions of the North",
+    "Mandate of Heaven",
+    "Mare Nostrum",
+    "Res Publica",
+    "Rule Britannia",
+    "The Cossacks",
+    "Third Rome",
+    "Wealth of Nations",
+    "Winds of Change"
+  ],
+  "stagedManifest": [
+    {
+      "path": "common/event_modifiers/AMC_modifiers.txt",
+      "sha256": "08f9d4ca8f2b0534b17d9f85eeee3fc64ee9bef20aa425d2488ce492464b4871"
+    },
+    {
+      "path": "common/on_actions/zz_runtime_test.txt",
+      "sha256": "5c83df083355f52f1ce3d4206712bb6c6fe23714aaf71a4094ae4bf2ecb6b70f"
+    },
+    {
+      "path": "common/scripted_effects/eu4usa_wrappers.txt",
+      "sha256": "415472d20906f84cff8088992d5c20767134b019dc01b137b9dba97a15711979"
+    },
+    {
+      "path": "common/scripted_triggers/AMC_triggers.txt",
+      "sha256": "8ba72aeeda903ee25efff63fcc5021405422c2a746b7559b307fea989cdf33f3"
+    },
+    {
+      "path": "decisions/AMC_atlantic.txt",
+      "sha256": "afbbd026cfaa5c0d40bf91386666541d781595f05a5d8ad4fd18ccdf4d38bbe7"
+    },
+    {
+      "path": "decisions/zz_eu4usa_observe.txt",
+      "sha256": "52f36fafe3c3edd99d99457ab0f586ddae97a06fc55a2151e4f8d62f5185ba5f"
+    },
+    {
+      "path": "descriptor.mod",
+      "sha256": "57080a3949420e3338f2b729ad84789eab97bdb9640fe6eb0bdd56eb8a442b39"
+    },
+    {
+      "path": "events/AMC_constitution.txt",
+      "sha256": "e8b5c9eb70bc89ac9b168f6172aa2b35382c1520b6058395472f0d4526f9525c"
+    },
+    {
+      "path": "history/countries/ENG - England.txt",
+      "sha256": "70392efe385983fb1b19d32013c9f87fd7560d63c8209a3169e382c87f632db6"
+    },
+    {
+      "path": "history/provinces/950 - Powhatan.txt",
+      "sha256": "600dab4174703e293e660c4563554c2c05389d4ea79a3c6cdbdf094cee739193"
+    },
+    {
+      "path": "history/provinces/952 - Powhatan.txt",
+      "sha256": "600dab4174703e293e660c4563554c2c05389d4ea79a3c6cdbdf094cee739193"
+    },
+    {
+      "path": "history/provinces/953 - Conoy.txt",
+      "sha256": "600dab4174703e293e660c4563554c2c05389d4ea79a3c6cdbdf094cee739193"
+    },
+    {
+      "path": "history/provinces/956 - Lenape.txt",
+      "sha256": "600dab4174703e293e660c4563554c2c05389d4ea79a3c6cdbdf094cee739193"
+    },
+    {
+      "path": "history/provinces/957 - Delaware.txt",
+      "sha256": "600dab4174703e293e660c4563554c2c05389d4ea79a3c6cdbdf094cee739193"
+    },
+    {
+      "path": "history/provinces/962 - Unami.txt",
+      "sha256": "600dab4174703e293e660c4563554c2c05389d4ea79a3c6cdbdf094cee739193"
+    },
+    {
+      "path": "history/provinces/965 - Manhattan.txt",
+      "sha256": "600dab4174703e293e660c4563554c2c05389d4ea79a3c6cdbdf094cee739193"
+    },
+    {
+      "path": "history/provinces/966 - Nipmuc.txt",
+      "sha256": "600dab4174703e293e660c4563554c2c05389d4ea79a3c6cdbdf094cee739193"
+    },
+    {
+      "path": "history/provinces/967 - Narraganset.txt",
+      "sha256": "600dab4174703e293e660c4563554c2c05389d4ea79a3c6cdbdf094cee739193"
+    },
+    {
+      "path": "history/provinces/968 - Massachusetts.txt",
+      "sha256": "600dab4174703e293e660c4563554c2c05389d4ea79a3c6cdbdf094cee739193"
+    },
+    {
+      "path": "localisation/english/amc_l_english.yml",
+      "sha256": "2479adf58bfa6f8aa779fd00fb30eb12fa2d595a146d7e2baa91853081c9c5a5"
+    },
+    {
+      "path": "localisation/english/eu4usa_test_l_english.yml",
+      "sha256": "d562fdd7744232fe079bfc7bc5d7edddef7ae88cc0b1f0f6c7b2bcc8b6cba783"
+    },
+    {
+      "path": "missions/AMC_colonial_origins.txt",
+      "sha256": "c5ff9be0fe54bba2b5a297d0add4ea9ee1e0bc72342c405e1a4c2c3267aa1ba3"
+    },
+    {
+      "path": "missions/AMC_USA_Missions.txt",
+      "sha256": "c26da370ec8f96f9b8c1f1ef2c66cdd3389d6f004ca8bffa3240e1ad8fb69d98"
+    },
+    {
+      "path": "missions/USA_Missions.txt",
+      "sha256": "43907a1ab99f9e22bef8c8b3df50473e52d94e7588a1e6552d42c6b0dd091e69"
+    }
+  ],
+  "launchArgs": [
+    "-debug",
+    "-userdir=X:/eu4-research/tools/runtime-tests/work/20261004T105823451Z_470def8e14de1db9/profile/",
+    "-start_tag=ENG",
+    "-auto_run=eu4rt_run.commands"
+  ],
+  "staticValidation": {
+    "production": {
+      "exitCode": 0,
+      "report": "X:\\eu4-research\\tools\\cwtools\\reports\\american_century\\latest.json"
+    },
+    "staged": {
+      "exitCode": 0,
+      "report": "X:\\eu4-research\\tools\\cwtools\\reports\\american_runtime\\latest.json"
+    }
+  },
+  "wiring": {
+    "passed": true,
+    "layer": "WIRING",
+    "findings": [],
+    "adapters": [],
+    "scope": "USA CWTools/layout; native tree membership checked independently"
+  },
+  "inlineBaseline": false,
+  "negativeControl": false,
+  "nativeFiles": [
+    {
+      "file": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T105823451Z_470def8e14de1db9\\profile\\eu4usa_setup.txt",
+      "sha256": "77f05e9cdc66a5a7a8d0cbbe74e6dd0052b599361b3437c7bd897e354840843c"
+    },
+    {
+      "file": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T105823451Z_470def8e14de1db9\\profile\\eu4rt_run.commands",
+      "sha256": "a7f1ec6a98d2cbd83ebd614c6aaa792c74593907a0a767cbbc6b09735cc68545"
+    }
+  ],
+  "missionClaim": {
+    "files": [
+      "eu4usa_setup.txt",
+      "eu4rt_run.commands"
+    ],
+    "geometry": {
+      "mission": "amc_liberty_at_last",
+      "series": "amc_state",
+      "slot": 3,
+      "row": 1,
+      "origin": [
+        0,
+        140
+      ],
+      "list": [
+        10,
+        122
+      ],
+      "cell": [
+        104,
+        152
+      ],
+      "scale": 1,
+      "scroll": 0,
+      "point": {
+        "x": 270,
+        "y": 312
+      },
+      "assumptions": "1280x720 client, UI scale 1, initial tree scroll; verify screenshot before input"
+    },
+    "geometries": {
+      "amc_liberty_at_last": {
+        "mission": "amc_liberty_at_last",
+        "series": "amc_state",
+        "slot": 3,
+        "row": 1,
+        "origin": [
+          0,
+          140
+        ],
+        "list": [
+          10,
+          122
+        ],
+        "cell": [
+          104,
+          152
+        ],
+        "scale": 1,
+        "scroll": 0,
+        "point": {
+          "x": 270,
+          "y": 312
+        },
+        "assumptions": "1280x720 client, UI scale 1, initial tree scroll; verify screenshot before input"
+      },
+      "amc_federal_compact": {
+        "mission": "amc_federal_compact",
+        "series": "amc_state",
+        "slot": 3,
+        "row": 2,
+        "origin": [
+          0,
+          140
+        ],
+        "list": [
+          10,
+          122
+        ],
+        "cell": [
+          104,
+          152
+        ],
+        "scale": 1,
+        "scroll": 0,
+        "point": {
+          "x": 270,
+          "y": 464
+        },
+        "assumptions": "1280x720 client, UI scale 1, initial tree scroll; verify screenshot before input"
+      },
+      "amc_free_harbors": {
+        "mission": "amc_free_harbors",
+        "series": "amc_economy",
+        "slot": 4,
+        "row": 1,
+        "origin": [
+          0,
+          140
+        ],
+        "list": [
+          10,
+          122
+        ],
+        "cell": [
+          104,
+          152
+        ],
+        "scale": 1,
+        "scroll": 0,
+        "point": {
+          "x": 374,
+          "y": 312
+        },
+        "assumptions": "1280x720 client, UI scale 1, initial tree scroll; verify screenshot before input"
+      },
+      "amc_open_doors": {
+        "mission": "amc_open_doors",
+        "series": "amc_economy",
+        "slot": 4,
+        "row": 2,
+        "origin": [
+          0,
+          140
+        ],
+        "list": [
+          10,
+          122
+        ],
+        "cell": [
+          104,
+          152
+        ],
+        "scale": 1,
+        "scroll": 0,
+        "point": {
+          "x": 374,
+          "y": 464
+        },
+        "assumptions": "1280x720 client, UI scale 1, initial tree scroll; verify screenshot before input"
+      }
+    },
+    "mode": "click",
+    "driver": "Codex node_repl @oai/sky; actual vanilla formation decision and production mission buttons"
+  },
+  "recoveryPolicy": {
+    "retries": 0,
+    "maxAttempts": 1,
+    "timeoutSeconds": 1200,
+    "progressTimeoutSeconds": 1200
+  },
+  "caseDefinitions": [
+    {
+      "test": "usa-slice",
+      "nonce": "470def8e14de1db9",
+      "checks": [
+        "initial",
+        "dlc-1",
+        "dlc-2",
+        "dlc-3",
+        "dlc-4",
+        "dlc-5",
+        "dlc-6",
+        "dlc-7",
+        "dlc-8",
+        "dlc-9",
+        "dlc-10",
+        "dlc-11",
+        "dlc-12",
+        "dlc-13",
+        "dlc-14",
+        "dlc-15",
+        "dlc-16",
+        "dlc-17",
+        "dlc-18",
+        "fixture-capital",
+        "fixture-tech",
+        "fixture-owner-core",
+        "fixture-cities",
+        "fixture-market"
+      ]
+    }
+  ],
+  "automated": [
+    "isolated staging",
+    "CWTools",
+    "process launch",
+    "native startup hook (experimental)",
+    "log assertions",
+    "bounded owned-process cleanup",
+    "native auto_run console batch",
+    "plain run-file fixtures/assertions",
+    "owned UI identity handoff to Codex input adapter"
+  ],
+  "manual": [],
+  "behavioralScope": "Vanilla USA decision UI, four actual production mission buttons, constitutional choice and independent native saves",
+  "missionCompletionPass": true,
+  "preflightCleanup": {
+    "actions": [],
+    "remaining": [],
+    "clean": true,
+    "known": [
+      {
+        "pid": 25264,
+        "parentPid": 52764,
+        "created": "2026-10-04T00:03:48.7979520Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000259304Z_6cf755dc681f1c08/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands"
+      },
+      {
+        "pid": 31684,
+        "parentPid": 37820,
+        "created": "2026-10-04T00:06:36.6230870Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000537249Z_df0709546354b7ba/attempts/2/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands"
+      },
+      {
+        "pid": 35460,
+        "parentPid": 34172,
+        "created": "2026-10-04T00:08:33.3352700Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000741056Z_7fa89d6ec1683acb/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowTitle": ""
+      },
+      {
+        "pid": 32380,
+        "parentPid": 35460,
+        "created": "2026-10-04T00:09:11.9371230Z",
+        "name": "CrashReporter.exe",
+        "executable": "X:\\eu4-game\\crash_reporter\\binaries\\CrashReporter.exe",
+        "command": "CrashReporter.exe \"--crashdir=X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T000741056Z_7fa89d6ec1683acb\\attempts\\1\\profile\\crashes\\eu4_20261003_170911\" \"--uploadurl=http://crashdump.paradox.private/upload\"",
+        "windowTitle": "Paradox Crash Reporter"
+      },
+      {
+        "pid": 59116,
+        "parentPid": 34172,
+        "created": "2026-10-04T00:09:18.9723390Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000741056Z_7fa89d6ec1683acb/attempts/2/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowTitle": ""
+      },
+      {
+        "pid": 57288,
+        "parentPid": 22628,
+        "created": "2026-10-04T00:12:29.8618240Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T001132193Z_c96414309bb54aec/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowTitle": ""
+      },
+      {
+        "pid": 30308,
+        "parentPid": 19192,
+        "created": "2026-10-04T00:32:17.2378870Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T003119682Z_c80185f6448b063e/attempts/1/profile/ -start_tag=BRI",
+        "windowTitle": ""
+      },
+      {
+        "pid": 4136,
+        "parentPid": 19192,
+        "created": "2026-10-04T00:33:19.3702750Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T003119682Z_c80185f6448b063e/attempts/2/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowTitle": ""
+      },
+      {
+        "pid": 17520,
+        "parentPid": 4280,
+        "created": "2026-10-04T00:36:15.1909400Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T003517867Z_63d3faf7c6cafb65/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowTitle": ""
+      },
+      {
+        "pid": 6188,
+        "parentPid": 55440,
+        "created": "2026-10-04T00:56:36.6664150Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T005543217Z_ef908fa85a2caf26/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      },
+      {
+        "pid": 57188,
+        "parentPid": 24196,
+        "created": "2026-10-04T01:05:47.4657990Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T010451698Z_85626f6a0f420f02/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      },
+      {
+        "pid": 11828,
+        "parentPid": 45196,
+        "created": "2026-10-04T01:09:42.5149880Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T010845845Z_e519856e4e96568a/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      },
+      {
+        "pid": 58144,
+        "parentPid": 56488,
+        "created": "2026-10-04T01:13:24.0101990Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T011228023Z_a47d1ae562c92866/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      },
+      {
+        "pid": 20340,
+        "parentPid": 15144,
+        "created": "2026-10-04T01:16:46.1372980Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T011550258Z_98f8471643f5e70e/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      },
+      {
+        "pid": 23224,
+        "parentPid": 43744,
+        "created": "2026-10-04T01:19:00.0348520Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T011804227Z_1b769f9bb0df6959/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      },
+      {
+        "pid": 57056,
+        "parentPid": 38604,
+        "created": "2026-10-04T01:24:43.2298870Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T012346136Z_da1fcc49d001d89a/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      },
+      {
+        "pid": 34620,
+        "parentPid": 50412,
+        "created": "2026-10-04T01:30:41.2954170Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T012949504Z_e890bd4b714c6b1c/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      },
+      {
+        "pid": 20224,
+        "parentPid": 54808,
+        "created": "2026-10-04T09:53:02.1116500Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T095210501Z_8ee4f9ee6157336d/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      },
+      {
+        "pid": 20244,
+        "parentPid": 33068,
+        "created": "2026-10-04T09:56:12.1356390Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T095518538Z_374e2e954e2e2191/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      },
+      {
+        "pid": 29580,
+        "parentPid": 8924,
+        "created": "2026-10-04T09:58:41.8763520Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T095749596Z_575194276d5acde7/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      },
+      {
+        "pid": 39212,
+        "parentPid": 34428,
+        "created": "2026-10-04T10:11:23.9218790Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T101031474Z_02406d186b9637f5/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      },
+      {
+        "pid": 14848,
+        "parentPid": 45124,
+        "created": "2026-10-04T10:21:11.4371960Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T102018057Z_f1f1909e0668e5f9/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      },
+      {
+        "pid": 31980,
+        "parentPid": 41228,
+        "created": "2026-10-04T10:23:59.4444500Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T102307198Z_deb0be57891b80c7/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      },
+      {
+        "pid": 55196,
+        "parentPid": 42648,
+        "created": "2026-10-04T10:35:44.1413040Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T103451880Z_ce15f7aef9146597/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      },
+      {
+        "pid": 23824,
+        "parentPid": 9272,
+        "created": "2026-10-04T10:47:29.3281120Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T104636760Z_cfb47953914b4f81/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      }
+    ]
+  },
+  "activeAttempt": {
+    "number": 1,
+    "pid": 32120,
+    "profile": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T105823451Z_470def8e14de1db9\\attempts\\1\\profile"
+  },
+  "nativeProbeVerified": true,
+  "caseResults": [
+    {
+      "test": "usa-slice",
+      "nonce": "470def8e14de1db9",
+      "markers": [
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 BEGIN usa-slice",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK initial",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-1",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-2",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-3",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-4",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-5",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-6",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-7",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-8",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-9",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-10",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-11",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-12",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-13",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-14",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-15",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-16",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-17",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-18",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK fixture-capital",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK fixture-tech",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK fixture-owner-core",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK fixture-cities",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK fixture-market",
+        "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 UI_READY usa-slice"
+      ],
+      "expectedMarkers": [
+        "BEGIN usa-slice",
+        "OK initial",
+        "OK dlc-1",
+        "OK dlc-2",
+        "OK dlc-3",
+        "OK dlc-4",
+        "OK dlc-5",
+        "OK dlc-6",
+        "OK dlc-7",
+        "OK dlc-8",
+        "OK dlc-9",
+        "OK dlc-10",
+        "OK dlc-11",
+        "OK dlc-12",
+        "OK dlc-13",
+        "OK dlc-14",
+        "OK dlc-15",
+        "OK dlc-16",
+        "OK dlc-17",
+        "OK dlc-18",
+        "OK fixture-capital",
+        "OK fixture-tech",
+        "OK fixture-owner-core",
+        "OK fixture-cities",
+        "OK fixture-market",
+        "UI_READY usa-slice"
+      ],
+      "assertionFailures": [],
+      "missingOrDuplicateChecks": [],
+      "runningVersion": "EU4 v1.37.5.0 Inca",
+      "dateMatches": true,
+      "versionMatches": true,
+      "transcriptPass": true,
+      "mode": "click",
+      "wiringPass": true,
+      "status": "pass"
+    }
+  ],
+  "collectorRun": {
+    "id": "20261004T105918099Z_d751b0",
+    "directory": "X:\\eu4-research\\tools\\test-runs\\reports\\american_runtime\\20261004T105918099Z_d751b0",
+    "status": "running"
+  },
+  "pid": 32120,
+  "startedAtUtc": "2026-10-04T10:59:15.994Z",
+  "lifecycleReason": "complete",
+  "markers": [
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 BEGIN usa-slice",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK initial",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-1",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-2",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-3",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-4",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-5",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-6",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-7",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-8",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-9",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-10",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-11",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-12",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-13",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-14",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-15",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-16",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-17",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-18",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK fixture-capital",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK fixture-tech",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK fixture-owner-core",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK fixture-cities",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK fixture-market",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 UI_READY usa-slice"
+  ],
+  "expectedMarkers": [
+    "BEGIN usa-slice",
+    "OK initial",
+    "OK dlc-1",
+    "OK dlc-2",
+    "OK dlc-3",
+    "OK dlc-4",
+    "OK dlc-5",
+    "OK dlc-6",
+    "OK dlc-7",
+    "OK dlc-8",
+    "OK dlc-9",
+    "OK dlc-10",
+    "OK dlc-11",
+    "OK dlc-12",
+    "OK dlc-13",
+    "OK dlc-14",
+    "OK dlc-15",
+    "OK dlc-16",
+    "OK dlc-17",
+    "OK dlc-18",
+    "OK fixture-capital",
+    "OK fixture-tech",
+    "OK fixture-owner-core",
+    "OK fixture-cities",
+    "OK fixture-market",
+    "UI_READY usa-slice"
+  ],
+  "assertionFailures": [],
+  "missingOrDuplicateChecks": [],
+  "runningVersion": "EU4 v1.37.5.0 Inca",
+  "dateMatches": true,
+  "versionMatches": true,
+  "transcriptPass": true,
+  "mode": "click",
+  "wiringPass": true,
+  "relevantScriptErrors": [],
+  "stagedChanges": [],
+  "nativeFileChanges": [],
+  "uiEvidence": {
+    "nonce": "470def8e14de1db9",
+    "readyInspected": true,
+    "downstreamReadyInspected": true,
+    "rewardDialogInspected": true,
+    "constitutionInspected": true,
+    "formationInspected": true,
+    "reloadInspected": true
+  },
+  "savedState": {
+    "passed": true,
+    "checks": [
+      {
+        "label": "same uninterrupted native campaign",
+        "passed": true
+      },
+      {
+        "label": "American culture and USA selection",
+        "passed": true
+      },
+      {
+        "label": "all production slice missions incomplete before claims",
+        "passed": true
+      },
+      {
+        "label": "no USA mission rewards before claims",
+        "passed": true
+      },
+      {
+        "label": "market fixture matches mode",
+        "passed": true
+      },
+      {
+        "label": "amc_liberty_at_last completion once",
+        "passed": true
+      },
+      {
+        "label": "amc_liberty_at_last real derived button input once",
+        "passed": true
+      },
+      {
+        "label": "amc_federal_compact completion once",
+        "passed": true
+      },
+      {
+        "label": "amc_federal_compact real derived button input once",
+        "passed": true
+      },
+      {
+        "label": "amc_free_harbors completion once",
+        "passed": true
+      },
+      {
+        "label": "amc_free_harbors real derived button input once",
+        "passed": true
+      },
+      {
+        "label": "amc_open_doors completion once",
+        "passed": true
+      },
+      {
+        "label": "amc_open_doors real derived button input once",
+        "passed": true
+      },
+      {
+        "label": "only expected USA missions completed",
+        "passed": true
+      },
+      {
+        "label": "amc_liberty_modifier once/exact expiry",
+        "passed": true
+      },
+      {
+        "label": "amc_enumerated_powers once/exact expiry",
+        "passed": true
+      },
+      {
+        "label": "amc_open_doors_modifier once/exact expiry",
+        "passed": true
+      },
+      {
+        "label": "permanent named harbor reward once",
+        "passed": true
+      },
+      {
+        "label": "exact harbor DIP delta",
+        "passed": true
+      },
+      {
+        "label": "exact liberty prestige delta",
+        "passed": true
+      },
+      {
+        "label": "exact immigration manpower delta",
+        "passed": true
+      },
+      {
+        "label": "exclusive constitution flags",
+        "passed": true
+      },
+      {
+        "label": "base republic government and reform",
+        "passed": true
+      },
+      {
+        "label": "native governing_capacity_modifier delta 0.1",
+        "passed": true
+      },
+      {
+        "label": "native state_maintenance_modifier delta -0.1",
+        "passed": true
+      },
+      {
+        "label": "native development_cost delta -0.1",
+        "passed": true
+      },
+      {
+        "label": "native global_colonial_growth delta 25",
+        "passed": true
+      },
+      {
+        "label": "native local trade power delta 0.15",
+        "passed": true
+      },
+      {
+        "label": "unrelated rewards absent",
+        "passed": true
+      },
+      {
+        "label": "readiness, choices and dialogs inspected",
+        "passed": true
+      },
+      {
+        "label": "actual formation decision inspected",
+        "passed": true
+      }
+    ],
+    "completionRecorded": true,
+    "before": {
+      "file": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T105823451Z_470def8e14de1db9\\attempts\\1\\before.eu4",
+      "sha256": "284117ad73b962f0e51b3ff58fb5b5aa215878dbf8944f101d3524d4f5c382db",
+      "campaignId": "4c01c9e4-52d2-420a-b486-b34c2a2632e3",
+      "tag": "USA",
+      "completed": [],
+      "modifiers": [
+        {
+          "name": "centralization_modifier",
+          "date": "1464.11.11"
+        }
+      ],
+      "provinces": {
+        "950": {
+          "owner": "USA"
+        },
+        "952": {
+          "owner": "USA"
+        },
+        "953": {
+          "owner": "USA"
+        },
+        "956": {
+          "owner": "USA"
+        },
+        "957": {
+          "owner": "USA"
+        },
+        "962": {
+          "owner": "USA"
+        },
+        "965": {
+          "owner": "USA"
+        },
+        "966": {
+          "owner": "USA"
+        },
+        "967": {
+          "owner": "USA"
+        },
+        "968": {
+          "owner": "USA"
+        }
+      },
+      "culture": "american",
+      "prestige": 33.947,
+      "dip": 70,
+      "government": "monarchy",
+      "reforms": [
+        "monarchy_mechanic",
+        "english_monarchy"
+      ],
+      "flags": [
+        "became_great_power_flag",
+        "eu4usa_started",
+        "was_not_former_colonial_nation",
+        "old_world_to_new_world_flag",
+        "no_colonial_nations",
+        "changed_from_colonial_nation"
+      ],
+      "variables": {
+        "eu4usa_development_cost": 0,
+        "eu4usa_global_colonial_growth": 0,
+        "eu4usa_governing_capacity_modifier": 0,
+        "eu4usa_state_maintenance_modifier": 0
+      },
+      "capitalManpower": 5,
+      "capitalVariables": {
+        "eu4usa_trade": 0.75
+      },
+      "capitalModifiers": [],
+      "buildings": [
+        "marketplace"
+      ]
+    },
+    "after": {
+      "file": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T105823451Z_470def8e14de1db9\\attempts\\1\\after.eu4",
+      "sha256": "bdeb7242470e35c3b8206465019bd8d92a5853e25ae3458919403fa17ddbd3b5",
+      "campaignId": "4c01c9e4-52d2-420a-b486-b34c2a2632e3",
+      "tag": "USA",
+      "completed": [
+        "amc_federal_compact",
+        "amc_free_harbors",
+        "amc_liberty_at_last",
+        "amc_open_doors"
+      ],
+      "modifiers": [
+        {
+          "name": "centralization_modifier",
+          "date": "1464.11.11"
+        },
+        {
+          "name": "amc_liberty_modifier",
+          "date": "1464.11.11"
+        },
+        {
+          "name": "amc_enumerated_powers",
+          "date": "-1.1.1"
+        },
+        {
+          "name": "amc_open_doors_modifier",
+          "date": "1464.11.11"
+        }
+      ],
+      "provinces": {
+        "950": {
+          "owner": "USA"
+        },
+        "952": {
+          "owner": "USA"
+        },
+        "953": {
+          "owner": "USA"
+        },
+        "956": {
+          "owner": "USA"
+        },
+        "957": {
+          "owner": "USA"
+        },
+        "962": {
+          "owner": "USA"
+        },
+        "965": {
+          "owner": "USA"
+        },
+        "966": {
+          "owner": "USA"
+        },
+        "967": {
+          "owner": "USA"
+        },
+        "968": {
+          "owner": "USA"
+        }
+      },
+      "culture": "american",
+      "prestige": 53.947,
+      "dip": 120,
+      "government": "republic",
+      "reforms": [
+        "republic_mechanic",
+        "oligarchy_reform"
+      ],
+      "flags": [
+        "became_great_power_flag",
+        "eu4usa_started",
+        "was_not_former_colonial_nation",
+        "old_world_to_new_world_flag",
+        "no_colonial_nations",
+        "changed_from_colonial_nation",
+        "amc_enumerated_powers_chosen"
+      ],
+      "variables": {
+        "eu4usa_development_cost": -0.1,
+        "eu4usa_global_colonial_growth": 25,
+        "eu4usa_governing_capacity_modifier": 0.1,
+        "eu4usa_state_maintenance_modifier": -0.1
+      },
+      "capitalManpower": 7,
+      "capitalVariables": {
+        "eu4usa_trade": 0.9
+      },
+      "capitalModifiers": [
+        {
+          "name": "amc_free_harbor",
+          "date": "-1.1.1"
+        }
+      ],
+      "buildings": [
+        "marketplace"
+      ]
+    }
+  },
+  "processExitCodeBeforeCleanup": null,
+  "logCapture": {
+    "id": "20261004T105918099Z_d751b0",
+    "report": "X:\\eu4-research\\tools\\test-runs\\reports\\american_runtime\\20261004T105918099Z_d751b0\\report.txt",
+    "outcome": "passed",
+    "newErrorMessages": 91,
+    "changedLogs": 25
+  },
+  "cleanup": {
+    "actions": [
+      {
+        "pid": 32120,
+        "created": "2026-10-04T10:59:18.1096390Z",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "action": "window-close"
+      }
+    ],
+    "remaining": [],
+    "clean": true,
+    "known": [
+      {
+        "pid": 32120,
+        "parentPid": 23432,
+        "created": "2026-10-04T10:59:18.1096390Z",
+        "name": "eu4.exe",
+        "executable": "X:\\eu4-game\\eu4.exe",
+        "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T105823451Z_470def8e14de1db9/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+        "windowHandle": 0,
+        "windowTitle": ""
+      }
+    ]
+  },
+  "crashes": [],
+  "attempts": [
+    {
+      "number": 1,
+      "directory": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T105823451Z_470def8e14de1db9\\attempts\\1",
+      "profile": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T105823451Z_470def8e14de1db9\\attempts\\1\\profile",
+      "launchCommand": [
+        "X:\\eu4-game\\eu4.exe",
+        "-debug",
+        "-userdir=X:/eu4-research/tools/runtime-tests/work/20261004T105823451Z_470def8e14de1db9/attempts/1/profile/",
+        "-start_tag=ENG",
+        "-auto_run=eu4rt_run.commands"
+      ],
+      "startedAtUtc": "2026-10-04T10:59:15.994Z",
+      "reason": "complete",
+      "recoverable": false,
+      "prelaunchCleanup": {
+        "actions": [],
+        "remaining": [],
+        "clean": true,
+        "known": [
+          {
+            "pid": 25264,
+            "parentPid": 52764,
+            "created": "2026-10-04T00:03:48.7979520Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000259304Z_6cf755dc681f1c08/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands"
+          },
+          {
+            "pid": 31684,
+            "parentPid": 37820,
+            "created": "2026-10-04T00:06:36.6230870Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000537249Z_df0709546354b7ba/attempts/2/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands"
+          },
+          {
+            "pid": 35460,
+            "parentPid": 34172,
+            "created": "2026-10-04T00:08:33.3352700Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000741056Z_7fa89d6ec1683acb/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowTitle": ""
+          },
+          {
+            "pid": 32380,
+            "parentPid": 35460,
+            "created": "2026-10-04T00:09:11.9371230Z",
+            "name": "CrashReporter.exe",
+            "executable": "X:\\eu4-game\\crash_reporter\\binaries\\CrashReporter.exe",
+            "command": "CrashReporter.exe \"--crashdir=X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T000741056Z_7fa89d6ec1683acb\\attempts\\1\\profile\\crashes\\eu4_20261003_170911\" \"--uploadurl=http://crashdump.paradox.private/upload\"",
+            "windowTitle": "Paradox Crash Reporter"
+          },
+          {
+            "pid": 59116,
+            "parentPid": 34172,
+            "created": "2026-10-04T00:09:18.9723390Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T000741056Z_7fa89d6ec1683acb/attempts/2/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowTitle": ""
+          },
+          {
+            "pid": 57288,
+            "parentPid": 22628,
+            "created": "2026-10-04T00:12:29.8618240Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T001132193Z_c96414309bb54aec/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowTitle": ""
+          },
+          {
+            "pid": 30308,
+            "parentPid": 19192,
+            "created": "2026-10-04T00:32:17.2378870Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T003119682Z_c80185f6448b063e/attempts/1/profile/ -start_tag=BRI",
+            "windowTitle": ""
+          },
+          {
+            "pid": 4136,
+            "parentPid": 19192,
+            "created": "2026-10-04T00:33:19.3702750Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T003119682Z_c80185f6448b063e/attempts/2/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowTitle": ""
+          },
+          {
+            "pid": 17520,
+            "parentPid": 4280,
+            "created": "2026-10-04T00:36:15.1909400Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T003517867Z_63d3faf7c6cafb65/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowTitle": ""
+          },
+          {
+            "pid": 6188,
+            "parentPid": 55440,
+            "created": "2026-10-04T00:56:36.6664150Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T005543217Z_ef908fa85a2caf26/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          },
+          {
+            "pid": 57188,
+            "parentPid": 24196,
+            "created": "2026-10-04T01:05:47.4657990Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T010451698Z_85626f6a0f420f02/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          },
+          {
+            "pid": 11828,
+            "parentPid": 45196,
+            "created": "2026-10-04T01:09:42.5149880Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T010845845Z_e519856e4e96568a/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          },
+          {
+            "pid": 58144,
+            "parentPid": 56488,
+            "created": "2026-10-04T01:13:24.0101990Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T011228023Z_a47d1ae562c92866/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          },
+          {
+            "pid": 20340,
+            "parentPid": 15144,
+            "created": "2026-10-04T01:16:46.1372980Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T011550258Z_98f8471643f5e70e/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          },
+          {
+            "pid": 23224,
+            "parentPid": 43744,
+            "created": "2026-10-04T01:19:00.0348520Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T011804227Z_1b769f9bb0df6959/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          },
+          {
+            "pid": 57056,
+            "parentPid": 38604,
+            "created": "2026-10-04T01:24:43.2298870Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T012346136Z_da1fcc49d001d89a/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          },
+          {
+            "pid": 34620,
+            "parentPid": 50412,
+            "created": "2026-10-04T01:30:41.2954170Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T012949504Z_e890bd4b714c6b1c/attempts/1/profile/ -start_tag=BRI -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          },
+          {
+            "pid": 20224,
+            "parentPid": 54808,
+            "created": "2026-10-04T09:53:02.1116500Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T095210501Z_8ee4f9ee6157336d/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          },
+          {
+            "pid": 20244,
+            "parentPid": 33068,
+            "created": "2026-10-04T09:56:12.1356390Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T095518538Z_374e2e954e2e2191/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          },
+          {
+            "pid": 29580,
+            "parentPid": 8924,
+            "created": "2026-10-04T09:58:41.8763520Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T095749596Z_575194276d5acde7/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          },
+          {
+            "pid": 39212,
+            "parentPid": 34428,
+            "created": "2026-10-04T10:11:23.9218790Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T101031474Z_02406d186b9637f5/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          },
+          {
+            "pid": 14848,
+            "parentPid": 45124,
+            "created": "2026-10-04T10:21:11.4371960Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T102018057Z_f1f1909e0668e5f9/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          },
+          {
+            "pid": 31980,
+            "parentPid": 41228,
+            "created": "2026-10-04T10:23:59.4444500Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T102307198Z_deb0be57891b80c7/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          },
+          {
+            "pid": 55196,
+            "parentPid": 42648,
+            "created": "2026-10-04T10:35:44.1413040Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T103451880Z_ce15f7aef9146597/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          },
+          {
+            "pid": 23824,
+            "parentPid": 9272,
+            "created": "2026-10-04T10:47:29.3281120Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T104636760Z_cfb47953914b4f81/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          }
+        ]
+      },
+      "collectorRun": {
+        "id": "20261004T105918099Z_d751b0",
+        "directory": "X:\\eu4-research\\tools\\test-runs\\reports\\american_runtime\\20261004T105918099Z_d751b0",
+        "status": "running"
+      },
+      "pid": 32120,
+      "elapsedMs": 589394,
+      "exitCode": null,
+      "signalCode": null,
+      "lastSignal": "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 UI_READY usa-slice",
+      "markerCount": 26,
+      "lastProgressElapsedMs": 44096,
+      "diagnosticsBeforeCleanup": {
+        "game.log": {
+          "bytes": 11114
+        },
+        "error.log": {
+          "bytes": 0
+        },
+        "system.log": {
+          "bytes": 9681
+        },
+        "setup_error.log": {
+          "bytes": 95725
+        }
+      },
+      "cleanup": {
+        "actions": [
+          {
+            "pid": 32120,
+            "created": "2026-10-04T10:59:18.1096390Z",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "action": "window-close"
+          }
+        ],
+        "remaining": [],
+        "clean": true,
+        "known": [
+          {
+            "pid": 32120,
+            "parentPid": 23432,
+            "created": "2026-10-04T10:59:18.1096390Z",
+            "name": "eu4.exe",
+            "executable": "X:\\eu4-game\\eu4.exe",
+            "command": "\"X:\\eu4-game\\eu4.exe\" -debug -userdir=X:/eu4-research/tools/runtime-tests/work/20261004T105823451Z_470def8e14de1db9/attempts/1/profile/ -start_tag=ENG -auto_run=eu4rt_run.commands",
+            "windowHandle": 0,
+            "windowTitle": ""
+          }
+        ]
+      },
+      "crashes": [],
+      "logCapture": {
+        "id": "20261004T105918099Z_d751b0",
+        "report": "X:\\eu4-research\\tools\\test-runs\\reports\\american_runtime\\20261004T105918099Z_d751b0\\report.txt",
+        "outcome": "passed",
+        "newErrorMessages": 91,
+        "changedLogs": 25
+      },
+      "finishedAtUtc": "2026-10-04T11:09:13.848Z",
+      "elapsedSeconds": 597.85,
+      "status": "pass",
+      "behavioralPass": true,
+      "caseResults": [
+        {
+          "test": "usa-slice",
+          "nonce": "470def8e14de1db9",
+          "markers": [
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 BEGIN usa-slice",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK initial",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-1",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-2",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-3",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-4",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-5",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-6",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-7",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-8",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-9",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-10",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-11",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-12",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-13",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-14",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-15",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-16",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-17",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK dlc-18",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK fixture-capital",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK fixture-tech",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK fixture-owner-core",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK fixture-cities",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 OK fixture-market",
+            "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT 470def8e14de1db9 UI_READY usa-slice"
+          ],
+          "expectedMarkers": [
+            "BEGIN usa-slice",
+            "OK initial",
+            "OK dlc-1",
+            "OK dlc-2",
+            "OK dlc-3",
+            "OK dlc-4",
+            "OK dlc-5",
+            "OK dlc-6",
+            "OK dlc-7",
+            "OK dlc-8",
+            "OK dlc-9",
+            "OK dlc-10",
+            "OK dlc-11",
+            "OK dlc-12",
+            "OK dlc-13",
+            "OK dlc-14",
+            "OK dlc-15",
+            "OK dlc-16",
+            "OK dlc-17",
+            "OK dlc-18",
+            "OK fixture-capital",
+            "OK fixture-tech",
+            "OK fixture-owner-core",
+            "OK fixture-cities",
+            "OK fixture-market",
+            "UI_READY usa-slice"
+          ],
+          "assertionFailures": [],
+          "missingOrDuplicateChecks": [],
+          "runningVersion": "EU4 v1.37.5.0 Inca",
+          "dateMatches": true,
+          "versionMatches": true,
+          "transcriptPass": true,
+          "mode": "click",
+          "wiringPass": true,
+          "status": "pass"
+        }
+      ],
+      "retryScheduled": false
+    }
+  ],
+  "retryExhausted": false,
+  "finishedAtUtc": "2026-10-04T11:09:13.857Z",
+  "elapsedSeconds": 650.41,
+  "nativeSeconds": 597.86,
+  "exitCode": 0
+}

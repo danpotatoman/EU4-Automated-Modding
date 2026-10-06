@@ -1,0 +1,13 @@
+{
+  "american_century": [
+    { "name": "United States", "tag": "USA", "mapSetup": "map_setup_normal", "flags": [] },
+    { "name": "England runway", "tag": "ENG", "mapSetup": "map_setup_normal", "flags": [] },
+    { "name": "British American colony (predicate review)", "tag": "C00", "mapSetup": "map_setup_normal", "flags": [] }
+  ],
+  "brittany_missions": [
+    { "name": "Initial Brittany", "tag": "BRI", "mapSetup": "map_setup_normal", "flags": [] },
+    { "name": "French diplomatic path", "tag": "BRI", "mapSetup": "map_setup_normal", "flags": ["bri_french_sphere_path"] },
+    { "name": "Autonomous diplomatic path", "tag": "BRI", "mapSetup": "map_setup_normal", "flags": ["bri_autonomous_path"] },
+    { "name": "Both path flags (invalid state check)", "diagnostic": true, "tag": "BRI", "mapSetup": "map_setup_normal", "flags": ["bri_french_sphere_path", "bri_autonomous_path"] }
+  ]
+}

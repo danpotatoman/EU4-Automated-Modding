@@ -1,0 +1,242 @@
+{
+  "test": "run-effects",
+  "nonce": "c3f5819eb3166689",
+  "status": "pass",
+  "behavioralPass": true,
+  "directory": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261003T204458592Z_c3f5819eb3166689",
+  "installedVersion": "EU4 v1.37.5.0 Inca (491d)",
+  "versionSource": "installed launcher-settings.json; running version must also be checked in logs",
+  "launcherConfiguration": {
+    "enabled_mods": [
+      "mod/brittany_missions_dev.mod"
+    ],
+    "disabled_dlcs": []
+  },
+  "dlcs": [
+    "Conquest of Paradise",
+    "Cradle of Civilization",
+    "Dharma",
+    "Domination",
+    "El Dorado",
+    "Emperor",
+    "Golden Century",
+    "King of Kings",
+    "Leviathan",
+    "Lions of the North",
+    "Mandate of Heaven",
+    "Mare Nostrum",
+    "Res Publica",
+    "Rule Britannia",
+    "The Cossacks",
+    "Third Rome",
+    "Wealth of Nations",
+    "Winds of Change"
+  ],
+  "stagedManifest": [
+    {
+      "path": "common/event_modifiers/BRI_mission_modifiers.txt",
+      "sha256": "3b8be834acc20de6490713efceaf4e0a84dca2132ec51bf221fc98545abf61fa"
+    },
+    {
+      "path": "common/government_reforms/BRI_government_reforms.txt",
+      "sha256": "3ab691c55eb9f88772f1927d10920c457518fe00b1c6fb29e533e927a3ddb110"
+    },
+    {
+      "path": "common/on_actions/zz_runtime_test.txt",
+      "sha256": "13c37596ed02cbc14900bc50ba1d2b19591326e7db852dde98a51dbe6ec50940"
+    },
+    {
+      "path": "common/powerprojection/BRI_power_projection.txt",
+      "sha256": "f7d2713a4d9d8fb27b484e8f93bb682e1f2931fa44c399296b46fb03b567e06f"
+    },
+    {
+      "path": "common/province_triggered_modifiers/BRI_metropole_modifiers.txt",
+      "sha256": "b7968f5fefb40ca8adcfcafa00f059ed756ba25c949fa2afae294c5bfef58199"
+    },
+    {
+      "path": "common/scripted_effects/eu4rt_run_probe.txt",
+      "sha256": "1c2515fd802c44ffcabf332f988b137412e4174bca31ed1f08ff28015d8361dd"
+    },
+    {
+      "path": "common/scripted_triggers/BRI_mission_triggers.txt",
+      "sha256": "d22254415c431c090f90cb2cdb488a14965c6e631bcb865aa800ac884e153458"
+    },
+    {
+      "path": "decisions/Custom_Breton_Decisions.txt",
+      "sha256": "9c7e177033a43633e27358506a73cdf22cea51666c363773423edbca9b8982d2"
+    },
+    {
+      "path": "descriptor.mod",
+      "sha256": "c5415feddb9c35cc021f5e971ace261f50bf1f38c7a8854885d299dd2f64d3b3"
+    },
+    {
+      "path": "events/Custom_Breton_Events.txt",
+      "sha256": "4acd8cee030162866aa2a006faa7287c0da1d693a5e736cd739e95e7a3a93b13"
+    },
+    {
+      "path": "localisation/english/bri_missions_l_english.yml",
+      "sha256": "85d1d817ee0dd2ef1b43cd8a28358540805810903e18d0af10341985811417b9"
+    },
+    {
+      "path": "missions/Breton_Missions.txt",
+      "sha256": "96ebd2f1e10b225e1e2a73e8ae21cf9d780fcb092be15adbcd16fc22f459a7f8"
+    },
+    {
+      "path": "missions/Custom_Breton_Missions.txt",
+      "sha256": "cb4454a5ce6954728c513e8ec52a160a773219b0cca86853d7348e8859b2a5b1"
+    }
+  ],
+  "launchArgs": [
+    "-debug",
+    "-userdir=X:/eu4-research/tools/runtime-tests/work/20261003T204458592Z_c3f5819eb3166689/profile/",
+    "-start_tag=BRI",
+    "-auto_run=eu4rt_run.commands"
+  ],
+  "staticValidation": {
+    "production": {
+      "exitCode": 0,
+      "report": "X:\\eu4-research\\tools\\cwtools\\reports\\brittany_missions\\latest.json"
+    },
+    "staged": {
+      "exitCode": 0,
+      "report": "X:\\eu4-research\\tools\\cwtools\\reports\\brittany_runtime\\latest.json"
+    }
+  },
+  "automated": [
+    "isolated staging",
+    "CWTools",
+    "process launch",
+    "native startup hook (experimental)",
+    "log assertions",
+    "bounded owned-process cleanup",
+    "native auto_run console batch",
+    "plain run-file effects"
+  ],
+  "manual": [],
+  "runFile": {
+    "file": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261003T204458592Z_c3f5819eb3166689\\profile\\eu4rt_effects_c3f5819eb3166689.txt",
+    "command": "run eu4rt_effects_c3f5819eb3166689.txt",
+    "sha256": "8e6a56e19e69ee80a0efe2bc7bb930e4de51a788e144a4fa896578084dbf6073",
+    "afterSha256": "8c0d4dab06d40c430e54d3662bf8834d15a704bf94e5b915ec93a2f59cd39653",
+    "commandsSha256": "52c64d0f5d49a11382346172e8e3089413c19c4213cdd92eecea2e5ad7019350"
+  },
+  "behavioralScope": "run-file effects and observability, not production mission completion",
+  "missionCompletionPass": false,
+  "collectorRun": {
+    "id": "20261003T204547861Z_d2d247",
+    "directory": "X:\\eu4-research\\tools\\test-runs\\reports\\brittany_runtime\\20261003T204547861Z_d2d247",
+    "status": "running"
+  },
+  "pid": 29196,
+  "startedAtUtc": "2026-10-03T20:45:47.874Z",
+  "markers": [
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 BEGIN run-effects",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK initial",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-1",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-2",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-3",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-4",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-5",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-6",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-7",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-8",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-9",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-10",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-11",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-12",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-13",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-14",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-15",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-16",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-17",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK dlc-18",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK implicit-bri",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK prestige-before-zero",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK flag-and-prestige-seven",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK scripted-flag-before",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK scripted-flag-after",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK stability-before-zero",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK production-scripted-stability-one",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK province-reward-before",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OBS permanent-presence query-false",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK province-value-correct",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK province-removed-zero",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OBS finite-presence query-false",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK finite-value-correct",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK cleanup-zero",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 OK missions-untouched",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4RT c3f5819eb3166689 END run-effects"
+  ],
+  "expectedMarkers": [
+    "BEGIN run-effects",
+    "OK initial",
+    "OK dlc-1",
+    "OK dlc-2",
+    "OK dlc-3",
+    "OK dlc-4",
+    "OK dlc-5",
+    "OK dlc-6",
+    "OK dlc-7",
+    "OK dlc-8",
+    "OK dlc-9",
+    "OK dlc-10",
+    "OK dlc-11",
+    "OK dlc-12",
+    "OK dlc-13",
+    "OK dlc-14",
+    "OK dlc-15",
+    "OK dlc-16",
+    "OK dlc-17",
+    "OK dlc-18",
+    "OK implicit-bri",
+    "OK prestige-before-zero",
+    "OK flag-and-prestige-seven",
+    "OK scripted-flag-before",
+    "OK scripted-flag-after",
+    "OK stability-before-zero",
+    "OK production-scripted-stability-one",
+    "OK province-reward-before",
+    [
+      "OBS permanent-presence present",
+      "OBS permanent-presence query-false"
+    ],
+    "OK province-value-correct",
+    "OK province-removed-zero",
+    [
+      "OBS finite-presence present",
+      "OBS finite-presence query-false"
+    ],
+    "OK finite-value-correct",
+    "OK cleanup-zero",
+    "OK missions-untouched",
+    "END run-effects"
+  ],
+  "observations": {
+    "permanent-presence": "query-false",
+    "finite-presence": "query-false"
+  },
+  "runningVersion": "EU4 v1.37.5.0 Inca",
+  "assertionFailures": [],
+  "missingOrDuplicateChecks": [],
+  "dateMatches": true,
+  "versionMatches": true,
+  "transcriptPass": true,
+  "relevantScriptErrors": [],
+  "stagedChanges": [],
+  "runFileUnchanged": true,
+  "nativeProbeVerified": true,
+  "permanentModifierPresenceQuery": "query-false",
+  "finiteModifierPresenceQuery": "query-false",
+  "modifierValueTransitionsVerified": true,
+  "productionMissionRewardVerified": false,
+  "processExitCodeBeforeCleanup": null,
+  "cleanup": "window-close",
+  "logCapture": {
+    "id": "20261003T204547861Z_d2d247",
+    "report": "X:\\eu4-research\\tools\\test-runs\\reports\\brittany_runtime\\20261003T204547861Z_d2d247\\report.txt",
+    "outcome": "passed",
+    "newErrorMessages": 92,
+    "changedLogs": 25
+  },
+  "finishedAtUtc": "2026-10-03T20:46:28.144Z"
+}

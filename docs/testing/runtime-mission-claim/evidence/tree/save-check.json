@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "completionRecorded": true,
+  "rewardExecuted": false,
+  "nativeMechanism": "tree",
+  "baselineEvidence": "current-nonce native pre-action assertions; no before save for startup diagnostic",
+  "before": null,
+  "after": {
+    "file": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T011228023Z_a47d1ae562c92866\\attempts\\1\\after.eu4",
+    "sha256": "79e34ae2371fe07723670e37290c7f86730e78bafd5b58749b2f5479ffc23792",
+    "bytes": 34228523,
+    "completed": [
+      "bri_atlantic_ambitions",
+      "bri_atlantic_monopoly",
+      "bri_breton_colonial_empire",
+      "bri_breton_foothold",
+      "bri_breton_manufactures",
+      "bri_breton_merchant_marine",
+      "bri_breton_metropole_1",
+      "bri_breton_metropole_2",
+      "bri_breton_metropole_3",
+      "bri_breton_renaissance",
+      "bri_breton_shipbuilding",
+      "bri_breton_textiles",
+      "bri_brittany_rules_the_waves",
+      "bri_cities_of_brittany",
+      "bri_colonial_americas",
+      "bri_conquer_ceylon",
+      "bri_constitutional_settlement",
+      "bri_first_among_nations",
+      "bri_flourishing_duchy",
+      "bri_gateway_to_the_atlantic",
+      "bri_gold_of_mali",
+      "bri_growing_economy",
+      "bri_guinea_trade",
+      "bri_nantes_market",
+      "bri_no_rivals_remain",
+      "bri_ocean_going_fleet",
+      "bri_prepare_the_defenses",
+      "bri_question_of_france",
+      "bri_round_the_cape",
+      "bri_seeds_of_the_renaissance",
+      "bri_spice_trade",
+      "bri_the_breton_burghers",
+      "bri_the_breton_clergy",
+      "bri_the_breton_estates",
+      "bri_the_breton_nobility",
+      "bri_western_indian_ocean"
+    ],
+    "provinces": {
+      "169": {
+        "buildings": [
+          "workshop"
+        ],
+        "rewardCount": 0,
+        "expiry": [],
+        "variables": {
+          "eu4claim_before": "0.000",
+          "eu4claim_goods": "0.000"
+        }
+      },
+      "172": {
+        "buildings": [
+          "marketplace"
+        ],
+        "rewardCount": 0,
+        "expiry": [],
+        "variables": {}
+      },
+      "4384": {
+        "buildings": [
+          "workshop"
+        ],
+        "rewardCount": 0,
+        "expiry": [],
+        "variables": {
+          "eu4claim_before": "0.000",
+          "eu4claim_goods": "0.000"
+        }
+      }
+    },
+    "date": "1444.11.11",
+    "version": "1.37.5.0",
+    "paused": true
+  }
+}

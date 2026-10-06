@@ -1,0 +1,75 @@
+{
+  "status": "saved-state-verified-probe-fail",
+  "phase": "reloaded",
+  "checkedAtUtc": "2026-10-03T23:18:18.180219+00:00",
+  "nonce": "868e7002f5332b98",
+  "sourceAndStagedAndConsoleHashesUnchanged": true,
+  "savePath": "tools/runtime-tests/work/nantes-manual-20261003T222727038Z-868e7002f5332b98/profile/save games/BRI_nantes_reloaded.eu4",
+  "snapshotPath": "tools/runtime-tests/work/nantes-manual-20261003T222727038Z-868e7002f5332b98/checkpoints/reloaded/BRI_nantes_reloaded.eu4",
+  "sha256": "483de08085aa18fa0263901ef271a15027d851cdedea0742a3bc04bb85cec4f2",
+  "bytes": 3523090,
+  "date": "1444.11.11",
+  "paused": true,
+  "campaignId": "f129204c-79ae-468c-b237-037e1b66c30c",
+  "campaignIdChangedFromInitial": true,
+  "loadedFromSave": "BRI_nantes_completed.eu4",
+  "predecessorSha256": "90117609cc7b7492e80a3b9056650f4e1d6ac3b40114775bd1fe5170fc428582",
+  "relevantStateMatchesPredecessor": true,
+  "completedMissions": [
+    "bri_nantes_market"
+  ],
+  "textilesIncomplete": true,
+  "selectorFlagsAbsent": true,
+  "provinces": {
+    "169": {
+      "owner": "BRI",
+      "buildings": [
+        "workshop"
+      ],
+      "clothEntries": 1,
+      "clothId": "bri_demand_for_breton_cloth",
+      "savedExpiry": "-1.1.1",
+      "goodsValue": 0.15,
+      "goodsBefore": 0.0,
+      "goodsDelta": 0.15
+    },
+    "172": {
+      "owner": "BRI",
+      "buildings": [
+        "marketplace"
+      ]
+    },
+    "4384": {
+      "owner": "BRI",
+      "buildings": [
+        "workshop"
+      ],
+      "clothEntries": 1,
+      "clothId": "bri_demand_for_breton_cloth",
+      "savedExpiry": "-1.1.1",
+      "goodsValue": 0.15,
+      "goodsBefore": 0.0,
+      "goodsDelta": 0.15
+    }
+  },
+  "observerMarkerCount": 11,
+  "observerMarkers": [
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 BEGIN reloaded",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 FAIL reloaded-nantes-completed",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK reloaded-textiles-incomplete",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK reloaded-fixture-flags-retained",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK reloaded-value-169",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK reloaded-delta-169",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OBS reloaded-named-169 query-false",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK reloaded-value-4384",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK reloaded-delta-4384",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OBS reloaded-named-4384 query-false",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 END reloaded"
+  ],
+  "observerStatus": "FAIL",
+  "observerFailures": [
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 FAIL reloaded-nantes-completed"
+  ],
+  "failureAttribution": "mission_completed observer contradicts completed_missions save and operator UI; observation mechanism unresolved, no attributable production contradiction",
+  "boundary": "Save independently proves identity, entries, sentinel expiry, completion and retained fixture. Numeric values/deltas corroborated by newly dispatched observer. UI action/readiness/once-only and actual reload require separately retained operator observations."
+}

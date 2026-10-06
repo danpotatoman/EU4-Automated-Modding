@@ -1,0 +1,21 @@
+BRI = {
+ if = { limit = { has_mission = bri_nantes_market has_mission = bri_breton_textiles NOT = { mission_completed = bri_nantes_market } NOT = { mission_completed = bri_breton_textiles } } log = "EU4RT a47d1ae562c92866 OK fixture-membership" }
+else = { log = "EU4RT a47d1ae562c92866 FAIL fixture-membership" }
+ 172 = { remove_building = marketplace remove_building = trade_depot remove_building = stock_exchange add_building = marketplace }
+ 169 = { add_building = workshop } 4384 = { add_building = workshop }
+ if = { limit = { 172 = { has_trade_building_trigger = yes } 169 = { has_production_building_trigger = yes } 4384 = { has_production_building_trigger = yes } } log = "EU4RT a47d1ae562c92866 OK fixture-buildings" }
+else = { log = "EU4RT a47d1ae562c92866 FAIL fixture-buildings" }
+ 169 = {
+ export_to_variable = { which = eu4claim_goods value = modifier:trade_goods_size_modifier }
+ set_variable = { which = eu4claim_before which = eu4claim_goods }
+ if = { limit = { check_variable = { which = eu4claim_goods value = 0 } NOT = { check_variable = { which = eu4claim_goods value = 0.001 } } } log = "EU4RT a47d1ae562c92866 OK before-169" }
+else = { log = "EU4RT a47d1ae562c92866 FAIL before-169" }
+}
+4384 = {
+ export_to_variable = { which = eu4claim_goods value = modifier:trade_goods_size_modifier }
+ set_variable = { which = eu4claim_before which = eu4claim_goods }
+ if = { limit = { check_variable = { which = eu4claim_goods value = 0 } NOT = { check_variable = { which = eu4claim_goods value = 0.001 } } } log = "EU4RT a47d1ae562c92866 OK before-4384" }
+else = { log = "EU4RT a47d1ae562c92866 FAIL before-4384" }
+}
+ log = "EU4RT a47d1ae562c92866 UI_READY nantes-claim"
+}

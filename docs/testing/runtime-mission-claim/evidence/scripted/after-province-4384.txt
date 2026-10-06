@@ -1,0 +1,124 @@
+-4384={
+		variables={
+			eu4claim_before=0.000
+			eu4claim_goods=0.000
+		}
+		name="Bro Roazhon"
+		owner="BRI"
+		controller="BRI"
+		previous_controller="BRI"
+		institutions={
+			100.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 
+		}
+		cores={
+			BRI 
+		}
+		trade="bordeaux"
+		original_culture=breton
+		native_culture=breton
+		culture=breton
+		religion=catholic
+		original_religion=catholic
+		capital="Roazhon"
+		is_city=yes
+		base_tax=4.000
+		original_tax=12.000
+		base_production=4.000
+		base_manpower=4.000
+		likely_rebels="noble_rebels"
+		trade_goods=cloth
+		ub=no
+		buildings={
+			workshop=yes
+		}
+		building_builders={
+			workshop="BRI"
+		}
+		history={
+			owner="BRI"
+			controller={
+				tag="BRI"
+			}
+			capital="Rennes"
+			is_city=yes
+			culture=breton
+			religion=catholic
+			hre=no
+			base_tax=4.000
+			base_production=4.000
+			trade_goods=cloth
+			base_manpower=4.000
+			add_core="BRI"
+			discovered_by="eastern"
+			discovered_by="western"
+			discovered_by="muslim"
+			discovered_by="ottoman"
+			1444.11.11={
+				advisor={
+					name="Deniel de Saint-Hoularn"
+					type=trader
+					skill=2
+					location=4384
+					culture=breton
+					religion=catholic
+					date=1443.11.11
+					id={
+						id=2440
+						type=51
+					}
+
+				}
+			}
+			1444.11.11={
+				advisor={
+					name="Maeldan de Roscoat"
+					type=statesman
+					skill=1
+					location=4384
+					culture=breton
+					religion=catholic
+					date=1443.11.11
+					id={
+						id=2441
+						type=51
+					}
+
+				}
+			}
+			1444.11.11={
+				advisor={
+					name="Yann de Beaumetz"
+					type=recruitmaster
+					skill=1
+					location=4384
+					culture=breton
+					religion=catholic
+					date=1444.11.11
+					id={
+						id=2444
+						type=51
+					}
+
+				}
+			}
+			1444.11.11={
+				workshop=yes
+			}
+			1444.11.12={
+				owner="BRI"
+			}
+		}
+		discovery_dates2={
+			1=1.1.1 2=1.1.1 3=1.1.1 4=1.1.1 
+		}
+		discovery_religion_dates2={
+			1=1444.11.11 6=1444.11.11 7=1444.11.11 8=1444.11.11 9=1444.11.11 10=1444.11.11 
+		}
+		discovered_by={SWE DAN GOT NOR SHL ALB ATH BOS BYZ CRO CYP EPI KNI MOL NAX RAG SER WAL HUN TUR CNN ENG LEI MNS SCO TYR ULS DMS SLN KID ORD TRY FLY MCM LOI LIT LIV MAZ POL RIG TEU OKA ALS AMG AUV BOU BRI BUR FOI FRA NEV ORL PRO AAC ANH ANS AUG BAD BOH BRA BRE BRU EFR FRN HAB HAM HES KLE KOL LAU LOR LUN MAG MAI MKL MUN OLD PAL SAX SLZ SWI THU TRI ULM WBG WUR NUM MEM VER NSA RVA DTT ARA CAS GRA NAV POR FER GEN MAN MLO NAP PAP SAV SIE URB VEN MFA LUC LAN BRB FLA FRI GEL HOL LIE UTR GEO MOS NOV PSK RYA TVE YAR PRM FEO BLO RSO ADE ALH ANZ ARD DAW FAD HDR HED MDA MFL MHR NAJ NJR OMA RAS SHM SRV YAS YEM HSN BTL AKK CND DUL KAR SYR TRE RAM AVR MLK SME ARL MSY MAM MOR TUN TFL SOS TLC TGT GHD FZA MZB MRK AFG KHO QAR TIM TRS KRY CIR GAZ TAB ORM LRI SIS BPI FRS QOM BAL HSA UBV LBV ING PSS MBZ KNZ ROT BYT REG GNV TTL OPL GLG BLG SZO WOL STE GOS CLI HRZ TNT BRG MLH BAM PGA }
+		trade_power=2.880
+		rebel_faction={
+			id=100
+			type=50
+		}
+
+	}

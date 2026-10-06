@@ -1,0 +1,309 @@
+namespace = bri_missions
+
+country_event = {
+    id = bri_missions.1
+    title = bri_missions.1.t
+    desc = bri_missions.1.d
+    picture = DIPLOMACY_eventPicture
+
+    is_triggered_only = yes
+
+    # Preview French Sphere
+    option = {
+        name = bri_missions.1.a
+        custom_tooltip = bri_french_sphere_preview_tt
+
+        clr_country_flag = bri_autonomous_path
+        set_country_flag = bri_french_sphere_path
+
+        swap_non_generic_missions = yes
+
+        hidden_effect = {
+            if = {
+                limit = {
+                    ai = yes
+                }
+                clr_country_flag = bri_diplomacy_preview
+            }
+        }
+
+        ai_chance = {
+            factor = 1
+        }
+    }
+
+    # Preview Autonomous Path
+    option = {
+        name = bri_missions.1.b
+        custom_tooltip = bri_autonomous_preview_tt
+
+        clr_country_flag = bri_french_sphere_path
+        set_country_flag = bri_autonomous_path
+
+        swap_non_generic_missions = yes
+
+        hidden_effect = {
+            if = {
+                limit = {
+                    ai = yes
+                }
+                clr_country_flag = bri_diplomacy_preview
+            }
+        }
+
+        ai_chance = {
+            factor = 1
+        }
+    }
+
+    # Lock currently previewed branch
+    option = {
+        name = bri_missions.1.c
+
+        trigger = {
+            ai = no
+
+            OR = {
+                has_country_flag = bri_french_sphere_path
+                has_country_flag = bri_autonomous_path
+            }
+        }
+
+        custom_tooltip = bri_lock_diplomatic_path_tt
+
+        clr_country_flag = bri_diplomacy_preview
+
+        ai_chance = {
+            factor = 0
+        }
+    }
+}
+country_event = {
+    id = bri_missions.2
+    title = bri_missions.2.t
+    desc = bri_missions.2.desc
+    picture = FORT_eventPicture
+
+    is_triggered_only = yes
+
+    # Arvor - 169
+    option = {
+        name = bri_missions.2.a
+
+        trigger = {
+            169 = {
+                owned_by = ROOT
+            }
+        }
+
+        if = {
+            limit = {
+                170 = {
+                    owned_by = ROOT
+                    has_building = fort_15th
+                }
+            }
+
+            170 = {
+                remove_building = fort_15th
+            }
+        }
+
+        if = {
+            limit = {
+                169 = {
+                    owned_by = ROOT
+                    NOT = {
+                        has_fort_building_trigger = yes
+                    }
+                }
+            }
+
+            169 = {
+                add_building = fort_15th
+            }
+        }
+
+        169 = {
+            add_province_modifier = {
+                name = bri_breton_fortress
+                duration = -1
+            }
+        }
+    }
+
+    # Penn-ar-Bed / Brest - 170
+    option = {
+        name = bri_missions.2.b
+
+        trigger = {
+            170 = {
+                owned_by = ROOT
+            }
+        }
+
+        170 = {
+            add_province_modifier = {
+                name = bri_breton_fortress
+                duration = -1
+            }
+        }
+    }
+
+    # Bro Wened - 171
+    option = {
+        name = bri_missions.2.c
+
+        trigger = {
+            171 = {
+                owned_by = ROOT
+            }
+        }
+
+        if = {
+            limit = {
+                170 = {
+                    owned_by = ROOT
+                    has_building = fort_15th
+                }
+            }
+
+            170 = {
+                remove_building = fort_15th
+            }
+        }
+
+        if = {
+            limit = {
+                171 = {
+                    owned_by = ROOT
+                    NOT = {
+                        has_fort_building_trigger = yes
+                    }
+                }
+            }
+
+            171 = {
+                add_building = fort_15th
+            }
+        }
+
+        171 = {
+            add_province_modifier = {
+                name = bri_breton_fortress
+                duration = -1
+            }
+        }
+    }
+
+    # Bro Naoned / Nantes - 172
+    option = {
+        name = bri_missions.2.d
+
+        trigger = {
+            172 = {
+                owned_by = ROOT
+            }
+        }
+
+        if = {
+            limit = {
+                170 = {
+                    owned_by = ROOT
+                    has_building = fort_15th
+                }
+            }
+
+            170 = {
+                remove_building = fort_15th
+            }
+        }
+
+        if = {
+            limit = {
+                172 = {
+                    owned_by = ROOT
+                    NOT = {
+                        has_fort_building_trigger = yes
+                    }
+                }
+            }
+
+            172 = {
+                add_building = fort_15th
+            }
+        }
+
+        172 = {
+            add_province_modifier = {
+                name = bri_breton_fortress
+                duration = -1
+            }
+        }
+    }
+
+    # Bro Roazhon - 4384
+    option = {
+        name = bri_missions.2.e
+
+        trigger = {
+            4384 = {
+                owned_by = ROOT
+            }
+        }
+
+        if = {
+            limit = {
+                170 = {
+                    owned_by = ROOT
+                    has_building = fort_15th
+                }
+            }
+
+            170 = {
+                remove_building = fort_15th
+            }
+        }
+
+        if = {
+            limit = {
+                4384 = {
+                    owned_by = ROOT
+                    NOT = {
+                        has_fort_building_trigger = yes
+                    }
+                }
+            }
+
+            4384 = {
+                add_building = fort_15th
+            }
+        }
+
+        4384 = {
+            add_province_modifier = {
+                name = bri_breton_fortress
+                duration = -1
+            }
+        }
+    }
+}
+country_event = {
+    id = bri_missions.3
+    title = bri_missions.3.t
+    desc = bri_missions.3.desc
+    picture = TRADE_GOODS_METALS_AND_MINING_EQUIPENT_eventPicture
+
+    is_triggered_only = yes
+
+    option = {
+        name = bri_missions.3.a
+
+        change_price = {
+            trade_goods = iron
+            key = BRI_ARTILLERY_DEMAND
+            value = 0.35
+            duration = -1
+        }
+    }
+}

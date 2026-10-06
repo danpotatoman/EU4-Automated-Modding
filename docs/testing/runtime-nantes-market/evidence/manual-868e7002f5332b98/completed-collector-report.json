@@ -1,0 +1,876 @@
+{
+  "id": "20261003T223050435Z_8f94eb",
+  "scenario": "Nantes ordinary mission-button readiness, rewards, Textiles update, once-only and persistence; nonce 868e7002f5332b98",
+  "outcome": "unverified",
+  "outcomeSource": "operator supplied; logs do not establish gameplay success",
+  "notes": "Ordinary Nantes click reported; completed save confirms named permanent cloth in both provinces and 0.150 values/deltas; Textiles immediate readiness reported. Completion observer FAIL contradicts save/UI. Persistence pending; preserved evidence manual-868e7002f5332b98.",
+  "finishedAtUtc": "2026-10-03T22:59:08.696Z",
+  "baseline": null,
+  "changedLogs": 25,
+  "missingLogs": [],
+  "unstableCapture": false,
+  "deploymentChanges": null,
+  "files": [
+    {
+      "name": "ai.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 2,
+      "messagesSha256": "93879bacec84c0ce9bd6dbc1e37e6fabcbd69944a8e4affa657fef1ca037bb04",
+      "comparisonSha256": "89508113afcf0793a290b40c3b5236d47e7085b02044f4f6c2b2c15caa4490fd"
+    },
+    {
+      "name": "ai_budgeting.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "ai_priority.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "ai_spending.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "autotest.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "building_investment.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "code_revisions.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 6,
+      "messagesSha256": "bf1b7d0fa7aa995de1383c2d0e5ede953f23bbf83fa0413c738776c24ea1abdc",
+      "comparisonSha256": "f1f649c86a8c8992305c07e674694b205fba94a5e7bb6dc8b1846f8062c26f17"
+    },
+    {
+      "name": "custom_automated_stats.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "error.log",
+      "mode": "new",
+      "errorLog": true,
+      "messageCount": 4,
+      "messagesSha256": "be572926a73852c931b2aa63e9bf048316a9fef389f01de8cf790e2455f85f07",
+      "comparisonSha256": "57c44e7e2623a28eaf302f8a65cd5ee346693bf2e49e182b78592b89d6452244"
+    },
+    {
+      "name": "game.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 144,
+      "messagesSha256": "5de9424084b96b94f5fb001e95814504ac1e4439ed758504cc33182f46a63179",
+      "comparisonSha256": "4969b1d05f3d83f60364d867c87f5e5b43c756679a0bfa0b5a12dc96ad1beaea"
+    },
+    {
+      "name": "graphics.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "local_temp.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "memory.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 104,
+      "messagesSha256": "be46b537ab330a3ca9cbd21dc8a62bb23bf02e62c41da4518d4b4340610ca496",
+      "comparisonSha256": "dfa66bc185e9744948c434fb66305f92b168e5e0bd32c4bf1ba7e70df8784d89"
+    },
+    {
+      "name": "message.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 10,
+      "messagesSha256": "aa528b8be58b5810f5c6cb10ed03e628f0c3c483799dbe8f3fe513b0cf9f8103",
+      "comparisonSha256": "01deda02e44ed255c8205b0416582ea3877d32cef503fe50ac8c99ca7c583cee"
+    },
+    {
+      "name": "profiling.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "random.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "random02.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "receivedcommands.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "sentcommands.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 0,
+      "messagesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "comparisonSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "setup.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 17878,
+      "messagesSha256": "309971616544a80f33f7526fc200b80d493534abe0f9116ca946ccf1d4d4bad7",
+      "comparisonSha256": "7bbfffc8774896454dfc61972acc2624f6c88b5209f90c3d6336e52ece5dac6f"
+    },
+    {
+      "name": "setup_error.log",
+      "mode": "new",
+      "errorLog": true,
+      "messageCount": 1186,
+      "messagesSha256": "6b3de57895225510ca3689995113017e4ade3680eb52239d0f3c95c29c1d0d58",
+      "comparisonSha256": "476f40a83204e59b131f29067eb384b2d55fdc967abf6113b45fc407e4a4736b"
+    },
+    {
+      "name": "system.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 187,
+      "messagesSha256": "f0579aad1d87e8a8b178e5b5533abb1c5e5b35559642669a69046947b0be6d69",
+      "comparisonSha256": "b36c67e4d9c4946d5eaf072978eee2f614f56fa571d9b214aa84ac51ef487015"
+    },
+    {
+      "name": "system_interface.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 12,
+      "messagesSha256": "3b1349d7f4cf081bb854cd3871b85ea7d700d41affb6873f4274009812c43baf",
+      "comparisonSha256": "9c5572169c992fb2d89bcb547a6d81ebb89e87e69a015e475a9cc06030aa1019"
+    },
+    {
+      "name": "text.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 28,
+      "messagesSha256": "a141b9719b3548fd6a2c0d63f64be8b89683c7b6d96dafb3ac9a5e8e8792e90e",
+      "comparisonSha256": "3278b688caedf3934b6bdb4f48f613de2fb208e521ee6ea240c614e964500755"
+    },
+    {
+      "name": "time.log",
+      "mode": "new",
+      "errorLog": false,
+      "messageCount": 18,
+      "messagesSha256": "ef7c281a0180a24c8edbf6633f1779e51511be0c71cf108310c64519d90bc210",
+      "comparisonSha256": "7dda4dd7669cd1b8254b44e8b1f2d92643de5b67986e59ac43aa84a511a26385"
+    }
+  ],
+  "newErrorMessages": [
+    {
+      "log": "error.log",
+      "message": "[localize.cpp:671]: Localization hash collision found, more info in text.log! Language: l_english",
+      "count": 2,
+      "baselineCount": 0,
+      "additionalOccurrences": 2
+    },
+    {
+      "log": "error.log",
+      "message": "[fixedwindow.cpp:2962]: interface/provinceview.gui: Missing Icon 'remove_parliament' in window 'top_section_window'.",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "error.log",
+      "message": "[fixedwindow.cpp:2962]: interface/unitpanel_card.gui: Missing Button 'unit4_type' in window 'land_units'.",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: AST had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "Callstack:00007FF745434F93 (eu4): (filename not available): (function-name not available)",
+      "count": 74,
+      "baselineCount": 0,
+      "additionalOccurrences": 74
+    },
+    {
+      "log": "setup_error.log",
+      "message": "00007FF745437B01 (eu4): (filename not available): (function-name not available)",
+      "count": 74,
+      "baselineCount": 0,
+      "additionalOccurrences": 74
+    },
+    {
+      "log": "setup_error.log",
+      "message": "00007FF7458C332A (eu4): (filename not available): (function-name not available)",
+      "count": 74,
+      "baselineCount": 0,
+      "additionalOccurrences": 74
+    },
+    {
+      "log": "setup_error.log",
+      "message": "00007FF7458C4424 (eu4): (filename not available): (function-name not available)",
+      "count": 74,
+      "baselineCount": 0,
+      "additionalOccurrences": 74
+    },
+    {
+      "log": "setup_error.log",
+      "message": "00007FF74596AC4C (eu4): (filename not available): (function-name not available)",
+      "count": 74,
+      "baselineCount": 0,
+      "additionalOccurrences": 74
+    },
+    {
+      "log": "setup_error.log",
+      "message": "00007FF74595B18A (eu4): (filename not available): (function-name not available)",
+      "count": 74,
+      "baselineCount": 0,
+      "additionalOccurrences": 74
+    },
+    {
+      "log": "setup_error.log",
+      "message": "00007FF74622AEB2 (eu4): (filename not available): (function-name not available)",
+      "count": 74,
+      "baselineCount": 0,
+      "additionalOccurrences": 74
+    },
+    {
+      "log": "setup_error.log",
+      "message": "00007FF746223C5A (eu4): (filename not available): (function-name not available)",
+      "count": 74,
+      "baselineCount": 0,
+      "additionalOccurrences": 74
+    },
+    {
+      "log": "setup_error.log",
+      "message": "00007FF746612818 (eu4): (filename not available): (function-name not available)",
+      "count": 74,
+      "baselineCount": 0,
+      "additionalOccurrences": 74
+    },
+    {
+      "log": "setup_error.log",
+      "message": "00007FF746612E18 (eu4): (filename not available): (function-name not available)",
+      "count": 74,
+      "baselineCount": 0,
+      "additionalOccurrences": 74
+    },
+    {
+      "log": "setup_error.log",
+      "message": "00007FF7459C81B9 (eu4): (filename not available): (function-name not available)",
+      "count": 74,
+      "baselineCount": 0,
+      "additionalOccurrences": 74
+    },
+    {
+      "log": "setup_error.log",
+      "message": "00007FF746BC889A (eu4): (filename not available): PHYSFS_writeULE64",
+      "count": 74,
+      "baselineCount": 0,
+      "additionalOccurrences": 74
+    },
+    {
+      "log": "setup_error.log",
+      "message": "00007FF746B8375A (eu4): (filename not available): PHYSFS_writeULE64",
+      "count": 74,
+      "baselineCount": 0,
+      "additionalOccurrences": 74
+    },
+    {
+      "log": "setup_error.log",
+      "message": "00007FFAD9A4CD87 (KERNEL32): (filename not available): BaseThreadInitThunk",
+      "count": 74,
+      "baselineCount": 0,
+      "additionalOccurrences": 74
+    },
+    {
+      "log": "setup_error.log",
+      "message": "00007FFADAF6CAEC (ntdll): (filename not available): RtlUserThreadStart",
+      "count": 74,
+      "baselineCount": 0,
+      "additionalOccurrences": 74
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: AST had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: CRI had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: CRI had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: KAZ had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: KAZ had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: QAS had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: QAS had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: NOG had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: NOG had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: SIB had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: SIB had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: BSH had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: BSH had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: GOL had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: GOL had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: GLH had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: GLH had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: AKK had no default sub-unit defined for 'Cavalry' Assigning Charge Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: AKK had no default sub-unit defined for 'Infantry' Assigning Muslim Archer",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: KZH had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: KZH had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: SHY had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: SHY had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: QAR had no default sub-unit defined for 'Cavalry' Assigning Charge Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: QAR had no default sub-unit defined for 'Infantry' Assigning Muslim Archer",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: TIM had no default sub-unit defined for 'Cavalry' Assigning Charge Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: TIM had no default sub-unit defined for 'Infantry' Assigning Muslim Archer",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: TRS had no default sub-unit defined for 'Cavalry' Assigning Charge Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: TRS had no default sub-unit defined for 'Infantry' Assigning Muslim Archer",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: CHG had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: CHG had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: KHA had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: KHA had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: MCH had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: MCH had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: OIR had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: OIR had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: ILK had no default sub-unit defined for 'Cavalry' Assigning Charge Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: ILK had no default sub-unit defined for 'Infantry' Assigning Muslim Archer",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: KLM had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: KLM had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: MGE had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: MGE had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: NVK had no default sub-unit defined for 'Cavalry' Assigning East Asian Archer Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: NVK had no default sub-unit defined for 'Infantry' Assigning East Asian Spearmen",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: SOL had no default sub-unit defined for 'Cavalry' Assigning East Asian Archer Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: SOL had no default sub-unit defined for 'Infantry' Assigning East Asian Spearmen",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: EJZ had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: EJZ had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: NHX had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: NHX had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: MYR had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: MYR had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: MHX had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: MHX had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: MJZ had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: MJZ had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: KRC had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: KRC had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: KLK had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: KLK had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: HMI had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: HMI had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: ZUN had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: ZUN had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: CHH had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: CHH had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: KSD had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: KSD had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: SYG had no default sub-unit defined for 'Infantry' Assigning Eastern Archers",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: SYG had no default sub-unit defined for 'Cavalry' Assigning Eastern Steppe Cavalry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: ROM had no default sub-unit defined for 'Infantry' Assigning Latin Medieval Infantry",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[country.cpp:6507]: ROM had no default sub-unit defined for 'Cavalry' Assigning Latin Knights",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[gamestate.cpp:6277]: 1444.11.11 Synthetics has no primary culture specified.",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    },
+    {
+      "log": "setup_error.log",
+      "message": "[gamestate.cpp:6286]: 1444.11.11 Synthetics has no religion specified.",
+      "count": 1,
+      "baselineCount": 0,
+      "additionalOccurrences": 1
+    }
+  ],
+  "publicationNote": "Public summary; bulk collector messages/comparisons retained only in the local original. Verdict, error list and capture metadata preserved."
+}

@@ -1,0 +1,123 @@
+eu4rt_named_probe_c3f5819eb3166689 = { set_country_flag = eu4rt_scripted_c3f5819eb3166689 }
+eu4rt_static_wrapper_c3f5819eb3166689 = {
+# Plain console run-file effects; no enclosing event or on_action.
+# Native auto_run executes this only after startup fixture assertions.
+if = { limit = { tag = BRI } log = "EU4RT c3f5819eb3166689 OK implicit-bri" }
+else = { log = "EU4RT c3f5819eb3166689 FAIL implicit-bri" }
+BRI = {
+    add_prestige = -1000
+    add_prestige = 100
+    export_to_variable = { which = eu4rt_prestige value = prestige }
+    if = {
+        limit = { check_variable = { which = eu4rt_prestige value = 0 } NOT = { check_variable = { which = eu4rt_prestige value = 0.001 } } }
+        log = "EU4RT c3f5819eb3166689 OK prestige-before-zero"
+    }
+    else = { log = "EU4RT c3f5819eb3166689 FAIL prestige-before-zero" }
+    set_country_flag = eu4rt_simple_c3f5819eb3166689
+    add_prestige = 7
+    export_to_variable = { which = eu4rt_prestige value = prestige }
+    if = {
+        limit = { has_country_flag = eu4rt_simple_c3f5819eb3166689 check_variable = { which = eu4rt_prestige value = 7 } NOT = { check_variable = { which = eu4rt_prestige value = 7.001 } } }
+        log = "EU4RT c3f5819eb3166689 OK flag-and-prestige-seven"
+    }
+    else = { log = "EU4RT c3f5819eb3166689 FAIL flag-and-prestige-seven" }
+    if = {
+        limit = { NOT = { has_country_flag = eu4rt_scripted_c3f5819eb3166689 } }
+        log = "EU4RT c3f5819eb3166689 OK scripted-flag-before"
+    }
+    else = { log = "EU4RT c3f5819eb3166689 FAIL scripted-flag-before" }
+    eu4rt_named_probe_c3f5819eb3166689 = yes
+    if = {
+        limit = { has_country_flag = eu4rt_scripted_c3f5819eb3166689 }
+        log = "EU4RT c3f5819eb3166689 OK scripted-flag-after"
+    }
+    else = { log = "EU4RT c3f5819eb3166689 FAIL scripted-flag-after" }
+
+    # Call the real installed scripted effect also used by bri_flourishing_duchy.
+    # This verifies one effect's invocation, not that mission's completion/reward.
+    add_stability = -10
+    add_stability = 3
+    if = {
+        limit = { stability = 0 NOT = { stability = 1 } }
+        log = "EU4RT c3f5819eb3166689 OK stability-before-zero"
+    }
+    else = { log = "EU4RT c3f5819eb3166689 FAIL stability-before-zero" }
+    add_stability_or_adm_power = yes
+    if = {
+        limit = { stability = 1 NOT = { stability = 2 } }
+        log = "EU4RT c3f5819eb3166689 OK production-scripted-stability-one"
+    }
+    else = { log = "EU4RT c3f5819eb3166689 FAIL production-scripted-stability-one" }
+
+    # Calibrate one province effect and its value. Nantes's two-province inline
+    # mission reward is not independently invoked or duplicated here.
+    169 = {
+        export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+        if = {
+            limit = { NOT = { has_province_modifier = bri_demand_for_breton_cloth } check_variable = { which = eu4rt_goods value = 0 } NOT = { check_variable = { which = eu4rt_goods value = 0.001 } } }
+            log = "EU4RT c3f5819eb3166689 OK province-reward-before"
+        }
+        else = { log = "EU4RT c3f5819eb3166689 FAIL province-reward-before" }
+        add_province_modifier = { name = bri_demand_for_breton_cloth duration = -1 }
+    }
+}
+
+# Separate console dispatch to probe named-modifier query timing.
+BRI = {
+    169 = {
+        if = {
+            limit = { has_province_modifier = bri_demand_for_breton_cloth }
+            log = "EU4RT c3f5819eb3166689 OBS permanent-presence present"
+        }
+        else = { log = "EU4RT c3f5819eb3166689 OBS permanent-presence query-false" }
+        export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+        if = {
+            limit = { check_variable = { which = eu4rt_goods value = 0.15 } NOT = { check_variable = { which = eu4rt_goods value = 0.151 } } }
+            log = "EU4RT c3f5819eb3166689 OK province-value-correct"
+        }
+        else = { log = "EU4RT c3f5819eb3166689 FAIL province-value-correct" }
+        # Independently calibrate identity through removal by the same modifier ID.
+        remove_province_modifier = bri_demand_for_breton_cloth
+        export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+        if = {
+            limit = { check_variable = { which = eu4rt_goods value = 0 } NOT = { check_variable = { which = eu4rt_goods value = 0.001 } } }
+            log = "EU4RT c3f5819eb3166689 OK province-removed-zero"
+        }
+        else = { log = "EU4RT c3f5819eb3166689 FAIL province-removed-zero" }
+        # A finite-duration control distinguishes duration from general lookup behavior.
+        add_province_modifier = { name = bri_demand_for_breton_cloth duration = 365 }
+        if = {
+            limit = { has_province_modifier = bri_demand_for_breton_cloth }
+            log = "EU4RT c3f5819eb3166689 OBS finite-presence present"
+        }
+        else = { log = "EU4RT c3f5819eb3166689 OBS finite-presence query-false" }
+        export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+        if = {
+            limit = { check_variable = { which = eu4rt_goods value = 0.15 } NOT = { check_variable = { which = eu4rt_goods value = 0.151 } } }
+            log = "EU4RT c3f5819eb3166689 OK finite-value-correct"
+        }
+        else = { log = "EU4RT c3f5819eb3166689 FAIL finite-value-correct" }
+        remove_province_modifier = bri_demand_for_breton_cloth
+        export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+        if = {
+            limit = { check_variable = { which = eu4rt_goods value = 0 } NOT = { check_variable = { which = eu4rt_goods value = 0.001 } } }
+            log = "EU4RT c3f5819eb3166689 OK cleanup-zero"
+        }
+        else = { log = "EU4RT c3f5819eb3166689 FAIL cleanup-zero" }
+    }
+    if = {
+        limit = {
+            NOT = { mission_completed = bri_nantes_market }
+            NOT = { mission_completed = bri_breton_textiles }
+            4384 = { NOT = { has_province_modifier = bri_demand_for_breton_cloth } }
+            NOT = { has_country_flag = bri_diplomacy_preview }
+            NOT = { has_country_flag = bri_french_sphere_path }
+            NOT = { has_country_flag = bri_autonomous_path }
+        }
+        log = "EU4RT c3f5819eb3166689 OK missions-untouched"
+    }
+    else = { log = "EU4RT c3f5819eb3166689 FAIL missions-untouched" }
+}
+log = "EU4RT c3f5819eb3166689 END run-effects"
+
+}

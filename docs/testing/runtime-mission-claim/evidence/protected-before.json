@@ -1,0 +1,58 @@
+[
+    {
+        "path":  "X:\\eu4-research\\mod\\brittany_missions\\common\\event_modifiers\\BRI_mission_modifiers.txt",
+        "sha256":  "3B8BE834ACC20DE6490713EFCEAF4E0A84DCA2132EC51BF221FC98545ABF61FA"
+    },
+    {
+        "path":  "X:\\eu4-research\\mod\\brittany_missions\\common\\government_reforms\\BRI_government_reforms.txt",
+        "sha256":  "3AB691C55EB9F88772F1927D10920C457518FE00B1C6FB29E533E927A3DDB110"
+    },
+    {
+        "path":  "X:\\eu4-research\\mod\\brittany_missions\\common\\powerprojection\\BRI_power_projection.txt",
+        "sha256":  "F7D2713A4D9D8FB27B484E8F93BB682E1F2931FA44C399296B46FB03B567E06F"
+    },
+    {
+        "path":  "X:\\eu4-research\\mod\\brittany_missions\\common\\province_triggered_modifiers\\BRI_metropole_modifiers.txt",
+        "sha256":  "B7968F5FEFB40CA8ADCFCAFA00F059ED756BA25C949FA2AFAE294C5BFEF58199"
+    },
+    {
+        "path":  "X:\\eu4-research\\mod\\brittany_missions\\common\\scripted_effects\\BRI_mission_effects.txt",
+        "sha256":  "A9244BA4FC65D9A000DCBF90A7C5751871D0D7ABD1A022BEA9D89ADACB93BD9C"
+    },
+    {
+        "path":  "X:\\eu4-research\\mod\\brittany_missions\\common\\scripted_triggers\\BRI_mission_triggers.txt",
+        "sha256":  "D22254415C431C090F90CB2CDB488A14965C6E631BCB865AA800AC884E153458"
+    },
+    {
+        "path":  "X:\\eu4-research\\mod\\brittany_missions\\decisions\\Custom_Breton_Decisions.txt",
+        "sha256":  "9C7E177033A43633E27358506A73CDF22CEA51666C363773423EDBCA9B8982D2"
+    },
+    {
+        "path":  "X:\\eu4-research\\mod\\brittany_missions\\events\\Custom_Breton_Events.txt",
+        "sha256":  "4ACD8CEE030162866AA2A006FAA7287C0DA1D693A5E736CD739E95E7A3A93B13"
+    },
+    {
+        "path":  "X:\\eu4-research\\mod\\brittany_missions\\localisation\\english\\bri_missions_l_english.yml",
+        "sha256":  "85D1D817EE0DD2EF1B43CD8A28358540805810903E18D0AF10341985811417B9"
+    },
+    {
+        "path":  "X:\\eu4-research\\mod\\brittany_missions\\missions\\Breton_Missions.txt",
+        "sha256":  "96EBD2F1E10B225E1E2A73E8AE21CF9D780FCB092BE15ADBCD16FC22F459A7F8"
+    },
+    {
+        "path":  "X:\\eu4-research\\mod\\brittany_missions\\missions\\Custom_Breton_Missions.txt",
+        "sha256":  "C7F42B80E6037C11FA988EDBE1AE1F0C71DA1F2E1A6F55FE8FCC85D1C08EB324"
+    },
+    {
+        "path":  "X:\\eu4-user-data\\settings.txt",
+        "sha256":  "0FF626E8AADBA4A6B01C296E2F4B8C9D874D06C2B3D56B045A826E5E75CEEA91"
+    },
+    {
+        "path":  "X:\\eu4-user-data\\dlc_load.json",
+        "sha256":  "5CC846E60458A3D910ED013D9C7FA0704C9643D4980BE84FC0E0ACA740CD4BBB"
+    },
+    {
+        "path":  "X:\\eu4-user-data\\shortcuts.txt",
+        "sha256":  "2CF2C8C4957D1182349A88CE9ACFBA2DBDE6F5BB621788FEE79AB4085502D974"
+    }
+]

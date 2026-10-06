@@ -1,0 +1,475 @@
+on_startup = {
+
+    if = {
+        limit = { tag = BRI }
+        log = "EU4RT f004fc6700ea1d9d_0 BEGIN preview-gate"
+        if = {
+            limit = {
+                is_subject = no
+                is_year = 1444
+                NOT = { is_year = 1445 }
+                NOT = { has_country_flag = bri_diplomacy_preview }
+                NOT = { has_country_flag = bri_french_sphere_path }
+                NOT = { has_country_flag = bri_autonomous_path }
+            }
+            log = "EU4RT f004fc6700ea1d9d_0 OK initial"
+        }
+        else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL initial" }
+
+        if = {
+    limit = { has_dlc = "Conquest of Paradise" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-1"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-1" }
+if = {
+    limit = { has_dlc = "Cradle of Civilization" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-2"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-2" }
+if = {
+    limit = { has_dlc = "Dharma" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-3"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-3" }
+if = {
+    limit = { has_dlc = "Domination" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-4"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-4" }
+if = {
+    limit = { has_dlc = "El Dorado" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-5"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-5" }
+if = {
+    limit = { has_dlc = "Emperor" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-6"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-6" }
+if = {
+    limit = { has_dlc = "Golden Century" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-7"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-7" }
+if = {
+    limit = { has_dlc = "King of Kings" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-8"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-8" }
+if = {
+    limit = { has_dlc = "Leviathan" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-9"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-9" }
+if = {
+    limit = { has_dlc = "Lions of the North" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-10"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-10" }
+if = {
+    limit = { has_dlc = "Mandate of Heaven" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-11"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-11" }
+if = {
+    limit = { has_dlc = "Mare Nostrum" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-12"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-12" }
+if = {
+    limit = { has_dlc = "Res Publica" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-13"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-13" }
+if = {
+    limit = { has_dlc = "Rule Britannia" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-14"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-14" }
+if = {
+    limit = { has_dlc = "The Cossacks" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-15"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-15" }
+if = {
+    limit = { has_dlc = "Third Rome" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-16"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-16" }
+if = {
+    limit = { has_dlc = "Wealth of Nations" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-17"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-17" }
+if = {
+    limit = { has_dlc = "Winds of Change" }
+    log = "EU4RT f004fc6700ea1d9d_0 OK dlc-18"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL dlc-18" }
+
+        if = {
+            limit = { bri_diplomacy_preview_trigger = yes }
+            log = "EU4RT f004fc6700ea1d9d_0 OK initial-allowed"
+        }
+        else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL initial-allowed" }
+
+        set_country_flag = bri_french_sphere_path
+        set_country_flag = bri_diplomacy_preview
+        if = {
+            limit = { bri_diplomacy_preview_trigger = yes }
+            log = "EU4RT f004fc6700ea1d9d_0 FAIL french-preview-blocked"
+        }
+        else = { log = "EU4RT f004fc6700ea1d9d_0 OK french-preview-blocked" }
+
+        clr_country_flag = bri_french_sphere_path
+        set_country_flag = bri_autonomous_path
+        if = {
+            limit = { bri_diplomacy_preview_trigger = yes }
+            log = "EU4RT f004fc6700ea1d9d_0 FAIL autonomous-preview-blocked"
+        }
+        else = { log = "EU4RT f004fc6700ea1d9d_0 OK autonomous-preview-blocked" }
+
+        clr_country_flag = bri_diplomacy_preview
+        if = {
+            limit = { bri_diplomacy_preview_trigger = yes }
+            log = "EU4RT f004fc6700ea1d9d_0 OK locked-allowed"
+        }
+        else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL locked-allowed" }
+
+        if = {
+            limit = {
+                has_country_flag = bri_autonomous_path
+                NOT = { has_country_flag = bri_french_sphere_path }
+                NOT = { has_country_flag = bri_diplomacy_preview }
+            }
+            log = "EU4RT f004fc6700ea1d9d_0 OK final-flags"
+        }
+        else = { log = "EU4RT f004fc6700ea1d9d_0 FAIL final-flags" }
+        log = "EU4RT f004fc6700ea1d9d_0 END preview-gate"
+    }
+
+
+    if = {
+        limit = { tag = BRI }
+        log = "EU4RT f004fc6700ea1d9d_1 BEGIN shipbuilding-reward"
+        if = {
+            limit = {
+                is_subject = no
+                is_year = 1444
+                NOT = { is_year = 1445 }
+                169 = { owned_by = ROOT }
+                170 = { owned_by = ROOT }
+                4384 = { owned_by = ROOT }
+            }
+            log = "EU4RT f004fc6700ea1d9d_1 OK initial"
+        }
+        else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL initial" }
+        if = {
+    limit = { has_dlc = "Conquest of Paradise" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-1"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-1" }
+if = {
+    limit = { has_dlc = "Cradle of Civilization" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-2"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-2" }
+if = {
+    limit = { has_dlc = "Dharma" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-3"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-3" }
+if = {
+    limit = { has_dlc = "Domination" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-4"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-4" }
+if = {
+    limit = { has_dlc = "El Dorado" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-5"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-5" }
+if = {
+    limit = { has_dlc = "Emperor" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-6"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-6" }
+if = {
+    limit = { has_dlc = "Golden Century" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-7"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-7" }
+if = {
+    limit = { has_dlc = "King of Kings" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-8"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-8" }
+if = {
+    limit = { has_dlc = "Leviathan" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-9"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-9" }
+if = {
+    limit = { has_dlc = "Lions of the North" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-10"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-10" }
+if = {
+    limit = { has_dlc = "Mandate of Heaven" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-11"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-11" }
+if = {
+    limit = { has_dlc = "Mare Nostrum" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-12"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-12" }
+if = {
+    limit = { has_dlc = "Res Publica" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-13"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-13" }
+if = {
+    limit = { has_dlc = "Rule Britannia" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-14"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-14" }
+if = {
+    limit = { has_dlc = "The Cossacks" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-15"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-15" }
+if = {
+    limit = { has_dlc = "Third Rome" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-16"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-16" }
+if = {
+    limit = { has_dlc = "Wealth of Nations" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-17"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-17" }
+if = {
+    limit = { has_dlc = "Winds of Change" }
+    log = "EU4RT f004fc6700ea1d9d_1 OK dlc-18"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_1 FAIL dlc-18" }
+    }
+
+
+    if = {
+        limit = { tag = BRI }
+        log = "EU4RT f004fc6700ea1d9d_2 BEGIN borders-reward"
+        if = {
+            limit = {
+                is_subject = no
+                is_year = 1444
+                NOT = { is_year = 1445 }
+                169 = { owned_by = ROOT }
+                170 = { owned_by = ROOT }
+                4384 = { owned_by = ROOT }
+            }
+            log = "EU4RT f004fc6700ea1d9d_2 OK initial"
+        }
+        else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL initial" }
+        if = {
+    limit = { has_dlc = "Conquest of Paradise" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-1"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-1" }
+if = {
+    limit = { has_dlc = "Cradle of Civilization" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-2"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-2" }
+if = {
+    limit = { has_dlc = "Dharma" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-3"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-3" }
+if = {
+    limit = { has_dlc = "Domination" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-4"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-4" }
+if = {
+    limit = { has_dlc = "El Dorado" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-5"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-5" }
+if = {
+    limit = { has_dlc = "Emperor" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-6"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-6" }
+if = {
+    limit = { has_dlc = "Golden Century" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-7"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-7" }
+if = {
+    limit = { has_dlc = "King of Kings" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-8"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-8" }
+if = {
+    limit = { has_dlc = "Leviathan" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-9"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-9" }
+if = {
+    limit = { has_dlc = "Lions of the North" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-10"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-10" }
+if = {
+    limit = { has_dlc = "Mandate of Heaven" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-11"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-11" }
+if = {
+    limit = { has_dlc = "Mare Nostrum" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-12"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-12" }
+if = {
+    limit = { has_dlc = "Res Publica" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-13"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-13" }
+if = {
+    limit = { has_dlc = "Rule Britannia" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-14"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-14" }
+if = {
+    limit = { has_dlc = "The Cossacks" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-15"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-15" }
+if = {
+    limit = { has_dlc = "Third Rome" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-16"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-16" }
+if = {
+    limit = { has_dlc = "Wealth of Nations" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-17"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-17" }
+if = {
+    limit = { has_dlc = "Winds of Change" }
+    log = "EU4RT f004fc6700ea1d9d_2 OK dlc-18"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_2 FAIL dlc-18" }
+    }
+
+
+    if = {
+        limit = { tag = BRI }
+        log = "EU4RT f004fc6700ea1d9d_3 BEGIN textiles-upgrade"
+        if = {
+            limit = {
+                is_subject = no
+                is_year = 1444
+                NOT = { is_year = 1445 }
+                169 = { owned_by = ROOT }
+                170 = { owned_by = ROOT }
+                4384 = { owned_by = ROOT }
+            }
+            log = "EU4RT f004fc6700ea1d9d_3 OK initial"
+        }
+        else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL initial" }
+        if = {
+    limit = { has_dlc = "Conquest of Paradise" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-1"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-1" }
+if = {
+    limit = { has_dlc = "Cradle of Civilization" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-2"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-2" }
+if = {
+    limit = { has_dlc = "Dharma" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-3"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-3" }
+if = {
+    limit = { has_dlc = "Domination" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-4"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-4" }
+if = {
+    limit = { has_dlc = "El Dorado" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-5"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-5" }
+if = {
+    limit = { has_dlc = "Emperor" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-6"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-6" }
+if = {
+    limit = { has_dlc = "Golden Century" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-7"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-7" }
+if = {
+    limit = { has_dlc = "King of Kings" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-8"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-8" }
+if = {
+    limit = { has_dlc = "Leviathan" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-9"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-9" }
+if = {
+    limit = { has_dlc = "Lions of the North" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-10"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-10" }
+if = {
+    limit = { has_dlc = "Mandate of Heaven" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-11"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-11" }
+if = {
+    limit = { has_dlc = "Mare Nostrum" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-12"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-12" }
+if = {
+    limit = { has_dlc = "Res Publica" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-13"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-13" }
+if = {
+    limit = { has_dlc = "Rule Britannia" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-14"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-14" }
+if = {
+    limit = { has_dlc = "The Cossacks" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-15"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-15" }
+if = {
+    limit = { has_dlc = "Third Rome" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-16"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-16" }
+if = {
+    limit = { has_dlc = "Wealth of Nations" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-17"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-17" }
+if = {
+    limit = { has_dlc = "Winds of Change" }
+    log = "EU4RT f004fc6700ea1d9d_3 OK dlc-18"
+}
+else = { log = "EU4RT f004fc6700ea1d9d_3 FAIL dlc-18" }
+    }
+
+}

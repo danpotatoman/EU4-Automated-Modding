@@ -1,0 +1,110 @@
+force_pow2_textures=no
+language="l_english"
+graphics={
+	size={
+		x=1280
+		y=720
+	}
+
+	min_gui={
+		x=1280
+		y=720
+	}
+
+	game_ui_scale=1.000
+	refreshRate=280
+	fullScreen=no
+	borderless=no
+	shadows=no
+	shadowSize=2048
+	multi_sampling=8
+	maxanisotropy=4
+	gamma=52.000000
+	vsync=yes
+}
+sound_fx_volume=72.000000
+music_volume=47.520000
+scroll_speed=50.000000
+camera_rotation_speed=50.000000
+zoom_speed=50.000000
+mouse_speed=50.000000
+master_volume=11.445783
+ambient_volume=47.000000
+dev_master_volume=75.000000
+combat_sound_random=6
+mapRenderingOptions={
+	draw_terrain=yes
+	draw_water=yes
+	draw_borders=yes
+	draw_trees=yes
+	draw_rivers=yes
+	draw_lakes=yes
+	draw_postfx=yes
+	draw_sky=yes
+	draw_bloom=yes
+	draw_tooltips=yes
+	draw_hires_terrain=no
+	draw_citysprawl=yes
+	draw_shadows=yes
+	draw_reflections=yes
+	draw_ambient_objects=yes
+	draw_particles=yes
+	moving_units=yes
+	minimap_units=yes
+	draw_terrain_in_uncolonized=yes
+	draw_state_borders=yes
+	use_compact_battle_result=no
+}
+camera_speed=50.000000
+camera_tilt=100.000000
+centered_zoom_in=yes
+lastplayer="Player"
+lasthost=""
+debug_saves=0
+autosave="YEARLY"
+autosave_tocloud=no
+compress_autosave=no
+compress_saves=no
+difficulty="LUCK_NONE"
+outliner={
+	2 3 4 5 7 9 11 12 14 15 16 19 20 21 17 8 
+}
+outliner_open=yes
+messagelist_open=yes
+windowmovetime=0.200000
+floating_chat_text=yes
+hints=no
+autosave_on_events=yes
+autopause_in_countryview=yes
+told_user_autopause=no
+disabled_hints={
+	1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+}
+primary_mapmode_names={
+	{ GFX_mapmode_military_access GFX_mapmode_fortlevel } { GFX_mapmode_political GFX_mapmode_empire GFX_mapmode_players_small } { GFX_mapmode_trade GFX_mapmode_trade_goods GFX_mapmode_colonial_regions } { GFX_mapmode_diplomatic GFX_mapmode_truce GFX_mapmode_coalition } { GFX_mapmode_religion GFX_mapmode_culture GFX_mapmode_acceptedculture } { GFX_mapmode_economical } { GFX_mapmode_rebel } { GFX_mapmode_colonial } { GFX_mapmode_supplylimit } { GFX_mapmode_institutions } 
+}
+been_told_of_low_vram=no
+subscription_highlights=5
+sub_message_seen="sub_1_month"
+sub_message_id_seen=2
+sub_messages_seen={
+	sub_1_month=2
+	sub_subscription=2
+}
+disable_third_party_content=no
+dismissed_news_banner=18
+full_dump=no
+rich_presence=yes
+skip_account_link=no
+cvaa_settings={
+	cvaa_tts_enabled=no
+	cvaa_stt_enabled=no
+	cvaa_chat_visual_alerts=no
+	cvaa_stt_hotkey_enabled=no
+	cvaa_chat_large_fonts=no
+	cvaa_stt_hotkey_value={
+		0 0 0 0 
+	}
+}
+hotkey_activation_delay=0.100000
+hotkey_actualization_delay=0.100000

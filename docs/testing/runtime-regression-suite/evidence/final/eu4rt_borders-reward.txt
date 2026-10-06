@@ -1,0 +1,40 @@
+# Calls the country reward; does not complete the mission.
+BRI = {
+    remove_country_modifier = bri_secure_the_borders_modifier
+    break_alliance = FRA
+    export_to_variable = { which = eu4rt_dip_before value = trigger_value:dip_power }
+    export_to_variable = { which = eu4rt_rep_before value = modifier:diplomatic_reputation }
+    if = { limit = { NOT = { alliance_with = FRA } dip_power = 0 NOT = { dip_power = 800 } } log = "EU4RT e9ac65c794069bde_2 OK unallied-before" }
+    else = { log = "EU4RT e9ac65c794069bde_2 FAIL unallied-before" }
+    bri_secure_borders_reward_effect = yes
+    export_to_variable = { which = eu4rt_dip_delta value = trigger_value:dip_power }
+    subtract_variable = { which = eu4rt_dip_delta which = eu4rt_dip_before }
+    if = { limit = { check_variable = { which = eu4rt_dip_delta value = 50.000 } NOT = { check_variable = { which = eu4rt_dip_delta value = 50.001 } } } log = "EU4RT e9ac65c794069bde_2 OK unallied-dip-plus-50" }
+    else = { log = "EU4RT e9ac65c794069bde_2 FAIL unallied-dip-plus-50" }
+    export_to_variable = { which = eu4rt_rep_delta value = modifier:diplomatic_reputation }
+    subtract_variable = { which = eu4rt_rep_delta which = eu4rt_rep_before }
+    if = { limit = { check_variable = { which = eu4rt_rep_delta value = 1.000 } NOT = { check_variable = { which = eu4rt_rep_delta value = 1.001 } } } log = "EU4RT e9ac65c794069bde_2 OK unallied-reputation-one" }
+    else = { log = "EU4RT e9ac65c794069bde_2 FAIL unallied-reputation-one" }
+    remove_country_modifier = bri_secure_the_borders_modifier
+    export_to_variable = { which = eu4rt_rep_delta value = modifier:diplomatic_reputation }
+    subtract_variable = { which = eu4rt_rep_delta which = eu4rt_rep_before }
+    if = { limit = { check_variable = { which = eu4rt_rep_delta value = 0.000 } NOT = { check_variable = { which = eu4rt_rep_delta value = 0.001 } } } log = "EU4RT e9ac65c794069bde_2 OK unallied-modifier-removed" }
+    else = { log = "EU4RT e9ac65c794069bde_2 FAIL unallied-modifier-removed" }
+    create_alliance = FRA
+    export_to_variable = { which = eu4rt_dip_before value = trigger_value:dip_power }
+    if = { limit = { alliance_with = FRA dip_power = 0 NOT = { dip_power = 800 } } log = "EU4RT e9ac65c794069bde_2 OK allied-before" }
+    else = { log = "EU4RT e9ac65c794069bde_2 FAIL allied-before" }
+    bri_secure_borders_reward_effect = yes
+    export_to_variable = { which = eu4rt_dip_delta value = trigger_value:dip_power }
+    subtract_variable = { which = eu4rt_dip_delta which = eu4rt_dip_before }
+    if = { limit = { check_variable = { which = eu4rt_dip_delta value = 0.000 } NOT = { check_variable = { which = eu4rt_dip_delta value = 0.001 } } } log = "EU4RT e9ac65c794069bde_2 OK allied-dip-unchanged" }
+    else = { log = "EU4RT e9ac65c794069bde_2 FAIL allied-dip-unchanged" }
+    export_to_variable = { which = eu4rt_rep_delta value = modifier:diplomatic_reputation }
+    subtract_variable = { which = eu4rt_rep_delta which = eu4rt_rep_before }
+    if = { limit = { check_variable = { which = eu4rt_rep_delta value = 1.000 } NOT = { check_variable = { which = eu4rt_rep_delta value = 1.001 } } } log = "EU4RT e9ac65c794069bde_2 OK allied-reputation-one" }
+    else = { log = "EU4RT e9ac65c794069bde_2 FAIL allied-reputation-one" }
+    if = { limit = { NOT = { mission_completed = bri_secure_the_borders } } log = "EU4RT e9ac65c794069bde_2 OK mission-incomplete" }
+    else = { log = "EU4RT e9ac65c794069bde_2 FAIL mission-incomplete" }
+}
+log = "EU4RT e9ac65c794069bde_2 END borders-reward"
+

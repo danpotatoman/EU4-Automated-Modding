@@ -1,0 +1,29 @@
+log = "EU4NF 868e7002f5332b98 BEGIN ready"
+BRI = {
+ if = { limit = { has_mission = bri_nantes_market has_mission = bri_breton_textiles NOT = { mission_completed = bri_nantes_market } NOT = { mission_completed = bri_breton_textiles } 172 = { owned_by = ROOT } 169 = { owned_by = ROOT } 4384 = { owned_by = ROOT } NOT = { has_country_flag = bri_diplomacy_preview } NOT = { has_country_flag = bri_french_sphere_path } NOT = { has_country_flag = bri_autonomous_path } }
+ 172 = { add_building = marketplace }
+ if = { limit = { 172 = { has_trade_building_trigger = yes has_building = marketplace } } log = "EU4NF 868e7002f5332b98 OK marketplace-added" }
+else = { log = "EU4NF 868e7002f5332b98 FAIL marketplace-added" }
+ if = { limit = { has_mission = bri_nantes_market has_mission = bri_breton_textiles NOT = { mission_completed = bri_nantes_market } NOT = { mission_completed = bri_breton_textiles } NOT = { has_country_flag = bri_diplomacy_preview } NOT = { has_country_flag = bri_french_sphere_path } NOT = { has_country_flag = bri_autonomous_path } 169 = { has_production_building_trigger = yes } 4384 = { has_production_building_trigger = yes } } log = "EU4NF 868e7002f5332b98 OK ready-fixture-only" }
+else = { log = "EU4NF 868e7002f5332b98 FAIL ready-fixture-only" }
+ 169 = {
+ export_to_variable = { which = eu4nf_goods value = modifier:trade_goods_size_modifier }
+ 
+ if = { limit = { check_variable = { which = eu4nf_goods value = 0 } NOT = { check_variable = { which = eu4nf_goods value = 0.001 } } } log = "EU4NF 868e7002f5332b98 OK ready-value-169" }
+else = { log = "EU4NF 868e7002f5332b98 FAIL ready-value-169" }
+ 
+ if = { limit = { has_province_modifier = bri_demand_for_breton_cloth } log = "EU4NF 868e7002f5332b98 OBS ready-named-169 present" }
+ else = { log = "EU4NF 868e7002f5332b98 OBS ready-named-169 query-false" }
+}
+4384 = {
+ export_to_variable = { which = eu4nf_goods value = modifier:trade_goods_size_modifier }
+ 
+ if = { limit = { check_variable = { which = eu4nf_goods value = 0 } NOT = { check_variable = { which = eu4nf_goods value = 0.001 } } } log = "EU4NF 868e7002f5332b98 OK ready-value-4384" }
+else = { log = "EU4NF 868e7002f5332b98 FAIL ready-value-4384" }
+ 
+ if = { limit = { has_province_modifier = bri_demand_for_breton_cloth } log = "EU4NF 868e7002f5332b98 OBS ready-named-4384 present" }
+ else = { log = "EU4NF 868e7002f5332b98 OBS ready-named-4384 query-false" }
+}
+ } else = { log = "EU4NF 868e7002f5332b98 FAIL ready-refused" }
+}
+log = "EU4NF 868e7002f5332b98 END ready"

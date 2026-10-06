@@ -1,0 +1,57 @@
+# Separate console dispatch to probe named-modifier query timing.
+BRI = {
+    169 = {
+        if = {
+            limit = { has_province_modifier = bri_demand_for_breton_cloth }
+            log = "EU4RT c3f5819eb3166689 OBS permanent-presence present"
+        }
+        else = { log = "EU4RT c3f5819eb3166689 OBS permanent-presence query-false" }
+        export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+        if = {
+            limit = { check_variable = { which = eu4rt_goods value = 0.15 } NOT = { check_variable = { which = eu4rt_goods value = 0.151 } } }
+            log = "EU4RT c3f5819eb3166689 OK province-value-correct"
+        }
+        else = { log = "EU4RT c3f5819eb3166689 FAIL province-value-correct" }
+        # Independently calibrate identity through removal by the same modifier ID.
+        remove_province_modifier = bri_demand_for_breton_cloth
+        export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+        if = {
+            limit = { check_variable = { which = eu4rt_goods value = 0 } NOT = { check_variable = { which = eu4rt_goods value = 0.001 } } }
+            log = "EU4RT c3f5819eb3166689 OK province-removed-zero"
+        }
+        else = { log = "EU4RT c3f5819eb3166689 FAIL province-removed-zero" }
+        # A finite-duration control distinguishes duration from general lookup behavior.
+        add_province_modifier = { name = bri_demand_for_breton_cloth duration = 365 }
+        if = {
+            limit = { has_province_modifier = bri_demand_for_breton_cloth }
+            log = "EU4RT c3f5819eb3166689 OBS finite-presence present"
+        }
+        else = { log = "EU4RT c3f5819eb3166689 OBS finite-presence query-false" }
+        export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+        if = {
+            limit = { check_variable = { which = eu4rt_goods value = 0.15 } NOT = { check_variable = { which = eu4rt_goods value = 0.151 } } }
+            log = "EU4RT c3f5819eb3166689 OK finite-value-correct"
+        }
+        else = { log = "EU4RT c3f5819eb3166689 FAIL finite-value-correct" }
+        remove_province_modifier = bri_demand_for_breton_cloth
+        export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+        if = {
+            limit = { check_variable = { which = eu4rt_goods value = 0 } NOT = { check_variable = { which = eu4rt_goods value = 0.001 } } }
+            log = "EU4RT c3f5819eb3166689 OK cleanup-zero"
+        }
+        else = { log = "EU4RT c3f5819eb3166689 FAIL cleanup-zero" }
+    }
+    if = {
+        limit = {
+            NOT = { mission_completed = bri_nantes_market }
+            NOT = { mission_completed = bri_breton_textiles }
+            4384 = { NOT = { has_province_modifier = bri_demand_for_breton_cloth } }
+            NOT = { has_country_flag = bri_diplomacy_preview }
+            NOT = { has_country_flag = bri_french_sphere_path }
+            NOT = { has_country_flag = bri_autonomous_path }
+        }
+        log = "EU4RT c3f5819eb3166689 OK missions-untouched"
+    }
+    else = { log = "EU4RT c3f5819eb3166689 FAIL missions-untouched" }
+}
+log = "EU4RT c3f5819eb3166689 END run-effects"

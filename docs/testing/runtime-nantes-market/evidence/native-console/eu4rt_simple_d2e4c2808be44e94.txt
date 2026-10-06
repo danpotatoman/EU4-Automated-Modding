@@ -1,0 +1,24 @@
+log = "EU4RUN d2e4c2808be44e94 BEGIN simple profile-root"
+BRI = {
+    if = { limit = { mission_completed = bri_nantes_market } log = "EU4RUN d2e4c2808be44e94 OK console-mission-completed" }
+    else = { log = "EU4RUN d2e4c2808be44e94 FAIL console-mission-completed" }
+    if = { limit = { has_mission = bri_breton_textiles NOT = { mission_completed = bri_breton_textiles } mission_completed = bri_nantes_market } log = "EU4RUN d2e4c2808be44e94 OK downstream-parent-completed" }
+    else = { log = "EU4RUN d2e4c2808be44e94 FAIL downstream-parent-completed" }
+    169 = {
+        if = { limit = { has_province_modifier = bri_demand_for_breton_cloth } log = "EU4RUN d2e4c2808be44e94 OBS modifier-169 present" }
+        else = { log = "EU4RUN d2e4c2808be44e94 OBS modifier-169 query-false" }
+        export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+        if = { limit = { check_variable = { which = eu4rt_goods value = 0.15 } NOT = { check_variable = { which = eu4rt_goods value = 0.151 } } } log = "EU4RUN d2e4c2808be44e94 OBS value-169 correct" }
+        else_if = { limit = { check_variable = { which = eu4rt_goods value = 0 } NOT = { check_variable = { which = eu4rt_goods value = 0.001 } } } log = "EU4RUN d2e4c2808be44e94 OBS value-169 zero" }
+        else = { log = "EU4RUN d2e4c2808be44e94 OBS value-169 other" }
+    }
+    4384 = {
+        if = { limit = { has_province_modifier = bri_demand_for_breton_cloth } log = "EU4RUN d2e4c2808be44e94 OBS modifier-4384 present" }
+        else = { log = "EU4RUN d2e4c2808be44e94 OBS modifier-4384 query-false" }
+        export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+        if = { limit = { check_variable = { which = eu4rt_goods value = 0.15 } NOT = { check_variable = { which = eu4rt_goods value = 0.151 } } } log = "EU4RUN d2e4c2808be44e94 OBS value-4384 correct" }
+        else_if = { limit = { check_variable = { which = eu4rt_goods value = 0 } NOT = { check_variable = { which = eu4rt_goods value = 0.001 } } } log = "EU4RUN d2e4c2808be44e94 OBS value-4384 zero" }
+        else = { log = "EU4RUN d2e4c2808be44e94 OBS value-4384 other" }
+    }
+}
+log = "EU4RUN d2e4c2808be44e94 END simple"

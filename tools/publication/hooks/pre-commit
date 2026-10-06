@@ -1,0 +1,9 @@
+#!/bin/sh
+# Scan the bytes about to be committed, including force-added ignored artifacts.
+if command -v node >/dev/null 2>&1; then
+  exec node tools/publication/audit.mjs --staged --history
+elif command -v powershell.exe >/dev/null 2>&1; then
+  exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/publication/pre-commit.ps1
+fi
+echo 'Node.js 24 is required for the publication audit.' >&2
+exit 2

@@ -1,0 +1,5 @@
+[localize.cpp:671]: Localization hash collision found, more info in text.log! Language: l_english
+[localize.cpp:671]: Localization hash collision found, more info in text.log! Language: l_english
+[news_banner.cpp:96]: Failed to get server data for key: 'steam_depot_id'
+[news_banner.cpp:185]: Failed to parse JSON
+[fixedwindow.cpp:2962]: interface/provinceview.gui: Missing Icon 'remove_parliament' in window 'top_section_window'.

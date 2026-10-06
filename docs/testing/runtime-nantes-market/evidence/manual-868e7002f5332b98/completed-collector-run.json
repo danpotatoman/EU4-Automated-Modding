@@ -1,0 +1,191 @@
+{
+  "id": "20261003T223050435Z_8f94eb",
+  "mod": "brittany_nantes_manual",
+  "scenario": "Nantes ordinary mission-button readiness, rewards, Textiles update, once-only and persistence; nonce 868e7002f5332b98",
+  "startedAtUtc": "2026-10-03T22:30:50.439Z",
+  "status": "complete",
+  "logsDirectory": "X:\\eu4-research\\tools\\runtime-tests\\work\\nantes-manual-20261003T222727038Z-868e7002f5332b98\\profile\\logs",
+  "deployment": null,
+  "before": [],
+  "notes": "",
+  "gameVersion": "v1.37.5.0",
+  "gameVersionSource": "latest CWTools report; not verified against running game",
+  "after": [
+    {
+      "name": "ai.log",
+      "size": 98,
+      "sha256": "f84a2f50f868ad7b041f9e10c8e76061a3583e2a0b9f91cd642b8b5ece37dd1f",
+      "modifiedAtUtc": "2026-10-03T22:31:32.610Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "ai_budgeting.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifiedAtUtc": "2026-10-03T22:30:54.732Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "ai_priority.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifiedAtUtc": "2026-10-03T22:30:54.732Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "ai_spending.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifiedAtUtc": "2026-10-03T22:30:54.732Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "autotest.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifiedAtUtc": "2026-10-03T22:30:54.731Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "building_investment.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifiedAtUtc": "2026-10-03T22:30:54.734Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "code_revisions.log",
+      "size": 272,
+      "sha256": "4ca1e49d164938a2b457e78640a58cf2646ecc0eee5772044f99956c982b6034",
+      "modifiedAtUtc": "2026-10-03T22:30:56.288Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "custom_automated_stats.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifiedAtUtc": "2026-10-03T22:30:54.735Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "error.log",
+      "size": 423,
+      "sha256": "113cf473ab57e456646cf4e0afb0913b45cad6063107f194319f77e21da098a3",
+      "modifiedAtUtc": "2026-10-03T22:41:01.431Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "game.log",
+      "size": 10283,
+      "sha256": "1e473bc98a65c797f519c74a23ca0b1e6ff0236732c53d7d255234d8458641b7",
+      "modifiedAtUtc": "2026-10-03T22:53:49.822Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "graphics.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifiedAtUtc": "2026-10-03T22:30:54.729Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "local_temp.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifiedAtUtc": "2026-10-03T22:30:54.730Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "memory.log",
+      "size": 7317,
+      "sha256": "8ccfd1b2e4854907bb97d883ff7d19c0fa61c9d7b694dad878cec8c89bfccbca",
+      "modifiedAtUtc": "2026-10-03T22:31:33.933Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "message.log",
+      "size": 856,
+      "sha256": "67b8674865567a8f3a87d7dbe9722fa8a99d35a2bc373c4c351f25ac718f5aee",
+      "modifiedAtUtc": "2026-10-03T22:31:33.935Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "profiling.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifiedAtUtc": "2026-10-03T22:30:54.730Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "random.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifiedAtUtc": "2026-10-03T22:30:54.728Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "random02.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifiedAtUtc": "2026-10-03T22:30:54.729Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "receivedcommands.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifiedAtUtc": "2026-10-03T22:30:54.728Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "sentcommands.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modifiedAtUtc": "2026-10-03T22:30:54.727Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "setup.log",
+      "size": 919032,
+      "sha256": "f5fa007c7caf748dda0642d5b076145f9869a2d822823681bffc04071bf351f1",
+      "modifiedAtUtc": "2026-10-03T22:31:25.775Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "setup_error.log",
+      "size": 95574,
+      "sha256": "5e8f9a0b978e233b4cee562b9d3ca754d7e4bcfcc209e72ca133df2cc5d9a887",
+      "modifiedAtUtc": "2026-10-03T22:31:32.576Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "system.log",
+      "size": 9682,
+      "sha256": "1fa137bae5674bfc9fd7ddff4e4fa58f9d2689a08a2706ff4a696d055ef19b63",
+      "modifiedAtUtc": "2026-10-03T22:31:22.300Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "system_interface.log",
+      "size": 1363,
+      "sha256": "9446d91385a5361bb47c472792508b6c1b7ea9f0e638decf84829e9a82ac7a52",
+      "modifiedAtUtc": "2026-10-03T22:31:33.736Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "text.log",
+      "size": 7006,
+      "sha256": "5b182852932bdc5b26f456f24676378a6d9e9037a44d1e53dfb1b7f988af09fb",
+      "modifiedAtUtc": "2026-10-03T22:30:57.158Z",
+      "changedDuringCapture": false
+    },
+    {
+      "name": "time.log",
+      "size": 1024,
+      "sha256": "e37fa9ec4f1bf18c2bb1002f84ea01b61c083ee19c5e6109da41e89bf295bc96",
+      "modifiedAtUtc": "2026-10-03T22:31:34.247Z",
+      "changedDuringCapture": false
+    }
+  ],
+  "finishedAtUtc": "2026-10-03T22:59:08.696Z"
+}

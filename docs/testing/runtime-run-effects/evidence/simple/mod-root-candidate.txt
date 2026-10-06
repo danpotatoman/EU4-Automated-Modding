@@ -1,0 +1,16 @@
+log = "EU4RUN 77f4bab0b67467dc BEGIN simple mod-root"
+if = { limit = { tag = BRI } log = "EU4RUN 77f4bab0b67467dc OK implicit-bri" }
+else = { log = "EU4RUN 77f4bab0b67467dc FAIL implicit-bri" }
+BRI = {
+    add_prestige = -1000
+    add_prestige = 100
+    export_to_variable = { which = eu4rt_run_prestige value = prestige }
+    if = { limit = { check_variable = { which = eu4rt_run_prestige value = 0 } NOT = { check_variable = { which = eu4rt_run_prestige value = 0.001 } } } log = "EU4RUN 77f4bab0b67467dc OK prestige-before-zero" }
+    else = { log = "EU4RUN 77f4bab0b67467dc FAIL prestige-before-zero" }
+    set_country_flag = eu4rt_run_simple_77f4bab0b67467dc
+    add_prestige = 7
+    export_to_variable = { which = eu4rt_run_prestige value = prestige }
+    if = { limit = { has_country_flag = eu4rt_run_simple_77f4bab0b67467dc check_variable = { which = eu4rt_run_prestige value = 7 } NOT = { check_variable = { which = eu4rt_run_prestige value = 7.001 } } } log = "EU4RUN 77f4bab0b67467dc OK flag-and-prestige-seven" }
+    else = { log = "EU4RUN 77f4bab0b67467dc FAIL flag-and-prestige-seven" }
+}
+log = "EU4RUN 77f4bab0b67467dc END simple"

@@ -1,0 +1,151 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "key": "campaignId",
+      "passed": true
+    },
+    {
+      "key": "completed",
+      "passed": true
+    },
+    {
+      "key": "modifiers",
+      "passed": true
+    },
+    {
+      "key": "government",
+      "passed": true
+    },
+    {
+      "key": "reforms",
+      "passed": true
+    },
+    {
+      "key": "flags",
+      "passed": true
+    },
+    {
+      "key": "capitalManpower",
+      "passed": true
+    },
+    {
+      "key": "capitalModifiers",
+      "passed": true
+    },
+    {
+      "key": "variables",
+      "passed": true
+    },
+    {
+      "key": "capitalVariables",
+      "passed": true
+    },
+    {
+      "key": "dip",
+      "passed": true
+    },
+    {
+      "key": "prestige",
+      "passed": true
+    }
+  ],
+  "state": {
+    "file": "X:\\eu4-research\\tools\\runtime-tests\\work\\20261004T105823451Z_470def8e14de1db9\\attempts\\1\\reload.eu4",
+    "sha256": "608f31c164d0b6f436087c6f79c06891e13615284409418b97aeec8d99c01315",
+    "campaignId": "4c01c9e4-52d2-420a-b486-b34c2a2632e3",
+    "tag": "USA",
+    "completed": [
+      "amc_federal_compact",
+      "amc_free_harbors",
+      "amc_liberty_at_last",
+      "amc_open_doors"
+    ],
+    "modifiers": [
+      {
+        "name": "centralization_modifier",
+        "date": "1464.11.11"
+      },
+      {
+        "name": "amc_liberty_modifier",
+        "date": "1464.11.11"
+      },
+      {
+        "name": "amc_enumerated_powers",
+        "date": "-1.1.1"
+      },
+      {
+        "name": "amc_open_doors_modifier",
+        "date": "1464.11.11"
+      }
+    ],
+    "provinces": {
+      "950": {
+        "owner": "USA"
+      },
+      "952": {
+        "owner": "USA"
+      },
+      "953": {
+        "owner": "USA"
+      },
+      "956": {
+        "owner": "USA"
+      },
+      "957": {
+        "owner": "USA"
+      },
+      "962": {
+        "owner": "USA"
+      },
+      "965": {
+        "owner": "USA"
+      },
+      "966": {
+        "owner": "USA"
+      },
+      "967": {
+        "owner": "USA"
+      },
+      "968": {
+        "owner": "USA"
+      }
+    },
+    "culture": "american",
+    "prestige": 53.947,
+    "dip": 120,
+    "government": "republic",
+    "reforms": [
+      "republic_mechanic",
+      "oligarchy_reform"
+    ],
+    "flags": [
+      "became_great_power_flag",
+      "eu4usa_started",
+      "was_not_former_colonial_nation",
+      "old_world_to_new_world_flag",
+      "no_colonial_nations",
+      "changed_from_colonial_nation",
+      "amc_enumerated_powers_chosen"
+    ],
+    "variables": {
+      "eu4usa_development_cost": -0.1,
+      "eu4usa_global_colonial_growth": 25,
+      "eu4usa_governing_capacity_modifier": 0.1,
+      "eu4usa_state_maintenance_modifier": -0.1
+    },
+    "capitalManpower": 7,
+    "capitalVariables": {
+      "eu4usa_trade": 0.9
+    },
+    "capitalModifiers": [
+      {
+        "name": "amc_free_harbor",
+        "date": "-1.1.1"
+      }
+    ],
+    "buildings": [
+      "marketplace"
+    ]
+  }
+}

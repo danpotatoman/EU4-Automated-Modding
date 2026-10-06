@@ -1,0 +1,149 @@
+{
+  "status": "readiness-verified-awaiting-ordinary-completion",
+  "checkedAtUtc": "2026-10-03T22:50:16.016234+00:00",
+  "nonce": "868e7002f5332b98",
+  "sourceAndStagedAndConsoleHashesUnchanged": true,
+  "checkpoints": [
+    {
+      "label": "unready",
+      "savePath": "tools/runtime-tests/work/nantes-manual-20261003T222727038Z-868e7002f5332b98/profile/save games/BRI_nantes_unready.eu4",
+      "snapshotPath": "tools/runtime-tests/work/nantes-manual-20261003T222727038Z-868e7002f5332b98/checkpoints/readiness/BRI_nantes_unready.eu4",
+      "sha256": "31998f062a60fa101ae2a8217c3e237bce67c295d625f11a6e5a8a1595bc9371",
+      "bytes": 3525070,
+      "date": "1444.11.11",
+      "paused": true,
+      "player": "BRI",
+      "campaignId": "0cb36ae4-f222-4427-ac55-77a9f161b96e",
+      "saveVersion": "1.37.5.0",
+      "dlcs": [
+        "Conquest of Paradise",
+        "Wealth of Nations",
+        "Res Publica",
+        "Art of War",
+        "El Dorado",
+        "Common Sense",
+        "The Cossacks",
+        "Mare Nostrum",
+        "Rights of Man",
+        "Mandate of Heaven",
+        "Third Rome",
+        "Cradle of Civilization",
+        "Rule Britannia",
+        "Dharma",
+        "Golden Century",
+        "Emperor",
+        "Leviathan",
+        "Lions of the North",
+        "Domination",
+        "King of Kings",
+        "Winds of Change"
+      ],
+      "provinces": {
+        "169": {
+          "name": "Arvor",
+          "owner": "BRI",
+          "buildings": [
+            "workshop"
+          ],
+          "clothIdPresent": false
+        },
+        "172": {
+          "name": "Bro Naoned",
+          "owner": "BRI",
+          "buildings": [],
+          "clothIdPresent": false
+        },
+        "4384": {
+          "name": "Bro Roazhon",
+          "owner": "BRI",
+          "buildings": [
+            "workshop"
+          ],
+          "clothIdPresent": false
+        }
+      },
+      "commerceSeriesSaved": true,
+      "missionIdsAbsentFromCountry": true,
+      "selectorFlagsAbsent": true
+    },
+    {
+      "label": "ready",
+      "savePath": "tools/runtime-tests/work/nantes-manual-20261003T222727038Z-868e7002f5332b98/profile/save games/BRI_nantes_ready.eu4",
+      "snapshotPath": "tools/runtime-tests/work/nantes-manual-20261003T222727038Z-868e7002f5332b98/checkpoints/readiness/BRI_nantes_ready.eu4",
+      "sha256": "a18e0aa51d7de20139c892f0ffaa2866c917df3db694544fb7b52924cbafb204",
+      "bytes": 3525143,
+      "date": "1444.11.11",
+      "paused": true,
+      "player": "BRI",
+      "campaignId": "0cb36ae4-f222-4427-ac55-77a9f161b96e",
+      "saveVersion": "1.37.5.0",
+      "dlcs": [
+        "Conquest of Paradise",
+        "Wealth of Nations",
+        "Res Publica",
+        "Art of War",
+        "El Dorado",
+        "Common Sense",
+        "The Cossacks",
+        "Mare Nostrum",
+        "Rights of Man",
+        "Mandate of Heaven",
+        "Third Rome",
+        "Cradle of Civilization",
+        "Rule Britannia",
+        "Dharma",
+        "Golden Century",
+        "Emperor",
+        "Leviathan",
+        "Lions of the North",
+        "Domination",
+        "King of Kings",
+        "Winds of Change"
+      ],
+      "provinces": {
+        "169": {
+          "name": "Arvor",
+          "owner": "BRI",
+          "buildings": [
+            "workshop"
+          ],
+          "clothIdPresent": false
+        },
+        "172": {
+          "name": "Bro Naoned",
+          "owner": "BRI",
+          "buildings": [
+            "marketplace"
+          ],
+          "clothIdPresent": false
+        },
+        "4384": {
+          "name": "Bro Roazhon",
+          "owner": "BRI",
+          "buildings": [
+            "workshop"
+          ],
+          "clothIdPresent": false
+        }
+      },
+      "commerceSeriesSaved": true,
+      "missionIdsAbsentFromCountry": true,
+      "selectorFlagsAbsent": true
+    }
+  ],
+  "readyMarkerCount": 8,
+  "readyMarkers": [
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 BEGIN ready",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK marketplace-added",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK ready-fixture-only",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK ready-value-169",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OBS ready-named-169 query-false",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OK ready-value-4384",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 OBS ready-named-4384 query-false",
+    "[effectimplementation.cpp:25375]: EVENT [1444.11.11]:EU4NF 868e7002f5332b98 END ready"
+  ],
+  "operatorReport": "Nantes unavailable due to missing trade building, then marketplace present and mission ready after run nantes_ready.txt. Cloth for Sail parent blocked before and after. No unpause or refresh; 11 November 1444. Both requested save names used.",
+  "readinessVerified": true,
+  "ordinaryCompletionVerified": false,
+  "boundary": "UI readiness is an operator report corroborated by native fixture/save evidence. Absent mission IDs are saved-state observations, not an independent readiness oracle. DLC metadata lists 21 names: all 18 specified DLC plus Art of War, Common Sense and Rights of Man. No additional compatibility claim is inferred."
+}

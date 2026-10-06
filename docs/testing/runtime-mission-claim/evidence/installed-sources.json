@@ -1,0 +1,23 @@
+﻿[
+    {
+        "relativePath":  "interface/countrymissionsview.gui",
+        "installedPath":  "X:\\eu4-game\\interface\\countrymissionsview.gui",
+        "sha256":  "492157456D7047FA92A5F266A3AC2CBF74DB6F5010CC931FC2E9F211DB4C5B3F",
+        "version":  "EU4 1.37.5.0 Inca (491d)",
+        "readOnly":  true
+    },
+    {
+        "relativePath":  "interface/countryview.gui",
+        "installedPath":  "X:\\eu4-game\\interface\\countryview.gui",
+        "sha256":  "3B1A0059B591ED66FD99D626331263BA7561CABFB461E9134269EC4EA7D69B73",
+        "version":  "EU4 1.37.5.0 Inca (491d)",
+        "readOnly":  true
+    },
+    {
+        "relativePath":  "launcher-settings.json",
+        "installedPath":  "X:\\eu4-game\\launcher-settings.json",
+        "sha256":  "71BC763B5DF4D9FC04DBC48655449F847BF4442D65FB195E5111739C08C5D572",
+        "version":  "EU4 1.37.5.0 Inca (491d)",
+        "readOnly":  true
+    }
+]

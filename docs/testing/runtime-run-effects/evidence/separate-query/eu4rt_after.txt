@@ -1,0 +1,29 @@
+# Separate console dispatch to probe named-modifier query timing.
+BRI = {
+    169 = {
+        if = {
+            limit = { has_province_modifier = bri_demand_for_breton_cloth }
+            log = "EU4RT 73edc51c4d8b76e3 OK province-reward-after"
+        }
+        else = { log = "EU4RT 73edc51c4d8b76e3 FAIL province-reward-after" }
+        export_to_variable = { which = eu4rt_goods value = modifier:trade_goods_size_modifier }
+        if = {
+            limit = { check_variable = { which = eu4rt_goods value = 0.15 } NOT = { check_variable = { which = eu4rt_goods value = 0.151 } } }
+            log = "EU4RT 73edc51c4d8b76e3 OK province-value-correct"
+        }
+        else = { log = "EU4RT 73edc51c4d8b76e3 FAIL province-value-correct" }
+    }
+    if = {
+        limit = {
+            NOT = { mission_completed = bri_nantes_market }
+            NOT = { mission_completed = bri_breton_textiles }
+            4384 = { NOT = { has_province_modifier = bri_demand_for_breton_cloth } }
+            NOT = { has_country_flag = bri_diplomacy_preview }
+            NOT = { has_country_flag = bri_french_sphere_path }
+            NOT = { has_country_flag = bri_autonomous_path }
+        }
+        log = "EU4RT 73edc51c4d8b76e3 OK missions-untouched"
+    }
+    else = { log = "EU4RT 73edc51c4d8b76e3 FAIL missions-untouched" }
+}
+log = "EU4RT 73edc51c4d8b76e3 END run-effects"

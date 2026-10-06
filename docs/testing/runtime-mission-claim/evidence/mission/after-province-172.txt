@@ -1,0 +1,85 @@
+-172={
+		name="Bro Naoned"
+		owner="BRI"
+		controller="BRI"
+		previous_controller="BRI"
+		institutions={
+			100.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 
+		}
+		cores={
+			BRI 
+		}
+		trade="bordeaux"
+		unit={
+			id=119
+			type=54
+		}
+
+		original_culture=breton
+		native_culture=breton
+		culture=breton
+		religion=catholic
+		original_religion=catholic
+		capital="Naoned"
+		is_city=yes
+		garrison=1000.000
+		base_tax=4.000
+		original_tax=12.000
+		base_production=4.000
+		base_manpower=4.000
+		likely_rebels="noble_rebels"
+		trade_goods=salt
+		ub=no
+		buildings={
+			marketplace=yes
+		}
+		building_builders={
+			marketplace="BRI"
+		}
+		history={
+			owner="BRI"
+			controller={
+				tag="BRI"
+			}
+			capital="Nantes"
+			is_city=yes
+			culture=breton
+			religion=catholic
+			hre=no
+			base_tax=4.000
+			base_production=4.000
+			trade_goods=salt
+			base_manpower=4.000
+			add_core="BRI"
+			discovered_by="eastern"
+			discovered_by="western"
+			discovered_by="muslim"
+			discovered_by="ottoman"
+			extra_cost=10.000
+			1444.11.11={
+				marketplace=yes
+			}
+			1444.11.12={
+				owner="BRI"
+			}
+		}
+		discovery_dates2={
+			1=1.1.1 2=1.1.1 3=1.1.1 4=1.1.1 
+		}
+		discovery_religion_dates2={
+			1=1444.11.11 6=1444.11.11 7=1444.11.11 8=1444.11.11 9=1444.11.11 10=1444.11.11 
+		}
+		discovered_by={SWE DAN GOT NOR SHL ALB ATH BOS BYZ CRO CYP EPI KNI MOL NAX RAG SER WAL HUN TUR CNN ENG LEI MNS SCO TYR ULS DMS SLN KID ORD TRY FLY MCM LOI LIT LIV MAZ POL RIG TEU OKA ALS AMG AUV BOU BRI BUR FOI FRA NEV ORL PRO AAC ANH ANS AUG BAD BOH BRA BRE BRU EFR FRN HAB HAM HES KLE KOL LAU LOR LUN MAG MAI MKL MUN OLD PAL SAX SLZ SWI THU TRI ULM WBG WUR NUM MEM VER NSA RVA DTT ARA CAS GRA NAV POR FER GEN MAN MLO NAP PAP SAV SIE URB VEN MFA LUC LAN BRB FLA FRI GEL HOL LIE UTR GEO MOS NOV PSK RYA TVE YAR PRM FEO BLO RSO ADE ALH ANZ ARD DAW FAD HDR HED MDA MFL MHR NAJ NJR OMA RAS SHM SRV YAS YEM HSN BTL AKK CND DUL KAR SYR TRE RAM AVR MLK SME ARL MSY MAM MOR TUN TFL SOS TLC TGT GHD FZA MZB MRK AFG KHO QAR TIM TRS KRY CIR GAZ TAB ORM LRI SIS BPI FRS QOM BAL HSA UBV LBV ING PSS MBZ KNZ ROT BYT REG GNV TTL OPL GLG BLG SZO WOL STE GOS CLI HRZ TNT BRG MLH BAM PGA }
+		modifier={
+			modifier="loire_estuary_modifier"
+			date=-1.1.1
+			permanent=yes
+		}
+		fort_influencing=178
+		trade_power=17.980
+		rebel_faction={
+			id=100
+			type=50
+		}
+
+	}
