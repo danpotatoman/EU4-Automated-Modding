@@ -1,7 +1,7 @@
 # American Century state
 
 Owner: mod/american_century
-Last updated: 2026-10-06 (documentation only; no new game validation)
+Last updated: 2026-10-07 (bounded alternate constitution/Union native evidence)
 
 The first slice is implemented; positive and negative contracts are retained PASS
 from 2026-10-04. The full adopted design and natural colonial campaign remain open.
@@ -24,12 +24,26 @@ British eastern CN -> independent colony -> USA assignment has not been proved.
 | Ordinary reload | 12 persistence comparisons of completions, flags/reforms, rewards/expiry, capital state and numerical observations | One paused UI reload; time-based expiry/repeat-click/arbitrary save-launch untested |
 | Negative, `20261004T110948651Z_65dcd99511bff1c2` | Fresh missing-marketplace refusal, no entry input, eight before/after save checks | False/true readiness in separate fresh fixtures; same-campaign building transition open |
 | Source/staged static validation | 8/12 loaded gameplay/test files respectively, CWTools zero errors/warnings; no structural layout error | Source descriptor was rewritten for runtime activation, not release-certified; inspector cannot evaluate colonial scripted potential |
+| Local Guarantees -> Union, `20261007T201607449Z_bf7181bbc16ae60e` | PASS/exit 0: three real mission buttons, real alternate option, 65 native input/save checks across six checkpoints; 13 paused reload comparisons | Overseas ENG fixture, exact tradition gate 60 -> 70; no elapsed accrual/natural campaign/new missions/exactly-18 certification |
 
 The [dated report and original verdicts](../../testing/american-century/README.md)
 link numerical rewards, input, saves and source/staged hashes. Its eight earlier
 INCOMPLETE attempts remain INCOMPLETE; only the separate clean runs earned PASS.
 The 2026-10-05 publication check again records source CWTools zero errors/warnings;
-there is no USA combined-check report at the ownership review.
+there was no USA combined-check report at the ownership review. The 2026-10-07
+combined preflight passed with zero CWTools errors/warnings and two layout warnings.
+
+The [alternate-path report](../../testing/mods/american_century/local-guarantees-2026-10-07/README.md)
+establishes republic/oligarchy reform, event tradition 50 -> 60, exclusive Local
+Guarantees flag/permanent modifier, +1 accepted-culture capacity and isolated -1
+national unrest. Only the fixture's once-only +10 tradition is needed for Union at
+stability 2/RT 70. Its actual claim grants permanent +0.3 yearly tradition/+10%
+reform progress growth; both modifiers and fresh totals survive ordinary paused
+reload. Tradition itself stays 70 across Union. Vanilla tradition's -0.2 unrest/
++0.10 growth per ten points is checked separately, not attributed to Local Guarantees.
+The calibration attempt remains INCOMPLETE with clean cleanup; a fresh run earned
+PASS. All 36 selected protected source/profile/installed-reference hashes match.
+Production files are unchanged. No commit/push or natural campaign/tree expansion.
 
 ## Environment and dependencies
 

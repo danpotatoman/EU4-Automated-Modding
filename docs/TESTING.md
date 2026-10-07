@@ -91,11 +91,16 @@ preparation. No repository-wide native all command exists.
 | nantes-claim click/refusal | Brittany supervised actual-input/native-save contract | See [Brittany runbook](mods/brittany_missions/testing/README.md) |
 | nantes-market / run-effects | Brittany completion diagnostic / BRI engine-calibration workload, outside all | `./tools/run-eu4-test.ps1 -Mod brittany_missions -Test run-effects -TimeoutSeconds 150` |
 | usa-slice click/refusal | American Century supervised formation/four real claims/native-save fixture, outside all; reload is separate scenario evidence | See [USA runbook](mods/american_century/testing/README.md) |
+| usa-local-union click | American Century: real Liberty/Compact/Local option/Union, six paused checkpoints and ordinary reload, same USA adapter/lifecycle | `./tools/run-eu4-test.ps1 -Mod american_century -Test usa-local-union -ClaimMode click -TimeoutSeconds 1800 -ProgressTimeoutSeconds 1800 -Retries 0` |
 
 Legacy commands without -Mod retain usa-slice -> American Century and every other
 test/default -> Brittany routing, with a scoped notice. The first positional
 PowerShell argument remains Test. Defaults, exit codes and protocol IDs are intact.
 Explicit USA all and USA diagnostic modes other than click/negative are rejected.
+The added usa-local-union contract requires explicit -Mod american_century and
+supports click only; legacy omitted-Mod routing remains unchanged. Its current
+[native scope/report](testing/mods/american_century/local-guarantees-2026-10-07/README.md)
+does not advance the natural colonial campaign or certify elapsed yearly accrual.
 Only Nantes supports mission/scripted/tree diagnostics and experimental shortcut;
 non-UI contracts accept the default click mode only. Diagnostic modes never earn
 faithful mission PASS. `-ListTests` accepts only its optional Mod filter.

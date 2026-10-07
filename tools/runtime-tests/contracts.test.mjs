@@ -67,7 +67,7 @@ test('PowerShell ListTests filters owners and invalid owner/test routing is non-
   const before=snapshot();
   const call=args=>spawnSync('powershell.exe',['-NoProfile','-ExecutionPolicy','Bypass','-File','tools/run-eu4-test.ps1',...args],{env,encoding:'utf8',windowsHide:true});
   const list=call(['-Mod','american_century','-ListTests']);assert.equal(list.status,0,list.stderr);
-  assert.deepEqual(JSON.parse(list.stdout).map(c=>[c.owner,c.test]),[['american_century','usa-slice']]);
+  assert.deepEqual(JSON.parse(list.stdout).map(c=>[c.owner,c.test]),[['american_century','usa-slice'],['american_century','usa-local-union']]);
   const bad=call(['-Mod','american_century','-Test','all']);assert.equal(bad.status,2);assert.match(bad.stderr,/no all regression suite/);
   const invalidList=call(['-ListTests','-ClaimMode','negative']);assert.notEqual(invalidList.status,0);
   const emptyOwner=call(['-Mod','']);assert.notEqual(emptyOwner.status,0);

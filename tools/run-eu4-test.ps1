@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('preview-gate','nantes-market','nantes-claim','run-effects','shipbuilding-reward','borders-reward','textiles-upgrade','usa-slice','all')][string]$Test = 'preview-gate',
+    [ValidateSet('preview-gate','nantes-market','nantes-claim','run-effects','shipbuilding-reward','borders-reward','textiles-upgrade','usa-slice','usa-local-union','all')][string]$Test = 'preview-gate',
     [ValidateSet('click','mission','scripted','tree','shortcut','negative')][string]$ClaimMode = 'click',
     [ValidateRange(30,1800)][int]$TimeoutSeconds = 120,
     [ValidateRange(0,2)][int]$Retries = 1,

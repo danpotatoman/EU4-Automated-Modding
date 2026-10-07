@@ -1,0 +1,80 @@
+{
+  "reviewedBy": "Codex, 2026-10-07",
+  "policy": "Summary contains selected generated observations only; originals remain ignored/local. No logs, save bytes, screenshots, game definitions or operational ownership copied.",
+  "originals": [
+    {
+      "relativeLocalPath": "tools/runtime-tests/work/20261007T193724265Z_a987c1e22ce27676/result.json",
+      "sha256": "3fc79e42d5d24793a3c23e9f477a1356ac920d8836a8dc762d6f787985e27269"
+    },
+    {
+      "relativeLocalPath": "tools/runtime-tests/work/20261007T200129243Z_5ed7ea6bcad1bbc0/result.json",
+      "sha256": "feb6b2aef6b7b4d3e268f5b73a0dbba6f759d53fe56b8c26abf35b6ada3ba338"
+    },
+    {
+      "relativeLocalPath": "tools/runtime-tests/work/20261007T200421644Z_f5d4b7b380413e23/result.json",
+      "sha256": "f54701ac36580cdfbafda8ca00753bd38b1b984ecf685c30f94cb3da5c1ccae9"
+    },
+    {
+      "relativeLocalPath": "tools/runtime-tests/work/20261007T201607449Z_bf7181bbc16ae60e/result.json",
+      "sha256": "07c9f89154c6b55ad6c42f7722dbaa62b7e227dbe31e7653109d897904578d68"
+    },
+    {
+      "relativeLocalPath": "tools/runtime-tests/work/20261007T201607449Z_bf7181bbc16ae60e/cwtools-production.json",
+      "sha256": "2dbfeed77555db6641f6d78db330c28e53e68f30a28692a5e631453d1d035c47"
+    },
+    {
+      "relativeLocalPath": "tools/runtime-tests/work/20261007T201607449Z_bf7181bbc16ae60e/cwtools-staged.json",
+      "sha256": "a07b315331b38e7bc0373e10f878b8e8784f16ef0f15541c3a24ff91a5d5afd7"
+    },
+    {
+      "relativeLocalPath": "tools/runtime-tests/work/20261007T201607449Z_bf7181bbc16ae60e/attempts/1/ui-actions.jsonl",
+      "sha256": "3d0555c53d292c68e6f85a6c127bc973ae166919f7472c16ea7e38570757d445"
+    },
+    {
+      "relativeLocalPath": "tools/runtime-tests/work/20261007T201607449Z_bf7181bbc16ae60e/attempts/1/ui-finish.json",
+      "sha256": "57e13464175cd16acb132cc656c3a1fc666a0c537c64245075cfac0913a96755"
+    },
+    {
+      "relativeLocalPath": "tools/runtime-tests/work/20261007T201607449Z_bf7181bbc16ae60e/attempts/1/before.eu4",
+      "sha256": "64ae4af409ab2b73764604faba25d6ce33422727ccddb1197190b5e55a775f87"
+    },
+    {
+      "relativeLocalPath": "tools/runtime-tests/work/20261007T201607449Z_bf7181bbc16ae60e/attempts/1/pending.eu4",
+      "sha256": "8c6147624f4d97d648a8c21aa661875a2e7f5b245a9a20909a2a5ec27cf9e86c"
+    },
+    {
+      "relativeLocalPath": "tools/runtime-tests/work/20261007T201607449Z_bf7181bbc16ae60e/attempts/1/compact.eu4",
+      "sha256": "611168b982b38d057e256eca3a3c9050870249ac0a33ba1b6242bf45cf736085"
+    },
+    {
+      "relativeLocalPath": "tools/runtime-tests/work/20261007T201607449Z_bf7181bbc16ae60e/attempts/1/ready.eu4",
+      "sha256": "58af99b03fc4418f9dd1f1396b2444d4eb0078a6ca2912b43f076bb3695aa6ec"
+    },
+    {
+      "relativeLocalPath": "tools/runtime-tests/work/20261007T201607449Z_bf7181bbc16ae60e/attempts/1/after.eu4",
+      "sha256": "4a6db81692954a2878e7d55eb8cb5bb988b7d305b33f683eedbc392999382ebb"
+    },
+    {
+      "relativeLocalPath": "tools/runtime-tests/work/20261007T201607449Z_bf7181bbc16ae60e/attempts/1/reload.eu4",
+      "sha256": "5478585ddc64bcbb18f2cfd6f192dc031df906be14bde2c5d81c78a3f5941129"
+    },
+    {
+      "relativeLocalPath": ".local/evidence/american-constitution-2026-10-07/protected-before.json",
+      "sha256": "c698b72d71586a3edcd366378648783ae09c473b4b23cfef01784927466969fc"
+    },
+    {
+      "relativeLocalPath": ".local/evidence/american-constitution-2026-10-07/protection-check.json",
+      "sha256": "ff4da290ba5331a3b9fccbd1934ec5663ebc69301265dc21925fb356e2ebc87e"
+    },
+    {
+      "relativeLocalPath": "tools/test-runs/reports/american_runtime/20261007T201657172Z_7efb3a/run.json",
+      "sha256": "03de8148bfac6590d1b2ebe10e48255389cfce2954aa53602392861b4092beaf"
+    }
+  ],
+  "publicArtifacts": [
+    {
+      "path": "summary.json",
+      "sha256": "a17aa482fbd1e5090b1fb372ba7f990c1cd09dc876006f7de9969eb1bd04625b"
+    }
+  ]
+}

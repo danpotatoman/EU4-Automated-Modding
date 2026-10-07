@@ -1,7 +1,7 @@
 # Framework/tooling state
 
 Owner: repository/framework
-Last updated: 2026-10-07 (Brittany deployment repair)
+Last updated: 2026-10-07 (deployment repair and bounded USA contract extension)
 
 Root state describes shared tools and repository work. Independent gameplay state
 belongs to [Brittany](mods/brittany_missions/STATUS.md) and
@@ -22,6 +22,15 @@ their recorded verdicts/builds in the [evidence index](testing/README.md).
 | Crash/exit/freeze recovery | 2026-10-03 [recovery evidence](testing/runtime-recovery/README.md), workload Brittany four-case regression; controlled exit, crash reporter and after-BEGIN suspension recovered before fresh retry | Unusual unidentifiable dialogs/denied cleanup/locked desktop require further evidence; assertion or integrity failures do not retry |
 | Faithful input/save oracle | 2026-10-03 Nantes and 2026-10-04 USA fixture workload demonstrate real button actions, scoped native save checks, refusal; current shared input geometry is derived | Active historical Codex Windows adapter required; bounded 1280x720/scale-1/top-scroll conditions, no standalone/scheduled GUI service or arbitrary mission coverage |
 | Engine calibration | BRI run-file effects and Nantes console/UI/save comparisons; USA paused ordinary reload demonstrates startup replay risk and fixture guard | Commands recording completion can omit rewards; false ID/completion queries, narrow save/provenance patterns and helper branches remain unresolved |
+
+The existing USA adapter now registers explicitly owned `usa-local-union` (click
+only), reusing the same runner/lease/collector/cleanup. Its workload passed 65 native
+input/save checks and 13 paused reload comparisons; [USA evidence and limits](testing/mods/american_century/local-guarantees-2026-10-07/README.md)
+belong to American Century. Shared lifecycle/input code and legacy routing are
+unchanged. The aggregate passed 90 offline tests/four self-tests; post-correction
+USA/selection tests passed 15/15, two process tests passed, and Brittany's four-case
+native `all` passed for dependency protection. Earlier startup/calibration attempts
+remain INCOMPLETE. No broader framework input/layout/campaign capability is implied.
 
 Native evidence targets **1.37.5.0 Inca (491d)**. `1.37.*` is metadata, not broader
 compatibility. Shared preference requires 18 DLC; actual USA evidence activated 21,

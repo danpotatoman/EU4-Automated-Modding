@@ -1,0 +1,822 @@
+{
+  "kind": "reviewed bounded native-result summary; not a byte-identical result copy or operational ownership record",
+  "reviewer": "Codex, 2026-10-07: generated-state ownership, private paths and bounded size reviewed",
+  "schemaVersion": 2,
+  "sourceMod": "american_century",
+  "storageNamespace": "american_runtime",
+  "artifactKind": "fixture",
+  "contractId": "usa-local-union",
+  "runId": "20261007T201607449Z_bf7181bbc16ae60e",
+  "attemptId": "20261007T201607449Z_bf7181bbc16ae60e/1",
+  "verdict": "PASS",
+  "exitCode": 0,
+  "coveredLayers": [
+    "STATIC",
+    "LOGIC",
+    "INPUT",
+    "SAVE",
+    "END-TO-END"
+  ],
+  "sourceBuildSha256": "06ec36a619307e88a9e277f074317245350f6d7516cfd5c6d0563a621da2d6cd",
+  "stagedBuildSha256": "d8f64fa97ad2c471e81e833e9fa652ea810a6face0670821186d02b1fec0b6ed",
+  "environment": {
+    "runningVersion": "EU4 v1.37.5.0 Inca",
+    "saveVersions": [
+      "1.37.5.0"
+    ],
+    "enabledDlcs": [
+      "Conquest of Paradise",
+      "Wealth of Nations",
+      "Res Publica",
+      "Art of War",
+      "El Dorado",
+      "Common Sense",
+      "The Cossacks",
+      "Mare Nostrum",
+      "Rights of Man",
+      "Mandate of Heaven",
+      "Third Rome",
+      "Cradle of Civilization",
+      "Rule Britannia",
+      "Dharma",
+      "Golden Century",
+      "Emperor",
+      "Leviathan",
+      "Lions of the North",
+      "Domination",
+      "King of Kings",
+      "Winds of Change"
+    ],
+    "enabledModNames": [
+      "American Runtime Test (DO NOT EXPORT)"
+    ],
+    "enabledModFiles": [
+      "mod/runtime_test.mod"
+    ],
+    "activationIdentityStatus": "established"
+  },
+  "collector": {
+    "id": "20261007T201657172Z_7efb3a",
+    "outcome": "passed",
+    "status": "complete"
+  },
+  "runs": [
+    {
+      "runId": "20261007T193724265Z_a987c1e22ce27676",
+      "sourceMod": "brittany_missions",
+      "contractId": "all",
+      "test": "all",
+      "verdict": "INCOMPLETE",
+      "exitCode": 2,
+      "cleanupClean": true,
+      "attemptCount": 1,
+      "originalResultSha256": "3fc79e42d5d24793a3c23e9f477a1356ac920d8836a8dc762d6f787985e27269"
+    },
+    {
+      "runId": "20261007T200129243Z_5ed7ea6bcad1bbc0",
+      "sourceMod": "brittany_missions",
+      "contractId": "all",
+      "test": "all",
+      "verdict": "PASS",
+      "exitCode": 0,
+      "cleanupClean": true,
+      "attemptCount": 1,
+      "originalResultSha256": "feb6b2aef6b7b4d3e268f5b73a0dbba6f759d53fe56b8c26abf35b6ada3ba338"
+    },
+    {
+      "runId": "20261007T200421644Z_f5d4b7b380413e23",
+      "sourceMod": "american_century",
+      "contractId": "usa-local-union",
+      "test": "usa-local-union",
+      "verdict": "INCOMPLETE",
+      "exitCode": 2,
+      "cleanupClean": true,
+      "attemptCount": 1,
+      "originalResultSha256": "f54701ac36580cdfbafda8ca00753bd38b1b984ecf685c30f94cb3da5c1ccae9"
+    },
+    {
+      "runId": "20261007T201607449Z_bf7181bbc16ae60e",
+      "sourceMod": "american_century",
+      "contractId": "usa-local-union",
+      "test": "usa-local-union",
+      "verdict": "PASS",
+      "exitCode": 0,
+      "cleanupClean": true,
+      "attemptCount": 1,
+      "originalResultSha256": "07c9f89154c6b55ad6c42f7722dbaa62b7e227dbe31e7653109d897904578d68"
+    }
+  ],
+  "sourceByteComparison": [
+    {
+      "path": "common/event_modifiers/AMC_modifiers.txt",
+      "sourceSha256": "08f9d4ca8f2b0534b17d9f85eeee3fc64ee9bef20aa425d2488ce492464b4871",
+      "stagedSha256": "08f9d4ca8f2b0534b17d9f85eeee3fc64ee9bef20aa425d2488ce492464b4871",
+      "matches": true
+    },
+    {
+      "path": "common/scripted_triggers/AMC_triggers.txt",
+      "sourceSha256": "8ba72aeeda903ee25efff63fcc5021405422c2a746b7559b307fea989cdf33f3",
+      "stagedSha256": "8ba72aeeda903ee25efff63fcc5021405422c2a746b7559b307fea989cdf33f3",
+      "matches": true
+    },
+    {
+      "path": "decisions/AMC_atlantic.txt",
+      "sourceSha256": "afbbd026cfaa5c0d40bf91386666541d781595f05a5d8ad4fd18ccdf4d38bbe7",
+      "stagedSha256": "afbbd026cfaa5c0d40bf91386666541d781595f05a5d8ad4fd18ccdf4d38bbe7",
+      "matches": true
+    },
+    {
+      "path": "descriptor.mod",
+      "sourceSha256": "49577e839ebe3b81a31627a5f23b54231c23dc6fcd150ac40317185a11e38ce0",
+      "stagedSha256": "57080a3949420e3338f2b729ad84789eab97bdb9640fe6eb0bdd56eb8a442b39",
+      "matches": false
+    },
+    {
+      "path": "events/AMC_constitution.txt",
+      "sourceSha256": "e8b5c9eb70bc89ac9b168f6172aa2b35382c1520b6058395472f0d4526f9525c",
+      "stagedSha256": "e8b5c9eb70bc89ac9b168f6172aa2b35382c1520b6058395472f0d4526f9525c",
+      "matches": true
+    },
+    {
+      "path": "localisation/english/amc_l_english.yml",
+      "sourceSha256": "2479adf58bfa6f8aa779fd00fb30eb12fa2d595a146d7e2baa91853081c9c5a5",
+      "stagedSha256": "2479adf58bfa6f8aa779fd00fb30eb12fa2d595a146d7e2baa91853081c9c5a5",
+      "matches": true
+    },
+    {
+      "path": "missions/AMC_USA_Missions.txt",
+      "sourceSha256": "c26da370ec8f96f9b8c1f1ef2c66cdd3389d6f004ca8bffa3240e1ad8fb69d98",
+      "stagedSha256": "c26da370ec8f96f9b8c1f1ef2c66cdd3389d6f004ca8bffa3240e1ad8fb69d98",
+      "matches": true
+    },
+    {
+      "path": "missions/AMC_colonial_origins.txt",
+      "sourceSha256": "c5ff9be0fe54bba2b5a297d0add4ea9ee1e0bc72342c405e1a4c2c3267aa1ba3",
+      "stagedSha256": "c5ff9be0fe54bba2b5a297d0add4ea9ee1e0bc72342c405e1a4c2c3267aa1ba3",
+      "matches": true
+    },
+    {
+      "path": "missions/USA_Missions.txt",
+      "sourceSha256": "43907a1ab99f9e22bef8c8b3df50473e52d94e7588a1e6552d42c6b0dd091e69",
+      "stagedSha256": "43907a1ab99f9e22bef8c8b3df50473e52d94e7588a1e6552d42c6b0dd091e69",
+      "matches": true
+    }
+  ],
+  "protected": {
+    "files": 36,
+    "allUnchanged": true,
+    "groups": {
+      "brittanySource": 11,
+      "usaSource": 9,
+      "ordinaryProfileConfigs": 2,
+      "installedReferences": 14
+    }
+  },
+  "input": [
+    {
+      "sequence": 44,
+      "atUtc": "2026-10-07T20:19:28.315Z",
+      "action": {
+        "kind": "click",
+        "x": 450,
+        "y": 648,
+        "inspected": true,
+        "decision": "usa_nation"
+      }
+    },
+    {
+      "sequence": 80,
+      "atUtc": "2026-10-07T20:20:41.299Z",
+      "action": {
+        "kind": "click",
+        "x": 271,
+        "y": 343,
+        "inspected": true,
+        "mission": "amc_liberty_at_last"
+      }
+    },
+    {
+      "sequence": 88,
+      "atUtc": "2026-10-07T20:21:26.567Z",
+      "action": {
+        "kind": "click",
+        "x": 271,
+        "y": 495,
+        "inspected": true,
+        "mission": "amc_federal_compact"
+      }
+    },
+    {
+      "sequence": 116,
+      "atUtc": "2026-10-07T20:22:58.984Z",
+      "action": {
+        "kind": "click",
+        "x": 646,
+        "y": 499,
+        "inspected": true,
+        "eventOption": "amc.1.b"
+      }
+    },
+    {
+      "sequence": 164,
+      "atUtc": "2026-10-07T20:25:59.819Z",
+      "action": {
+        "kind": "click",
+        "x": 448,
+        "y": 618,
+        "inspected": true,
+        "decision": "eu4usa_union_setup"
+      }
+    },
+    {
+      "sequence": 200,
+      "atUtc": "2026-10-07T20:28:27.405Z",
+      "action": {
+        "kind": "click",
+        "x": 271,
+        "y": 647,
+        "inspected": true,
+        "mission": "amc_more_perfect_union"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "label": "same native campaign across six independently saved checkpoints",
+      "passed": true
+    },
+    {
+      "label": "fresh USA before claims",
+      "passed": true
+    },
+    {
+      "label": "Liberty and Compact completed before event option; Union incomplete",
+      "passed": true
+    },
+    {
+      "label": "pending event converts monarchy to base republic with oligarchy reform",
+      "passed": true
+    },
+    {
+      "label": "no constitutional choice before real option",
+      "passed": true
+    },
+    {
+      "label": "Local Guarantees event adds exactly ten tradition (50 -> 60)",
+      "passed": true
+    },
+    {
+      "label": "compact: exclusive Local Guarantees flag/modifier; no pending/enumerated choice",
+      "passed": true
+    },
+    {
+      "label": "compact: republic and intended base reform retained",
+      "passed": true
+    },
+    {
+      "label": "ready: exclusive Local Guarantees flag/modifier; no pending/enumerated choice",
+      "passed": true
+    },
+    {
+      "label": "ready: republic and intended base reform retained",
+      "passed": true
+    },
+    {
+      "label": "after: exclusive Local Guarantees flag/modifier; no pending/enumerated choice",
+      "passed": true
+    },
+    {
+      "label": "after: republic and intended base reform retained",
+      "passed": true
+    },
+    {
+      "label": "reload: exclusive Local Guarantees flag/modifier; no pending/enumerated choice",
+      "passed": true
+    },
+    {
+      "label": "reload: republic and intended base reform retained",
+      "passed": true
+    },
+    {
+      "label": "engine-observed Local Guarantees accepted-culture capacity +1",
+      "passed": true
+    },
+    {
+      "label": "Local Guarantees total unrest -1.2 = permanent -1 plus ten-tradition -0.2",
+      "passed": true
+    },
+    {
+      "label": "option tradition contributes vanilla reform growth +0.10",
+      "passed": true
+    },
+    {
+      "label": "Local Guarantees leaves unrelated governing_capacity_modifier unchanged",
+      "passed": true
+    },
+    {
+      "label": "Local Guarantees leaves unrelated state_maintenance_modifier unchanged",
+      "passed": true
+    },
+    {
+      "label": "Local Guarantees leaves unrelated development_cost unchanged",
+      "passed": true
+    },
+    {
+      "label": "Local Guarantees leaves unrelated global_colonial_growth unchanged",
+      "passed": true
+    },
+    {
+      "label": "Local Guarantees leaves unrelated republican_tradition unchanged",
+      "passed": true
+    },
+    {
+      "label": "Liberty exact prestige +20 and reform progress +100",
+      "passed": true
+    },
+    {
+      "label": "Liberty modifier once, twenty-year expiry",
+      "passed": true
+    },
+    {
+      "label": "minimum Union prerequisite setup only: tradition 60 -> 70, stability 2 retained",
+      "passed": true
+    },
+    {
+      "label": "prerequisite tradition alone changes unrest -0.2 and reform growth +0.10",
+      "passed": true
+    },
+    {
+      "label": "independently isolated Local Guarantees national unrest -1",
+      "passed": true
+    },
+    {
+      "label": "prerequisite setup leaves unrelated num_accepted_cultures unchanged",
+      "passed": true
+    },
+    {
+      "label": "prerequisite setup leaves unrelated governing_capacity_modifier unchanged",
+      "passed": true
+    },
+    {
+      "label": "prerequisite setup leaves unrelated state_maintenance_modifier unchanged",
+      "passed": true
+    },
+    {
+      "label": "prerequisite setup leaves unrelated development_cost unchanged",
+      "passed": true
+    },
+    {
+      "label": "prerequisite setup leaves unrelated global_colonial_growth unchanged",
+      "passed": true
+    },
+    {
+      "label": "prerequisite setup leaves unrelated republican_tradition unchanged",
+      "passed": true
+    },
+    {
+      "label": "Union completed once, only three expected AMC missions",
+      "passed": true
+    },
+    {
+      "label": "Union permanent modifier once, absent before real claim",
+      "passed": true
+    },
+    {
+      "label": "engine-observed Union annual tradition +0.3",
+      "passed": true
+    },
+    {
+      "label": "engine-observed Union reform progress growth +0.10",
+      "passed": true
+    },
+    {
+      "label": "Union leaves unrelated num_accepted_cultures unchanged",
+      "passed": true
+    },
+    {
+      "label": "Union leaves unrelated global_unrest unchanged",
+      "passed": true
+    },
+    {
+      "label": "Union leaves unrelated governing_capacity_modifier unchanged",
+      "passed": true
+    },
+    {
+      "label": "Union leaves unrelated state_maintenance_modifier unchanged",
+      "passed": true
+    },
+    {
+      "label": "Union leaves unrelated development_cost unchanged",
+      "passed": true
+    },
+    {
+      "label": "Union leaves unrelated global_colonial_growth unchanged",
+      "passed": true
+    },
+    {
+      "label": "Union does not grant instant tradition/progress",
+      "passed": true
+    },
+    {
+      "label": "unrelated mission rewards and capital/power changes absent",
+      "passed": true
+    },
+    {
+      "label": "exactly three real mission-entry inputs",
+      "passed": true
+    },
+    {
+      "label": "amc_liberty_at_last: actual derived mission-button input once",
+      "passed": true
+    },
+    {
+      "label": "amc_federal_compact: actual derived mission-button input once",
+      "passed": true
+    },
+    {
+      "label": "amc_more_perfect_union: actual derived mission-button input once",
+      "passed": true
+    },
+    {
+      "label": "exactly one real Local Guarantees event-option input",
+      "passed": true
+    },
+    {
+      "label": "no console mission-completion command",
+      "passed": true
+    },
+    {
+      "label": "formation, event, refusal at 60, readiness at 70 and reward dialogs inspected",
+      "passed": true
+    },
+    {
+      "label": "ordinary paused reload preserves completed",
+      "passed": true
+    },
+    {
+      "label": "ordinary paused reload preserves modifiers",
+      "passed": true
+    },
+    {
+      "label": "ordinary paused reload preserves government",
+      "passed": true
+    },
+    {
+      "label": "ordinary paused reload preserves reforms",
+      "passed": true
+    },
+    {
+      "label": "ordinary paused reload preserves flags",
+      "passed": true
+    },
+    {
+      "label": "ordinary paused reload preserves variables",
+      "passed": true
+    },
+    {
+      "label": "ordinary paused reload preserves capitalModifiers",
+      "passed": true
+    },
+    {
+      "label": "ordinary paused reload preserves capitalManpower",
+      "passed": true
+    },
+    {
+      "label": "ordinary paused reload preserves dip",
+      "passed": true
+    },
+    {
+      "label": "ordinary paused reload preserves prestige",
+      "passed": true
+    },
+    {
+      "label": "ordinary paused reload preserves stability",
+      "passed": true
+    },
+    {
+      "label": "ordinary paused reload preserves tradition",
+      "passed": true
+    },
+    {
+      "label": "ordinary paused reload preserves reformProgress",
+      "passed": true
+    }
+  ],
+  "states": {
+    "before": {
+      "sha256": "64ae4af409ab2b73764604faba25d6ce33422727ccddb1197190b5e55a775f87",
+      "campaignId": "5fe47afb-d556-4416-9c0c-0e3a1977c8f5",
+      "completed": [],
+      "modifiers": [
+        {
+          "name": "centralization_modifier",
+          "date": "1464.11.11"
+        }
+      ],
+      "government": "monarchy",
+      "reforms": [
+        "monarchy_mechanic",
+        "english_monarchy"
+      ],
+      "flags": [
+        "became_great_power_flag",
+        "eu4usa_started",
+        "was_not_former_colonial_nation",
+        "old_world_to_new_world_flag",
+        "no_colonial_nations",
+        "changed_from_colonial_nation"
+      ],
+      "variables": {
+        "eu4usa_development_cost": 0,
+        "eu4usa_global_colonial_growth": 0,
+        "eu4usa_global_unrest": -4,
+        "eu4usa_governing_capacity_modifier": 0,
+        "eu4usa_num_accepted_cultures": 2,
+        "eu4usa_reform_progress_growth": 0.4,
+        "eu4usa_republican_tradition": 1.01,
+        "eu4usa_state_maintenance_modifier": 0
+      },
+      "capitalModifiers": [],
+      "capitalManpower": 5,
+      "dip": 70,
+      "prestige": 34.246,
+      "stability": 2,
+      "tradition": null,
+      "reformProgress": 0
+    },
+    "pending": {
+      "sha256": "8c6147624f4d97d648a8c21aa661875a2e7f5b245a9a20909a2a5ec27cf9e86c",
+      "campaignId": "5fe47afb-d556-4416-9c0c-0e3a1977c8f5",
+      "completed": [
+        "amc_federal_compact",
+        "amc_liberty_at_last"
+      ],
+      "modifiers": [
+        {
+          "name": "centralization_modifier",
+          "date": "1464.11.11"
+        },
+        {
+          "name": "amc_liberty_modifier",
+          "date": "1464.11.11"
+        }
+      ],
+      "government": "republic",
+      "reforms": [
+        "republic_mechanic",
+        "oligarchy_reform"
+      ],
+      "flags": [
+        "became_great_power_flag",
+        "eu4usa_started",
+        "was_not_former_colonial_nation",
+        "old_world_to_new_world_flag",
+        "no_colonial_nations",
+        "changed_from_colonial_nation",
+        "amc_constitution_pending"
+      ],
+      "variables": {
+        "eu4usa_development_cost": 0,
+        "eu4usa_global_colonial_growth": 0,
+        "eu4usa_global_unrest": -3.5,
+        "eu4usa_governing_capacity_modifier": 0,
+        "eu4usa_num_accepted_cultures": 2,
+        "eu4usa_reform_progress_growth": 0.9,
+        "eu4usa_republican_tradition": 1.01,
+        "eu4usa_state_maintenance_modifier": 0
+      },
+      "capitalModifiers": [],
+      "capitalManpower": 5,
+      "dip": 70,
+      "prestige": 54.246,
+      "stability": 2,
+      "tradition": 50,
+      "reformProgress": 100
+    },
+    "compact": {
+      "sha256": "611168b982b38d057e256eca3a3c9050870249ac0a33ba1b6242bf45cf736085",
+      "campaignId": "5fe47afb-d556-4416-9c0c-0e3a1977c8f5",
+      "completed": [
+        "amc_federal_compact",
+        "amc_liberty_at_last"
+      ],
+      "modifiers": [
+        {
+          "name": "centralization_modifier",
+          "date": "1464.11.11"
+        },
+        {
+          "name": "amc_liberty_modifier",
+          "date": "1464.11.11"
+        },
+        {
+          "name": "amc_local_guarantees",
+          "date": "-1.1.1"
+        }
+      ],
+      "government": "republic",
+      "reforms": [
+        "republic_mechanic",
+        "oligarchy_reform"
+      ],
+      "flags": [
+        "became_great_power_flag",
+        "eu4usa_started",
+        "was_not_former_colonial_nation",
+        "old_world_to_new_world_flag",
+        "no_colonial_nations",
+        "changed_from_colonial_nation",
+        "amc_local_guarantees_chosen"
+      ],
+      "variables": {
+        "eu4usa_development_cost": 0,
+        "eu4usa_global_colonial_growth": 0,
+        "eu4usa_global_unrest": -4.7,
+        "eu4usa_governing_capacity_modifier": 0,
+        "eu4usa_num_accepted_cultures": 3,
+        "eu4usa_reform_progress_growth": 1,
+        "eu4usa_republican_tradition": 1.01,
+        "eu4usa_state_maintenance_modifier": 0
+      },
+      "capitalModifiers": [],
+      "capitalManpower": 5,
+      "dip": 70,
+      "prestige": 54.246,
+      "stability": 2,
+      "tradition": 60,
+      "reformProgress": 100
+    },
+    "ready": {
+      "sha256": "58af99b03fc4418f9dd1f1396b2444d4eb0078a6ca2912b43f076bb3695aa6ec",
+      "campaignId": "5fe47afb-d556-4416-9c0c-0e3a1977c8f5",
+      "completed": [
+        "amc_federal_compact",
+        "amc_liberty_at_last"
+      ],
+      "modifiers": [
+        {
+          "name": "centralization_modifier",
+          "date": "1464.11.11"
+        },
+        {
+          "name": "amc_liberty_modifier",
+          "date": "1464.11.11"
+        },
+        {
+          "name": "amc_local_guarantees",
+          "date": "-1.1.1"
+        }
+      ],
+      "government": "republic",
+      "reforms": [
+        "republic_mechanic",
+        "oligarchy_reform"
+      ],
+      "flags": [
+        "became_great_power_flag",
+        "eu4usa_started",
+        "was_not_former_colonial_nation",
+        "old_world_to_new_world_flag",
+        "no_colonial_nations",
+        "changed_from_colonial_nation",
+        "amc_local_guarantees_chosen",
+        "eu4usa_union_setup_done"
+      ],
+      "variables": {
+        "eu4usa_development_cost": 0,
+        "eu4usa_global_colonial_growth": 0,
+        "eu4usa_global_unrest": -4.9,
+        "eu4usa_governing_capacity_modifier": 0,
+        "eu4usa_num_accepted_cultures": 3,
+        "eu4usa_reform_progress_growth": 1.1,
+        "eu4usa_republican_tradition": 1.01,
+        "eu4usa_state_maintenance_modifier": 0
+      },
+      "capitalModifiers": [],
+      "capitalManpower": 5,
+      "dip": 70,
+      "prestige": 54.246,
+      "stability": 2,
+      "tradition": 70,
+      "reformProgress": 100
+    },
+    "after": {
+      "sha256": "4a6db81692954a2878e7d55eb8cb5bb988b7d305b33f683eedbc392999382ebb",
+      "campaignId": "5fe47afb-d556-4416-9c0c-0e3a1977c8f5",
+      "completed": [
+        "amc_federal_compact",
+        "amc_liberty_at_last",
+        "amc_more_perfect_union"
+      ],
+      "modifiers": [
+        {
+          "name": "centralization_modifier",
+          "date": "1464.11.11"
+        },
+        {
+          "name": "amc_liberty_modifier",
+          "date": "1464.11.11"
+        },
+        {
+          "name": "amc_local_guarantees",
+          "date": "-1.1.1"
+        },
+        {
+          "name": "amc_durable_union",
+          "date": "-1.1.1"
+        }
+      ],
+      "government": "republic",
+      "reforms": [
+        "republic_mechanic",
+        "oligarchy_reform"
+      ],
+      "flags": [
+        "became_great_power_flag",
+        "eu4usa_started",
+        "was_not_former_colonial_nation",
+        "old_world_to_new_world_flag",
+        "no_colonial_nations",
+        "changed_from_colonial_nation",
+        "amc_local_guarantees_chosen",
+        "eu4usa_union_setup_done"
+      ],
+      "variables": {
+        "eu4usa_development_cost": 0,
+        "eu4usa_global_colonial_growth": 0,
+        "eu4usa_global_unrest": -4.9,
+        "eu4usa_governing_capacity_modifier": 0,
+        "eu4usa_num_accepted_cultures": 3,
+        "eu4usa_reform_progress_growth": 1.2,
+        "eu4usa_republican_tradition": 1.31,
+        "eu4usa_state_maintenance_modifier": 0
+      },
+      "capitalModifiers": [],
+      "capitalManpower": 5,
+      "dip": 70,
+      "prestige": 54.246,
+      "stability": 2,
+      "tradition": 70,
+      "reformProgress": 100
+    },
+    "reload": {
+      "sha256": "5478585ddc64bcbb18f2cfd6f192dc031df906be14bde2c5d81c78a3f5941129",
+      "campaignId": "5fe47afb-d556-4416-9c0c-0e3a1977c8f5",
+      "completed": [
+        "amc_federal_compact",
+        "amc_liberty_at_last",
+        "amc_more_perfect_union"
+      ],
+      "modifiers": [
+        {
+          "name": "centralization_modifier",
+          "date": "1464.11.11"
+        },
+        {
+          "name": "amc_liberty_modifier",
+          "date": "1464.11.11"
+        },
+        {
+          "name": "amc_local_guarantees",
+          "date": "-1.1.1"
+        },
+        {
+          "name": "amc_durable_union",
+          "date": "-1.1.1"
+        }
+      ],
+      "government": "republic",
+      "reforms": [
+        "republic_mechanic",
+        "oligarchy_reform"
+      ],
+      "flags": [
+        "became_great_power_flag",
+        "eu4usa_started",
+        "was_not_former_colonial_nation",
+        "old_world_to_new_world_flag",
+        "no_colonial_nations",
+        "changed_from_colonial_nation",
+        "amc_local_guarantees_chosen",
+        "eu4usa_union_setup_done"
+      ],
+      "variables": {
+        "eu4usa_development_cost": 0,
+        "eu4usa_global_colonial_growth": 0,
+        "eu4usa_global_unrest": -4.9,
+        "eu4usa_governing_capacity_modifier": 0,
+        "eu4usa_num_accepted_cultures": 3,
+        "eu4usa_reform_progress_growth": 1.2,
+        "eu4usa_republican_tradition": 1.31,
+        "eu4usa_state_maintenance_modifier": 0
+      },
+      "capitalModifiers": [],
+      "capitalManpower": 5,
+      "dip": 70,
+      "prestige": 54.246,
+      "stability": 2,
+      "tradition": 70,
+      "reformProgress": 100
+    }
+  }
+}

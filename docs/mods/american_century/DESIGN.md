@@ -196,8 +196,11 @@ no console readiness/completion query is treated as authoritative.
 - Accepted-native-culture classification, foreign great-power ownership tests,
   policy limits and exact modifier IDs in future branches require vanilla review.
 - Four real claims, numerical rewards, independent negative readiness and ordinary
-  save/reload are verified for the slice's enumerated-powers path. Choice alternates,
-  expiry, other roots, AI and dynamic scrolling need independent scenarios.
+  save/reload are verified for the slice's enumerated-powers path. The separate
+  [2026-10-07 constitutional fixture](../../testing/mods/american_century/local-guarantees-2026-10-07/README.md)
+  proves real Local Guarantees -> Union claims, exact permanent rewards, 60 -> 70
+  tradition readiness and paused reload. Elapsed accrual, expiry, other roots, AI
+  and dynamic scrolling need independent scenarios.
   Existing real-input proof uses one observed window geometry.
 - Final border/count requirements deliberately avoid indiscriminate region conquest.
 - Latest implementation/evidence: [USA playtests/status](../../testing/american-century/README.md).

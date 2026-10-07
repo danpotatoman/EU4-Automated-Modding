@@ -8,20 +8,22 @@ import { block } from '../../save-blocks.mjs';
 import { parse, field } from '../../../mission-inspector/engine.mjs';
 
 export const usaMissions=['amc_liberty_at_last','amc_federal_compact','amc_free_harbors','amc_open_doors'];
+export const constitutionMissions=['amc_liberty_at_last','amc_federal_compact','amc_more_perfect_union'];
 export const usaProvinces=[965,966,968,967,956,957,962,950,952,953];
 export const usaChecks=['initial',...Array.from({length:18},(_,i)=>`dlc-${i+1}`),'fixture-capital','fixture-tech','fixture-owner-core','fixture-cities','fixture-market'];
-export function usaHook(nonce,dlcAssertions) {
+export function usaHook(nonce,dlcAssertions,test='usa-slice') {
   return `on_startup = { if = { limit = { tag = ENG capital = 965 num_of_cities = 10
  NOT = { has_country_flag = eu4usa_started } }
  set_country_flag = eu4usa_started
- log = "EU4RT ${nonce} BEGIN usa-slice"
+ log = "EU4RT ${nonce} BEGIN ${test}"
  if = { limit = { is_subject = no is_at_war = no is_year = 1444 NOT = { is_year = 1445 } }
  log = "EU4RT ${nonce} OK initial" } else = { log = "EU4RT ${nonce} FAIL initial" }
  ${dlcAssertions}
 } }\n`;
 }
-export function stageUSA({profile,staged,game,nonce,mode}) {
+export function stageUSA({profile,staged,game,nonce,mode,test='usa-slice'}) {
   if(!['click','negative'].includes(mode)) throw Error('USA slice supports click or negative');
+  const constitutional=test==='usa-local-union';
   // Explicit test-only initial history, not a copied production reward path.
   fs.mkdirSync(path.join(staged,'history/countries'),{recursive:true});
   const englishHistory=fs.readFileSync(path.join(game,'history/countries/ENG - England.txt'),'utf8');
@@ -40,7 +42,7 @@ else = { log = "EU4RT ${nonce} FAIL ${n}" }`;
   const body=`ENG = {
  set_capital = 965
  add_adm_tech = 7
- add_stability = 3
+ add_stability = ${constitutional?2:3}
  add_prestige = -100 add_prestige = 100
  965 = { remove_building = marketplace remove_building = trade_depot remove_building = stock_exchange
  ${mode==='click'?'add_building = marketplace':''} }
@@ -49,7 +51,7 @@ else = { log = "EU4RT ${nonce} FAIL ${n}" }`;
  ${check('965 = { owned_by = ENG is_core = ENG has_port = yes }','fixture-owner-core')}
  ${check('num_of_owned_provinces_with = { value = 10 colonial_region = colonial_eastern_america is_city = yes is_core = ENG }','fixture-cities')}
  ${check(`965 = { has_trade_building_trigger = ${mode==='click'?'yes':'no'} }`,'fixture-market')}
- log = "EU4RT ${nonce} UI_READY usa-slice"
+ log = "EU4RT ${nonce} UI_READY ${test}"
 }`;
   fs.writeFileSync(path.join(profile,'eu4usa_setup.txt'),body+'\n');
   fs.writeFileSync(path.join(profile,'eu4rt_run.commands'),'run eu4usa_setup.txt\r\n');
@@ -57,29 +59,41 @@ else = { log = "EU4RT ${nonce} FAIL ${n}" }`;
   fs.writeFileSync(path.join(staged,'common/scripted_effects/eu4usa_wrappers.txt'),`eu4usa_static_setup = {\n${body}\n}\n`);
   fs.mkdirSync(path.join(staged,'decisions'),{recursive:true});
   const metrics=['governing_capacity_modifier','state_maintenance_modifier','development_cost','global_colonial_growth'];
+  if(constitutional) metrics.push('num_accepted_cultures','global_unrest','republican_tradition','reform_progress_growth');
+  const observation=metrics.map(m=>`export_to_variable = { which = eu4usa_${m} value = modifier:${m} }`).join('\n');
+  if(constitutional) {
+    fs.writeFileSync(path.join(profile,'eu4usa_observe.txt'),`USA = { ${observation} }\n`);
+    fs.appendFileSync(path.join(staged,'common/scripted_effects/eu4usa_wrappers.txt'),`eu4usa_static_observe = { ${observation} }\n`);
+  }
   fs.writeFileSync(path.join(staged,'decisions/zz_eu4usa_observe.txt'),`country_decisions = {
  eu4usa_observe = { major = yes potential = { tag = USA } allow = { always = yes }
  effect = {
- ${metrics.map(m=>`export_to_variable = { which = eu4usa_${m} value = modifier:${m} }`).join('\n')}
+ ${observation}
  965 = { export_to_variable = { which = eu4usa_trade value = modifier:province_trade_power_modifier } }
  log = "EU4USAOBS ${nonce} STATE"
  } ai_will_do = { factor = 0 } }
+ ${constitutional?`eu4usa_union_setup = { major = yes
+ potential = { tag = USA has_country_flag = amc_local_guarantees_chosen NOT = { has_country_flag = eu4usa_union_setup_done } }
+ allow = { government = republic stability = 2 NOT = { republican_tradition = 70 } }
+ effect = { add_republican_tradition = 10 set_country_flag = eu4usa_union_setup_done
+ log = "EU4USAOBS ${nonce} UNION_SETUP tradition +10" }
+ ai_will_do = { factor = 0 } }`:''}
 }\n`);
   fs.mkdirSync(path.join(staged,'localisation/english'),{recursive:true});
   fs.writeFileSync(path.join(staged,'localisation/english/eu4usa_test_l_english.yml'),
-    '\uFEFFl_english:\n eu4usa_observe_title:0 "Record USA Test State"\n eu4usa_observe_desc:0 "Test-only numerical observation; grants no rewards and completes no missions."\n');
+    '\uFEFFl_english:\n eu4usa_observe_title:0 "Record USA Test State"\n eu4usa_observe_desc:0 "Test-only numerical observation; grants no rewards and completes no missions."\n'+(constitutional?' eu4usa_union_setup_title:0 "Prepare Union Test Tradition"\n eu4usa_union_setup_desc:0 "Test-only prerequisite: add ten republican tradition, once; no mission completion or mission rewards."\n':''));
   let settings=fs.readFileSync(path.join(profile,'settings.txt'),'utf8');
   settings=settings.replace(/size=\{\s*x=\d+\s*y=\d+\s*\}/,'size={ x=1280 y=720 }')
     .replace(/game_ui_scale=[\d.]+/,'game_ui_scale=1.000').replace(/fullScreen=\w+/,'fullScreen=no')
     .replace(/borderless=\w+/,'borderless=no').replace(/compress_saves=\w+/,'compress_saves=no');
   fs.writeFileSync(path.join(profile,'settings.txt'),settings);
-  const geometries=Object.fromEntries(usaMissions.map(m=>[m,missionGeometry(staged,game,m)]));
-  return {files:['eu4usa_setup.txt','eu4rt_run.commands'],geometry:geometries[usaMissions[0]],geometries,mode,
+  const geometries=Object.fromEntries((constitutional?constitutionMissions:usaMissions).map(m=>[m,missionGeometry(staged,game,m)]));
+  return {files:['eu4usa_setup.txt','eu4rt_run.commands',...(constitutional?['eu4usa_observe.txt']:[])],geometry:geometries[usaMissions[0]],geometries,mode,
     driver:'Codex node_repl @oai/sky; actual vanilla formation decision and production mission buttons'};
 }
-export function expectedUSA() { return ['BEGIN usa-slice',...usaChecks.map(c=>`OK ${c}`),'UI_READY usa-slice']; }
-export function evaluateUSA(text,nonce,mode) {
-  const result=inspectProtocol(text,nonce,usaChecks,expectedUSA(),{
+export function expectedUSA(test='usa-slice') { return [`BEGIN ${test}`,...usaChecks.map(c=>`OK ${c}`),`UI_READY ${test}`]; }
+export function evaluateUSA(text,nonce,mode,test='usa-slice') {
+  const result=inspectProtocol(text,nonce,usaChecks,expectedUSA(test),{
     expectedVersion:'EU4 v1.37.5.0 Inca',versionPrefix:true,suffixMarkers:true,
   });
   return {markers:result.markers,expectedMarkers:result.expectedMarkers,
@@ -124,6 +138,9 @@ export function readUSASave(file,dlcs,tag='USA') {
   const state={file,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),
     campaignId:text.match(/^campaign_id="([^"]+)"/m)?.[1],tag,completed,modifiers,provinces,
     culture:scalar('primary_culture'),prestige:Number(scalar('prestige')),
+    stability:Number(scalar('stability')),tradition:Number(scalar('republican_tradition')),
+    // Native saves omit an untouched zero pool; retain strict numeric parsing when present.
+    reformProgress:Number(scalar('government_reform_progress')??0),
     dip:Number(countryField('powers')[1]?.key),government:field(government,'government')?.value,
     reforms:(field(field(government,'reform_stack')?.value||[],'reforms')?.value||[]).map(n=>n.key),
     flags:countryField('flags').map(n=>n.key),

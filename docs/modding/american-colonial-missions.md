@@ -97,3 +97,28 @@ assignment, release/play, the second constitution choice and remaining roots are
 still open scenarios.
 
 Current example coverage: [American Century owner runbook](../mods/american_century/testing/README.md).
+
+## Constitutional modifier observations (2026-10-07)
+
+Before testing alternate rewards, separate conversion, option and prerequisite
+effects. Country-scope `export_to_variable = { which = test_unrest value =
+modifier:global_unrest }` observes engine totals; it is not just the named event
+modifier. Installed 1.37.5.0 `common/static_modifiers/00_static_modifiers.txt`
+(`republican_tradition`) supplies unrest -2 and reform progress growth +1 scaled
+by tradition. A +10 tradition step therefore changes those totals by -0.2/+0.10.
+Observe both the 50 -> 60 option step and the reward-free 60 -> 70 fixture step:
+subtract the latter unrest delta to isolate Local Guarantees' permanent -1.
+Accepted-culture capacity should separately rise by exactly 1. Hold tradition at
+70 across the Union button to isolate yearly tradition +0.3/growth +0.10.
+
+Required files/scopes: existing staged observation decision, production country
+event/modifiers/missions and native country save fields. Test-only setup must not
+add the production modifier or complete a mission. Observation localisation stays
+in the staged test namespace. Base oligarchy needs no American Dream; actual DLC
+activation still requires save evidence. Verify source/staged CWTools, real option
+and mission input, exclusive flags, expiry `-1.1.1`, independent paused checkpoints
+and reload. Native saves may order completed IDs differently from claim order and
+omit untouched zero reform progress; compare unique membership/count and interpret
+only that documented omitted-zero pool as zero, keeping missing probes invalid.
+The first alternate attempt is retained INCOMPLETE for oracle calibration;
+acceptance/current limits remain in the owner's coverage, not inferred here.

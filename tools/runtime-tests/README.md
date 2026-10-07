@@ -292,6 +292,32 @@ campaign/version/DLC/mod/series, inputs, rewards, duration, exclusivity and tota
 `formationInspected` and `unreadyRefused`. See the
 [USA report and playtests](../../docs/testing/american-century/README.md).
 
+## Alternate USA constitution and Union contract
+
+```powershell
+./tools/run-eu4-test.ps1 -Mod american_century -Test usa-local-union -ClaimMode click -TimeoutSeconds 1800 -ProgressTimeoutSeconds 1800 -Retries 0
+```
+
+This explicitly owned scenario reuses the USA slice fixture and shared lifecycle;
+omitted-Mod legacy routing is unchanged. It adds no production content. Initial
+stability is 2. Use real formation/Liberty/Compact input and the Local Guarantees
+event option (`eventOption:'amc.1.b'` in the inspected click action). Before choosing,
+save the pending event/republic state; use `run eu4usa_observe.txt` only to export
+modifier totals, never to complete missions or grant rewards. The existing Record
+USA Test State decision also exports the four additional constitutional metrics.
+
+Keep paused, independent `before.eu4`, `pending.eu4`, `compact.eu4`, `ready.eu4`,
+`after.eu4`, `reload.eu4` in the active attempt. Inspect Union blocked at tradition
+60; the test-only Prepare Union Test Tradition decision adds exactly 10 once.
+Save ready at 70, inspect and claim the actual Union button, record totals and save.
+Load that checkpoint through ordinary UI, record totals again and save reload.
+The oracle checks real input, intermediate arithmetic, exclusivity, permanent
+modifier expiry, unrelated state and reload comparisons. Finish only with the
+active nonce and inspected facts including `unionUnreadyInspected` and
+`reloadInspected`, alongside the usual formation/constitution/readiness/dialog facts.
+Missing saves or failed assertions cannot earn PASS. Native results and limits
+belong to [USA coverage](../../docs/mods/american_century/testing/coverage.md).
+
 ## Runtime ownership API
 
 `contracts.mjs` resolves owners, validates options and lists serializable contracts.

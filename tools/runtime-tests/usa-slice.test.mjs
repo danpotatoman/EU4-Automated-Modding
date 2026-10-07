@@ -5,6 +5,41 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { evaluateUSA, usaChecks, usaMissions, judgeUSA, stageUSA } from './contracts/american_century/usa-slice.mjs';
 import { missionGeometry } from './mission-geometry.mjs';
+import { judgeConstitution } from './contracts/american_century/usa-constitution.mjs';
+import { constitutionMissions } from './contracts/american_century/usa-slice.mjs';
+
+test('Local Guarantees/Union oracle rejects wrong option, fake claims, wrong arithmetic and reload loss',()=>{
+  const vars=Object.fromEntries(['num_accepted_cultures','global_unrest','republican_tradition','reform_progress_growth',
+    'governing_capacity_modifier','state_maintenance_modifier','development_cost','global_colonial_growth'].map(k=>[`eu4usa_${k}`,0]));
+  const before={campaignId:'c',culture:'american',government:'monarchy',completed:[],modifiers:[],flags:[],variables:vars,
+    capitalModifiers:[],capitalManpower:5,dip:100,prestige:25,reformProgress:0,tradition:0,stability:2};
+  const pending={...before,government:'republic',reforms:['oligarchy_reform'],completed:constitutionMissions.slice(0,2),
+    flags:['amc_constitution_pending'],modifiers:[{name:'amc_liberty_modifier',date:'1464.11.11'}],tradition:50,prestige:45,reformProgress:100};
+  const compact={...pending,flags:['amc_local_guarantees_chosen'],tradition:60,
+    modifiers:[...pending.modifiers,{name:'amc_local_guarantees',date:'-1.1.1'}],
+    variables:{...vars,eu4usa_num_accepted_cultures:1,eu4usa_global_unrest:-1.2,eu4usa_reform_progress_growth:.1}};
+  const ready={...compact,tradition:70,flags:[...compact.flags,'eu4usa_union_setup_done'],
+    variables:{...compact.variables,eu4usa_global_unrest:-1.4,eu4usa_reform_progress_growth:.2}};
+  const after={...ready,completed:constitutionMissions,modifiers:[...ready.modifiers,{name:'amc_durable_union',date:'-1.1.1'}],
+    variables:{...ready.variables,eu4usa_republican_tradition:.3,eu4usa_reform_progress_growth:.3}};
+  const saves={before,pending,compact,ready,after,reload:structuredClone(after)};
+  const geometries=Object.fromEntries(constitutionMissions.map((m,i)=>[m,{point:{x:270,y:312+i*152}}]));
+  const actions=constitutionMissions.map(m=>({kind:'input-returned',action:{mission:m,kind:'click',x:271,y:geometries[m].point.y+31}}));
+  actions.push({kind:'input-returned',action:{kind:'click',eventOption:'amc.1.b',inspected:true}});
+  const ui=Object.fromEntries(['formationInspected','constitutionInspected','readyInspected','unionUnreadyInspected',
+    'downstreamReadyInspected','rewardDialogInspected','reloadInspected'].map(k=>[k,true]));
+  assert.equal(judgeConstitution(saves,ui,actions,geometries).passed,true);
+  const reordered=structuredClone(saves);reordered.pending.completed.reverse();reordered.after.completed.reverse();
+  reordered.reload.completed.reverse();assert.equal(judgeConstitution(reordered,ui,actions,geometries).passed,true);
+  for(const mutate of [s=>s.compact.tradition=70,s=>s.compact.flags.push('amc_enumerated_powers_chosen'),
+    s=>s.after.variables.eu4usa_republican_tradition=.03,s=>s.after.variables.eu4usa_reform_progress_growth=10,
+    s=>s.reload.modifiers.pop(),s=>s.compact.variables.eu4usa_num_accepted_cultures=0,
+    s=>s.after.capitalManpower++,s=>s.ready.completed.push('amc_more_perfect_union')]) {
+    const bad=structuredClone(saves);mutate(bad);assert.equal(judgeConstitution(bad,ui,actions,geometries).passed,false);
+  }
+  assert.equal(judgeConstitution(saves,ui,actions.slice(0,3),geometries).passed,false);
+  assert.equal(judgeConstitution(saves,ui,actions.slice(1),geometries).passed,false);
+});
 
 test('USA native protocol rejects missing, failed, duplicate, wrong-date and wrong-version markers',()=>{
   const outcomes=['BEGIN usa-slice',...usaChecks.map(c=>`OK ${c}`),'UI_READY usa-slice'];
