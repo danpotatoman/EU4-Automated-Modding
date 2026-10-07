@@ -112,6 +112,7 @@ Measurable criteria; distinguish completion of this task from release readiness.
 
 | Plan | Primary owner / affected mods | Execution state and canonical state |
 | --- | --- | --- |
+| [Brittany deployment repair](plans/2026-10-07-brittany-deployment-repair.md) | shared EU4 deployment tooling; Brittany affected, USA protected | complete; exact final-LF restoration, normal validated deployment, combined PASS; [handoff](../docs/runtime/brittany-deployment-repair-2026-10-07.md), [framework status](../docs/STATUS.md). No native/commit/push. |
 | [Project-state ownership](plans/2026-10-06-project-state-ownership.md) | repository/framework; both mod adapters/provenance/config | Authorized Phase 1/2A/2B/2C complete. [Phase 2C handoff](../docs/runtime/phase2c-configuration-ownership-2026-10-06.md), [framework status](../docs/STATUS.md). No next phase begins automatically. |
 | [Publication preparation](plans/2026-10-05-publication-preparation.md) | repository/framework; both mods protected | complete; dated publication evidence, no commit/remote/push. [Framework status](../docs/STATUS.md) |
 | [American Century](plans/2026-10-04-american-century.md) | mod/american_century; Brittany protected, shared runtime touched historically | active under its prior gameplay authorization; first slice complete, broader design remains active. [USA status](../docs/mods/american_century/STATUS.md) |

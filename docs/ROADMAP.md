@@ -1,7 +1,7 @@
 # Framework/tooling roadmap
 
 Owner: repository/framework
-Last updated: 2026-10-06
+Last updated: 2026-10-07
 
 Roadmap entries identify gaps/proposals, not implementation authorization.
 Use [status](STATUS.md) and owner-labelled [task plans](../.agent/PLANS.md).
@@ -19,8 +19,10 @@ or [American Century](mods/american_century/ROADMAP.md).
 - Unusual dialogs without observable process ownership, graphics/Steam startup and
   denied cleanup remain bounded-environment gaps. Do not clean unowned processes.
 - A comparable version/DLC/scenario log baseline is necessary before attributing
-  general game-log errors to a mod. Descriptor reconciliation must preserve strict
-  ownership guards; affected deployment state belongs in its mod roadmap.
+  general game-log errors to a mod. [Brittany final-LF restoration](runtime/brittany-deployment-repair-2026-10-07.md)
+  preserved strict ownership guards; the cause of recurrent descriptor rewriting
+  and broader recovery mechanisms remain outside its bounded scope. Affected
+  deployment/export work belongs in its mod roadmap.
 
 ## Deferred ownership refactor
 

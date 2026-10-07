@@ -61,3 +61,31 @@ A successful copy is not evidence of successful in-game behavior or release read
 
 Run isolated integration checks with `./tools/deployment/self-test.ps1`. Their
 files stay under ignored shared tooling folders; they do not write to the game.
+
+## Exact launcher final-newline restoration
+
+After investigation establishes a final-LF-only loss, this narrow repair can restore
+the original owned bytes before normal strict deployment:
+
+```powershell
+./tools/deployment/repair-launcher-newline.ps1 -Mod brittany_missions -Preview
+./tools/deployment/repair-launcher-newline.ps1 -Mod brittany_missions
+./tools/deploy-mod.ps1 -Mod brittany_missions
+```
+
+Close EU4 and avoid concurrent writes. `-DestinationRoot` selects an isolated test
+destination. Repair preview verifies eligibility without writing. Repair requires a
+matching source/destination ownership record, its complete unchanged deployed file
+set, canonical internal descriptor and canonical launcher hashes equal to the record,
+and actual launcher bytes exactly equal to canonical bytes minus one final `0A`.
+Manual text changes, missing/extra/changed files, incompatible schema/identity,
+linked content and directory redirection are refused. It does not accept arbitrary
+newline conversion, BOM changes or stale generated metadata.
+
+The tool preserves original launcher/record bytes and `repair.json` in a unique
+`state/<mod>/<destination-key>/repair-<timestamp>/` audit. It restores only the final
+LF and leaves ownership JSON untouched. A subsequent normal validated deployment
+updates source content and records schema-2 UNVERIFIED provenance through the existing
+mechanism. Neither operation establishes activation/gameplay. The integration
+self-test exercises both restoration and refusal controls/sentinel preservation.
+See the [Brittany diagnosis and handoff](../../docs/runtime/brittany-deployment-repair-2026-10-07.md).

@@ -1,7 +1,7 @@
 # Brittany Missions state
 
 Owner: mod/brittany_missions
-Last updated: 2026-10-06 (documentation only; no new game validation)
+Last updated: 2026-10-07 (deployment reconciliation; no new game validation)
 
 Retained results apply to their recorded builds and EU4 1.37.5.0 Inca (491d).
 The 2026-10-05 publication validation records Brittany `all` PASS/0, four contracts,
@@ -88,13 +88,22 @@ identity support reward-extraction equivalence within the recorded scope.
 
 ## Report freshness and deployment
 
-The older combined report at `tools/checks/reports/brittany_missions/latest.json`
-is failed, dated `2026-10-02T03:28:47.210Z`: six then-undefined preview-trigger
-errors and duplicate-localisation warnings. Later zero-error CWTools does not make
-that combined check PASS. This documentation migration reruns neither check.
-Historical selector deployment has a descriptor-final-newline mismatch; preserve
-its strict ownership verdict until separately reconciled. No normal deployment or
-release descriptor was changed here.
+The 2026-10-07 combined check at `tools/checks/reports/brittany_missions/latest.json`
+is complete PASS/0: CWTools 0 errors/58 warnings, inspector 0 errors/6 warnings,
+file/deployment checks clean. Older October 2 source failures and Phase 2B/2C
+`modified-destination` failures retain their original verdicts.
+
+The separately authorized [deployment repair](../../runtime/brittany-deployment-repair-2026-10-07.md)
+proved a single missing final `0A` in the launcher; all old deployed content matched
+its October 2 ownership record. Canonical descriptor bytes and that record agreed.
+After guarded restoration, normal validated deployment refreshed the two reward
+call sites and added the existing production effect file. Production source was
+unchanged; no unknown/manual content edits were found, and the actor responsible for
+newline loss remains unknown. The ordinary development destination now matches
+current source/generated output and fresh ownership hashes. This is deployment
+integrity evidence, with activation/gameplay UNVERIFIED; no native run or release
+descriptor change occurred. Historical selector observations remain scoped to the
+old deployed build.
 
 Nantes's [manual reference](../../testing/runtime-nantes-market/faithful-completion-2026-10-03.md)
 also verifies numeric cloth deltas, once-only behavior and ordinary save/reload;

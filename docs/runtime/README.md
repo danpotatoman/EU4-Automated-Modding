@@ -60,3 +60,8 @@ and completes browser/self-test isolation. Its
 [handoff](phase2c-configuration-ownership-2026-10-06.md) records descriptor/parity,
 static checks, unchanged native scope and integrity. Remaining work belongs to the
 [framework roadmap](../ROADMAP.md#deferred-ownership-refactor), without automatic authorization.
+
+The separately authorized [Brittany deployment repair](brittany-deployment-repair-2026-10-07.md)
+restored exactly a missing final LF, verified old owned content, and refreshed source
+through normal validated deployment. It changed no Phase 2A/2B/2C semantics or
+gameplay evidence. Broader destination edits continue to fail protection.

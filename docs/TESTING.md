@@ -69,6 +69,14 @@ fixture input under `test-work/browser-<id>/`; it never consumes production late
 Both preserve ordinary report baselines. Do not run them
 as a documentation check or mistake their output for fresh native evidence.
 
+Deployment self-test additionally covers exact launcher final-LF restoration,
+non-mutating repair preview, unchanged ownership state, manual launcher/content and
+extra-file refusal, conflicting owner/schema/canonical hash refusal, normal strict
+deployment afterward and unrelated sentinel preservation. This separate PowerShell
+integration test is not one of the four offline aggregate self-test programs.
+The [October 7 handoff](runtime/brittany-deployment-repair-2026-10-07.md#playtest-list)
+records reproducible deployment scenarios and unchanged native coverage.
+
 ## Native test ownership and current commands
 
 Prefer explicit native `-Mod <source-id>`. `-ListTests` (with optional -Mod filter)

@@ -1,7 +1,7 @@
 # Framework/tooling state
 
 Owner: repository/framework
-Last updated: 2026-10-06 (Phase 2C complete)
+Last updated: 2026-10-07 (Brittany deployment repair)
 
 Root state describes shared tools and repository work. Independent gameplay state
 belongs to [Brittany](mods/brittany_missions/STATUS.md) and
@@ -29,6 +29,17 @@ so exactly-18-only/minimal-DLC support is unverified. Read [runtime knowledge](r
 for mechanisms/dependencies without needing a mod's gameplay design.
 
 ## Current command ownership
+
+The separately authorized [Brittany deployment repair](runtime/brittany-deployment-repair-2026-10-07.md)
+restored a single missing launcher final LF, then used the unchanged strict validated
+deployer to refresh old owned content from canonical source. Brittany combined check
+now PASS/0: CWTools 0 errors/58 warnings, inspector 0 errors/6 warnings, file and
+deployment checks clean. Deployment self-test and 89 offline tests/four tool
+self-tests PASS. Repair refuses any broader modification and leaves ownership
+unchanged during restoration; normal deployment writes fresh schema-2 UNVERIFIED
+ownership. Phase 2A/2B/2C architecture, production and retained native evidence are
+unchanged. No fresh native gameplay result or release readiness is claimed. Earlier
+Phase 2B/2C failed deployment results below remain dated historical evidence.
 
 The native wrapper supports explicit `-Mod` ownership and non-launching,
 non-mutating `-ListTests`. Unsupported selections fail before game configuration
