@@ -1,5 +1,16 @@
 # Local CWTools validator
 
+Owner: shared EU4 tooling interface
+
+[Framework status](../../docs/STATUS.md) owns tool capability state;
+[mod runbooks](../../docs/mods/README.md) own gameplay state/coverage and
+[evidence index](../../docs/testing/README.md) labels historical workloads.
+
+These existing tools accept their documented -Mod and default to Brittany.
+Brittany examples/source-backed tests do not establish another mod's gameplay.
+Shared configuration remains unchanged; schema 2 semantics above apply to new reports.
+
+
 Run from the shared `eu4-modding` project folder:
 
 ```powershell
@@ -15,6 +26,18 @@ This is a small Node.js LSP client for the server bundled with the installed
 VS Code. It validates saved files, not unsaved editor changes.
 
 ## Configuration and results
+
+New reports use [evidence schema 2](../../docs/runtime/evidence-identity.md),
+including explicit source owner (null for arbitrary projects), storage namespace,
+artifact kind, canonical project path, byte manifest/hash, run ID and start/finish
+times. `-SourceMod`, `-ReportKey`, `-ArtifactKind`, `-ProjectIdentity` are optional
+on the PowerShell wrapper (`--source-mod`, `--report-key`, `--artifact-kind`,
+`--project-identity` in Node). Canonical production owner/kind contradictions fail.
+Basename fallback and existing production/runtime namespaces/cache paths remain;
+use separate report keys for arbitrary same-basename projects. Reuse requires
+matching path/owner/kind/build and a fresh completed report. STATIC only; no runtime
+activation is claimed. Historical reports remain unchanged and require documented
+legacy compatibility or revalidation.
 
 `config.json` records portable defaults for the EU4 installation, local rules folder, localisation
 languages, experimental checks, and timeout. The newest installed CWTools extension

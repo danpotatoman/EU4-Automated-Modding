@@ -1,5 +1,14 @@
 # American colonial runway and USA tree selection
 
+Owner: shared EU4 mechanics/tooling knowledge
+
+The American Century examples/results below are attributed workloads, not general mod coverage.
+Current framework capability lives in [framework status](../STATUS.md) and
+[runtime knowledge](../runtime/README.md); gameplay state/playtests belong to
+[the mod owners](../mods/README.md). Dated verification and unresolved assumptions
+remain scoped to their recorded versions, dependencies and fixtures.
+
+
 Purpose: add English preparation without replacing England's DLC mission trees;
 give eastern-American British CNs a short origin tree and replace USA's missions
 upon vanilla formation. Read-only sources reviewed 2026-10-04 in EU4 1.37.5.0:
@@ -86,3 +95,5 @@ privilege tuples. Static layout flags the same-row Compact/Doors link, but nativ
 UI renders its routed arrow and enforces both prerequisites. Natural CN origin
 assignment, release/play, the second constitution choice and remaining roots are
 still open scenarios.
+
+Current example coverage: [American Century owner runbook](../mods/american_century/testing/README.md).

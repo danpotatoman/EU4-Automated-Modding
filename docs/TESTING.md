@@ -1,266 +1,192 @@
-# Validation and testing
+# Framework validation and testing
 
-This describes the infrastructure currently present. Evidence of actual capabilities
-and open behavior lives in [STATUS.md](STATUS.md) and the
-[runtime coverage manifest](testing/runtime-coverage.md). A command being available
-does not mean it ran successfully on the current source/environment.
+Owner: repository/framework testing
+Last updated: 2026-10-06
+
+This document defines current interfaces, evidence semantics and test selection.
+[Framework status](STATUS.md) owns actual tool capability results; each
+[mod](mods/README.md) owns gameplay coverage and open playtests. No CLI or tool
+behavior changed in Phase 1.
 
 ## Static development loop
 
-Game-independent checks: `node tools/test-offline.mjs`. This runs 53 Node tests and
-four synthetic tool self-tests. Real Windows process-adapter tests are separate:
-`node --test tools/runtime-tests/windows-adapter.test.mjs`. Full
-`node --test tools/runtime-tests/*.test.mjs` still includes both adapter tests;
-the shared runtime count remains 51, plus four config/publication tests outside it.
-CWTools and native runs require [local setup](SETUP.md); CI runs only the offline
-command, public link/audit checks and whitespace review.
-
-Run from the repository root after relevant script/localisation changes:
+Use the source-folder ID with existing static interfaces:
 
 ```powershell
-./tools/validate-cwtools.ps1
-./tools/inspect-missions.ps1 -Open
-# Combined CWTools, layout, file checks and deployment preparation:
-./tools/check-project.ps1
+./tools/validate-cwtools.ps1 -Mod brittany_missions
+./tools/inspect-missions.ps1 -Mod brittany_missions
+./tools/check-project.ps1 -Mod brittany_missions
+./tools/validate-cwtools.ps1 -Mod american_century
+./tools/inspect-missions.ps1 -Mod american_century
+./tools/check-project.ps1 -Mod american_century
 ```
 
-All accept `-Mod other_mod` where documented. PowerShell wrappers find Node on
-PATH or the existing Codex runtime fallback. If process policy blocks scripts,
-use `powershell.exe -NoProfile -ExecutionPolicy Bypass -File <script> ...`;
-no permanent execution-policy change is necessary.
+These wrappers otherwise default to Brittany. CWTools -Project supports an
+arbitrary/staged directory with optional -SourceMod/-ReportKey/-ArtifactKind/
+-ProjectIdentity. Basename remains the default storage key; canonical path,
+build hash and both invocation start/completion times establish applicability.
+Saved files are validated. Cached vanilla/rules remain shared; source/staged
+results are distinct. See [schema and legacy rules](runtime/evidence-identity.md).
 
-- **CWTools:** [validator README](../tools/cwtools/README.md). Launches the installed
-  extension's LSP server itself using `tools/cwtools/config.json` and local rules;
-  checks all saved script/localisation files are loaded. Reports/cache under shared
-  ignored tools. `latest.json`/`latest.txt`: exit 0 completed without errors,
-  1 completed with errors, 2 failed/timed out; warnings do not fail. Running/failed
-  reports are not passes. Missing rules: `./tools/cwtools/install-rules.ps1` with
-  network access. Version changes invalidate cache; `-RebuildCache` forces rebuilding.
-- **Mission inspector:** [README](../tools/mission-inspector/README.md). Checks grid,
-  dependencies, scenario visibility, duplicate/missing English keys and schematic
-  arrow risks. `latest.json`, text and offline viewer stay under shared reports.
-  Exit 0 no structural errors in normal scenarios, 1 structural errors, 2 failed;
-  diagnostic scenarios deliberately containing invalid state do not fail the command.
-  Its supported visibility predicates are narrow; unknown ones remain visible with
-  warnings. It does not model real saves, mission swapping, engine arrow routing,
-  DLC archives or generic mission merging.
-- **Combined check:** [README](../tools/checks/README.md). Adds byte/encoding and
-  export-folder integrity checks, descriptor preparation in memory, build fingerprints,
-  finding history and deployment evidence freshness. Exit 0 passed, 1 completed with
-  errors, 2 incomplete (takes precedence). It neither deploys nor launches EU4.
-  Comparisons use the last completed run; missing findings from incomplete tools are
-  deferred, not resolved. Deployment preparation does not establish write permission.
-
-For a documentation-only edit, review local links, contradictions and the changed
-file scope; a fresh CWTools/native run is unnecessary unless game content changed.
+| Tool | Interface/result semantics | Scope |
+| --- | --- | --- |
+| [CWTools](../tools/cwtools/README.md) | Exit 0 complete/no errors, 1 complete/errors, 2 failed/timed out; warnings do not fail; reports start running | Reports/cache/rules ignored; static syntax/scope/reference/localisation only |
+| [Inspector](../tools/mission-inspector/README.md) | Exit 0 no structural errors in normal scenarios, 1 structural errors, 2 failed; diagnostic invalid-state scenarios do not fail | Narrow potential evaluation, schematic geometry; no actual tree swaps/merged generic missions/DLC artwork |
+| [Combined check](../tools/checks/README.md) | Exit 0 passed, 1 completed/errors, 2 incomplete/stale; incomplete takes precedence | Last completed comparison baseline; incomplete missing findings deferred; deployment preparation makes no writes |
+| [Deployment](../tools/deployment/README.md) | Failed validation blocks; diagnostic allowed errors/skipped validation remain labelled | Byte-preserving copy/generated descriptors and strict destination ownership; not playset or release proof |
+| [Collector](../tools/test-runs/README.md) | Exit 0 collection completed even for operator gameplay FAIL; error exits 2 | Operator outcome, byte-preserving logs/deltas and explicitly selected baseline; clean logs do not prove loading/gameplay |
 
 ## Automated tool checks
 
-These are the existing entry points, not a claim that every check was rerun during
-the bootstrap. Fixtures stay outside production mods, under ignored shared tools
-or bounded temporary directories. Integration wrappers test the wrappers as well
-as their Node core; CWTools integration also needs the installed server/rules.
+```shell
+node tools/test-offline.mjs
+node --test tools/runtime-tests/windows-adapter.test.mjs
+```
 
-| Check | Command |
-| --- | --- |
-| CWTools integration (valid, syntax, scope/reference faults) | `node tools/cwtools/self-test.mjs` |
-| Deployment integrity/rollback | `./tools/deployment/self-test.ps1` |
-| Collector identity/baselines/log capture | `./tools/test-runs/self-test.ps1` |
-| Layout/scenario/structural checks | `./tools/mission-inspector/self-test.ps1` |
-| Optional isolated headless-Chromium viewer check | `node tools/mission-inspector/browser-test.mjs` |
-| Combined result/history/failure/concurrency checks | `./tools/checks/self-test.ps1` |
-| Vanilla lookup/provenance | `./tools/vanilla-reference/self-test.ps1` |
-| Native lifecycle, transcript evaluator, wiring and evidence regressions | `node --test tools/runtime-tests/*.test.mjs` |
+The offline aggregate currently discovers shared lifecycle/config/publication tests
+**and mod-specific adapters/source-backed geometry/evidence replays**, then four
+tool self-tests. The dated 2026-10-05 count is 53 Node tests offline plus four tool
+self-tests, with two real Windows process-adapter tests separate (55 Node total).
+Phase 2A adds 13 registry/shared-helper tests (66). Phase 2B adds nine identity/
+collector tests and three saved-environment parser regressions (78). Phase 2C adds
+11 metadata/parity/descriptor/isolation tests: current offline count is **89 plus
+four tool self-tests**, with two Windows process-adapter tests separate. Two of
+the 89 tests need Windows PowerShell; they explicitly skip on platforms without it.
+Current Windows acceptance has no skips. [Phase 2B acceptance](runtime/phase2b-evidence-identity-2026-10-06.md)
+retains native evidence; [Phase 2C acceptance](runtime/phase2c-configuration-ownership-2026-10-06.md)
+records configuration/QA checks and the justified native scope.
+CI runs offline tests, link/publication checks and whitespace, not EU4 or installed
+CWTools. Tests/replays do not create new native mod verification.
 
-The last row replays preserved real logs, rejects stale/missing/duplicate/wrong-date/
-wrong-version or failed assertions, checks production wiring/ordered reward expansion
-and tests specific faults. It does not launch EU4 or create new behavioral evidence.
-If Node is absent from PATH, use the same local fallback executable selected by
-the PowerShell wrappers (under the user's `.cache/codex-runtimes/`).
+Other interfaces: `node tools/cwtools/self-test.mjs` (installed server/rules),
+`./tools/deployment/self-test.ps1`, `./tools/test-runs/self-test.ps1`,
+`./tools/mission-inspector/self-test.ps1`, `./tools/checks/self-test.ps1`,
+`./tools/vanilla-reference/self-test.ps1`, optional Chromium
+`node tools/mission-inspector/browser-test.mjs`. Source-backed Brittany tests are
+workloads, not generic gameplay coverage. Inspector self-test output uses a separate
+fixture namespace to preserve provenance. Browser QA regenerates fresh isolated
+fixture input under `test-work/browser-<id>/`; it never consumes production latest.
+Both preserve ordinary report baselines. Do not run them
+as a documentation check or mistake their output for fresh native evidence.
+
+## Native test ownership and current commands
+
+Prefer explicit native `-Mod <source-id>`. `-ListTests` (with optional -Mod filter)
+lists ownership, modes, members and coverage without reading game configuration,
+creating profiles/reports or launching EU4. Unsupported selections fail before
+preparation. No repository-wide native all command exists.
+
+| Selection | Source owner / layers | Current command |
+| --- | --- | --- |
+| all | Brittany: preview-gate, shipbuilding-reward, borders-reward, textiles-upgrade; LOGIC/EFFECT/WIRING, no ordinary dispatch | `./tools/run-eu4-test.ps1 -Mod brittany_missions -Test all -TimeoutSeconds 150` |
+| Named member of all | Brittany targeted predicate/effect regression | `./tools/run-eu4-test.ps1 -Mod brittany_missions -Test shipbuilding-reward` (or other named member) |
+| nantes-claim click/refusal | Brittany supervised actual-input/native-save contract | See [Brittany runbook](mods/brittany_missions/testing/README.md) |
+| nantes-market / run-effects | Brittany completion diagnostic / BRI engine-calibration workload, outside all | `./tools/run-eu4-test.ps1 -Mod brittany_missions -Test run-effects -TimeoutSeconds 150` |
+| usa-slice click/refusal | American Century supervised formation/four real claims/native-save fixture, outside all; reload is separate scenario evidence | See [USA runbook](mods/american_century/testing/README.md) |
+
+Legacy commands without -Mod retain usa-slice -> American Century and every other
+test/default -> Brittany routing, with a scoped notice. The first positional
+PowerShell argument remains Test. Defaults, exit codes and protocol IDs are intact.
+Explicit USA all and USA diagnostic modes other than click/negative are rejected.
+Only Nantes supports mission/scripted/tree diagnostics and experimental shortcut;
+non-UI contracts accept the default click mode only. Diagnostic modes never earn
+faithful mission PASS. `-ListTests` accepts only its optional Mod filter.
+
+Default native test is Brittany preview-gate. InlineBaseline, NegativeControl and
+freeze exercise are limited to Brittany all; retained negative control expects
+exit 1 with three FAILs and textiles PASS. Preparation-only exit 0 is static
+preparation, never native PASS. Framework recovery exercises use the Brittany
+workload and verify lifecycle recovery, not whole-mod gameplay.
+
+Covered production changes need the owning named contract plus CWTools. Shared
+runner changes need the offline tests and Brittany all, and affected Nantes/USA
+input/save contracts when their interfaces change. A Brittany PASS cannot replace
+an affected USA contract; missing native checks remain pending/INCOMPLETE.
+
+## Native environment, lifecycle and verdicts
+
+Use [setup](SETUP.md), [shared environment preference](testing/environment.md),
+[runtime knowledge](runtime/README.md) and [runner implementation guide](../tools/runtime-tests/README.md).
+Recorded target: EU4 1.37.5.0 Inca (491d). Confirm installed/running version and
+actual mod/DLC activation for every new result; desired 18 DLC is not activation
+evidence and later USA saves show 21. Native execution needs Steam, Windows,
+graphics and interactive desktop; it is not headless. Historical faithful UI
+tests require an active supported Codex driver, known geometry and owned-window
+inspection. Bare PowerShell alone does not provide that input driver.
+
+Brittany preflight requires ordinary launcher only brittany_missions_dev.mod/no
+disabled DLC; USA reads ordinary launcher config but does not apply that same
+mod gate. The runner stages isolated source, hooks/descriptors/profile, validates
+source and stage, uses owned process identity/global lock and refuses unrelated
+EU4. Settings/vanilla/production remain read only. Default total native limit 120s,
+progress 30s, one retry; configured bounds are documented in runner README.
+Assertion/integrity/config errors and failed cleanup stop; infrastructure failures
+can retry only after verified owned cleanup in a fresh profile.
+
+PASS/0 means the specified native contract; FAIL/1 means assertions/wiring fail;
+PARTIAL/2 diagnoses state without faithful reward dispatch; INCOMPLETE/2 means
+timeout/crash/infrastructure/missing evidence. The runner additionally checks
+ordered unique nonce/date/version markers, staged/console hashes and relevant
+errors. Successful cleanup does not certify gameplay, and a retry's PASS does not
+rewrite an earlier attempt. Source-backed offline replays preserve those verdicts.
 
 ## Manual runtime workflow and logs
 
-[environment.md](testing/environment.md) defines the default: documented 18 DLC,
-only the tested mod, non-Ironman scenarios. Verify actual launcher/DLC activation
-before testing. The user performs gameplay and requested reloads; the assistant
-prepares fixtures/instructions and analyzes results. Preserve a pristine baseline,
-separate checkpoints, actual running version, tested build, scenario and run ID.
+Use existing deployment/collector -Mod explicitly for the source owner. Close EU4
+before deployment, understand destination ownership, select/confirm launcher
+activation yourself, then begin collection before gameplay and finish after exit:
 
 ```powershell
-./tools/deploy-mod.ps1
-./tools/test-run.ps1 -Action begin -Scenario 'Describe the exact behavior'
-# User runs the documented gameplay scenario, then closes EU4.
-./tools/test-run.ps1 -Action finish -Outcome passed -Notes 'Record observations and limits'
+./tools/deploy-mod.ps1 -Mod brittany_missions
+./tools/test-run.ps1 -Mod brittany_missions -Action begin -Scenario 'Exact documented behavior'
+./tools/test-run.ps1 -Mod brittany_missions -Action finish -Outcome unverified -Notes 'Actual observations and limits'
 ```
 
-Deployment creates the development copy/descriptors and ownership records; it does
-not select the playset. Close EU4 before deploying. Validation errors block normal
-deployment; `-AllowValidationErrors` explicitly records diagnostic deployment,
-failed validation still blocks it. [Deployment details](../tools/deployment/README.md).
+Substitute american_century for a USA production/deployment scenario. The collector
+namespace also represents runtime pseudo-mods, so a mod field alone is not verified
+source identity. Save hashes, source/staged/deployment identity, actual environment,
+scenario/actions and outcome provenance are necessary. Comparable no-mod baselines
+use explicit Untracked/baseline selection; the collector does not verify vanilla
+activation or infer behavior from logs. Preserve FAIL/INCOMPLETE and descriptor
+mismatches, not just successful summaries.
 
-The [collector](../tools/test-runs/README.md) verifies deployment hashes before/after,
-captures byte-preserving logs/deltas and records **operator-supplied** outcomes.
-Exit 0 means collection succeeded even when gameplay failed or logs contain errors.
-Clean/no changed logs do not prove loading or successful behavior. Use `-Untracked`
-and explicit `-Action baseline -Run <id>` for a comparable no-mod log baseline;
-the collector does not verify vanilla playset activation. Unbaselined errors must
-not be attributed to this mod automatically. Descriptor bytes are part of strict
-identity: the historical selector run lost a final descriptor newline and was
-flagged, even though content files matched.
+## Playtest list and evidence ownership
 
-Start with the [selector scenario and reported results](testing/brittany-diplomatic-selector.md).
-Do not use forced completion for normal mission-button scenarios.
+Gameplay playtests with affected files, initial conditions, steps, expected behavior
+and failure signs belong to [Brittany](mods/brittany_missions/testing/README.md#playtest-list)
+or [American Century](mods/american_century/testing/README.md#playtest-list).
+Framework recovery/calibration scenarios remain indexed in
+[historical evidence](testing/README.md), with workload owners explicitly separated.
+[Phase 2A handoff](runtime/phase2a-ownership-2026-10-06.md) records fresh ownership
+refactor checks separately from retained mod gameplay evidence and pending playtests.
 
-## Isolated native runner
+Raw profiles/saves/logs/screenshots stay ignored; public excerpts are reviewed
+copies with separate provenance. Keep historical bundles/paths/bytes intact under
+[hygiene](REPOSITORY_HYGIENE.md). Documentation changes require links, publication
+audit, whitespace/scope review and protected-byte checks; CWTools/native/tool
+self-tests are unnecessary when game/tool content is unchanged.
 
-[Runtime README](../tools/runtime-tests/README.md) and
-[assertion guide](modding/runtime-script-assertions.md) describe the implementation.
+Configuration tests verify shared environment/local/default precedence, scoped
+legacy display name and generic version overrides, Node/PowerShell effective
+metadata/descriptor parity, unknown/future metadata, independent inspector owners
+and fixture output isolation. [Configuration ownership](runtime/configuration-ownership.md)
+defines sources. Development descriptor changes do not change native fixture
+descriptors; inspect the actual preparation/activation diff before choosing native
+regressions, and never label descriptor/preparation parity as a fresh native PASS.
 
-```powershell
-./tools/run-eu4-test.ps1 -Test preview-gate
-./tools/run-eu4-test.ps1 -Test shipbuilding-reward
-./tools/run-eu4-test.ps1 -Test borders-reward
-./tools/run-eu4-test.ps1 -Test textiles-upgrade
-./tools/run-eu4-test.ps1 -Test all -TimeoutSeconds 150
-# Diagnostics outside all:
-./tools/run-eu4-test.ps1 -Test run-effects -TimeoutSeconds 150
-./tools/run-eu4-test.ps1 -Test nantes-market -TimeoutSeconds 150
-./tools/run-eu4-test.ps1 -PrepareOnly
-```
+## Historical section compatibility
 
-For covered behavior changes run the relevant named contract plus CWTools. Use
-`all` after shared trigger/effect/runner changes or before a broader handoff.
+Former root gameplay sections now route to the owner runbooks above. Their old
+anchors remain for dated links; they are not independent current-state owners.
 
-The runner reads normal launcher `dlc_load.json` and requires only
-`mod/brittany_missions_dev.mod` with no disabled DLC, cleans identity-verified stale
-harness processes and refuses unrelated EU4, copies production byte for byte into
-`tools/runtime-tests/work/`, adds
-test-only hooks/wrappers and generates an isolated profile/descriptor. It reads
-normal settings but does not write the ordinary profile, installed game or source
-mod. Production and staged CWTools must both complete without errors before launch.
-
-Launch is `eu4.exe -debug -userdir=<profile>/ -start_tag=BRI`. Startup assertions
-check fresh independent Brittany on 1444.11.11, relevant flags/ownership and all 18
-DLC. Plain effect cases use `-auto_run=eu4rt_run.commands`: profile-root CRLF
-command lines `run eu4rt_<test>.txt`. These ordinary UTF-8 effect files have no
-event envelope; native execution was demonstrated for implicit BRI, explicit
-`BRI = { ... }` and province nesting. Startup does not itself load the console
-files. Static wrappers validate bodies but are not invoked in game.
-
-Required `all` covers preview logic, two named production rewards and the installed
-textiles helper, plus static mission wiring. The final retained suite passed all
-four, before/after reward extraction. See [suite evidence](testing/runtime-regression-suite/README.md).
-`-NegativeControl -Test all` faults only staged code: expected exit 1, preview/
-shipbuilding/borders FAIL and textiles PASS. `-InlineBaseline` is historical
-comparison mode requiring original inline rewards, not normal current execution.
-
-Native PASS/exit 0 means the stated predicate/effect contract. FAIL/exit 1 means
-assertion/wiring failure. PARTIAL/exit 2 means the Nantes diagnostic completed but
-faithful completion is unproven. Infrastructure/missing evidence/timeout/crash is
-INCOMPLETE/exit 2. `-PrepareOnly` exits 0 for static preparation, never a native
-PASS. Each required suite case is judged separately; any required failure or
-incomplete case makes the suite nonzero.
-
-The full runner requires ordered unique nonce/date/version markers, unchanged
-staged/console files and no relevant script-error matches; these checks are broader
-than the transcript evaluator alone. Owned lifecycle monitoring is bounded separately
-from CWTools (default total native timeout 120 seconds, permitted 30–1800; after
-native markers begin, default progress timeout 30 seconds). It requests normal
-close on success, then forces termination after five seconds if needed. Failures
-clean verified descendants/reporters and can retry once in a fresh profile by
-default (`-Retries 0–2`, `-ProgressTimeoutSeconds 5–1800`). Cleanup failure and
-assertion/integrity/configuration errors stop. The [recovery report and playtest
-list](testing/runtime-recovery/README.md) retain actual termination/native crash
-recovery, reporter removal and a clean follow-up suite, plus remaining bounds.
-Steam must already be usable; authentication remains the operator's responsibility.
-Graphics access is required: isolated execution is **not headless**. A restricted
-desktop failed D3D creation; a Steam-not-running launch also reached no assertions.
-
-Local results/manifests/CWTools/log snapshots live in ignored work and the collector's
-separate `brittany_runtime` namespace. Portable selected artifacts live in
-`docs/testing/`; public path provenance is redacted to synthetic roots and original
-hashes refer to local originals. Game screenshots and bulk engine dumps remain local.
-See [publication policy](REPOSITORY_HYGIENE.md) and
-[redaction manifest](testing/publication-redactions.json).
-Normal deployment cannot copy runtime hooks because they are not production files.
-
-## Calibration and unresolved limitations
-
-| Mechanism / risk | Established evidence and limit |
-| --- | --- |
-| Plain console files and `-auto_run` | Profile-root `.txt`, one/two-command CRLF batches, country/province effects and named calls verified; other extensions/absolute paths/spaces/default-profile lookup not verified |
-| Province modifier observation | Cloth apply/remove changes exported goods modifier 0 -> 0.15 -> 0; ID query false despite positive values. Ordinary Nantes UI/native saves now independently verify named permanent rewards and +0.15 contributions, including reload; console ID queries remain false. Original probe FAILs retained; no general cause established |
-| Post-click console completion query | `mission_completed` false despite ordinary Nantes completion in UI/native `completed_missions`, both before and after reload. Preserve FAIL and use independent UI/save evidence; startup state-only behavior is a separate context |
-| Native save provenance | In the Nantes reload, metadata `save_game` names the loaded completed file but `campaign_id` changes. Record original/snapshot hashes, load source and relevant restored state; do not assume UUID stability. Not a general save-schema rule |
-| Vanilla stability helper | Actual `add_stability_or_adm_power` yields stability 0 -> 1; max-stability ADM branch not tested |
-| `complete_mission` | Nantes completion/parent state recorded without reward even in ready-building fixture; not faithful mission dispatch or readiness oracle |
-| Native `mission` command | Fresh independent native saves/UI establish Nantes complete, Textiles ready and rewards absent despite false completion query. Historical raw query-based FAIL/incomplete verdicts remain unchanged; not faithful claiming. [Fresh report](testing/runtime-mission-claim/README.md) |
-| Numerical assertions | 0.0002-wide intervals falsely failed expected rewards; accepted contracts use fixed deltas and `[expected, expected + 0.001)`; avoid caps/clamping assumptions |
-| Native crash/hang | Historical dynamic-log stack overflow cause remains unisolated. Owned lifecycle captures crash/timeout attempts as incomplete, removes verified remnants and retries boundedly. Native crash/reporter recovery and a real after-BEGIN suspension are verified, each followed by a separate clean suite. Unusual unidentifiable dialogs remain open in the [recovery report](testing/runtime-recovery/README.md) |
-| Relevant-error filtering | Identifier filter covers known hook/effect sources, not every possible game error. General errors require a comparable baseline |
-| Mission/layout evidence | Predicate/effect plus wiring never establishes normal readiness, button dispatch, tooltip rendering, UI refresh or save/reload. Inspector geometry/unknown predicates can produce warnings requiring judgment |
-| Localisation diagnostics | `desc_<id>` warnings despite existing `_desc` text need rules/vanilla/UI review; false-positive status not established. Duplicate keys are independently evidenced |
-
-Read [run-file calibration](testing/runtime-run-effects/README.md),
-[console guide](modding/console-run-effects.md), and
-[native completion guide](modding/native-mission-completion.md) before extending
-automation. Do not assume arbitrary startup/file dispatch, save loading, stdin,
-sockets or gameplay UI automation are supported.
-
-## Playtest list
-
-The separate bounded faithful UI case is documented in
-[the claim report and playtest list](testing/runtime-mission-claim/README.md#playtest-list):
-
-```powershell
-./tools/run-eu4-test.ps1 -Test nantes-claim -ClaimMode click -TimeoutSeconds 600 -ProgressTimeoutSeconds 600 -Retries 0
-./tools/run-eu4-test.ps1 -Test nantes-claim -ClaimMode negative -TimeoutSeconds 600 -ProgressTimeoutSeconds 600 -Retries 0
-```
-
-These require an active Codex `node_repl` driver using the supported Windows
-adapter; see [operator handoff](../tools/runtime-tests/README.md#faithful-nantes-claim).
-Bare PowerShell waits boundedly then fails/cleans without that driver. Native
-markers verify setup inputs, screenshot inspection verifies actual UI readiness,
-and actual native saves judge completion/rewards independently. Real button
-dispatch and unready refusal passed, followed by a separate clean `all`.
-Diagnostic modes `mission`, `scripted`, `tree` never earn mission PASS.
-Keep these outside the four required logic/effect/wiring cases. Other layouts,
-standalone UI operation, locked desktops and UI-stage native crashes remain open.
-
-Concrete starting conditions, source files, steps, expected results and failure
-signs remain in the detailed scenario owners:
-
-- [Suite playtests](testing/runtime-regression-suite/README.md#playtest-list):
-  ordinary shipbuilding/borders/textiles dispatch, tooltips, persistence/expiry,
-  selector refresh and named-query comparison.
-- [Nantes playtests](testing/runtime-nantes-market/README.md#open-playtest-list):
-  required ordinary readiness/completion/rewards, Textiles parent refresh, once-only
-  action and save/reload are now [verified manually](testing/runtime-nantes-market/faithful-completion-2026-10-03.md)
-  on the recorded build; query/automation boundaries remain explicit.
-- [Calibration playtests](testing/runtime-run-effects/README.md#open-playtest-list):
-  query reliability against UI/save/day advance, mission dispatch and vanilla
-  helper's max-stability branch.
-- [Selector manual record](testing/brittany-diplomatic-selector.md): retain reported
-  passes; still isolate the preview gate with every normal requirement satisfied
-  and record exact mission rewards/build/environment identity.
-
-The runner starts fresh; direct save-launch semantics remain unverified. USA's
-ordinary UI reload proved that startup hooks execute again, including former-tag
-scope. Its fixture now guards setup with an initial identity predicate and saved
-flag; duplicate protocol markers are still rejected. One bounded Codex-operated
-Nantes END-TO-END test exists; its numeric post-click/reload remain additional
-manual reference evidence. USA has a separate real-input/save/reload contract.
-Follow [ROADMAP.md](ROADMAP.md) for open work rather than treating these
-limitations as implemented or as proven production defects.
-
-## American Century
-
-Use the existing runner with `-Test usa-slice -ClaimMode click -TimeoutSeconds
-1200 -ProgressTimeoutSeconds 1200 -Retries 0`; negative readiness changes only
-`-ClaimMode negative`. An active Codex session operates the owned window through
-the same input driver. Source/staged CWTools, startup assertions, actual vanilla
-formation, production button claims, independent native saves and numerical
-modifier observations are distinct evidence layers. See the [USA report and
-playtest list](testing/american-century/README.md). Run Brittany `-Test all` after
-shared runner changes; USA fixture success does not prove a natural colonial war,
-the complete proposed tree, AI, other DLC combinations or export readiness.
+<a id="validation-and-testing"></a>
+<a id="static-development-loop"></a>
+<a id="combined-cwtools-layout-file-checks-and-deployment-preparation"></a>
+<a id="automated-tool-checks"></a>
+<a id="manual-runtime-workflow-and-logs"></a>
+<a id="user-runs-the-documented-gameplay-scenario-then-closes-eu4"></a>
+<a id="isolated-native-runner"></a>
+<a id="diagnostics-outside-all"></a>
+<a id="calibration-and-unresolved-limitations"></a>
+<a id="playtest-list"></a>
+<a id="american-century"></a>

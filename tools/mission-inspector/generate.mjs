@@ -1,12 +1,14 @@
 import { loadConfig } from '../config.mjs';
+import { loadModConfig } from '../mod-config.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { extract, parse, analyze } from './engine.mjs';
+import { identity, buildIdentity, productionOwners } from '../evidence-identity.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const root = path.resolve(here, '../..');
+const projectRoot = path.resolve(here, '../..');
 const read = file => fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '');
 function files(directory, extension) {
   if (!fs.existsSync(directory)) return [];
@@ -15,10 +17,16 @@ function files(directory, extension) {
     return entry.isDirectory() ? files(file, extension) : entry.isFile() && entry.name.endsWith(extension) ? [file] : [];
   });
 }
-export function generate(mod, noVanilla = false) {
+export function generate(mod, noVanilla = false, options = {}) {
   if (!/^[a-zA-Z0-9_-]+$/.test(mod)) throw Error('Invalid mod name.');
+  const root=path.resolve(options.root || projectRoot);
   const source = path.join(root, 'mod', mod);
   if (!fs.existsSync(source)) throw Error(`Mod does not exist: ${mod}`);
+  const startedAtUtc=new Date().toISOString();
+  const artifactBuild=buildIdentity(source);
+  const reportIdentity=identity({sourceMod:productionOwners.includes(mod)?mod:null,
+    storageNamespace:options.storageNamespace || mod,artifactKind:options.artifactKind || (productionOwners.includes(mod)?'production':'untracked'),
+    evidenceSource:'static',coveredLayers:['STATIC'],artifactBuild,runId:crypto.randomUUID(),startedAtUtc});
   const data = { mod, generatedAtUtc: new Date().toISOString(), series: [], diagnostics: [], externalMissions: [], icons: [], iconIndexAvailable: false, sourceFiles: [], referenceLimitations: [] };
   const titles = {};
   for (const file of files(path.join(source, 'localisation'), '.yml')) {
@@ -69,19 +77,21 @@ export function generate(mod, noVanilla = false) {
   data.iconIndexAvailable = interfaceFiles.length > 0;
   data.externalMissions = [...new Set(data.externalMissions)];
   data.icons = [...new Set(data.icons)];
-  const configured = JSON.parse(read(path.join(here, 'scenarios.json')));
-  data.scenarios = configured[mod] || [{ name: 'Unknown country state — review series selection', flags: null }];
-  data.mutuallyExclusiveFlags = JSON.parse(read(path.join(here, 'state-rules.json')))[mod]?.mutuallyExclusiveFlags || [];
+  const modMetadata=loadModConfig(mod,root,{onNotice:message=>console.error(message)});
+  data.scenarios = modMetadata.missionInspector.scenarios;
+  data.mutuallyExclusiveFlags = modMetadata.missionInspector.mutuallyExclusiveFlags;
   const reports = data.scenarios.map(scenario => ({ scenario, ...analyze(data, scenario) }));
-  const output = path.join(here, 'reports', mod);
+  if(buildIdentity(source).sha256!==artifactBuild.sha256) throw Error('Inspector source changed during inspection.');
+  const output = path.join(options.storage || path.join(here, 'reports'), reportIdentity.storageNamespace);
   fs.mkdirSync(output, { recursive: true });
   const engine = read(path.join(here, 'engine.mjs')).replace(/^export /gm, '');
   const json = JSON.stringify(data).replaceAll('<', '\\u003c');
   const html = read(path.join(here, 'viewer.html')).replace('/*__DATA__*/', `const DATA = ${json};`).replace('/*__ENGINE__*/', engine).replace('/*__VIEWER__*/', read(path.join(here, 'viewer.js')));
   fs.writeFileSync(path.join(output, 'index.html'), html);
-  fs.writeFileSync(path.join(output, 'latest.json'), JSON.stringify({ mod, generatedAtUtc: data.generatedAtUtc, sourceFiles: data.sourceFiles, referenceLimitations: data.referenceLimitations, scenarios: reports }, null, 2) + '\n');
+  const report={...reportIdentity,status:'complete',finishedAtUtc:new Date().toISOString(),verdict:reports.some(r=>!r.scenario.diagnostic && r.summary.error)?'FAIL':'PASS',verdictSource:'mission inspector structural scenarios; STATIC only',mod,generatedAtUtc:data.generatedAtUtc,sourceFiles:data.sourceFiles,referenceLimitations:data.referenceLimitations,scenarios:reports};
+  fs.writeFileSync(path.join(output, 'latest.json'), JSON.stringify(report, null, 2) + '\n');
   fs.writeFileSync(path.join(output, 'latest.txt'), reports.map(report => [`Scenario: ${report.scenario.name}`, `Missions: ${report.missions.length}; errors: ${report.summary.error}; warnings: ${report.summary.warning}; info: ${report.summary.info}`, ...report.findings.map(finding => `[${finding.severity} ${finding.code}] ${finding.message}`)].join('\n')).join('\n\n') + '\n');
-  return { output, missions: data.series.reduce((sum, group) => sum + group.missions.length, 0), reports };
+  return { output, identity:report, missions: data.series.reduce((sum, group) => sum + group.missions.length, 0), reports };
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   try {

@@ -1,17 +1,15 @@
 // Isolated headless-browser QA; does not open or control the user's browser session.
 import fs from 'node:fs';
 import path from 'node:path';
-import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { prepareBrowserFixture } from './browser-fixture.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const browser = process.argv[2] || 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 if (!fs.existsSync(browser)) throw Error('Provide the path to an installed Chromium browser.');
-const fixture = path.join(here, 'test-work', 'browser-' + crypto.randomUUID());
-fs.mkdirSync(fixture, { recursive: true });
-const output = path.join(here, 'reports/brittany_missions/index.html');
+const {fixture,output} = prepareBrowserFixture();
 const qa = `
 <script>
 try {

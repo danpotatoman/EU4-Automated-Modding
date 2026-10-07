@@ -1,61 +1,59 @@
-# Established design and open questions
+# Framework design and ownership
 
-The independently authorized USA project has its own detailed source of truth:
-[American Century design](usa/DESIGN.md). The sections below concern Brittany.
+Owner: repository/framework
+Last updated: 2026-10-06
 
-These statements are supported by player-facing localisation and documented
-scenarios. Script/tests establish implementation, not a broader design mandate.
-This is a record of existing intent, not a new balance or feature specification.
+## Ownership hierarchy
 
-## Diplomatic choice
+Repository state owns policy, architecture, shared-tool capability status and
+development boundaries. Shared runtime/modding knowledge owns reusable mechanics,
+protocols, dependencies and limitations. Each independent mod owns its adopted
+gameplay design, implementation state, roadmap and coverage. Task plans own
+authorization/progress; generated evidence owns a specific run/build/scenario.
+The [project map](PROJECT.md) gives canonical locations.
 
-The player can examine French-sphere and autonomous diplomatic paths before
-committing. Preview choices are explicitly temporary; the review decision permits
-switching; the lock tooltip explicitly describes an irreversible adoption. Only
-the selected branch should appear, and branch completion is blocked until the
-Question of France is resolved. This is supported by the selector event text,
-decision description and [selector scenario](testing/brittany-diplomatic-selector.md).
-AI selection clears preview automatically in source; there is no documented AI
-playtest or broader AI design policy.
+## Validation architecture
 
-The French text describes security through cooperation and shared interests;
-the autonomous text describes freedom of action and an independent alliance
-network. These are alternative paths, not evidence of a required relationship
-to France throughout every campaign or a claimed balance between their rewards.
+Production source -> static validation and hashed staging -> owned isolated native
+process -> assertions/actual input -> independent save checks -> scoped verdict.
+Static acceptance, scripted effect PASS, real-button completion, reward values,
+persistence and lifecycle cleanup are separate evidence dimensions. A framework
+experiment names its mod workload; a mod result never becomes another mod's PASS.
+Public replays test retained evaluators, not a new game session.
 
-## Homeland and maritime development
+## Safety and evidence boundaries
 
-Mission descriptions emphasize investment in Breton commerce, cloth production,
-ports/naval construction, urban development and Renaissance institutions. Metropole
-text explicitly describes concentrated homeland investment; its compactness
-tooltip requires fewer than ten owned European provinces, with the tier-three
-exception after No Rivals Remain. This supports the existing compact-homeland
-mechanic, not a claim that all territorial expansion is discouraged: overseas
-and colonial content also exists.
+One shared runner owns bounded attempts, a global lifecycle lock and identity-based
+cleanup. Native game files and ordinary profiles remain read only to the harness;
+test-only hooks/history copies live in ignored isolated profiles. Mod directories
+contain exportable game content only. Deployment records protect destination/hash
+ownership separately from runtime test profiles. Configuration and raw evidence
+remain local; public evidence is separately reviewed and has its own provenance.
 
-The constitutional settlement text describes reconciling estate rights and crown
-authority while preventing any one estate from dominating. It supports that
-mission's theme, not a prescribed historical simulation or an independently
-validated reform balance.
+## Current interfaces and deferred implementation
 
-## Presentation conventions evidenced in content
+Documentation owners are explicit after Phase 1. Phase 2A adds an owner/test
+registry, canonical owner adapters, shared geometry/AST/save-block/protocol helpers,
+and explicit native `-Mod`/non-launching `-ListTests`. The runner validates selection
+before reading configuration or creating profiles/reports. Legacy omitted-Mod
+routing remains available; `-Test all` stays the four Brittany regressions only.
+Phase 2B adds [evidence/report identity and applicability](runtime/evidence-identity.md)
+under separate authorization. Operational storage, deployment protections and
+lifecycle/input semantics stay intact. Phase 2C separates shared machine settings
+from [canonical owner metadata](runtime/configuration-ownership.md), with equivalent
+Node/PowerShell descriptor resolution and isolated source-backed QA. Config identity
+does not register native contracts or replace evidence identity. See
+[framework roadmap](ROADMAP.md#deferred-ownership-refactor) and the
+[governing plan](../.agent/plans/2026-10-06-project-state-ownership.md).
 
-Mission titles/descriptions, highlight predicates and custom trigger/reward
-tooltips explain goals and conditional rewards. Metropole reward comments explicitly
-separate clean player-facing summaries from multi-province hidden effects.
-Preserve understandable tooltip meaning when changing an existing mechanic;
-technical test state belongs in shared tools/docs rather than the mission UI.
+## Mod design compatibility
 
-Evidence: `mod/brittany_missions/localisation/english/bri_missions_l_english.yml`,
-`missions/Custom_Breton_Missions.txt`, `events/Custom_Breton_Events.txt` and
-`decisions/Custom_Breton_Decisions.txt` within that mod. No independent overall
-design specification or comprehensive balance targets were found.
+The former root gameplay design belongs to [Brittany](mods/brittany_missions/DESIGN.md).
+American Century has its own [adopted design](mods/american_century/DESIGN.md).
+Old root anchors below remain for historical references and route to Brittany.
 
-## Open design questions
-
-- Intended difficulty, pacing and numerical balance across the whole tree.
-- Minimum supported DLC set and whether fallback behavior must cover absent DLC.
-- Intended AI behavior beyond the implemented selector options; multiplayer scope.
-
-Answer these only when needed for an authorized change. They are not committed
-roadmap requirements. See [ROADMAP.md](ROADMAP.md) for evidence-backed follow-up.
+<a id="established-design-and-open-questions"></a>
+<a id="diplomatic-choice"></a>
+<a id="homeland-and-maritime-development"></a>
+<a id="presentation-conventions-evidenced-in-content"></a>
+<a id="open-design-questions"></a>

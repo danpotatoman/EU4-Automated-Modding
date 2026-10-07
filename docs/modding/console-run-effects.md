@@ -1,5 +1,14 @@
 # Console run-file effects investigation
 
+Owner: shared EU4 mechanics/tooling knowledge
+
+The Brittany/Nantes examples/results below are attributed workloads, not general mod coverage.
+Current framework capability lives in [framework status](../STATUS.md) and
+[runtime knowledge](../runtime/README.md); gameplay state/playtests belong to
+[the mod owners](../mods/README.md). Dated verification and unresolved assumptions
+remain scoped to their recorded versions, dependencies and fixtures.
+
+
 Started 2026-10-03 against installed EU4 1.37.5.0. Native command help describes
 `run` as running effects in a specified file, and `run_commands` as running a file
 of console commands. Exact file lookup, syntax and execution scope remain to be
@@ -94,3 +103,5 @@ crashed before assertions with stack overflow and required the user's manual
 crash-reporter dismissal. It is suspected, not proven, to have caused the crash;
 constant diagnostic markers subsequently ran normally. Keep dynamic log expansion
 outside the supported harness. Mission-button dispatch remains unverified.
+
+Current example coverage: [Brittany/Nantes owner runbook](../mods/brittany_missions/testing/README.md).

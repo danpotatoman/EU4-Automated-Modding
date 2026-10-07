@@ -7,6 +7,10 @@ param(
     [string]$DeploymentRecord,
     [ValidateSet('passed','failed','not-completed','unverified')][string]$Outcome = 'unverified',
     [string]$Notes,
+    [string]$SourceMod,
+    [ValidateSet('production','staged','fixture','synthetic','untracked','baseline')][string]$ArtifactKind,
+    [string]$ContractId,
+    [string]$ProvenanceFile,
     [switch]$Untracked
 )
 $ErrorActionPreference = 'Stop'
@@ -16,7 +20,7 @@ $nodePath = if ($nodeCommand) { $nodeCommand.Source } else {
 }
 if (-not (Test-Path -LiteralPath $nodePath)) { throw 'Node.js was not found.' }
 $collectorArgs = @((Join-Path $PSScriptRoot 'test-runs/collector.mjs'), $Action, '--mod', $Mod, '--outcome', $Outcome)
-foreach ($pair in @(@('scenario',$Scenario), @('run',$Run), @('logs',$LogsDirectory), @('deployment',$DeploymentRecord), @('notes',$Notes))) {
+foreach ($pair in @(@('scenario',$Scenario), @('run',$Run), @('logs',$LogsDirectory), @('deployment',$DeploymentRecord), @('notes',$Notes), @('source-mod',$SourceMod), @('artifact-kind',$ArtifactKind), @('contract-id',$ContractId), @('provenance',$ProvenanceFile))) {
     if ($pair[1]) { $collectorArgs += @(('--' + $pair[0]), $pair[1]) }
 }
 if ($Untracked) { $collectorArgs += '--untracked' }

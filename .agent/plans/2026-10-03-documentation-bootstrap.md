@@ -2,6 +2,11 @@
 
 Status: complete
 Last updated: 2026-10-03
+Owner: repository/framework
+Affected mods: brittany_missions (documentation)
+Documentation ownership updated: 2026-10-06
+Current state: [canonical owner status](../../docs/PROJECT.md)
+Shared knowledge: [runtime index](../../docs/runtime/README.md)
 
 ## Goal
 
@@ -112,3 +117,6 @@ All requested documents exist, have distinct responsibilities and working local
 links; current implementation and evidence limits are accurately distinguished;
 only documentation changes; checks reported truthfully; durable context linked
 from `AGENTS.md`; migration marked complete with follow-up work still open.
+
+Phase 1 added owner/current-source navigation only. Execution dates, authorizations,
+observations and verdicts above remain historical and do not authorize new work.

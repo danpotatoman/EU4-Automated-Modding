@@ -1,3 +1,4 @@
+// Owner: mod/brittany_missions; offline checks/replays, no new native verdict
 // Portable evidence replays: these checks do not launch another EU4 session.
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -5,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {parse,field} from '../mission-inspector/engine.mjs';
-import {judgeClaim} from './claim-save.mjs';
+import {judgeClaim} from './contracts/brittany_missions/claim-save.mjs';
 const evidence=fileURLToPath(new URL('../../docs/testing/runtime-mission-claim/evidence/',import.meta.url));
 const read=(label,file)=>fs.readFileSync(path.join(evidence,label,file),'utf8');
 const json=(label,file)=>JSON.parse(read(label,file));

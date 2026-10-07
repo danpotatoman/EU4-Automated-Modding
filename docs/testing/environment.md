@@ -1,11 +1,14 @@
 # Default in-game test environment
 
+Owner: shared EU4 runtime/tooling
+Documentation ownership updated: 2026-10-06
+
 User-specified default, recorded 2026-10-02. Apply to every mod test unless the
 user explicitly specifies a different environment.
 
 - Enable only the mod being tested. Disable other copies of that mod as well as
-  unrelated mods. For the development deployment, enable **Brittany Missions
-  (Development)** and disable the existing **Brittany Missions** copy.
+  unrelated mods. Deployment names and scenario selection belong to each mod's
+  testing runbook, not this shared preference.
 - Enable the following DLC for every test:
   - Conquest of Paradise
   - Cradle of Civilization
@@ -37,4 +40,7 @@ starting save, and use separately named working saves for checkpoints. A source
 or game-version change requires reviewing whether the baseline is still suitable;
 prefer a new baseline when mission initialization or selection behavior changes.
 
-Current scenario: [Brittany diplomatic selector](brittany-diplomatic-selector.md).
+Select a scenario from the [owning mod's testing runbook](../mods/README.md).
+The current runner reads the 18 indented DLC bullets above; their names/format are
+unchanged. Later USA native saves record 21 activated DLC including these 18;
+exactly-18-only support remains unverified. Intended preference is not activation.

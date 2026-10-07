@@ -1,11 +1,35 @@
 # Test-run log collector
 
+Owner: shared EU4 tooling interface
+
+[Framework status](../../docs/STATUS.md) owns tool capability state;
+[mod runbooks](../../docs/mods/README.md) own gameplay state/coverage and
+[evidence index](../../docs/testing/README.md) labels historical workloads.
+
+These existing tools accept their documented -Mod and default to Brittany.
+Brittany examples/source-backed tests do not establish another mod's gameplay.
+Shared configuration remains unchanged; schema 2 semantics above apply to new reports.
+
+
 Run commands from the project root. Game logs are read only; snapshots and reports
 stay under ignored `tools/test-runs/reports/<mod>/<run-id>/` directories.
 The logs path defaults to the sibling `logs/` directory of the game mod directory
 in `tools/deployment/config.json`.
 
 ## Testing a deployed mod
+
+New run/report JSON uses [evidence schema 2](../../docs/runtime/evidence-identity.md).
+`-Mod` is the storage namespace. Optional `-SourceMod`, `-ArtifactKind`,
+`-ContractId`, `-ProvenanceFile` provide separate source/scope metadata (Node:
+`--source-mod`, `--artifact-kind`, `--contract-id`, `--provenance`). The provenance
+JSON can include builds, native run/attempt IDs, suite/members and intended
+environment. Conflicting metadata is refused. Explicit production -Mod can default
+the source owner for a tracked deployed run; deployed copies are staged. Untracked
+and synthetic aliases default to null owner; scenario text never selects one.
+`coveredLayers` is empty for log capture; caller layers are only `declaredLayers`.
+Outcomes remain operator supplied and cannot automatically close gameplay coverage.
+No actual game/DLC activation is inferred from configuration or CWTools. Existing
+active/latest/baseline locations and legacy captures remain readable.
 
 Deploy first, then begin before launching EU4 or performing your scenario:
 

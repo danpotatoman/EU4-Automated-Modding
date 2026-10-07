@@ -1,5 +1,14 @@
 # Country-flag gates for preview missions
 
+Owner: shared EU4 mechanics/tooling knowledge
+
+The Brittany/Nantes examples/results below are attributed workloads, not general mod coverage.
+Current framework capability lives in [framework status](../STATUS.md) and
+[runtime knowledge](../runtime/README.md); gameplay state/playtests belong to
+[the mod owners](../mods/README.md). Dated verification and unresolved assumptions
+remain scoped to their recorded versions, dependencies and fixtures.
+
+
 Applicable reference: installed EU4 v1.37.5.0. The gate itself has no DLC
 predicate; availability of the surrounding missions must be checked separately.
 
@@ -49,3 +58,5 @@ preview flags, and allowed after clearing preview while retaining autonomous
 selection. All 18 required DLC were verified in game. This resolves the predicate's
 true/false behavior, but does not replace the controlled mission-completion UI,
 prerequisite, reward, selector-event or save/load checks above.
+
+Current example coverage: [Brittany/Nantes owner runbook](../mods/brittany_missions/testing/README.md).

@@ -1,5 +1,33 @@
 # Small EU4 runtime regression suite
 
+Owner: shared EU4 tooling interface
+
+Generated result and per-attempt JSON now uses
+[evidence schema 2](../../docs/runtime/evidence-identity.md): explicit source owner,
+storage namespace, fixture artifact scope, contract/suite/members/mode/layers,
+source/staged manifests, invocation and attempt IDs, scoped verdict/source and
+independently observed environment. Requested layers differ from exercised layers.
+Each existing attempt directory retains `result.json` and behavioral evidence;
+retry PASS does not overwrite earlier FAIL/INCOMPLETE. Lifecycle/cleanup is a
+separate dimension. Full identity/freshness guards protect source/staged CWTools
+reuse. Work layout, global lock, selection, input/protocol and retry semantics remain.
+
+[Framework status](../../docs/STATUS.md) owns tool capability state;
+[mod runbooks](../../docs/mods/README.md) own gameplay state/coverage and
+[evidence index](../../docs/testing/README.md) labels historical workloads.
+
+Prefer explicit native -Mod selection. -ListTests (optionally filtered by -Mod)
+returns owner/test/mode/coverage metadata without configuration reads, profiles,
+reports or game launch. Invalid owner/test/mode/options fail before preparation.
+Legacy omitted-Mod usa-slice selects American Century; all/default/other tests
+select Brittany, with a compatibility notice. all stays four Brittany
+LOGIC/EFFECT/WIRING regressions, excluding Nantes claims, USA and campaign checks.
+See [Phase 2A handoff](../../docs/runtime/phase2a-ownership-2026-10-06.md) for
+the registry matrix, exact moves, compatibility and validation results.
+The opening manual-session prose is historical; later sections and the owner
+runbooks describe the separately verified actual-input contracts.
+
+
 The separately authorized ordinary-button Nantes investigation uses
 `prepare-nantes-manual.mjs` to prepare an isolated profile and plain setup/ready/
 observation files. It does not launch EU4 or grant/complete mission rewards.
@@ -12,7 +40,7 @@ verifies ordinary Nantes readiness/dispatch, both permanent rewards, Textiles
 readiness, once-only action and save/reload. Console completion/presence probe
 FAILs remain retained; no automated faithful action was established.
 
-`-Test all` runs four required production contracts in one isolated EU4 process:
+`-Test all` runs four required **Brittany** production contracts in one isolated EU4 process:
 
 | Test | Native contract | Static wiring |
 | --- | --- | --- |
@@ -25,7 +53,7 @@ The two conditional rewards were extracted only after successful original-block
 comparison fixtures; complete expanded AST identity and native before/after passes
 are recorded in the [suite report](../../docs/testing/runtime-regression-suite/README.md).
 Tests invoke actual production definitions in a hashed byte-for-byte staged copy.
-The [coverage manifest](../../docs/testing/runtime-coverage.md) distinguishes
+The [coverage manifest](../../docs/mods/brittany_missions/testing/coverage.md) distinguishes
 LOGIC/EFFECT/WIRING from ordinary END-TO-END dispatch. The four required contracts
 do not verify the latter. Subsequent bounded automated Nantes and USA real-input
 contracts are separate scenarios described below and in the current reports;
@@ -41,21 +69,21 @@ calls and individual province-reward effect observability. It never completes a
 mission and cannot establish the mission's real reward dispatch.
 
 ```powershell
-./tools/run-eu4-test.ps1 -Test preview-gate
-./tools/run-eu4-test.ps1 -Test all -TimeoutSeconds 150
-./tools/run-eu4-test.ps1 -Test shipbuilding-reward
-./tools/run-eu4-test.ps1 -Test borders-reward
-./tools/run-eu4-test.ps1 -Test textiles-upgrade
-./tools/run-eu4-test.ps1 -Test nantes-market -TimeoutSeconds 150
-./tools/run-eu4-test.ps1 -Test run-effects -TimeoutSeconds 150
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test preview-gate
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test all -TimeoutSeconds 150
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test shipbuilding-reward
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test borders-reward
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test textiles-upgrade
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test nantes-market -TimeoutSeconds 150
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test run-effects -TimeoutSeconds 150
 # If the shell blocks scripts, use a process-local execution policy:
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./tools/run-eu4-test.ps1 -Test preview-gate
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./tools/run-eu4-test.ps1 -Mod brittany_missions -Test preview-gate
 # Cold startup may need a larger, still bounded limit:
-./tools/run-eu4-test.ps1 -TimeoutSeconds 180
-./tools/run-eu4-test.ps1 -PrepareOnly
+./tools/run-eu4-test.ps1 -Mod brittany_missions -TimeoutSeconds 180
+./tools/run-eu4-test.ps1 -Mod brittany_missions -PrepareOnly
 node --test tools/runtime-tests/*.test.mjs
 # Faults only the isolated copy; expected exit 1, three FAIL and textiles PASS:
-./tools/run-eu4-test.ps1 -Test all -NegativeControl -TimeoutSeconds 150
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test all -NegativeControl -TimeoutSeconds 150
 ```
 
 Requirements: installed Steam running with EU4 available; access to the Windows
@@ -64,8 +92,8 @@ desktop session can fail Direct3D creation. Do not change adapter settings as an
 assumed fix. Native launch succeeded outside that restriction. Do not automate
 authentication if Steam needs login; ask the operator to establish the session.
 
-The runner verifies the normal launcher configuration against the documented
-development-mod preference, cleans identity-verified stale harness processes and
+The runner reads normal launcher configuration; the Brittany adapter enforces
+its documented development-mod preference, while USA retains its original preflight. It cleans identity-verified stale harness processes and
 refuses unrelated EU4 processes, copies production
 files byte for byte to ignored `work/`, adds one test-only startup hook, generates
 an isolated user profile and descriptor, validates both projects with the existing
@@ -124,7 +152,8 @@ clean before retry. Assertions, wiring/integrity errors, failed cleanup and
 configuration/graphics/capture failures stop. Exhaustion is INCOMPLETE/exit 2.
 
 Every attempt uses a fresh `attempts/<number>/profile` copied from prepared inputs,
-and retains its own stdout/stderr and collector logs in `brittany_runtime`.
+and retains its own stdout/stderr and collector logs in the existing owner adapter
+namespace (`brittany_runtime` or `american_runtime`).
 `result.json` retains all attempts, failure reason, last signal, elapsed time,
 exit/signal code, cleanup actions and retry decisions; `ownership.json` records
 process identities. Failed attempts additionally snapshot four logs before cleanup.
@@ -135,9 +164,9 @@ Do not relabel general log errors as mod regressions without a baseline.
 Explicit isolated recovery exercises (first attempt only):
 
 ```powershell
-./tools/run-eu4-test.ps1 -Test all -TimeoutSeconds 150 -ExerciseTerminateFirst
-./tools/run-eu4-test.ps1 -Test all -TimeoutSeconds 150 -ExerciseNativeCrash
-./tools/run-eu4-test.ps1 -Test all -TimeoutSeconds 150 -ProgressTimeoutSeconds 15 -ExerciseFreezeFirst
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test all -TimeoutSeconds 150 -ExerciseTerminateFirst
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test all -TimeoutSeconds 150 -ExerciseNativeCrash
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test all -TimeoutSeconds 150 -ProgressTimeoutSeconds 15 -ExerciseFreezeFirst
 ```
 
 The second inserts installed native `CrashReporter.SimulateCrash` only into the
@@ -180,9 +209,9 @@ continues to use the existing `deploy-mod.ps1` workflow and cannot copy this hoo
 ## Faithful Nantes claim
 
 ```powershell
-./tools/run-eu4-test.ps1 -Test nantes-claim -ClaimMode click -TimeoutSeconds 600 -ProgressTimeoutSeconds 600 -Retries 0
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test nantes-claim -ClaimMode click -TimeoutSeconds 600 -ProgressTimeoutSeconds 600 -Retries 0
 # Separate fresh unready case:
-./tools/run-eu4-test.ps1 -Test nantes-claim -ClaimMode negative -TimeoutSeconds 600 -ProgressTimeoutSeconds 600 -Retries 0
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test nantes-claim -ClaimMode negative -TimeoutSeconds 600 -ProgressTimeoutSeconds 600 -Retries 0
 ```
 
 These stage unchanged production plus setup in the existing lifecycle; no separate
@@ -240,7 +269,7 @@ cover the verified bounded case and remaining extensions.
 
 ## USA vertical slice
 
-`./tools/run-eu4-test.ps1 -Test usa-slice -ClaimMode click -TimeoutSeconds 1200
+`./tools/run-eu4-test.ps1 -Mod american_century -Test usa-slice -ClaimMode click -TimeoutSeconds 1200
 -ProgressTimeoutSeconds 1200 -Retries 0` stages `mod/american_century/` in the same
 owned lifecycle. Negative readiness uses `-ClaimMode negative`. Both require an
 active Codex input session. The longer bounded progress window covers paused UI
@@ -262,3 +291,24 @@ campaign/version/DLC/mod/series, inputs, rewards, duration, exclusivity and tota
 `constitutionInspected` plus the ordinary inspected claim facts. Negative uses
 `formationInspected` and `unreadyRefused`. See the
 [USA report and playtests](../../docs/testing/american-century/README.md).
+
+## Runtime ownership API
+
+`contracts.mjs` resolves owners, validates options and lists serializable contracts.
+`contracts/<source-id>/index.mjs` defines staging, start tag, protocol expectations,
+error identifiers, evaluators, native save oracle and coverage. The runner delegates
+mod behavior while retaining the existing supervisor, lock, flat work root and UI
+lease/input driver. Shared `script-ast.mjs`, `mission-geometry.mjs`, `save-blocks.mjs`
+and `protocol.mjs` import no owner adapter. Old module/manual command paths remain
+thin compatibility wrappers; fixture bytes now live with their Brittany owner.
+Top-level tests remain the single discovery entry points.
+
+```powershell
+./tools/run-eu4-test.ps1 -ListTests
+./tools/run-eu4-test.ps1 -Mod american_century -ListTests
+```
+
+Listing accepts only its optional Mod filter. `selection.owner` and
+`selection.members` retain compatible resolution metadata. Phase 2B adds explicit
+schema 2 provenance without relocating operational storage. See the owner runbooks
+for affected playtests and the evidence schema for applicability rules.

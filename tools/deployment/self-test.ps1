@@ -18,6 +18,24 @@ Remove-Item -LiteralPath $target
 $unrelated = Join-Path $testRoot 'unrelated.mod'
 [IO.File]::WriteAllText($unrelated, 'leave alone')
 if ((Invoke-TestDeploy) -ne 0) { throw 'First deployment failed.' }
+$hasher = [Security.Cryptography.SHA256]::Create()
+try { $destinationKey = ([BitConverter]::ToString($hasher.ComputeHash([Text.Encoding]::UTF8.GetBytes($target.ToLowerInvariant())))).Replace('-', '').Substring(0, 16) } finally { $hasher.Dispose() }
+$recordPath = Join-Path $PSScriptRoot "state/brittany_missions/$destinationKey/latest.json"
+$record = Get-Content -LiteralPath $recordPath -Raw | ConvertFrom-Json
+if ($record.schemaVersion -ne 2 -or $record.sourceMod -ne 'brittany_missions' -or $record.storageNamespace -ne 'brittany_missions' -or $record.artifactKind -ne 'staged' -or -not $record.sourceBuild.sha256 -or -not $record.artifactBuild.sha256 -or $record.verdict -ne 'UNVERIFIED') { throw 'Deployment identity is missing or falsely promotes gameplay.' }
+# Only this unique self-test destination: contradictory owner is rejected.
+$record.sourceMod = 'american_century'
+[IO.File]::WriteAllText($recordPath, ($record | ConvertTo-Json -Depth 10))
+if ((Invoke-TestDeploy) -eq 0) { throw 'Conflicting deployment owner was accepted.' }
+$record.sourceMod = 'brittany_missions'
+$record.artifactKind = 'production'
+[IO.File]::WriteAllText($recordPath, ($record | ConvertTo-Json -Depth 10))
+if ((Invoke-TestDeploy) -eq 0) { throw 'Conflicting deployment artifact kind was accepted.' }
+$record.artifactKind = 'staged'
+# Legacy unversioned ownership remains readable; byte checks still apply.
+$record.PSObject.Properties.Remove('schemaVersion')
+$record.PSObject.Properties.Remove('sourceMod')
+[IO.File]::WriteAllText($recordPath, ($record | ConvertTo-Json -Depth 10))
 if (-not (Test-Path -LiteralPath (Join-Path $target 'descriptor.mod'))) { throw 'Internal descriptor missing.' }
 $projectRoot = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 $sourceScript = Join-Path $projectRoot 'mod/brittany_missions/localisation/english/bri_missions_l_english.yml'

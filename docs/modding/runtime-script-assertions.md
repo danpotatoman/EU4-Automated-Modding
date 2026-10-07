@@ -1,5 +1,14 @@
 # Runtime script assertions
 
+Owner: shared EU4 mechanics/tooling knowledge
+
+The Brittany/Nantes examples/results below are attributed workloads, not general mod coverage.
+Current framework capability lives in [framework status](../STATUS.md) and
+[runtime knowledge](../runtime/README.md); gameplay state/playtests belong to
+[the mod owners](../mods/README.md). Dated verification and unresolved assumptions
+remain scoped to their recorded versions, dependencies and fixtures.
+
+
 Investigation started 2026-10-03 against installed EU4 1.37.5.0. This guide
 describes a prototype, not established support for a headless EU4 test API.
 
@@ -89,3 +98,5 @@ commands and selector/mission integration remain outside this verified scope.
 The followup changes retained this scenario; a fresh native regression on
 2026-10-03 again passed all 24 checks. Evidence is linked from the
 [Nantes report](../testing/runtime-nantes-market/README.md).
+
+Current example coverage: [Brittany/Nantes owner runbook](../mods/brittany_missions/testing/README.md).

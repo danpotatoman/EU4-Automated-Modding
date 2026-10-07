@@ -1,7 +1,8 @@
+// Owner: mod/brittany_missions; offline checks/replays, no new native verdict
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { test } from 'node:test';
-import { evaluate } from './evaluate.mjs';
+import { evaluate } from './contracts/brittany_missions/evaluate.mjs';
 
 // Real EU4 evidence, with deliberately damaged copies to check false-PASS risks.
 const evidence = new URL('../../docs/testing/runtime-preview-gate/evidence/', import.meta.url);

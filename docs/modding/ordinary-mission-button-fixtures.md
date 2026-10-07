@@ -1,5 +1,14 @@
 # Ordinary mission-button fixtures
 
+Owner: shared EU4 mechanics/tooling knowledge
+
+The Brittany/Nantes examples/results below are attributed workloads, not general mod coverage.
+Current framework capability lives in [framework status](../STATUS.md) and
+[runtime knowledge](../runtime/README.md); gameplay state/playtests belong to
+[the mod owners](../mods/README.md). Dated verification and unresolved assumptions
+remain scoped to their recorded versions, dependencies and fixtures.
+
+
 Purpose: prepare controlled province/building state, then leave mission completion
 to the user through the ordinary mission UI. Applicable evidence: EU4 1.37.5.0
 Inca (491d), default 18 DLC; isolated startup/run-file dispatch and scopes are
@@ -91,3 +100,5 @@ Reloaded native metadata names the loaded file but changes `campaign_id`; compar
 explicit source, hashes and relevant state rather than assuming UUID stability.
 See the [final report](../testing/runtime-nantes-market/faithful-completion-2026-10-03.md)
 for raw evidence and scope. Static validation alone proves no gameplay result.
+
+Current example coverage: [Brittany/Nantes owner runbook](../mods/brittany_missions/testing/README.md).

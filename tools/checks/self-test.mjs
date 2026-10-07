@@ -4,6 +4,7 @@ import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import { inventory, fileChecks, consolidate, compare, classify, deploymentPreparation, evidence, checkProject } from './check.mjs';
+import { identity, buildIdentity, cwtoolsIdentity } from '../evidence-identity.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fixture = path.join(here, 'test-work', crypto.randomUUID());
@@ -33,6 +34,25 @@ assert.equal(fs.readdirSync(gameMods).length, 0, 'Preparation wrote game files')
 fs.mkdirSync(prepared.target);
 assert.equal(deploymentPreparation(root, 'fixture', inventory(source)).findings[0].code, 'unowned-destination');
 fs.rmdirSync(prepared.target);
+// Identity cannot be normalized from matching bytes or selected storage alone.
+// These files and records are confined to the unique synthetic self-test root.
+fs.mkdirSync(prepared.target);
+put(path.join(prepared.target,'descriptor.mod'),prepared.descriptor);
+put(prepared.launcher,prepared.launcherText);
+const deploymentKey=crypto.createHash('sha256').update(prepared.target.toLowerCase()).digest('hex').slice(0,16);
+const deploymentRecordPath=path.join(root,`tools/deployment/state/fixture/${deploymentKey}/latest.json`);
+const deploymentRecord={schemaVersion:2,sourceMod:null,storageNamespace:'fixture',artifactKind:'staged',target:prepared.target,launcher:prepared.launcher,
+ files:inventory(prepared.target).files,launcherSha256:prepared.launcherSha256};
+json(deploymentRecordPath,deploymentRecord);
+assert.equal(deploymentPreparation(root,'fixture',inventory(source)).findings.length,0);
+for(const conflict of [{sourceMod:'american_century'},{storageNamespace:'other'},{artifactKind:'production'},{schemaVersion:99}]) {
+ json(deploymentRecordPath,{...deploymentRecord,...conflict});
+ assert.ok(deploymentPreparation(root,'fixture',inventory(source)).findings.some(f=>['identity-conflict','unsupported-schema'].includes(f.code)));
+}
+const legacyDeployment={...deploymentRecord};delete legacyDeployment.schemaVersion;delete legacyDeployment.sourceMod;
+json(deploymentRecordPath,legacyDeployment);
+assert.equal(deploymentPreparation(root,'fixture',inventory(source)).findings.length,0);
+fs.unlinkSync(path.join(prepared.target,'descriptor.mod'));fs.rmdirSync(prepared.target);fs.unlinkSync(prepared.launcher);
 const finding = { tool: 'cwtools', severity: 'error', code: 'CW1', file: 'missions/example.txt', message: 'Undefined reference' };
 const grouped = consolidate([{ ...finding, line: 1 }, { ...finding, line: 2 }]);
 assert.equal(grouped.length, 1); assert.equal(grouped[0].occurrences.length, 2);
@@ -45,10 +65,10 @@ assert.equal(classify([{ status: 'complete', errors: 1 }, { status: 'incomplete'
 json(path.join(root, 'tools/cwtools/config.json'), { timeoutSeconds: 1 });
 const validatorReport = path.join(root, 'tools/cwtools/reports/fixture/latest.json');
 const validator = diagnostics => async () => {
-  json(validatorReport, { status: 'complete', validatedAt: new Date().toISOString(), project: source, summary: { errors: diagnostics.filter(item => item.severity === 'error').length }, diagnostics });
+  json(validatorReport, { ...cwtoolsIdentity({root,project:source}),artifactBuild:buildIdentity(source),startedAtUtc:new Date().toISOString(),finishedAtUtc:new Date().toISOString(),status: 'complete', validatedAt: new Date().toISOString(), project: source, summary: { errors: diagnostics.filter(item => item.severity === 'error').length }, diagnostics });
   return { exitCode: diagnostics.some(item => item.severity === 'error') ? 1 : 0, output: 'fixture validator' };
 };
-const inspector = issues => () => ({ reports: [{ scenario: { name: 'normal' }, findings: issues }, { scenario: { name: 'diagnostic', diagnostic: true }, findings: [{ severity: 'error', code: 'conflicting-state', message: 'deliberately invalid' }] }] });
+const inspector = issues => () => ({ identity:{...identity({sourceMod:null,storageNamespace:'fixture',artifactKind:'fixture',evidenceSource:'static',coveredLayers:['STATIC'],artifactBuild:buildIdentity(source)}),status:'complete',startedAtUtc:new Date().toISOString(),finishedAtUtc:new Date().toISOString()},reports: [{ scenario: { name: 'normal' }, findings: issues }, { scenario: { name: 'diagnostic', diagnostic: true }, findings: [{ severity: 'error', code: 'conflicting-state', message: 'deliberately invalid' }] }] });
 const layoutError = { severity: 'error', code: 'overlap', message: 'Two missions overlap', missions: ['a', 'b'] };
 const invoke = opts => checkProject('fixture', { root, storage, ...opts });
 const first = await invoke({ validator: validator([finding]), inspector: inspector([layoutError]) });
@@ -66,10 +86,14 @@ const logReport = { outcome: 'failed', scenario: 'fixture scenario', deploymentC
 const logMetadata = { id: 'test-run', status: 'complete', deployment: { record: { files: prepared.preparedFiles, launcherSha256: prepared.launcherSha256 } } };
 json(path.join(logRun, 'report.json'), logReport); json(path.join(logRun, 'run.json'), logMetadata);
 json(path.join(root, 'tools/test-runs/reports/fixture/latest.json'), { report: path.join(logRun, 'report.json') });
+assert.equal(evidence(root, 'fixture', prepared).status, 'unavailable','Ambiguous legacy fixture must not become production evidence');
+const explicitIdentity={...identity({sourceMod:null,storageNamespace:'fixture',artifactKind:'staged',sourceBuild:buildIdentity(source),evidenceSource:'operator',coveredLayers:[],runId:'test-run'}),startedAtUtc:new Date().toISOString(),finishedAtUtc:new Date().toISOString()};
+json(path.join(logRun,'run.json'),{...logMetadata,...explicitIdentity});
+json(path.join(logRun,'report.json'),{...logReport,...explicitIdentity});
 assert.equal(evidence(root, 'fixture', prepared).status, 'matching-build');
 assert.equal(evidence(root, 'fixture', prepared).outcome, 'failed', 'Operator outcome was discarded');
 assert.equal(evidence(root, 'fixture', { ...prepared, preparedFiles: [] }).status, 'stale');
-json(path.join(logRun, 'report.json'), { ...logReport, deploymentChanges: ['mission changed'] });
+json(path.join(logRun, 'report.json'), { ...logReport,...explicitIdentity, deploymentChanges: ['mission changed'] });
 assert.equal(evidence(root, 'fixture', prepared).status, 'stale');
 json(path.join(logRun, 'run.json'), { ...logMetadata, deployment: null });
 assert.equal(evidence(root, 'fixture', prepared).status, 'untracked');

@@ -2,6 +2,11 @@
 
 Status: complete
 Last updated: 2026-10-03
+Owner: mod/brittany_missions
+Affected mods: brittany_missions; shared save/probe findings
+Documentation ownership updated: 2026-10-06
+Current state: [canonical owner status](../../docs/mods/brittany_missions/STATUS.md)
+Shared knowledge: [runtime index](../../docs/runtime/README.md)
 Execution authorization: **granted by the user on 2026-10-03** for this plan's
 bounded preparation, validation, test-only fixtures, evidence and documentation.
 Conclusion: **faithful Nantes mission behavior verified** on the recorded unchanged
@@ -474,3 +479,6 @@ including once-only ordinary action and persistence. Durable report, scenario,
 coverage, testing/mechanism guides, STATUS and roadmap updated; production hashes
 unchanged. Query FAILs preserved separately; no design decision, production fix,
 other roadmap work or export-readiness claim follows from this completion.
+
+Phase 1 added owner/current-source navigation only. Execution dates, authorizations,
+observations and verdicts above remain historical and do not authorize new work.

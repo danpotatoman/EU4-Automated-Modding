@@ -1,5 +1,8 @@
 # Public repository hygiene
 
+Owner: repository/framework policy
+
+
 Public candidates are reproducible project source, synthetic test fixtures, portable
 config defaults/examples, guides/plans and deliberately reviewed small evidence.
 Ignore rules are guardrails; already tracked files still need review.
@@ -24,7 +27,7 @@ Ignore rules are guardrails; already tracked files still need review.
    project-authored adaptations. Uncertain ownership stays local pending review.
 5. Run the test level in [TESTING](TESTING.md), then
    `node tools/publication/check-links.mjs` and `git diff --check`. Record limitations.
-6. Update status/coverage/guide/plan when behavior changes; stage explicit reviewed
+6. Update the appropriate framework or mod status/coverage/guide/plan when behavior changes; stage explicit reviewed
    paths and inspect the staged diff. Do not use `git add -f` to bypass these exclusions.
 
 The lightweight audit is not a complete secret detector or legal analysis. It does
@@ -81,3 +84,13 @@ a fresh local Git directory, never copies original `.git`, config overrides or
 ignored runtime data, and never commits or pushes. Review
 the export before any later publication instruction. Do not copy archived Git objects
 back into the active repository or add a remote automatically.
+
+## Documentation and evidence ownership
+
+[The evidence index](testing/README.md) labels preserved historical bundles;
+current mod scenarios/coverage live under docs/mods/<source-id>/testing. Framework
+state lives at the root docs and shared knowledge under runtime/modding. Do not
+rewrite dated raw verdicts or original/public hashes to reflect later prose edits.
+The [Phase 1 manifest](testing/project-state-migration.json) separately records
+document path/hash changes and protected inventory checks. Operational reports,
+profiles, deployment namespaces and raw local evidence stay in place.

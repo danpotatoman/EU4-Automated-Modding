@@ -5,12 +5,9 @@ import crypto from 'node:crypto';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { main as collect } from '../test-runs/collector.mjs';
-import { evaluate } from './evaluate.mjs';
-import { behaviors, requiredTests } from './behaviors.mjs';
-import { inspectWiring } from './wiring.mjs';
-import { claimChecks, claimModes, stageClaim } from './mission-claim.mjs';
-import { inspectSnapshots } from './claim-save.mjs';
-import { usaChecks, usaHook, stageUSA, evaluateUSA, inspectUSA } from './usa-slice.mjs';
+import { parseArguments, errorPattern } from './contracts.mjs';
+import { buildIdentity, runtimeIdentity, assertApplicable, snapshotAttempt } from '../evidence-identity.mjs';
+import { savedEnvironment } from './environment-identity.mjs';
 import { windowsProcesses, recordedOwnership, ownedProcesses, sameProcess,
   cleanupOwned, observe, runAttempts, launchOwned, acquireRunLock, inside, profileInCommand } from './lifecycle.mjs';
 
@@ -21,30 +18,16 @@ const hash = file => crypto.createHash('sha256').update(fs.readFileSync(file)).d
 const slash = value => value.replaceAll('\\', '/');
 const args = process.argv.slice(2);
 const suiteStarted = Date.now();
-const test = args.includes('--test') ? args[args.indexOf('--test') + 1] : 'preview-gate';
-const usa = test === 'usa-slice';
-const sourceMod = usa ? 'american_century' : 'brittany_missions';
-const runtimeMod = usa ? 'american_runtime' : 'brittany_runtime';
-const claimMode = args.includes('--claim-mode') ? args[args.indexOf('--claim-mode') + 1] : 'click';
-if (!claimModes.includes(claimMode)) throw Error('Unsupported claim mode');
-const selectedTests = test === 'all' ? requiredTests : [test];
-const inlineBaseline = args.includes('--inline-baseline');
-const negativeControl = args.includes('--negative-control');
-const timeout = Number(args.includes('--timeout') ? args[args.indexOf('--timeout') + 1] : 120);
-const retries = Number(args.includes('--retries') ? args[args.indexOf('--retries') + 1] : 1);
-const progressTimeout = Number(args.includes('--progress-timeout') ? args[args.indexOf('--progress-timeout') + 1] : 30);
-const exerciseTermination = args.includes('--exercise-terminate-first');
-const exerciseCrash = args.includes('--exercise-native-crash');
-const exerciseFreeze = args.includes('--exercise-freeze-first');
-if ([exerciseTermination, exerciseCrash, exerciseFreeze].filter(Boolean).length > 1) throw Error('Choose one recovery exercise.');
-if (exerciseFreeze && (test !== 'all' || args.includes('--prepare-only') || inlineBaseline || negativeControl))
-  throw Error('Freeze diagnostic requires a normal native all suite.');
-if (!Number.isInteger(retries) || retries < 0 || retries > 2 || !Number.isInteger(progressTimeout) || progressTimeout < 5 || progressTimeout > 1800)
-  throw Error('Retries must be 0..2 and progress timeout 5..1800 seconds.');
-if (![...requiredTests, 'all', 'nantes-market', 'nantes-claim', 'run-effects', 'usa-slice'].includes(test) || !Number.isInteger(timeout) || timeout < 30 || timeout > 1800)
-  throw Error('Use a documented runtime test or all; timeout must be 30..1800 seconds.');
-if ((inlineBaseline || negativeControl) && test !== 'all' || inlineBaseline && negativeControl)
-  throw Error('Comparison/negative-control modes require all and cannot be combined.');
+// Resolve/list before config reads, profile creation, report writes or process work.
+let selection;
+try { selection=parseArguments(args); } catch(error) { console.error(error.message); process.exit(2); }
+if(selection.listTests) { console.log(JSON.stringify(selection.contracts,null,2)); process.exit(0); }
+const {owner:sourceMod,adapter,test,claimMode,inlineBaseline,negativeControl,timeout,retries,progressTimeout,
+ exerciseTermination,exerciseCrash,exerciseFreeze}=selection;
+const selectedTests=selection.members;
+const runtimeMod=adapter.runtimeMod;
+console.log(`Runtime owner: ${sourceMod}; selected: ${selectedTests.join(', ')}`);
+if(selection.legacy)console.warn(`Compatibility routing: omitted -Mod resolves to ${sourceMod}; prefer -Mod ${sourceMod}.`);
 const nonce = crypto.randomBytes(8).toString('hex');
 const dir = path.join(here, 'work', new Date().toISOString().replace(/[-:.]/g, '') + '_' + nonce);
 const profile = path.join(dir, 'profile');
@@ -54,96 +37,33 @@ fs.mkdirSync(logs, { recursive: true });
 const game = loadConfig('cwtools', root).gamePath;
 const normalProfile = path.dirname(loadConfig('deployment', root).gameModDirectory);
 const launcher = readJson(path.join(normalProfile, 'dlc_load.json'));
-if (!usa && (launcher.enabled_mods.length !== 1 || launcher.enabled_mods[0] !== 'mod/brittany_missions_dev.mod'
-    || launcher.disabled_dlcs.length)) throw Error('Default launcher environment differs; inspect before testing.');
+adapter.preflight(launcher);
 const dlcs = [...fs.readFileSync(path.join(root, 'docs/testing/environment.md'), 'utf8')
   .matchAll(/^  - (.+)$/gm)].map(m => m[1].trim());
 if (dlcs.length !== 18) throw Error('Expected the documented 18 DLC. Review environment.md.');
 
+const sourceBuild = { ...buildIdentity(path.join(root,'mod',sourceMod)), artifactKind:'production' };
 fs.cpSync(path.join(root, 'mod',sourceMod), staged, { recursive: true });
-const checksFor = name => name === 'usa-slice' ? usaChecks : name === 'nantes-claim' ? claimChecks : ['initial', ...dlcs.map((_, i) => `dlc-${i + 1}`), ...(behaviors[name]
-  || (name === 'nantes-market' ? ['missing-building', 'fixture-marketplace', 'incomplete-before-action', 'rewards-absent-before-action',
-    'mission-completed', 'downstream-parent-completed', 'selector-flags-unchanged']
-  : ['implicit-bri', 'prestige-before-zero', 'flag-and-prestige-seven', 'scripted-flag-before',
-    'scripted-flag-after', 'stability-before-zero', 'production-scripted-stability-one',
-    'province-reward-before', 'province-value-correct', 'province-removed-zero',
-    'finite-value-correct', 'cleanup-zero', 'missions-untouched']))];
-const cases = selectedTests.map((name, i) => ({ test: name, nonce: test === 'all' ? `${nonce}_${i}` : nonce, checks: checksFor(name) }));
+const cases = selectedTests.map((name, i) => ({ test: name, nonce: test === 'all' ? `${nonce}_${i}` : nonce, checks: adapter.checksFor(name,dlcs) }));
 const checks = cases[0].checks;
 const dlcAssertions = dlcs.map((dlc, i) => `if = {
     limit = { has_dlc = "${dlc}" }
     log = "EU4RT @NONCE@ OK dlc-${i + 1}"
 }
 else = { log = "EU4RT @NONCE@ FAIL dlc-${i + 1}" }`).join('\n');
-const hooks = cases.map(item => usa ? usaHook(nonce,dlcAssertions.replaceAll('@NONCE@',nonce)) : fs.readFileSync(path.join(here,
-  (behaviors[item.test] && item.test !== 'preview-gate') || item.test === 'nantes-claim' ? 'behavior-fixture.on_actions.txt' : `${item.test}.on_actions.txt`), 'utf8')
-  .replace('@DLC_ASSERTIONS@', dlcAssertions).replaceAll('@NONCE@', item.nonce).replaceAll('@TEST@', item.test));
+const hooks = cases.map(item => adapter.hook(item,dlcAssertions));
 // Assemble one on_startup, rather than depend on unverified hook merge behavior.
 const hook = test === 'all' ? `on_startup = {\n${hooks.map(value => value.slice(value.indexOf('on_startup = {') + 'on_startup = {'.length, value.lastIndexOf('}'))).join('\n')}\n}\n` : hooks[0];
 fs.mkdirSync(path.join(staged, 'common/on_actions'), { recursive: true });
 fs.writeFileSync(path.join(staged, 'common/on_actions/zz_runtime_test.txt'), hook);
-const descriptor = `name="${usa?'American':'Brittany'} Runtime Test (DO NOT EXPORT)"\npath="${slash(staged)}"\nsupported_version="1.37.*"\n`;
+const descriptor = `name="${adapter.descriptorName}"\npath="${slash(staged)}"\nsupported_version="1.37.*"\n`;
 fs.mkdirSync(path.join(profile, 'mod'), { recursive: true });
 fs.writeFileSync(path.join(profile, 'mod/runtime_test.mod'), descriptor);
 fs.writeFileSync(path.join(staged, 'descriptor.mod'), descriptor.replace(/^path=.*\n/m, ''));
 fs.writeFileSync(path.join(profile, 'dlc_load.json'), JSON.stringify({ enabled_mods: ['mod/runtime_test.mod'], disabled_dlcs: [] }));
-const wiring = usa ? {passed:true,layer:'WIRING',findings:[],adapters:[],scope:'USA CWTools/layout; native tree membership checked independently'} : inspectWiring(staged, selectedTests, inlineBaseline);
-if (inlineBaseline) {
-  fs.mkdirSync(path.join(staged, 'common/scripted_effects'), { recursive: true });
-  fs.writeFileSync(path.join(staged, 'common/scripted_effects/BRI_mission_effects.txt'),
-    wiring.adapters.map(item => `# Generated exact inline baseline adapter; comparison only.\n${item.effectName} = {${item.body}}\n`).join('\n'));
-}
-if (negativeControl) {
-  const triggerFile = path.join(staged, 'common/scripted_triggers/BRI_mission_triggers.txt');
-  const effectFile = path.join(staged, 'common/scripted_effects/BRI_mission_effects.txt');
-  const mutate = (file, from, to) => {
-    const value = fs.readFileSync(file, 'utf8');
-    if (!value.includes(from)) throw Error(`Negative-control target missing: ${from}`);
-    fs.writeFileSync(file, value.replace(from, to));
-  };
-  mutate(triggerFile, 'NOT = { has_country_flag = bri_diplomacy_preview }', 'always = yes');
-  mutate(effectFile, 'add_building = shipyard', 'add_building = dock');
-  mutate(effectFile, 'add_dip_power = 50', 'add_dip_power = 49');
-}
-let runFile;
-const nativeFiles = [];
-if (test === 'run-effects') {
-  runFile = `eu4rt_effects_${nonce}.txt`;
-  const body = fs.readFileSync(path.join(here, 'run-effects.run.txt'), 'utf8').replaceAll('@NONCE@', nonce);
-  const after = fs.readFileSync(path.join(here, 'run-effects.after.txt'), 'utf8').replaceAll('@NONCE@', nonce);
-  fs.writeFileSync(path.join(profile, runFile), body);
-  fs.writeFileSync(path.join(profile, 'eu4rt_after.txt'), after);
-  fs.writeFileSync(path.join(profile, 'eu4rt_run.commands'), `run ${runFile}\r\nrun eu4rt_after.txt\r\n`);
-  fs.mkdirSync(path.join(staged, 'common/scripted_effects'), { recursive: true });
-  const named = `eu4rt_named_probe_${nonce} = { set_country_flag = eu4rt_scripted_${nonce} }\n`;
-  // The wrapper validates the exact plain file body; it is never called in game.
-  fs.writeFileSync(path.join(staged, 'common/scripted_effects/eu4rt_run_probe.txt'),
-    named + `eu4rt_static_wrapper_${nonce} = {\n${body}\n${after}\n}\n`);
-}
-const effectCases = cases.filter(item => behaviors[item.test] && item.test !== 'preview-gate');
-if (effectCases.length) {
-  const wrappers = [];
-  const commands = [];
-  for (const item of effectCases) {
-    const filename = `eu4rt_${item.test}.txt`;
-    const body = fs.readFileSync(path.join(here, `${item.test}.run.txt`), 'utf8').replaceAll('@NONCE@', item.nonce);
-    fs.writeFileSync(path.join(profile, filename), body);
-    nativeFiles.push({ file: path.join(profile, filename), sha256: hash(path.join(profile, filename)) });
-    commands.push(`run ${filename}`);
-    wrappers.push(`eu4rt_static_${item.test.replaceAll('-', '_')}_${nonce} = {\n${body}\n}\n`);
-  }
-  fs.writeFileSync(path.join(profile, 'eu4rt_run.commands'), commands.join('\r\n') + '\r\n');
-  nativeFiles.push({ file: path.join(profile, 'eu4rt_run.commands'), sha256: hash(path.join(profile, 'eu4rt_run.commands')) });
-  fs.mkdirSync(path.join(staged, 'common/scripted_effects'), { recursive: true });
-  fs.writeFileSync(path.join(staged, 'common/scripted_effects/eu4rt_behavior_wrappers.txt'), wrappers.join('\n'));
-}
-// Reuse display preferences, but never write to the user's normal profile.
-fs.copyFileSync(path.join(normalProfile, 'settings.txt'), path.join(profile, 'settings.txt'));
-let missionClaim;
-if (test === 'nantes-claim' || usa) {
-  missionClaim = (usa ? stageUSA : stageClaim)({profile,staged,game,nonce,mode:claimMode});
-  for (const file of missionClaim.files) nativeFiles.push({file:path.join(profile,file),sha256:hash(path.join(profile,file))});
-}
+// Reuse display preferences, never write the ordinary profile.
+fs.copyFileSync(path.join(normalProfile,'settings.txt'),path.join(profile,'settings.txt'));
+const {wiring,runFile,nativeFiles,missionClaim}=adapter.prepare({staged,profile,cases,selectedTests,test,nonce,game,claimMode,inlineBaseline,negativeControl});
 const manifest = [];
 function inventory(directory) {
   for (const item of fs.readdirSync(directory, { withFileTypes: true })) {
@@ -153,9 +73,15 @@ function inventory(directory) {
   }
 }
 inventory(staged);
-const launchArgs = ['-debug', `-userdir=${slash(profile)}/`, `-start_tag=${usa?'ENG':'BRI'}`];
+const stagedBuild = { ...buildIdentity(staged), artifactKind:'fixture' };
+const runId = path.basename(dir);
+const runIdentity = runtimeIdentity(selection,{sourceBuild,stagedBuild,runId,coveredLayers:['STATIC'],evidenceSource:'preparation'});
+const launchArgs = ['-debug', `-userdir=${slash(profile)}/`, `-start_tag=${adapter.startTag}`];
 if (runFile || nativeFiles.length) launchArgs.push('-auto_run=eu4rt_run.commands');
-const report = { test, nonce, status: 'prepared', behavioralPass: false, directory: dir,
+const report = { ...runIdentity, requestedLayers:[...new Set(selection.definitions.flatMap(d=>d.layers))],
+  startedAtUtc:new Date(suiteStarted).toISOString(), timestamp:new Date().toISOString(), verdict:'UNVERIFIED', verdictSource:'preparation only',
+  intendedEnvironment:{version:'1.37.5.0 Inca (491d)',requiredDlcs:dlcs,enabledMods:['mod/runtime_test.mod'],source:'prepared isolated profile; not actual activation'},
+  selection: { owner: sourceMod, members: selectedTests }, test, nonce, status: 'prepared', behavioralPass: false, directory: dir,
   installedVersion: readJson(path.join(game, 'launcher-settings.json')).version,
   versionSource: 'installed launcher-settings.json; running version must also be checked in logs',
   launcherConfiguration: launcher, dlcs, stagedManifest: manifest, launchArgs,
@@ -168,7 +94,7 @@ if (selectedTests.includes('textiles-upgrade')) {
   const file = path.join(game, 'common/scripted_effects/00_scripted_effects.txt');
   report.productionHelper = { name: 'add_or_upgrade_production_building', file, sha256: hash(file) };
 }
-const saveReport = () => fs.writeFileSync(path.join(dir, 'result.json'), JSON.stringify(report, null, 2) + '\n');
+const saveReport = () => { report.timestamp=new Date().toISOString(); fs.writeFileSync(path.join(dir, 'result.json'), JSON.stringify(report, null, 2) + '\n'); };
 if (runFile) {
   report.runFile = { file: path.join(profile, runFile), command: `run ${runFile}`,
     sha256: hash(path.join(profile, runFile)), afterSha256: hash(path.join(profile, 'eu4rt_after.txt')),
@@ -186,11 +112,19 @@ if (nativeFiles.length) {
 saveReport();
 console.log(`Prepared ${dir}`);
 async function validate(project, label) {
+  const startedAtUtc = new Date().toISOString();
+  const artifactKind=label==='production'?'production':'fixture';
+  const artifactBuild=label==='production'?sourceBuild:stagedBuild;
+  if(buildIdentity(project).sha256!==artifactBuild.sha256) throw Error(`CWTools ${label} artifact changed before validation.`);
   const child = spawn('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File',
-    path.join(root, 'tools/validate-cwtools.ps1'), '-Project', project], { cwd: root, windowsHide: true, stdio: 'inherit' });
+    path.join(root, 'tools/validate-cwtools.ps1'), '-Project', project, '-SourceMod',sourceMod,'-ArtifactKind',artifactKind], { cwd: root, windowsHide: true, stdio: 'inherit' });
   const exitCode = await new Promise((resolve, reject) => { child.once('error', reject); child.once('exit', resolve); });
   const source = path.join(root, 'tools/cwtools/reports', path.basename(project), 'latest.json');
-  if (fs.existsSync(source)) fs.copyFileSync(source, path.join(dir, `cwtools-${label}.json`));
+  if (fs.existsSync(source)) {
+    const validation=readJson(source);
+    assertApplicable(validation,{sourceMod,storageNamespace:path.basename(project),artifactKind,projectPath:project,artifactBuild,notBefore:startedAtUtc,evidenceSource:'static'});
+    fs.copyFileSync(source, path.join(dir, `cwtools-${label}.json`));
+  } else throw Error(`CWTools ${label} report missing.`);
   report.staticValidation[label] = { exitCode, report: source };
   saveReport();
   if (exitCode !== 0) throw Error(`CWTools ${label} did not complete without errors: ${exitCode}`);
@@ -220,6 +154,7 @@ try {
   } else {
     const attemptPolicy = await runAttempts({ retries, onAttempt: (attempt, attempts) => {
       report.attempts = attempts; saveReport();
+      fs.writeFileSync(path.join(attempt.directory,'result.json'),JSON.stringify(attempt,null,2)+'\n');
       if (attempt.retryScheduled) console.log(`Recoverable ${attempt.reason}; cleanup verified, retrying (${attempt.number}/${retries + 1}).`);
     }, attempt: async number => {
       const attemptDir = path.join(dir, 'attempts', String(number));
@@ -242,8 +177,10 @@ try {
       const ownershipFile = path.join(dir, 'ownership.json');
       const context = { game, profiles: [attemptProfile], known: fs.existsSync(ownershipFile)
         ? JSON.parse(fs.readFileSync(ownershipFile, 'utf8')).known : [] };
-      const result = { number, directory: attemptDir, profile: attemptProfile, launchCommand: [path.join(game, 'eu4.exe'), ...attemptArgs],
+      const result = { ...runtimeIdentity(selection,{sourceBuild,stagedBuild,runId,attemptId:`${runId}/${number}`,coveredLayers:[]}),
+        intendedEnvironment:report.intendedEnvironment, number, directory: attemptDir, profile: attemptProfile, launchCommand: [path.join(game, 'eu4.exe'), ...attemptArgs],
         startedAtUtc: new Date().toISOString(), reason: 'infrastructure-error', recoverable: false };
+      fs.writeFileSync(path.join(attemptDir,'result.json'),JSON.stringify({...result,status:'starting',verdict:'INCOMPLETE',verdictSource:'attempt not completed'},null,2)+'\n');
       if (missionClaim) { report.activeAttempt = {profile:attemptProfile,directory:attemptDir}; }
       if (controlledCrash) result.controlledCrash = controlledCrash;
       if (exerciseFreeze && number === 1) result.freezeDiagnostic = { timingGate: 'withhold auto_run dispatch on first attempt only',
@@ -252,6 +189,10 @@ try {
       report.behavioralPass = report.nativeProbeVerified = false;
       report.caseResults = [];
       report.manual = [];
+      // These describe one attempt; never carry failed/retried observations forward.
+      for(const key of ['savedState','uiEvidence','actualEnvironment','observations','markers','assertionFailures','missionCompletionPass','transcriptPass','claimInputVerified','relevantScriptErrors','stagedChanges','nativeFileChanges']) delete report[key];
+      report.coveredLayers=[];
+      report.evidenceSource='native'; report.attemptId=result.attemptId;
       delete report.error;
       try {
         const previous = recordedOwnership(path.join(here, 'work'));
@@ -259,13 +200,14 @@ try {
         if (!result.prelaunchCleanup.clean) throw Error('Owned remnants remain before attempt launch.');
         refuseUnrelatedGame();
         collectorRun = collect(['begin', '--mod', runtimeMod, '--scenario', `Native ${test} ${nonce} attempt ${number}`,
-          '--logs', attemptLogs, '--untracked']);
+          '--logs', attemptLogs, '--untracked'],{provenance:{...result,storageNamespace:runtimeMod}});
         report.collectorRun = result.collectorRun = collectorRun;
         ({ child, streams, outputErrors } = launchOwned(path.join(game, 'eu4.exe'), attemptArgs, { cwd: game, directory: attemptDir }));
         report.pid = result.pid = child.pid;
         if (missionClaim) report.activeAttempt.pid = child.pid;
-        report.startedAtUtc = result.startedAtUtc;
+        report.nativeStartedAtUtc = result.startedAtUtc;
         report.status = 'running';
+        fs.writeFileSync(path.join(attemptDir,'result.json'),JSON.stringify({...result,status:'running',verdict:'INCOMPLETE',verdictSource:'attempt not completed'},null,2)+'\n');
         report.activeAttempt = { number, pid: child.pid, profile: attemptProfile };
         saveReport();
         console.log(`Launched owned EU4 PID ${child.pid}; attempt ${number}/${retries + 1}, timeout ${timeout}s.`);
@@ -349,20 +291,16 @@ try {
           secondsFromSuspendToDetection: (Date.now() - Date.parse(result.freezeDiagnostic.suspension.suspendedAtUtc)) / 1000,
         });
         const text = observed.text;
+        report.actualEnvironment = {
+          ...(text.match(/Game Version: (.+)/)?.[1] ? {runningVersion:text.match(/Game Version: (.+)/)[1].trim(),versionSource:'attempt game.log'} : {}),
+          observedRequiredDlcs:dlcs.filter((_,i)=>cases.some(c=>text.split(/\r?\n/).some(line=>line.endsWith(`EU4RT ${c.nonce} OK dlc-${i+1}`)))),
+          dlcSource:'individual nonce-scoped native assertions; extras unknown unless saved',
+        };
         report.lifecycleReason = observed.reason;
         report.status = observed.reason === 'complete' ? 'running' : observed.reason;
         const judged = cases.map(item => ({ test: item.test, nonce: item.nonce,
-          ...(usa ? evaluateUSA(text,nonce,claimMode) : evaluate(text, item.nonce, item.checks, report.installedVersion.replace(/ \([^)]+\)$/, ''), item.test)),
+          ...adapter.evaluateCase(text,item,report.installedVersion.replace(/ \([^)]+\)$/, ''),claimMode),
           wiringPass: wiring.findings.filter(finding => finding.test === item.test).every(finding => finding.passed) }));
-        if (missionClaim && !usa && ['click','shortcut','negative'].includes(claimMode)) {
-          const pre = claimChecks.slice(0,23);
-          const expected = ['BEGIN nantes-claim',...pre.map(c=>`OK ${c}`),'UI_READY nantes-claim'];
-          const item=judged[0];
-          item.expectedMarkers=expected;
-          item.missingOrDuplicateChecks=pre.filter(c=>!item.markers.some(m=>m.endsWith(`OK ${c}`)));
-          item.transcriptPass=item.markers.length===expected.length && item.dateMatches && item.versionMatches
-            && expected.every((m,i)=>item.markers[i].endsWith(`EU4RT ${nonce} ${m}`));
-        }
         if (test !== 'all') Object.assign(report, judged[0]);
         else {
           report.transcriptPass = judged.every(item => item.transcriptPass);
@@ -372,7 +310,7 @@ try {
         report.relevantScriptErrors = ['error.log', 'setup_error.log'].flatMap(name => {
           const file = path.join(attemptLogs, name);
           return fs.existsSync(file) ? fs.readFileSync(file, 'utf8').split(/\r?\n/)
-            .filter(line => /zz_runtime_test|zz_runtime_mission|eu4usa_|AMC_|amc_|eu4rt_|prepare_ready|after_console|bri_nantes_market|bri_diplomacy_preview_trigger|BRI_mission_triggers|BRI_mission_effects|bri_shipbuilding_reward_effect|bri_secure_borders_reward_effect|add_or_upgrade_production_building/i.test(line)) : [];
+            .filter(line => errorPattern.test(line)) : [];
         });
         report.stagedChanges = manifest.filter(item => !fs.existsSync(path.join(staged, item.path)) || hash(path.join(staged, item.path)) !== item.sha256);
         report.nativeFileChanges = nativeFiles.filter(item => !fs.existsSync(item.file) || hash(item.file) !== item.sha256);
@@ -393,50 +331,17 @@ try {
           && !report.nativeFileChanges.length && report.runFileUnchanged !== false && observed.reason === 'complete';
         report.nativeProbeVerified = report.transcriptPass && environmentVerified && wiring.passed;
         report.caseResults = judged.map(item => ({ ...item,
-          status: item.transcriptPass && environmentVerified && item.wiringPass ? (item.test === 'nantes-market' ? 'partial' : 'pass')
+          status: item.transcriptPass && environmentVerified && item.wiringPass ? (adapter.partialTranscript(item.test) ? 'partial' : 'pass')
             : item.assertionFailures.length || !item.wiringPass ? 'fail' : 'incomplete' }));
-        report.behavioralPass = report.nativeProbeVerified && !['nantes-market','nantes-claim'].includes(test);
-        if (missionClaim && !usa) {
-          report.savedState = inspectSnapshots(attemptDir,dlcs,claimMode);
-          const ui=JSON.parse(fs.readFileSync(path.join(attemptDir,'ui-finish.json'),'utf8'));
-          report.uiEvidence=ui;
-          const inputFile=path.join(attemptDir,'ui-actions.jsonl');
-          const inputRecords=fs.existsSync(inputFile) ? fs.readFileSync(inputFile,'utf8').trim().split('\n').map(JSON.parse) : [];
-          const claims=inputRecords.filter(r=>r.kind==='input-returned' && r.action.mission==='bri_nantes_market');
-          report.claimInputVerified=claimMode==='click' && claims.length===1 && claims[0].action.kind==='click'
-            && claims[0].action.x===missionClaim.geometry.point.x+1 && claims[0].action.y===missionClaim.geometry.point.y+31;
-          report.missionCompletionPass = report.nativeProbeVerified && report.savedState.passed
-            && report.claimInputVerified && ui.nonce===nonce
-            && ui.readyInspected===true && ui.downstreamReadyInspected===true;
-          report.behavioralPass=report.missionCompletionPass || claimMode==='negative' && report.nativeProbeVerified
-            && report.savedState.passed && ui.nonce===nonce && ui.unreadyRefused===true;
-          report.behavioralScope = 'Native setup + actual mission-entry input + native save assertions; Nantes only, Codex UI driver required';
-          if(!report.savedState.passed) { result.blockRetry=true;report.assertionFailures.push('native saved state'); }
-        }
-        if(usa) {
-          const ui=JSON.parse(fs.readFileSync(path.join(attemptDir,'ui-finish.json'),'utf8'));
-          const inputFile=path.join(attemptDir,'ui-actions.jsonl');
-          const actions=fs.existsSync(inputFile)?fs.readFileSync(inputFile,'utf8').trim().split('\n').map(JSON.parse):[];
-          report.uiEvidence=ui;
-          report.savedState=inspectUSA(attemptDir,dlcs,claimMode,ui,actions,missionClaim.geometries);
-          report.behavioralPass=report.nativeProbeVerified && report.savedState.passed && ui.nonce===nonce;
-          report.missionCompletionPass=report.behavioralPass && claimMode==='click';
-          report.behavioralScope='Vanilla USA decision UI, four actual production mission buttons, constitutional choice and independent native saves';
-          if(!report.savedState.passed) {result.blockRetry=true;report.assertionFailures.push('USA native saved state');}
-        }
-        if (test === 'run-effects') {
-          report.permanentModifierPresenceQuery = report.observations['permanent-presence'];
-          report.finiteModifierPresenceQuery = report.observations['finite-presence'];
-          report.modifierValueTransitionsVerified = report.nativeProbeVerified;
-          report.productionMissionRewardVerified = false;
-        }
-        if (test === 'nantes-market') {
-          report.mechanism = 'country scripted effect complete_mission = bri_nantes_market';
-          report.completionRecorded = report.markers.some(line => line.endsWith('OK mission-completed'));
-          report.productionRewardVerified = ['modifier-169 present', 'modifier-4384 present',
-            'reward-value-169 correct', 'reward-value-4384 correct'].every(value => report.markers.some(line => line.endsWith(`OBS ${value}`)));
-          report.readinessVerified = false;
-          report.automationBoundary = 'complete_mission records completion but is not established as normal reward-bearing completion; no native readiness query was verified. The run-effects followup verified auto_run dispatch of profile-root .txt files. A separate native mission command probe left completion false and reward values zero; its console response and failure reason remain unresolved.';
+        report.behavioralPass = report.nativeProbeVerified && adapter.initialBehavioralPass(test);
+        adapter.postEvaluate({report,result,attemptDir,dlcs,claimMode,missionClaim,nonce,test});
+        report.coveredLayers=[...report.requestedLayers];
+        if(report.behavioralPass && missionClaim && claimMode==='click') report.coveredLayers.push('END-TO-END');
+        const saveFile=path.join(attemptDir,'after.eu4');
+        if(fs.existsSync(saveFile)) {
+          const saveText=fs.readFileSync(saveFile,'utf8');
+          Object.assign(report.actualEnvironment,savedEnvironment(saveText,{file:saveFile,sha256:hash(saveFile)},
+            {expectedModFiles:['mod/runtime_test.mod']}));
         }
         report.status = report.behavioralPass ? 'pass' : report.nativeProbeVerified ? 'partial' : report.assertionFailures.length || !wiring.passed ? 'fail' : report.status === 'running' ? 'timeout-or-incomplete' : report.status;
         if (!report.markers.length) report.manual = ['No native assertions reached. Inspect startup blockers (including Steam), then establish a session if automatic entry remains blocked. Do not count startup as a behavioral pass.'];
@@ -449,6 +354,7 @@ try {
         report.error = error.message;
         report.behavioralPass = false;
       } finally {
+        result.behavioralVerdict=report.behavioralPass?'PASS':report.status==='fail'?'FAIL':report.status==='partial'?'PARTIAL':'INCOMPLETE';
         // Capture immediately before termination as well as after it; collector
         // keeps final logs. Only small crash metadata is referenced, not dumps.
         result.diagnosticsBeforeCleanup = {};
@@ -523,6 +429,9 @@ try {
         result.status = report.status;
         result.behavioralPass = report.behavioralPass;
         result.caseResults = report.caseResults;
+        result.coveredLayers=[...report.coveredLayers];
+        Object.assign(result,snapshotAttempt(report,result));
+        fs.writeFileSync(path.join(attemptDir,'result.json'),JSON.stringify(result,null,2)+'\n');
         saveReport();
       }
       return result;
@@ -537,8 +446,11 @@ try {
 } finally {
   releaseLock?.();
   report.finishedAtUtc = new Date().toISOString();
+  report.verdict=report.behavioralPass?'PASS':report.status==='fail'?'FAIL':report.status==='partial'?'PARTIAL':report.status==='prepared-and-statically-validated'?'UNVERIFIED':'INCOMPLETE';
+  report.verdictSource=args.includes('--prepare-only')?'static preparation; no native verdict':'runtime contract evaluator; cleanup separately recorded';
+  report.lifecycleOutcome={reason:report.lifecycleReason,cleanup:report.cleanup,preflightCleanup:report.preflightCleanup};
   report.elapsedSeconds = Number(((Date.now() - suiteStarted) / 1000).toFixed(2));
-  if (report.startedAtUtc) report.nativeSeconds = Number(((Date.now() - Date.parse(report.startedAtUtc)) / 1000).toFixed(2));
+  if (report.nativeStartedAtUtc) report.nativeSeconds = Number(((Date.now() - Date.parse(report.nativeStartedAtUtc)) / 1000).toFixed(2));
   report.exitCode = report.behavioralPass || args.includes('--prepare-only') && report.status === 'prepared-and-statically-validated' ? 0 : report.status === 'fail' ? 1 : 2;
   saveReport();
   if (test === 'all') for (const item of report.caseResults || []) console.log(`${item.status.toUpperCase()}: ${item.test}`);

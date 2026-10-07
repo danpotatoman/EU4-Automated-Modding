@@ -1,32 +1,27 @@
-# EU4 modding workspace
+# EU4 modding workspace map
 
-[README.md](README.md) is the public entry point; [setup](docs/SETUP.md),
-[contributing](CONTRIBUTING.md), [publication audit](docs/PUBLICATION.md) and
-[repository hygiene](docs/REPOSITORY_HYGIENE.md) cover reproducibility and future
-development. Public textual evidence is reviewed/redacted; raw game captures and
-machine configuration remain ignored locally.
+Owner: repository/framework navigation
+Last updated: 2026-10-06
 
-Open `eu4-modding` as the project folder in Codex or VS Code. Each source mod lives
-under `mod/<mod_name>/`; shared development material stays outside mod content.
+[README](README.md), [setup](docs/SETUP.md), [contributing](CONTRIBUTING.md),
+[hygiene](docs/REPOSITORY_HYGIENE.md) and [AGENTS](AGENTS.md) define repository work.
+Production lives in `mod/<source-id>/`; shared development material stays outside.
 
-The durable project map is [docs/PROJECT.md](docs/PROJECT.md). Start with
-[current status](docs/STATUS.md) for implementation and verification boundaries,
-[design](docs/DESIGN.md) for established intent, [roadmap](docs/ROADMAP.md) for
-follow-up work, and [decisions](docs/DECISIONS.md) for important choices.
+| Task owner | Canonical reading path |
+| --- | --- |
+| Framework/tooling | [PROJECT](docs/PROJECT.md) -> [STATUS](docs/STATUS.md) -> [DESIGN](docs/DESIGN.md)/[ROADMAP](docs/ROADMAP.md) -> [TESTING](docs/TESTING.md)/[runtime knowledge](docs/runtime/README.md) -> relevant tool README and plan |
+| Brittany Missions | [PROJECT](docs/mods/brittany_missions/PROJECT.md) -> [STATUS](docs/mods/brittany_missions/STATUS.md) -> [DESIGN](docs/mods/brittany_missions/DESIGN.md)/[ROADMAP](docs/mods/brittany_missions/ROADMAP.md) -> [testing/coverage](docs/mods/brittany_missions/testing/README.md) -> shared guide and owning plan |
+| American Century | [PROJECT](docs/mods/american_century/PROJECT.md) -> [STATUS](docs/mods/american_century/STATUS.md) -> [DESIGN](docs/mods/american_century/DESIGN.md)/[ROADMAP](docs/mods/american_century/ROADMAP.md) -> [testing/coverage](docs/mods/american_century/testing/README.md) -> shared guide and active plan |
 
-[AGENTS.md](AGENTS.md) defines working instructions;
-[.agent/PLANS.md](.agent/PLANS.md) defines living execution plans.
-[docs/TESTING.md](docs/TESTING.md) indexes static/tool/native validation and the
-manual test workflow, with links to the detailed tool READMEs and scenarios.
+[Mod registry](docs/mods/README.md) indexes independent projects;
+[shared modding knowledge](docs/modding/README.md) records reusable mechanics;
+[plans](.agent/PLANS.md) record task scope/authorization/progress;
+[historical evidence index](docs/testing/README.md) records unchanged bundle owners.
+Generated state/raw evidence/configuration/private history remain ignored.
 
-Reusable mechanic guides remain in [docs/modding/](docs/modding/README.md).
-The [default environment](docs/testing/environment.md) and
-[runtime coverage](docs/testing/runtime-coverage.md) retain their specific roles.
-Production content, static acceptance, deployment and scoped runtime passes do
-not establish whole-mod export readiness.
-
-The USA project lives in `mod/american_century/`, with its adopted source of truth
-in [docs/usa/DESIGN.md](docs/usa/DESIGN.md), active execution plan under
-`.agent/plans/`, reusable colonial mechanic guide under `docs/modding/`, and
-[bounded native evidence/playtests](docs/testing/american-century/README.md).
-It shares `tools/runtime-tests/` with Brittany; no second runtime system is used.
+Phase 1 separated documentation owners; Phase 2A adds owner-specific runtime
+adapters, shared helpers and explicit native -Mod/-ListTests. Both mods share one
+runner/global lock; native all remains Brittany's four-case regression.
+[Deferred config/report work](docs/ROADMAP.md#deferred-ownership-refactor) requires
+separate authorization. No release or broader compatibility follows from
+static acceptance, development deployment or this organization change.

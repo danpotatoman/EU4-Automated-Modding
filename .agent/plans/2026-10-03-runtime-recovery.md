@@ -2,6 +2,11 @@
 
 Status: complete
 Last updated: 2026-10-03
+Owner: shared EU4 runtime/tooling
+Affected mods: brittany_missions (regression workload)
+Documentation ownership updated: 2026-10-06
+Current state: [canonical owner status](../../docs/STATUS.md)
+Shared knowledge: [runtime index](../../docs/runtime/README.md)
 
 ## Goal and authorization
 
@@ -107,3 +112,6 @@ Deterministic tests prove bounded failure/cleanup/retry and unaffected success;
 real controlled failure regains control and clean follow-up works, or a concrete
 external blocker is recorded. Durable report documents ownership limits and open
 reporter/hang scenarios without claiming gameplay/export readiness.
+
+Phase 1 added owner/current-source navigation only. Execution dates, authorizations,
+observations and verdicts above remain historical and do not authorize new work.

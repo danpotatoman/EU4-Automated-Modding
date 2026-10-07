@@ -1,3 +1,4 @@
+// Owner: mod/brittany_missions; offline checks/replays, no new native verdict
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -5,9 +6,9 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { test } from 'node:test';
 import { parse } from '../mission-inspector/engine.mjs';
-import { inspectWiring, unique } from './wiring.mjs';
-import { requiredTests } from './behaviors.mjs';
-import { compareExtraction } from './refactor-compare.mjs';
+import { inspectWiring, unique } from './contracts/brittany_missions/wiring.mjs';
+import { requiredTests } from './contracts/brittany_missions/behaviors.mjs';
+import { compareExtraction } from './contracts/brittany_missions/refactor-compare.mjs';
 
 const root = new URL('../../', import.meta.url);
 const missions = fs.readFileSync(new URL('mod/brittany_missions/missions/Custom_Breton_Missions.txt', root), 'utf8');

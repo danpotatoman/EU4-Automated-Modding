@@ -2,6 +2,11 @@
 
 Status: complete
 Last updated: 2026-10-05
+Owner: repository/framework
+Affected mods: brittany_missions, american_century (protected/regression evidence)
+Documentation ownership updated: 2026-10-06
+Current state: [canonical owner status](../../docs/STATUS.md)
+Shared knowledge: [runtime index](../../docs/runtime/README.md)
 
 ## Goal and authorization
 
@@ -96,3 +101,6 @@ linked `docs/PUBLICATION.md` playtest list; this task does not close them.
 Reviewable candidate snapshot and explicit blockers; no known private paths/secrets
 in public candidates, generated/game-owned material excluded, portable offline tests
 and setup documented, future hygiene enforced without weakening native contracts.
+
+Phase 1 added owner/current-source navigation only. Execution dates, authorizations,
+observations and verdicts above remain historical and do not authorize new work.

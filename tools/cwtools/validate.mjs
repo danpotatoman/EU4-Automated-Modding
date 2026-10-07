@@ -7,15 +7,32 @@ import crypto from 'node:crypto';
 import { spawn } from 'node:child_process';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { loadConfig } from '../config.mjs';
+import { cwtoolsIdentity, buildIdentity } from '../evidence-identity.mjs';
 
 const args = process.argv.slice(2);
+try {
+  const valueFlags=['--project','--mod','--source-mod','--report-key','--artifact-kind','--project-identity'];
+  for(let i=0;i<args.length;i++) {
+    if(args[i]==='--rebuild-cache') continue;
+    if(!valueFlags.includes(args[i]) || !args[i+1] || args[i+1].startsWith('--')) throw Error(`Invalid CWTools argument: ${args[i]}`);
+    i++;
+  }
+} catch(error) {console.error(error.message);process.exit(2);}
 const projectArg = args.indexOf('--project');
 const helper = path.dirname(fileURLToPath(import.meta.url));
 const helperProject = path.resolve(helper, '../..');
 const modArg = args.indexOf('--mod');
 const modName = modArg < 0 ? 'brittany_missions' : args[modArg + 1];
 const project = path.resolve(projectArg < 0 ? path.join(helperProject, 'mod', modName) : args[projectArg + 1]);
-const reports = path.join(helper, 'reports', path.basename(project));
+const argValue = name => args.includes(name) ? args[args.indexOf(name)+1] : undefined;
+const startedAtUtc = new Date().toISOString();
+const runId = crypto.randomUUID();
+// Basename fallback preserves report locations; applicability requires full path/build.
+let reportIdentity;
+try {reportIdentity = cwtoolsIdentity({root:helperProject,project,sourceMod:argValue('--source-mod'),
+  reportKey:argValue('--report-key'),artifactKind:argValue('--artifact-kind'),projectIdentity:argValue('--project-identity')});}
+catch(error) {console.error(error.message);process.exit(2);}
+const reports = path.join(helper, 'reports', reportIdentity.storageNamespace);
 const cache = path.join(helper, '.cache');
 fs.mkdirSync(reports, { recursive: true });
 fs.mkdirSync(cache, { recursive: true });
@@ -24,10 +41,11 @@ const textFile = path.join(reports, 'latest.txt');
 const logFile = path.join(reports, 'server.log');
 fs.writeFileSync(logFile, '');
 // Invalidate the previous report before any configuration or startup failure.
-fs.writeFileSync(reportFile, JSON.stringify({ status: 'running', startedAt: new Date().toISOString() }, null, 2));
+fs.writeFileSync(reportFile, JSON.stringify({ ...reportIdentity, runId, status: 'running', startedAt: startedAtUtc, startedAtUtc }, null, 2));
 fs.writeFileSync(textFile, 'Validation is running; previous results are no longer current.\n');
 
 let active;
+let artifactBuild;
 function findExtension() {
   const base = path.join(os.homedir(), '.vscode/extensions');
   if (!fs.existsSync(base)) return undefined;
@@ -161,6 +179,7 @@ class Client {
 }
 
 try {
+  artifactBuild = buildIdentity(project);
   const config = loadConfig('cwtools');
   const extension = config.extensionPath || findExtension();
   if (!extension) throw new Error('CWTools extension not found. Install tboby.cwtools-vscode or set extensionPath in config.json.');
@@ -229,7 +248,10 @@ try {
     const warnings = diagnostics.filter(d => d.severity === 'warning').length;
     const ruleHash = crypto.createHash('sha256');
     for (const file of ruleFiles.sort()) ruleHash.update(path.relative(rules, file)).update(fs.readFileSync(file));
-    const report = { status: 'complete', validatedAt: new Date().toISOString(), project,
+    if (buildIdentity(project).sha256 !== artifactBuild.sha256) throw Error('Project changed during validation; result is not applicable.');
+    const report = { ...reportIdentity, artifactBuild, runId, startedAtUtc, finishedAtUtc: new Date().toISOString(),
+      verdict: errors ? 'FAIL' : 'PASS', verdictSource: 'CWTools diagnostics; STATIC only',
+      status: 'complete', validatedAt: new Date().toISOString(), project,
       cwtoolsVersion: version, gameVersion, gamePath: config.gamePath,
       rulesPath: rules, rulesSha256: ruleHash.digest('hex'), ruleFileCount: ruleFiles.length,
       languages: config.languages || ['English'], projectFileCount: expectedFiles.length,
@@ -247,7 +269,8 @@ try {
   }
 } catch (error) {
   active?.stop();
-  const report = { status: 'failed', failedAt: new Date().toISOString(), message: error.message, logFile };
+  const report = { ...reportIdentity, artifactBuild, runId, startedAtUtc, finishedAtUtc: new Date().toISOString(),
+    verdict: 'INCOMPLETE', verdictSource: 'CWTools infrastructure failure', status: 'failed', failedAt: new Date().toISOString(), project, message: error.message, logFile };
   fs.writeFileSync(reportFile, JSON.stringify(report, null, 2) + '\n');
   fs.writeFileSync(textFile, `Validation failed: ${error.message}\n`);
   console.error(report.message);

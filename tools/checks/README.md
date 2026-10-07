@@ -1,5 +1,24 @@
 # One-command project check
 
+Owner: shared EU4 tooling interface
+
+Reports use [evidence schema 2](../../docs/runtime/evidence-identity.md), with
+owner/namespace/artifact/source-build/run identity and STATIC-only verdicts.
+Current CWTools/inspector acceptance checks path, owner, namespace, artifact/build,
+start/completion freshness and completed status. Legacy findings baselines remain
+readable; ambiguous collector records are unavailable. A matched deployed build
+is operator evidence with gameplay/activation unverified, never automatic coverage.
+
+[Framework status](../../docs/STATUS.md) owns tool capability state;
+[mod runbooks](../../docs/mods/README.md) own gameplay state/coverage and
+[evidence index](../../docs/testing/README.md) labels historical workloads.
+
+These existing tools accept their documented -Mod and default to Brittany.
+Brittany examples/source-backed tests do not establish another mod's gameplay.
+Shared machine configuration is separate from [mod metadata](../mods/README.md);
+schema 2 semantics above apply to new reports.
+
+
 From the project root:
 
 ```powershell
@@ -48,6 +67,12 @@ external modifications if a development destination exists. Missing source
 descriptors are allowed because deployment generates them. No write-permission
 probe is performed; passing preparation is not a guarantee that a subsequent
 copy will be authorized or writable.
+
+Development descriptor/scenario values come from the selected owner's
+`tools/mods/<id>/config.json`, through the same effective metadata rules as
+PowerShell deployment. Shared/local machine path precedence and strict known
+Brittany destination failure remain unchanged. Synthetic fixtures/unknown mods
+use explicit generic metadata without borrowing Brittany's name or scenarios.
 
 ## New, existing and resolved findings
 

@@ -15,13 +15,15 @@ coordinates bounded UI input and verifies behavior against independent saved sta
   assertion-stall detection, verified cleanup and bounded retries in fresh profiles.
 - **Native integration evidence:** four Brittany behavior contracts; a USA slice with
   four production mission claims, 31 save/input checks and 12 ordinary reload comparisons.
-- **Offline regression and CI:** 53 Node tests plus four tool self-test programs run
+- **Offline regression and CI:** 89 Node tests plus four tool self-test programs run
   without EU4 or an input adapter; GitHub Actions is configured for Linux and Windows.
 
 The repository is actively developed. Brittany Missions is the established mod;
 American Century is a growing USA mission project. Neither is certified as a complete
-release package. [Current status](docs/STATUS.md) and
-[USA slice results](docs/testing/american-century/README.md) define the supported claims.
+release package. [Framework status](docs/STATUS.md) defines tool capabilities; independent
+[Brittany status](docs/mods/brittany_missions/STATUS.md) and
+[American Century status](docs/mods/american_century/STATUS.md) define gameplay claims.
+Read the [ownership map](PROJECT_STRUCTURE.md) and [mod index](docs/mods/README.md).
 
 ## The testing problem
 
@@ -61,7 +63,10 @@ it refuses unrelated EU4 sessions. Assertion failures stop; selected infrastruct
 failures can retry after successful owned cleanup. Raw profiles, logs, saves and
 screenshots remain local. Small reviewed evidence supports replayable regression tests.
 
-## Verified results and scope
+## Dated demonstration workloads and scope
+
+The table records historical workloads, not a shared or current whole-mod verdict.
+Current tool state is at [framework status](docs/STATUS.md); each mod owns its coverage.
 
 | Capability | Verified scope |
 | --- | --- |
@@ -69,13 +74,17 @@ screenshots remain local. Small reviewed evidence supports replayable regression
 | Faithful input | One Nantes claim and fresh unready refusal, using actual pointer input and independent before/after saves; both permanent rewards granted once and immediate downstream readiness |
 | USA slice | Vanilla formation by real input, four production claims, 31 save/input checks and 12 ordinary reload comparisons; separate eight-check unready contract |
 | Recovery | Controlled owned exit, native crash/reporter cleanup and an actual after-BEGIN suspension; fresh retry and separate clean suites afterward |
-| Offline regression | Documented validation: 53 Node tests plus four tool self-test programs; no installed game or input adapter required |
+| Offline regression | Current Windows validation: 89 Node tests plus four tool self-test programs; no installed game or input adapter required; two parity tests skip without PowerShell |
 
-**Test-count breakdown:** the historical native development check recorded 51 shared
+**Test-count breakdown:** the historical native development check recorded 51 runtime
 Node tests. Four configuration/audit tests bring the total to 55; two exercise the real
 Windows process adapter and run separately from the 53-test offline command.
+These include mod-specific adapters, production-backed checks and offline replays.
+Current Phase 2A/2B/2C acceptance has 89 offline tests plus four self-tests and two
+separate Windows process-adapter tests. [Configuration ownership](docs/runtime/configuration-ownership.md)
+defines canonical mod metadata, legacy overrides and isolated browser/self-test output.
 See [validation results](docs/PUBLICATION.md) and
-[coverage boundaries](docs/testing/runtime-coverage.md). Replays check evaluators
+[Brittany coverage](docs/mods/brittany_missions/testing/coverage.md). Replays check evaluators
 against retained observations; they do not launch another game session.
 
 ## Run without EU4
@@ -112,11 +121,11 @@ overrides and committed examples support local configuration without editing sha
 
 ```powershell
 ./tools/cwtools/install-rules.ps1   # network needed only for rule installation
-./tools/validate-cwtools.ps1
+./tools/validate-cwtools.ps1 -Mod brittany_missions
 ./tools/validate-cwtools.ps1 -Mod american_century
 node --test tools/runtime-tests/windows-adapter.test.mjs
-# Requires the documented launcher configuration and desktop graphics:
-./tools/run-eu4-test.ps1 -Test all -TimeoutSeconds 150
+# Brittany four-case regression only; requires documented launcher/desktop:
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test all -TimeoutSeconds 150
 ```
 
 The native runner reads the ordinary launcher configuration, builds fresh isolated
@@ -126,6 +135,10 @@ are 120 seconds total, 30 seconds without assertion progress and one retry; expl
 bounds are available. Cleanup verifies identities before terminating owned processes.
 [Testing guide](docs/TESTING.md) and [runner documentation](tools/runtime-tests/README.md)
 cover outcomes, preparation-only mode, negative controls and recovery.
+
+Native test names infer ownership: usa-slice selects USA; other tests/all select
+Brittany. The native wrapper supports explicit -Mod and non-launching -ListTests; static tools have their own
+-Mod interfaces. [Framework testing](docs/TESTING.md) explains the current matrix.
 
 ### UI-input dependency
 
@@ -147,8 +160,10 @@ screenshots and fresh owned-window identities must be inspected before input.
 | `mod/brittany_missions/`, `mod/american_century/` | Project mod source; installed helpers/assets are external dependencies |
 | `tools/` | PowerShell entry points, Node implementations, synthetic fixtures and regression tests |
 | `docs/modding/` | Versioned mechanics guides, identifiers and minimal adapted examples |
-| `docs/testing/` | Scenarios, coverage, historical reports and reviewed textual evidence |
-| `docs/{PROJECT,DESIGN,STATUS,ROADMAP,DECISIONS,TESTING}.md` | Durable project knowledge and active development state |
+| `docs/testing/` | Shared environment and indexed, byte-preserved historical reports/evidence |
+| `docs/mods/<source-id>/` | Independent mod design/status/roadmap/decisions/testing |
+| `docs/runtime/` | Shared runtime knowledge and decisions |
+| `docs/{PROJECT,DESIGN,STATUS,ROADMAP,DECISIONS,TESTING}.md` | Repository/framework state and validation |
 | `AGENTS.md`, `.agent/` | Codex integrity instructions and execution plans |
 | `.local/` and ignored tool output | Machine configuration, raw evidence and audit originals; excluded from the public repository |
 
@@ -159,13 +174,12 @@ local configuration, evidence handling and staged-content checks.
 ## Limitations and next work
 
 There is no whole-mod campaign, AI, multiplayer or general version/DLC certification.
-Brittany retains 58 CWTools warnings and duplicate localisation findings. Most mission
-dispatch/persistence/expiry scenarios remain open. UI automation supports bounded
-known layouts and an external active driver; locked desktops and unusual unidentifiable
-dialogs need further evidence. USA currently implements nine USA and three colonial
-missions; the proposed 55-mission USA tree is still being developed.
+UI automation supports bounded known layouts and an external active driver; locked
+desktops and unusual unidentifiable dialogs need further evidence. Mod warning,
+mission and campaign gaps belong to each [mod roadmap](docs/mods/README.md), while
+shared-tool work belongs to the [framework roadmap](docs/ROADMAP.md).
 
-Follow the [roadmap](docs/ROADMAP.md) and linked playtests. Public evidence uses synthetic
+Use the [indexed historical evidence](docs/testing/README.md) and owner runbooks for playtests. Public evidence uses synthetic
 paths and preserves failed verdicts. Game screenshots and bulk engine dumps are retained
 locally pending ownership review, so readers cannot replay the original visual inspection
 from the public textual fixtures alone.

@@ -2,6 +2,11 @@
 
 Status: active
 Last updated: 2026-10-04
+Owner: mod/american_century
+Affected mods: american_century; Brittany protected; shared runtime dependency
+Documentation ownership updated: 2026-10-06
+Current state: [canonical owner status](../../docs/mods/american_century/STATUS.md)
+Shared knowledge: [runtime index](../../docs/runtime/README.md)
 
 ## Goal and authorization
 
@@ -11,7 +16,7 @@ design and a validated vertical slice. Design choices within that direction requ
 no repeated approval. This run establishes the architecture; it does not promise a
 fully implemented late-game tree before validating the slice.
 
-Source of truth: [USA design](../../docs/usa/DESIGN.md). Production source:
+Source of truth: [USA design](../../docs/mods/american_century/DESIGN.md). Production source:
 `mod/american_century/`. Shared infrastructure remains under `tools/`.
 
 ## Requirements
@@ -25,7 +30,8 @@ Never substitute console mission completion for reward-bearing button input.
 
 ## Background and systems
 
-Read PROJECT/STATUS/DESIGN/ROADMAP/DECISIONS/TESTING, plans and modding guides.
+Read the framework PROJECT/STATUS/TESTING and USA PROJECT/STATUS/DESIGN/ROADMAP/
+DECISIONS/testing, the owner-labelled plans and relevant shared modding guides.
 Existing `runtime-tests/run.mjs` owns staged validation, profiles, collector,
 process identity, retries/crash cleanup and UI leases. `codex-input.mjs` supports
 real Nantes input; `claim-save.mjs` is scenario-specific. Extend these systems

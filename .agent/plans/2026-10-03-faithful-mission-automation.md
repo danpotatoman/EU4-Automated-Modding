@@ -2,6 +2,11 @@
 
 Status: complete
 Last updated: 2026-10-03
+Owner: shared EU4 runtime/tooling
+Affected mods: brittany_missions (acceptance workload)
+Documentation ownership updated: 2026-10-06
+Current state: [canonical owner status](../../docs/STATUS.md)
+Shared knowledge: [runtime index](../../docs/runtime/README.md)
 
 ## Goal and authorization
 
@@ -87,3 +92,6 @@ unsupported layouts/remote-driver dependencies and every unresolved avenue.
 Completion criteria met for the authorized POC. The report's verified scenarios
 and open extension playtests own remaining geometry/keyboard/locked-desktop/
 UI-stage crash limits. New generalization is not authorized by this plan.
+
+Phase 1 added owner/current-source navigation only. Execution dates, authorizations,
+observations and verdicts above remain historical and do not authorize new work.

@@ -1,5 +1,14 @@
 # Faithful mission input
 
+Owner: shared EU4 mechanics/tooling knowledge
+
+The Brittany/Nantes examples/results below are attributed workloads, not general mod coverage.
+Current framework capability lives in [framework status](../STATUS.md) and
+[runtime knowledge](../runtime/README.md); gameplay state/playtests belong to
+[the mod owners](../mods/README.md). Dated verification and unresolved assumptions
+remain scoped to their recorded versions, dependencies and fixtures.
+
+
 Purpose: exercise a production mission's real entry-button action, with independent
 saved completion/reward evidence. This is test infrastructure, not a new mechanic.
 Target installed EU4 1.37.5.0/default 18 DLC; no broader compatibility established.
@@ -14,7 +23,7 @@ lease and exactly one returned window. It does not launch a separate game/watche
 Bare PowerShell execution cannot provide that Codex input runtime by itself.
 
 ```powershell
-./tools/run-eu4-test.ps1 -Test nantes-claim -ClaimMode click -TimeoutSeconds 600 -ProgressTimeoutSeconds 600 -Retries 0
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test nantes-claim -ClaimMode click -TimeoutSeconds 600 -ProgressTimeoutSeconds 600 -Retries 0
 ```
 
 Native setup checks membership, building conditions, zero goods modifier and DLC.
@@ -79,3 +88,5 @@ completion without exact rewards, repeats or finite expiry. The post-click numer
 probe/reload were not repeated; the normal dialog and named saved modifiers match
 the retained human reference. Other geometry, locked desktops and UI-stage native
 crashes remain open in the report's labeled playtest list.
+
+Current example coverage: [Brittany/Nantes owner runbook](../mods/brittany_missions/testing/README.md).

@@ -1,6 +1,10 @@
 param(
     [string]$Mod = 'brittany_missions',
     [string]$Project,
+    [string]$SourceMod,
+    [string]$ReportKey,
+    [ValidateSet('production','staged','fixture','synthetic','untracked','baseline')][string]$ArtifactKind,
+    [string]$ProjectIdentity,
     [switch]$RebuildCache
 )
 $ErrorActionPreference = 'Stop'
@@ -16,5 +20,8 @@ if (-not (Test-Path -LiteralPath $nodePath)) {
 }
 $validatorArgs = @((Join-Path $PSScriptRoot 'cwtools/validate.mjs'), '--project', $Project)
 if ($RebuildCache) { $validatorArgs += '--rebuild-cache' }
+foreach ($pair in @(@('source-mod',$SourceMod), @('report-key',$ReportKey), @('artifact-kind',$ArtifactKind), @('project-identity',$ProjectIdentity))) {
+    if ($pair[1]) { $validatorArgs += @(('--' + $pair[0]), $pair[1]) }
+}
 & $nodePath @validatorArgs
 exit $LASTEXITCODE

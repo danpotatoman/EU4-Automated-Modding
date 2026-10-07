@@ -1,10 +1,12 @@
 import { loadConfig } from '../config.mjs';
+import { loadModConfig, developmentDescriptor } from '../mod-config.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { generate } from '../mission-inspector/generate.mjs';
+import { identity, buildIdentity, assertApplicable, legacyIdentity, productionOwners, schemaVersion } from '../evidence-identity.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(here, '../..');
@@ -50,15 +52,13 @@ export function fileChecks(directory, snapshot) {
 export function deploymentPreparation(root, mod, snapshot) {
   const config = loadConfig('deployment', root);
   if (typeof config.gameModDirectory !== 'string' || !path.isAbsolute(config.gameModDirectory)) throw Error('Game mod directory must be an absolute path.');
-  if (typeof config.supportedVersion !== 'string' || !/^[0-9.*]+$/.test(config.supportedVersion)) throw Error('Invalid supportedVersion.');
-  const name = mod === 'brittany_missions' ? config.displayName : `${mod} (Development)`;
-  if (typeof name !== 'string' || !name.trim() || /["\r\n]/.test(name)) throw Error('Invalid display name.');
+  const modMetadata=loadModConfig(mod,root,{onNotice:message=>console.error(message)});
   const target = path.resolve(config.gameModDirectory, `${mod}_dev`), launcher = target + '.mod';
   const source = path.resolve(root, 'mod', mod);
   const overlaps = (a, b) => { const relative = path.relative(a, b); return relative === '' || relative !== '..' && !relative.startsWith('..' + path.sep) && !path.isAbsolute(relative); };
   if (overlaps(source, target) || overlaps(config.gameModDirectory, source) || /["\r\n]/.test(target)) throw Error('Invalid or overlapping source/destination.');
   if (!fs.existsSync(config.gameModDirectory) || !fs.statSync(config.gameModDirectory).isDirectory()) throw Error('Configured game mod directory does not exist.');
-  const descriptor = `name="${name}"\nsupported_version="${config.supportedVersion}"\n`;
+  const descriptor = developmentDescriptor(modMetadata);
   const launcherText = descriptor + `path="${target.replaceAll('\\', '/')}"\n`;
   const preparedFiles = snapshot.files.filter(file => file.path !== 'descriptor.mod').concat({ path: 'descriptor.mod', sha256: hash(Buffer.from(descriptor)) }).sort((a, b) => a.path.localeCompare(b.path));
   const key = hash(Buffer.from(target.toLowerCase())).slice(0, 16);
@@ -69,6 +69,8 @@ export function deploymentPreparation(root, mod, snapshot) {
     if (!fs.existsSync(recordPath)) findings.push({ tool: 'deployment', severity: 'error', code: 'unowned-destination', message: 'Development destination already exists without an ownership record; deployment would refuse it.' });
     else {
       const record = readJson(recordPath);
+      if(record.schemaVersion!==undefined && record.schemaVersion!==schemaVersion) findings.push({tool:'deployment',severity:'error',code:'unsupported-schema',message:'Deployment record has an unsupported schema version.'});
+      else if(record.schemaVersion===schemaVersion && (record.sourceMod!==(productionOwners.includes(mod)?mod:null) || record.storageNamespace!==mod || record.artifactKind!=='staged')) findings.push({tool:'deployment',severity:'error',code:'identity-conflict',message:'Deployment source owner, storage namespace or artifact kind conflicts with the selected destination.'});
       if (path.resolve(record.target).toLowerCase() !== target.toLowerCase() || path.resolve(record.launcher).toLowerCase() !== launcher.toLowerCase()) findings.push({ tool: 'deployment', severity: 'error', code: 'destination-mismatch', message: 'Deployment ownership record points to another destination.' });
       else if (!fs.existsSync(target) || !fs.existsSync(launcher)) findings.push({ tool: 'deployment', severity: 'error', code: 'incomplete-destination', message: 'Existing development deployment is incomplete.' });
       else {
@@ -119,12 +121,27 @@ export function evidence(root, mod, prepared) {
   if (!fs.existsSync(latest)) return { status: 'none', message: 'No completed in-game test report is available.' };
   try {
     const pointer = readJson(latest), report = readJson(pointer.report), run = readJson(path.join(path.dirname(pointer.report), 'run.json'));
+    if(pointer.storageNamespace && pointer.storageNamespace!==mod) throw Error('Collector latest pointer namespace conflict.');
     if (run.status !== 'complete') return { status: 'unavailable', message: 'Latest test-run metadata is not complete.' };
     if (!run.deployment) return { status: 'untracked', id: run.id, outcome: report.outcome, message: 'Test run has no verified deployed build.' };
     if (!prepared) return { status: 'unavailable', id: run.id, message: 'Cannot compare test build because deployment preparation failed.' };
     const tested = new Map(run.deployment.record.files.map(file => [file.path.replaceAll('\\', '/'), file.sha256.toLowerCase()]));
     const matches = prepared.preparedFiles.length === tested.size && prepared.preparedFiles.every(file => tested.get(file.path) === file.sha256) && run.deployment.record.launcherSha256.toLowerCase() === prepared.launcherSha256;
-    return { status: matches && !report.deploymentChanges?.length ? 'matching-build' : 'stale', id: run.id, outcome: report.outcome, scenario: report.scenario, finishedAtUtc: report.finishedAtUtc, logReport: pointer.report, unstableCapture: report.unstableCapture, changedLogs: report.changedLogs, message: 'Operator-reported scenario evidence; build matching does not prove the playset loaded it or all gameplay works.' };
+    let resolved;
+    if(run.schemaVersion===schemaVersion) {
+      // Completion is checked independently of an operator FAIL/INCOMPLETE verdict.
+      if(report.schemaVersion!==schemaVersion || report.sourceMod!==run.sourceMod || report.storageNamespace!==run.storageNamespace
+        || report.artifactKind!==run.artifactKind || report.runId!==run.runId || report.attemptId!==run.attemptId) throw Error('Collector report/run identity conflict.');
+      for(const field of ['sourceBuild','stagedBuild','artifactBuild','contractId','suiteId','selectedMembers','coveredLayers','evidenceSource']) {
+        if(JSON.stringify(report[field])!==JSON.stringify(run[field])) throw Error(`Collector report/run ${field} conflict.`);
+      }
+      assertApplicable({...run,finishedAtUtc:report.finishedAtUtc},{sourceMod:productionOwners.includes(mod)?mod:null,storageNamespace:mod,
+        sourceBuild:buildIdentity(path.join(root,'mod',mod))});
+      resolved=run;
+    } else resolved=legacyIdentity(run,{format:'collector',root,storageNamespace:mod,buildMatches:matches});
+    if(!['production','staged'].includes(resolved.artifactKind)) throw Error('Collector fixture/untracked artifact cannot serve as production build evidence.');
+    return { status: matches && !report.deploymentChanges?.length ? 'matching-build' : 'stale', sourceMod:resolved.sourceMod,storageNamespace:resolved.storageNamespace,artifactKind:resolved.artifactKind,
+      applicability:'operator-only; gameplay coverage remains unverified', id: run.id, outcome: report.outcome, scenario: report.scenario, finishedAtUtc: report.finishedAtUtc, logReport: pointer.report, unstableCapture: report.unstableCapture, changedLogs: report.changedLogs, message: 'Operator-reported scenario evidence; build matching does not prove the playset loaded it or all gameplay works.' };
   } catch (error) { return { status: 'unavailable', message: error.message }; }
 }
 function render(report) {
@@ -140,10 +157,17 @@ async function performCheck(mod, options = {}) {
   const storage = path.join(options.storage || path.join(here, 'reports'), mod);
   fs.mkdirSync(storage, { recursive: true });
   const startedAtUtc = new Date().toISOString(), snapshot = inventory(source);
+  const artifactBuild=buildIdentity(source);
+  const reportIdentity=identity({sourceMod:productionOwners.includes(mod)?mod:null,storageNamespace:mod,
+    artifactKind:productionOwners.includes(mod)?'production':'fixture',coveredLayers:['STATIC'],evidenceSource:'static',
+    artifactBuild,runId:crypto.randomUUID(),startedAtUtc});
   const previousPath = path.join(storage, 'last-complete.json');
   const previous = fs.existsSync(previousPath) ? readJson(previousPath) : null;
+  if(previous?.schemaVersion!==undefined && ![1,schemaVersion].includes(previous.schemaVersion)) throw Error('Unsupported last-complete schema version.');
+  if(previous?.mod && previous.mod!==mod) throw Error('Last-complete legacy namespace conflict.');
+  if(previous?.schemaVersion===schemaVersion && (previous.sourceMod!==reportIdentity.sourceMod || previous.storageNamespace!==mod || previous.artifactKind!==reportIdentity.artifactKind)) throw Error('Last-complete report identity conflict.');
   const findings = [], checks = [];
-  writeJson(path.join(storage, 'latest.json'), { mod, status: 'running', startedAtUtc });
+  writeJson(path.join(storage, 'latest.json'), { ...reportIdentity, mod, status: 'running', startedAtUtc });
   fs.writeFileSync(path.join(storage, 'latest.txt'), `${mod} — RUNNING\n`);
   fs.writeFileSync(path.join(storage, 'latest.html'), '<!doctype html><title>Project check running</title><h1>Project check is running</h1><p>No final result is available yet.</p>');
   const completed = (tool, name, items, message = '') => { findings.push(...items); checks.push({ tool, name, status: 'complete', errors: items.filter(item => item.severity === 'error').length, warnings: items.filter(item => item.severity === 'warning').length, message }); };
@@ -156,12 +180,15 @@ async function performCheck(mod, options = {}) {
     if (![0, 1].includes(result.exitCode)) throw Error(result.error || `CWTools did not complete (exit ${result.exitCode}).`);
     const report = readJson(path.join(root, `tools/cwtools/reports/${mod}/latest.json`));
     if (report.status !== 'complete' || !Number.isFinite(Date.parse(report.validatedAt)) || Date.parse(report.validatedAt) < Date.parse(startedAtUtc) || path.resolve(report.project).toLowerCase() !== path.resolve(source).toLowerCase()) throw Error('CWTools report is incomplete, stale or belongs to a different project.');
+    assertApplicable(report,{sourceMod:reportIdentity.sourceMod,storageNamespace:mod,artifactKind:productionOwners.includes(mod)?'production':'untracked',
+      projectPath:source,artifactBuild,notBefore:startedAtUtc,evidenceSource:'static'});
     if (!Array.isArray(report.diagnostics) || (result.exitCode === 0) !== (report.summary.errors === 0)) throw Error('CWTools exit code and report disagree.');
     completed('cwtools', 'CWTools', report.diagnostics.map(item => ({ ...item, tool: 'cwtools' })), `${report.cwtoolsVersion}; EU4 ${report.gameVersion}`);
   } catch (error) { incomplete('cwtools', 'CWTools', error); }
   console.log('Checking mission layouts, files and deployment preparation...');
   try {
-    const layout = (options.inspector || generate)(mod);
+    const layout = (options.inspector || generate)(mod,false,{storage:options.inspectorStorage});
+    assertApplicable(layout.identity,{sourceMod:reportIdentity.sourceMod,storageNamespace:mod,artifactBuild,notBefore:startedAtUtc,evidenceSource:'static'});
     if (!layout.reports.some(report => !report.scenario.diagnostic)) throw Error('No normal mission scenarios were inspected.');
     const items = layout.reports.filter(report => !report.scenario.diagnostic).flatMap(report => report.findings.map(item => ({ ...item, tool: 'missions', scenario: report.scenario.name })));
     completed('missions', 'Mission layout', items, `${layout.reports.filter(report => !report.scenario.diagnostic).length} normal scenarios; diagnostic scenarios excluded.`);
@@ -180,7 +207,7 @@ async function performCheck(mod, options = {}) {
     for (const item of checks) { item.status = 'incomplete'; item.message = 'Source changed during the check; rerun against a stable saved build.'; }
   }
   const unique = consolidate(findings), status = classify(checks), finishedAtUtc = new Date().toISOString();
-  const report = { schemaVersion: 1, mod, status, startedAtUtc, finishedAtUtc, source: snapshot, checks, findings: unique, comparison: compare(unique, previous, checks.filter(check => check.status === 'complete').map(check => check.tool)), gameEvidence: evidence(root, mod, prepared) };
+  const report = { ...reportIdentity, verdict:status==='passed'?'PASS':status==='failed'?'FAIL':'INCOMPLETE',verdictSource:'combined static checks; no native gameplay verdict',mod, status, startedAtUtc, finishedAtUtc, source: snapshot, checks, findings: unique, comparison: compare(unique, previous, checks.filter(check => check.status === 'complete').map(check => check.tool)), gameEvidence: evidence(root, mod, prepared) };
   const text = [`${mod} — ${status.toUpperCase()}`, '', ...checks.map(check => `${check.name}: ${check.status}${check.errors === undefined ? '' : `; ${check.errors} errors, ${check.warnings} warnings`}${check.message ? '; ' + check.message : ''}`), '', `New: ${report.comparison.new.length}; existing: ${report.comparison.existing.length}; resolved: ${report.comparison.resolved.length}; deferred: ${report.comparison.deferred.length}`, `Occurrence-count changes: ${report.comparison.occurrenceChanges.length}`, `In-game evidence: ${report.gameEvidence.status}`, '', ...unique.map(finding => `[${finding.tool} ${finding.severity} ${finding.code}] ${finding.message} (${finding.occurrences.length} occurrences)`), '', 'Automated checks do not establish in-game behavior or permission to write the deployment destination.'];
   const reportHtml = render(report);
   writeJson(path.join(storage, 'latest.json'), report);

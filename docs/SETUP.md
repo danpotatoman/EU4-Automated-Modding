@@ -1,5 +1,11 @@
 # Developer setup
 
+Owner: shared EU4 tooling/machine setup
+
+Gameplay state and runbooks belong to [the owning mod](mods/README.md). Root
+[status](STATUS.md) describes tooling, not Brittany or USA gameplay.
+
+
 Start at [README](../README.md), [testing](TESTING.md) and [current status](STATUS.md).
 Offline tests require Git and Node.js 24 only. Native tools were verified on Windows
 with Windows PowerShell 5.1 and EU4 1.37.5.0 Inca (491d), CWTools 0.10.31 and the
@@ -22,6 +28,14 @@ native test profiles and ignored machine settings stay in this same repository.
 
 Precedence is environment variables, ignored local override, committed defaults.
 The config readers are `tools/config.mjs` and `tools/config.ps1` (deployment only).
+These return shared machine settings. Development names, descriptor versions and
+inspector scenarios/rules have one canonical owner source in
+`tools/mods/<source-id>/config.json`, read by `tools/mod-config.mjs` and
+`tools/mod-config.ps1`. [Configuration ownership](runtime/configuration-ownership.md)
+documents the schema, future-mod fallback, QA isolation and scoped deprecated
+display/version fields in existing ignored deployment overrides. Migration never
+edits actual local overrides; displayName applies only to Brittany, while the
+legacy generic supportedVersion override retains its prior scope across mods.
 
 | Setting | Default / override |
 | --- | --- |
@@ -58,9 +72,9 @@ Install VS Code's `tboby.cwtools-vscode` extension locally. Obtain the EU4 rules
 
 ```powershell
 ./tools/cwtools/install-rules.ps1
-./tools/validate-cwtools.ps1
+./tools/validate-cwtools.ps1 -Mod brittany_missions
 ./tools/validate-cwtools.ps1 -Mod american_century
-./tools/inspect-missions.ps1
+./tools/inspect-missions.ps1 -Mod brittany_missions
 ```
 
 Normal validation is offline once rules/server/game references are installed. Read
@@ -85,16 +99,19 @@ requires ordinary launcher `enabled_mods` to contain only
 activation evidence. Development deployment is a separate operation:
 
 ```powershell
-./tools/deploy-mod.ps1 -Preview
+./tools/deploy-mod.ps1 -Mod brittany_missions -Preview
 # With EU4 closed, validation completed and destination ownership understood:
-./tools/deploy-mod.ps1
+./tools/deploy-mod.ps1 -Mod brittany_missions
 # Select the matching launcher playset yourself before testing.
-./tools/run-eu4-test.ps1 -Test all -TimeoutSeconds 150
+# Brittany four-case logic/effect/wiring suite only:
+./tools/run-eu4-test.ps1 -Mod brittany_missions -Test all -TimeoutSeconds 150
 ```
 
 Deployment refuses unowned or externally changed destinations; do not bypass this
 to repair a historical mismatch. The runner stages its own copy and does not require
-the ordinary deployed bytes to be current, but verifies launcher configuration.
+the ordinary deployed bytes to be current, but applies the documented launcher preflight to Brittany; USA reads the ordinary
+configuration without the same Brittany-mod gate. Actual staged activation must
+be checked independently.
 Preparation-only is not a native pass. Retry/cleanup uses fresh attempt profiles;
 assertion or integrity failures and failed cleanup stop automatically.
 
@@ -105,3 +122,9 @@ UI result as INCOMPLETE. No generic headless or scheduled UI support is claimed.
 
 The optional mission-viewer browser QA takes an installed Chromium path as its first
 argument; it defaults to the standard Chrome location. It is separate from offline CI.
+
+Prefer native `-Mod <source-id>`; `-ListTests` lists owner/test/mode support without
+launching or writing reports. Legacy no-Mod usa-slice selects American Century;
+all/default/other tests select Brittany. Existing shared config still includes
+Brittany metadata. Per-mod config/report migration is
+[deferred, not authorized](ROADMAP.md#deferred-ownership-refactor).

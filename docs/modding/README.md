@@ -1,5 +1,14 @@
 # Modding knowledge collection
 
+Owner: shared EU4 mechanics/tooling knowledge
+
+Examples below name their mod workloads.
+Current framework capability lives in [framework status](../STATUS.md) and
+[runtime knowledge](../runtime/README.md); gameplay state/playtests belong to
+[the mod owners](../mods/README.md). Dated verification and unresolved assumptions
+remain scoped to their recorded versions, dependencies and fixtures.
+
+
 Consult relevant guides before implementing a mechanic. Check their game version
 and DLC assumptions against the current installation. The lookup commands are
 documented in `tools/vanilla-reference/README.md`.
@@ -30,7 +39,7 @@ Faithful input: [owned Codex driver and deterministic GUI geometry](faithful-mis
 with [verified real Nantes claim, fresh commands and playtest limits](../testing/runtime-mission-claim/README.md).
 Console effect probes: [run-file dispatch, scope and observability](console-run-effects.md).
 Conditional reward extraction: [named mission rewards and native regressions](shared-mission-reward-effects.md),
-with [coverage manifest](../testing/runtime-coverage.md).
+with [coverage manifest](../mods/brittany_missions/testing/coverage.md).
 
 Ordinary mission-button investigations: [bounded manual fixtures](ordinary-mission-button-fixtures.md),
 with [current Nantes handoff](../testing/runtime-nantes-market/manual-session.md).

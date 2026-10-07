@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import { identity, productionOwners, canonicalPath, schemaVersion } from '../evidence-identity.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '../..');
@@ -73,7 +74,7 @@ export function main(args, options = {}) {
   while (args.length) {
     const key = args.shift();
     if (key === '--untracked') { opts.untracked = true; continue; }
-    if (!['--mod', '--scenario', '--run', '--logs', '--deployment', '--outcome', '--notes'].includes(key) || !args.length) throw Error(`Invalid argument: ${key}`);
+    if (!['--mod', '--scenario', '--run', '--logs', '--deployment', '--outcome', '--notes', '--source-mod', '--artifact-kind', '--contract-id', '--provenance'].includes(key) || !args.length) throw Error(`Invalid argument: ${key}`);
     opts[key.slice(2)] = args.shift();
   }
   const mod = opts.mod || 'brittany_missions';
@@ -97,6 +98,9 @@ export function main(args, options = {}) {
       const recordPath = path.resolve(opts.deployment || path.join(root, `tools/deployment/state/${mod}/${key}/latest.json`));
       if (!fs.existsSync(recordPath)) throw Error('No deployment record found. Deploy first, or use --untracked for a vanilla/unmanaged run.');
       const record = readJson(recordPath);
+      if (record.schemaVersion !== undefined && record.schemaVersion !== schemaVersion) throw Error('Unsupported deployment schema version.');
+      if (record.sourceMod && opts['source-mod'] && record.sourceMod !== opts['source-mod']) throw Error('Deployment source owner conflict.');
+      if (record.storageNamespace && record.storageNamespace !== mod) throw Error('Deployment storage namespace conflict.');
       const problems = verifyDeployment(record);
       if (problems.length) throw Error(`Deployed build differs from record: ${problems.join(', ')}`);
       deployment = { recordPath, recordSha256: sha(fs.readFileSync(recordPath)), record };
@@ -104,18 +108,46 @@ export function main(args, options = {}) {
     const id = new Date().toISOString().replace(/[-:.]/g, '') + '_' + crypto.randomBytes(3).toString('hex');
     const dir = runPath(id);
     const before = snapshot(logs, path.join(dir, 'before'));
-    const metadata = { id, mod, scenario: opts.scenario, startedAtUtc: new Date().toISOString(), status: 'running', logsDirectory: logs, deployment, before, notes: opts.notes || '', gameVersion: fs.existsSync(path.join(root, 'tools/cwtools/reports', mod, 'latest.json')) ? readJson(path.join(root, 'tools/cwtools/reports', mod, 'latest.json')).gameVersion : null, gameVersionSource: 'latest CWTools report; not verified against running game' };
+    const provenance = options.provenance || (opts.provenance ? readJson(opts.provenance) : {});
+    if(provenance.schemaVersion!==undefined && provenance.schemaVersion!==schemaVersion) throw Error('Unsupported collector provenance schema version.');
+    const kind = opts['artifact-kind'] || provenance.artifactKind || (opts.untracked ? 'untracked' : 'staged');
+    const sourceMod = opts['source-mod'] || provenance.sourceMod || (!opts.untracked && argsExplicitMod() && productionOwners.includes(mod) ? mod : null);
+    function argsExplicitMod() { return Object.hasOwn(opts,'mod'); }
+    if (deployment?.record.sourceMod && sourceMod && deployment.record.sourceMod !== sourceMod) throw Error('Deployment source owner conflict.');
+    if (deployment?.record.artifactKind && kind !== deployment.record.artifactKind) throw Error('Deployment artifact kind conflict.');
+    if(deployment && kind==='production') throw Error('Deployed copy is staged, not canonical production.');
+    if(opts['contract-id'] && provenance.contractId && opts['contract-id']!==provenance.contractId) throw Error('Collector contractId conflict.');
+    if (sourceMod && deployment?.record.source && canonicalPath(deployment.record.source)!==canonicalPath(path.join(root,'mod',sourceMod))) throw Error('Deployment source path conflict.');
+    for (const [key,value] of Object.entries({storageNamespace:mod,sourceMod,artifactKind:kind})) {
+      if(Object.hasOwn(provenance,key) && provenance[key]!==value) throw Error(`Collector ${key} conflict.`);
+    }
+    const provenanceFields = Object.fromEntries(['contractId','suiteId','selectedMembers','sourceBuild','stagedBuild','artifactBuild','intendedEnvironment','runId','attemptId','coveredLayers'].filter(k=>Object.hasOwn(provenance,k)).map(k=>[k,provenance[k]]));
+    // Collection establishes log capture only; caller's native layers stay declared.
+    const recordIdentity = identity({...provenanceFields,sourceMod,storageNamespace:mod,artifactKind:kind,
+      evidenceSource:'operator',coveredLayers:[],runId:provenance.runId || id,
+      ...(opts['contract-id']?{contractId:opts['contract-id']}:{})});
+    if (provenance.coveredLayers) recordIdentity.declaredLayers=provenance.coveredLayers;
+    if(deployment?.record.sourceBuild && !recordIdentity.sourceBuild) recordIdentity.sourceBuild=deployment.record.sourceBuild;
+    if(deployment?.record.artifactBuild && !recordIdentity.artifactBuild) recordIdentity.artifactBuild=deployment.record.artifactBuild;
+    for(const field of ['sourceBuild','artifactBuild']) {
+      const recorded=deployment?.record[field],declared=recordIdentity[field];
+      if(recorded && declared && (recorded.sha256!==declared.sha256 || recorded.algorithm!==declared.algorithm)) throw Error(`Collector deployment ${field} conflict.`);
+    }
+    const metadata = { ...recordIdentity, id, mod, scenario: opts.scenario, startedAtUtc: new Date().toISOString(), status: 'running', logsDirectory: logs, deployment, before, notes: opts.notes || '', gameVersion: fs.existsSync(path.join(root, 'tools/cwtools/reports', mod, 'latest.json')) ? readJson(path.join(root, 'tools/cwtools/reports', mod, 'latest.json')).gameVersion : null, gameVersionSource: 'latest CWTools report; not verified against running game' };
     writeJson(path.join(dir, 'run.json'), metadata);
-    writeJson(activePath, { id });
+    writeJson(activePath, { schemaVersion, sourceMod,storageNamespace:mod,artifactKind:kind,id,runId:recordIdentity.runId });
     return { id, directory: dir, status: 'running' };
   }
   if (action === 'status') return fs.existsSync(activePath) ? readJson(path.join(runPath(readJson(activePath).id), 'run.json')) : { status: 'no-active-run' };
   const id = opts.run || (fs.existsSync(activePath) ? readJson(activePath).id : null);
   const dir = runPath(id);
   const metadata = readJson(path.join(dir, 'run.json'));
+  if(metadata.schemaVersion!==undefined && metadata.schemaVersion!==schemaVersion) throw Error('Unsupported collector schema version.');
+  if(metadata.storageNamespace && metadata.storageNamespace!==mod) throw Error('Collector storage namespace conflict.');
+  if(opts['source-mod'] && metadata.sourceMod!==opts['source-mod']) throw Error('Collector source owner conflict.');
   if (action === 'baseline') {
     if (metadata.status !== 'complete') throw Error('Baseline must come from a completed run.');
-    writeJson(baselinePath, { id, scenario: metadata.scenario, selectedAtUtc: new Date().toISOString() });
+    writeJson(baselinePath, { schemaVersion,sourceMod:metadata.sourceMod ?? null,storageNamespace:mod,artifactKind:metadata.artifactKind || 'untracked',id,scenario: metadata.scenario,selectedAtUtc: new Date().toISOString(),referenceSchemaVersion:metadata.schemaVersion ?? null });
     return { baseline: id, note: 'Selected explicitly; collector does not verify that this was a vanilla run.' };
   }
   if (action !== 'finish') throw Error('Action must be begin, finish, baseline or status.');
@@ -137,14 +169,15 @@ export function main(args, options = {}) {
   }
   const missingLogs = metadata.before.filter(entry => !after.some(file => file.name === entry.name)).map(entry => entry.name);
   const deploymentChanges = metadata.deployment ? verifyDeployment(metadata.deployment.record) : null;
-  const report = { id, scenario: metadata.scenario, outcome, outcomeSource: 'operator supplied; logs do not establish gameplay success', notes: opts.notes || '', finishedAtUtc: new Date().toISOString(), baseline, changedLogs: files.filter(file => file.mode !== 'unchanged').length, missingLogs, unstableCapture: after.some(file => file.changedDuringCapture) || metadata.before.some(file => file.changedDuringCapture), deploymentChanges, files };
+  const identityFields = Object.fromEntries(['schemaVersion','sourceMod','storageNamespace','artifactKind','contractId','suiteId','selectedMembers','sourceBuild','stagedBuild','artifactBuild','runId','attemptId','intendedEnvironment','coveredLayers','declaredLayers','evidenceSource','startedAtUtc'].filter(k=>Object.hasOwn(metadata,k)).map(k=>[k,metadata[k]]));
+  const report = { ...identityFields, status:'complete', verdict:outcome==='passed'?'PASS':outcome==='failed'?'FAIL':outcome==='not-completed'?'INCOMPLETE':'UNVERIFIED', verdictSource:'operator supplied; collection does not establish gameplay', id, scenario: metadata.scenario, outcome, outcomeSource: 'operator supplied; logs do not establish gameplay success', notes: opts.notes || '', finishedAtUtc: new Date().toISOString(), baseline, changedLogs: files.filter(file => file.mode !== 'unchanged').length, missingLogs, unstableCapture: after.some(file => file.changedDuringCapture) || metadata.before.some(file => file.changedDuringCapture), deploymentChanges, files };
   const findings = files.filter(file => file.errorLog).flatMap(file => file.comparison.filter(item => item.additionalOccurrences).map(item => ({ log: file.name, ...item })));
   report.newErrorMessages = findings;
   writeJson(path.join(dir, 'report.json'), report);
   const text = [`Run: ${id}`, `Scenario: ${metadata.scenario}`, `Gameplay outcome (operator): ${outcome}`, `Baseline: ${baseline?.id || 'none; all captured error messages listed as unbaselined'}`, `Changed logs: ${report.changedLogs}`, `Missing logs: ${missingLogs.join(', ') || 'none'}`, `Capture changed while reading: ${report.unstableCapture}`, `Deployment changes: ${deploymentChanges === null ? 'untracked' : deploymentChanges.join(', ') || 'none'}`, '', 'New or increased error messages:', ...findings.map(item => `[${item.log}] +${item.additionalOccurrences} ${item.message}`), '', 'No log errors does not prove gameplay success. Unchanged logs do not prove a game run occurred.'];
   fs.writeFileSync(path.join(dir, 'report.txt'), text.join('\n') + '\n');
   writeJson(path.join(dir, 'run.json'), { ...metadata, status: 'complete', after, finishedAtUtc: report.finishedAtUtc });
-  writeJson(path.join(storage, 'latest.json'), { id, report: path.join(dir, 'report.json') });
+  writeJson(path.join(storage, 'latest.json'), { ...identityFields,id,report: path.join(dir, 'report.json') });
   if (fs.existsSync(activePath) && readJson(activePath).id === id) fs.unlinkSync(activePath);
   return { id, report: path.join(dir, 'report.txt'), outcome, newErrorMessages: findings.length, changedLogs: report.changedLogs };
 }

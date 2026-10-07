@@ -4,6 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import assert from 'node:assert/strict';
+import { buildIdentity, assertApplicable } from '../evidence-identity.mjs';
 
 const helper = path.dirname(fileURLToPath(import.meta.url));
 const fixture = path.join(helper, '.cache/self-test-project');
@@ -17,13 +18,16 @@ for (const file of [broken, scope, reference]) if (fs.existsSync(file)) fs.unlin
 fs.writeFileSync(valid, 'cwtools_helper_valid = { add_prestige = 1 }\n');
 
 function validate() {
-  const result = spawnSync(process.execPath, [path.join(helper, 'validate.mjs'), '--project', fixture],
+  const startedAtUtc=new Date().toISOString();
+  const result = spawnSync(process.execPath, [path.join(helper, 'validate.mjs'), '--project', fixture,'--artifact-kind','fixture'],
     { encoding: 'utf8', timeout: 360000, windowsHide: true });
   process.stdout.write(result.stdout || '');
   process.stderr.write(result.stderr || '');
   if (result.error) throw result.error;
   const report = JSON.parse(fs.readFileSync(path.join(helper, 'reports/self-test-project/latest.json'), 'utf8'));
   assert.equal(report.status, 'complete', report.message);
+  assertApplicable(report,{sourceMod:null,storageNamespace:'self-test-project',artifactKind:'fixture',projectPath:fixture,
+    artifactBuild:buildIdentity(fixture),notBefore:startedAtUtc,evidenceSource:'static',coveredLayers:['STATIC']});
   return { result, report };
 }
 

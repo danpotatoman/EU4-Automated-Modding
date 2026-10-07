@@ -1,9 +1,10 @@
+// Owner: mod/brittany_missions; offline checks/replays, no new native verdict
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { claimFixture,claimChecks,missionGeometry } from './mission-claim.mjs';
+import { claimFixture,claimChecks } from './contracts/brittany_missions/mission-claim.mjs';
 import { validLease } from './codex-input.mjs';
-import { judgeClaim } from './claim-save.mjs';
-import { evaluate } from './evaluate.mjs';
+import { judgeClaim } from './contracts/brittany_missions/claim-save.mjs';
+import { evaluate } from './contracts/brittany_missions/evaluate.mjs';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';

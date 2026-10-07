@@ -1,0 +1,471 @@
+{
+  "schemaVersion": 1,
+  "owner": "repository/framework documentation provenance",
+  "date": "2026-10-06",
+  "scope": "Authorized Phase 1 only; documentation/state ownership and compatibility",
+  "authorizationBoundary": "Proposal file-migration steps 1-2 implemented. Steps 3-5, config/readers, contract registry, module/fixture/CLI/report/collector/deployment/lifecycle changes and operational relocation remain unauthorized.",
+  "provenancePolicy": "This separate migration record does not replace 2026-10-05 publication-redactions.json original/public hashes. Documentation edits have new public hashes; native evidence bytes and original verdicts are preserved. This manifest omits its own hash to avoid circular provenance.",
+  "preserved": {
+    "toolBehaviorAndPolicy": {
+      "files": 79,
+      "bytes": 359418,
+      "inventorySha256": "4782eef40e1855a5e7097a00178211ea5768b56cfbc1f3bf76dbb233acab6868",
+      "verdict": "unchanged",
+      "inventory": "full per-file inventory retained locally; public record exposes category totals/digest only"
+    },
+    "historicalEvidence": {
+      "files": 734,
+      "bytes": 22431808,
+      "inventorySha256": "41c922e480c67ab73ccf65b492f9cb182fc45554f0402272e3c85a5ae15fe9e6",
+      "verdict": "unchanged",
+      "inventory": "full per-file inventory retained locally; public record exposes category totals/digest only"
+    },
+    "vanillaProvenanceCompatibility": {
+      "files": 1,
+      "bytes": 1943,
+      "inventorySha256": "b05806051301c013009cf4c97b6324a93e7d14863778f37404b66edb600ddc8a",
+      "verdict": "unchanged",
+      "inventory": "full per-file inventory retained locally; public record exposes category totals/digest only"
+    },
+    "production": {
+      "files": 20,
+      "bytes": 104769,
+      "inventorySha256": "1f23a5ac3cc33d0d7f92f6d77434a5a1c3ed84aec4b2c38d1e9fee1192ab97b7",
+      "verdict": "unchanged",
+      "inventory": "full per-file inventory retained locally; public record exposes category totals/digest only"
+    }
+  },
+  "relocation": [
+    {
+      "from": "docs/DESIGN.md",
+      "to": "docs/mods/brittany_missions/DESIGN.md",
+      "kind": "authored gameplay design rebased; root now framework design with legacy anchors",
+      "originalPublicSha256": "77fb284cad7a2bc90a50b1422e77d6dd5730de181a36c43476a01ca3254ff704",
+      "canonicalPublicSha256": "45ba12d224f2502e7151625d83c388b4359734b451f53ab523deff0993b61ecc"
+    },
+    {
+      "from": "docs/usa/DESIGN.md",
+      "to": "docs/mods/american_century/DESIGN.md",
+      "kind": "authored design rebased; old path is anchor-compatible pointer",
+      "originalPublicSha256": "9b35d2dd480d70b674ad625a198a71556587f1f59fda73407385a35755a9f1c6",
+      "canonicalPublicSha256": "79af7e11557359ef6e65abdf862a3d5fb57090ddfc3e997ebe7ae616afc139cc"
+    },
+    {
+      "from": "docs/testing/runtime-coverage.md",
+      "to": "docs/mods/brittany_missions/testing/coverage.md",
+      "kind": "authored coverage rebased; old path is pointer; native verdicts unchanged",
+      "originalPublicSha256": "8d03511a702d9b3a4e8e0c8335ac5af8c4676cd742c68f7b6212e69970599bed",
+      "canonicalPublicSha256": "831d6273c1f27e9d460df811455cc4595312ecf6f44e207e71a3c49d203eaaa5"
+    },
+    {
+      "from": "docs/testing/brittany-diplomatic-selector.md",
+      "to": "docs/mods/brittany_missions/testing/diplomatic-selector.md",
+      "kind": "new canonical reproduction copy with rebased navigation; historical scenario/results unchanged",
+      "originalPublicSha256": "ed91f30676241b79b3f18080570d9486e023979cb54a922d29f8635495e66f7b",
+      "canonicalPublicSha256": "51765a178835c958eef1bf5042199bf843a2f21592f8c7bb2a58b5ba15559c1e"
+    },
+    {
+      "from": "docs/usa/vanilla-provenance.json",
+      "to": "docs/mods/american_century/vanilla-provenance.json",
+      "kind": "canonical byte-identical copy; old bounded compatibility copy unchanged",
+      "originalPublicSha256": "15d122c13b632214ad1098983d23b79bc1c1d305074fa5cd29acccf8caeda190",
+      "canonicalPublicSha256": "15d122c13b632214ad1098983d23b79bc1c1d305074fa5cd29acccf8caeda190"
+    }
+  ],
+  "changes": [
+    {
+      "file": ".agent/PLANS.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "6ad61039e370befe6635377c9f0c13e3a7710a0b536879d05722a5eb6fa34378",
+      "afterPublicSha256": "af02c5832610ce6a503c3173572561fbcc1f2ac589c2d3e0fe17e1d7166a5c28"
+    },
+    {
+      "file": ".agent/plans/2026-10-03-documentation-bootstrap.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "1717903ea9c5f06b028ebf9aafd236e705d1546e23147120498dcedfa0002d37",
+      "afterPublicSha256": "a0d2a193cc452f10cb45454ed54129ff5380d70d26b88372db08b5b4f9f46bde"
+    },
+    {
+      "file": ".agent/plans/2026-10-03-faithful-mission-automation.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "0de665138eafa4388c9458d3a1f9d8b797f64efb1896243c19b6d4fd828d08c1",
+      "afterPublicSha256": "3cf2b2e5375b9c3061d2ab7d277ce8f225a637b58b995d6d86533a4556afcc06"
+    },
+    {
+      "file": ".agent/plans/2026-10-03-nantes-faithful-completion.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "7d02791a85b4407e693285b45775be043443964708c158271ad21781bc40eb97",
+      "afterPublicSha256": "5aa81c373f832fc572b9ccf447d6696983a781af1d8853b7ef4fb0b6fda69165"
+    },
+    {
+      "file": ".agent/plans/2026-10-03-runtime-freeze-validation.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "2efa4070160c9572f3551c15bedb0a1c342a6d7367888abea15e61191c0e2088",
+      "afterPublicSha256": "c0c882e0bcd550d7ddff9015c6c4782f464af7719e9c22c53a74e846ff99500d"
+    },
+    {
+      "file": ".agent/plans/2026-10-03-runtime-recovery.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "88a9b80b77eea661fdf660191ae4c3f8dba864e48ce2319cf04ac098d1910e45",
+      "afterPublicSha256": "a1e58e0b9cfe6d9472fa05f2520aca3f772d84b6085bce9808f58bba55c7a0f6"
+    },
+    {
+      "file": ".agent/plans/2026-10-04-american-century.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "a6ffab8af2c326374a0b1154c78ad59f860a9f42a5c57af0bf323f3a40bedc65",
+      "afterPublicSha256": "7c756cb3731618c9af6d2b2faea63905330af922dbdc1d4a21e7ab32f0d135c2"
+    },
+    {
+      "file": ".agent/plans/2026-10-05-publication-preparation.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "af5d31b03e5cf352a24b9941cddc6d6ea6a5b6e26f516aa4b5d5d86269251c91",
+      "afterPublicSha256": "01eaf044b3fc47e5dbe995f582666011a1ab09e56f4e89eddbc447010a0afbf9"
+    },
+    {
+      "file": ".agent/plans/2026-10-06-project-state-ownership.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "7a99ca27fd44ecd1ea4c1e35c4c3cf12c9f6d5b4a6c16fbc52124e601c4d9e3f",
+      "afterPublicSha256": "b0f483d29efcfe96f1c29aa19dab56eb2d68740dc664e1f484965f7a349f7f73"
+    },
+    {
+      "file": "AGENTS.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "42acdd13721fa6d22d34162e924b026c3288bd1e01290567a5660dcbc8c20493",
+      "afterPublicSha256": "7379df5cb243fcfd36e6785ed1bb53d64126ec79a1a4b137f14bceea6c8f3711"
+    },
+    {
+      "file": "CONTRIBUTING.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "c537569e3664968666596e596a50a8b8994b75cb22a028112a36080b18159b2b",
+      "afterPublicSha256": "65a35aaaed68f02e9b943f90c0b5dbc800b9c31772fcd42bf2f180bc43a690b3"
+    },
+    {
+      "file": "docs/DECISIONS.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "08ad427148a971fdc16d1769fb9e017be6387092ea9fbc1d5b17ba094b5d2571",
+      "afterPublicSha256": "c7eb17f96763e26a1d8a3f8e3ca22e89f45a1e0b880fde293d8ed66c41b4f1b0"
+    },
+    {
+      "file": "docs/DESIGN.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "77fb284cad7a2bc90a50b1422e77d6dd5730de181a36c43476a01ca3254ff704",
+      "afterPublicSha256": "23413eb61534a8df55c7d259794b62cd51cafb7d6268e0664b666e96bb5ca3ff"
+    },
+    {
+      "file": "docs/modding/american-colonial-missions.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "b49275202c7d465a3f0dd6c9ceede6923addf9791d0a86e80fc33b42fba4e4f0",
+      "afterPublicSha256": "d1f81d05c42752659dc91de050d2958677db8426eedb754e5f508706b9f32454"
+    },
+    {
+      "file": "docs/modding/console-run-effects.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "9fd4a3db7f7e039312fe6b2c45a01bb889a6508d83addd7990235db4297d4cef",
+      "afterPublicSha256": "77143aad48b345964c27f0e4a000588b1f7a6a3be26b2f8ea19438a2bbf12059"
+    },
+    {
+      "file": "docs/modding/country-flag-mission-gates.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "298e3f79f657ad43681522fc47d2844eb628a6d1628f97886232567dc7ec249c",
+      "afterPublicSha256": "ce17675a194d8139ac0abe0702d96f4e26fe077c6bee65b7c0f52240010d18e1"
+    },
+    {
+      "file": "docs/modding/faithful-mission-input.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "602f93713f85e17a34591cca47db002971526440a6773f062185649257482de9",
+      "afterPublicSha256": "83dae9215928acab91f58d55904ce01d9b49a5e44289a034aab7de55268a4577"
+    },
+    {
+      "file": "docs/modding/native-mission-completion.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "6d0d30d9620dd0406337a22f50d63e1d002028e34838c3684b182ab71a4d9308",
+      "afterPublicSha256": "a97935477f8552daa9d4c4cf728cdf61bdebe6974703ca97602266aa55203ece"
+    },
+    {
+      "file": "docs/modding/ordinary-mission-button-fixtures.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "64888a9ce137abbf108e5a324d62fd4d042e168d594f154d4ba7fb7e59dd91e4",
+      "afterPublicSha256": "5e774bd2c310314a38f08fe7fadb8a307b7f18de5822fd77b97c4add05b22b7c"
+    },
+    {
+      "file": "docs/modding/README.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "fd3dc00301c090b636d774ff9a18e017f3ca7712d05fcf51df37a6ca0fd10a11",
+      "afterPublicSha256": "518c321cdd87b52121ed2004daded708a24ed594aa1f1873e52d41a0a0803d51"
+    },
+    {
+      "file": "docs/modding/runtime-script-assertions.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "19bd759a479f199e498a2adb02668f3a1d8eb5f3f1038196f323bc5b21d9948a",
+      "afterPublicSha256": "4d80ef9e439ae7b5f436a10a6610ffc4b6ad0c8116d695829e12eebc50d645f0"
+    },
+    {
+      "file": "docs/modding/shared-mission-reward-effects.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "68a43436bd8b573e106001f1f583ace8c2302db184636625802d57f633a88f32",
+      "afterPublicSha256": "f14f8d5bbce45164648ebb07870bc5511c2793e5dacebf81d0067fb3c85f930e"
+    },
+    {
+      "file": "docs/mods/american_century/DECISIONS.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "0f66cf910a4ef0547c8c0ef19142acd53aa20980a8d6d0ad8d981ce73a74bc78"
+    },
+    {
+      "file": "docs/mods/american_century/DESIGN.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "79af7e11557359ef6e65abdf862a3d5fb57090ddfc3e997ebe7ae616afc139cc"
+    },
+    {
+      "file": "docs/mods/american_century/PROJECT.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "9a98375d625ada92d40ff93812143c6a496ae5995a4d2efc8bf32b3741be2018"
+    },
+    {
+      "file": "docs/mods/american_century/ROADMAP.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "c24dc858f3c2f790a0dcdad437962cf86abaf70b31ac9f1f8d7cf25aa8b52c4f"
+    },
+    {
+      "file": "docs/mods/american_century/STATUS.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "2bcda3bf63a16d4b79a8234ccc798246270ec8f2c1d0b04c5168497ab1ae5697"
+    },
+    {
+      "file": "docs/mods/american_century/testing/coverage.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "e4285fe963d315b3751e9f0db7abb80bd639f0ba0cb7722676128f2710512cbd"
+    },
+    {
+      "file": "docs/mods/american_century/testing/README.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "7c1b584014448232d66c03397dcc6e031713d1f91a893933a36ef3845279d379"
+    },
+    {
+      "file": "docs/mods/american_century/vanilla-provenance.json",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "15d122c13b632214ad1098983d23b79bc1c1d305074fa5cd29acccf8caeda190"
+    },
+    {
+      "file": "docs/mods/brittany_missions/DECISIONS.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "57e2ed3965f02fcca380b531894e04ec48d930c676758d2002b42aa9c33faa7b"
+    },
+    {
+      "file": "docs/mods/brittany_missions/DESIGN.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "45ba12d224f2502e7151625d83c388b4359734b451f53ab523deff0993b61ecc"
+    },
+    {
+      "file": "docs/mods/brittany_missions/PROJECT.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "6ee4811d53daadebedb3bc53b9cf76fc290406561a2bf03a34f02e23c4e15d3d"
+    },
+    {
+      "file": "docs/mods/brittany_missions/ROADMAP.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "d88fe4b7ed4208d5f1ab78ed4f5d92aa9ced14c4c3c75757edc821d692f885e1"
+    },
+    {
+      "file": "docs/mods/brittany_missions/STATUS.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "2954f7f336cfe59a7040d89c24e56d60f4985499c264f43704929108b9a0ef77"
+    },
+    {
+      "file": "docs/mods/brittany_missions/testing/coverage.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "831d6273c1f27e9d460df811455cc4595312ecf6f44e207e71a3c49d203eaaa5"
+    },
+    {
+      "file": "docs/mods/brittany_missions/testing/diplomatic-selector.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "51765a178835c958eef1bf5042199bf843a2f21592f8c7bb2a58b5ba15559c1e"
+    },
+    {
+      "file": "docs/mods/brittany_missions/testing/README.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "2c3ec7cf26c0270d237cae131791d6d7268fcefdab24d9575acaa634a534aa01"
+    },
+    {
+      "file": "docs/mods/README.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "4dd7379fa7855935866176641a68879be7ee0679094a640407d941d28f5b6e27"
+    },
+    {
+      "file": "docs/PROJECT.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "f82f3b0e61bef0f158a07d2997ed1da4aa7dfd4151a05795e68fe82f99bb6c73",
+      "afterPublicSha256": "2a6efcb834e67d95b19869f829324d101ffc6798b65f354b698a54f8c6fde441"
+    },
+    {
+      "file": "docs/REPOSITORY_HYGIENE.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "0cb5d1453c3e452a70dde4526c20ab4fd5a6e7275c3f885bec1b68c0bfd969d8",
+      "afterPublicSha256": "0693851e91a483cb34fb5598c24ef12e34f919afbac9bc29dc3968d453fe4aec"
+    },
+    {
+      "file": "docs/ROADMAP.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "d716111f1d6f26af0e48313b01b5e5e51aa1f9ea39bbbd4f89f8f8a6580e5430",
+      "afterPublicSha256": "bd0b3160becfda2ab1a1e9adbdc4a42fa1941df542ff10746bcc4d6168e7da06"
+    },
+    {
+      "file": "docs/runtime/DECISIONS.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "9ec52390affd7020388422d4e4b3b306517be70a490e0672dee227710447c221"
+    },
+    {
+      "file": "docs/runtime/README.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "334036e5777ce867c42d84e183675a3a7b77020a121032bcb38f8d8644404eeb"
+    },
+    {
+      "file": "docs/SETUP.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "a07484052d87e537683a53a0e55024f50153725bc1d4139fdffc83fe540bfe59",
+      "afterPublicSha256": "48b5ad1ed15c502e1e632d86ff55e3cea83a240bc8039705dbd572fc63113d7c"
+    },
+    {
+      "file": "docs/STATUS.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "3324aba3b05641dc946398d673cb0f7e547a41079e74f7a7e2fd947b3c477e08",
+      "afterPublicSha256": "d7997afee0b112b1c1b5e7f26005e3314b3cf11f989bffe66b09aed591ec4b31"
+    },
+    {
+      "file": "docs/TESTING.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "bd9ea52e0fe9b87fefb9793160c4cf803468fe8776206104a25e4c89f0dcf8d5",
+      "afterPublicSha256": "602ac91a0bc9ce66eda2e1d4fba8e71e80442cf3e81eef0ae3169ec48d000123"
+    },
+    {
+      "file": "docs/testing/environment.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "5121d50fbbb664a9bb50c5415388451d7149c71325e1123e5ac995c103c73107",
+      "afterPublicSha256": "e4ddadae41940762520a6e4b1d20fbccae604aa802ff5c6b154661615229d272"
+    },
+    {
+      "file": "docs/testing/README.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "d1adf19f40e4f35f213894fcd1b7c179cc592d8bf416dca9e5a660cc7c47bee6"
+    },
+    {
+      "file": "docs/testing/runtime-coverage.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "8d03511a702d9b3a4e8e0c8335ac5af8c4676cd742c68f7b6212e69970599bed",
+      "afterPublicSha256": "edb1c487d2b8bb6cb7670103dab1c18dcf11cff38556fe857d003e5e44def676"
+    },
+    {
+      "file": "docs/usa/DESIGN.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "9b35d2dd480d70b674ad625a198a71556587f1f59fda73407385a35755a9f1c6",
+      "afterPublicSha256": "a55648c3ae116a3cc006631e27829f22150d0a74b214eeef4824b21bcc60d1cc"
+    },
+    {
+      "file": "docs/usa/README.md",
+      "action": "documentation-create",
+      "beforePublicSha256": null,
+      "afterPublicSha256": "fbba42129e4cea2ec2e9874f914f25f6bacbb510f11d4354fdb7f22c53eb0997"
+    },
+    {
+      "file": "PROJECT_STRUCTURE.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "6a622355dc92061b97767d9d3e20fd0d72e5eddbca762dbecec1a5a65e80a94d",
+      "afterPublicSha256": "a532fde10311ebbf66f56a1b34525fd85daaa17c2a68407ae2286e4c3e1d851d"
+    },
+    {
+      "file": "README.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "e1fd148b9113d40e47702cae3143d048b0e1f94a29e02f9e1352347a16d2f995",
+      "afterPublicSha256": "3b9defabbdf1334199833d9d9a73064af70f34e590c6aaeb7dedc909118887a1"
+    },
+    {
+      "file": "tools/checks/README.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "d598394679333d57985f5e888406820a2b249a6d6f3180c46dca2caeb73eb71f",
+      "afterPublicSha256": "663e5eb00cad09298c859be63f2d0f2bfbfe0615b033ff01836bc23270de15bd"
+    },
+    {
+      "file": "tools/cwtools/README.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "cdde4cd12d83cdb24be3a3daec39c761593acfb24901c39a302679b64644aaae",
+      "afterPublicSha256": "0bf0322996f5d300cc6849f541f5ae70a5aace135f166442c239c2882cf46c78"
+    },
+    {
+      "file": "tools/deployment/README.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "73ee8aed7487cd66c25e0dddff7f05f21d8d72f439bbb805cfee0fb6e25ee54a",
+      "afterPublicSha256": "a427ead1c0d51d2f46c619ee98c7c513576eb37291d22b683c0cb4605ffac0d7"
+    },
+    {
+      "file": "tools/mission-inspector/README.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "35c03283608fe68846547b110fec8cf7dbd9d395e809768d0dcfee201ff16ed9",
+      "afterPublicSha256": "80aca75b3a2444c4b51903de91c82c2e919c7111e051c6e805c966854407a93e"
+    },
+    {
+      "file": "tools/runtime-tests/README.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "4a966ff483f9b1d31b6a1eb6cf3b1ee4ac865e3f1a629bbabcfad1669deabae0",
+      "afterPublicSha256": "24789b7bad48ad1425ba55a6e0f06c56dcc1279817587786afba7f19c9907cb1"
+    },
+    {
+      "file": "tools/test-runs/README.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "0ab9550f32e0606ae7e448ff730ad01ce06635680e728bc06e2bf7e36ddc7457",
+      "afterPublicSha256": "6a8cf33cdab7fcea2a935a0249316e02b9e44438f009f08ce8924e6466bab904"
+    },
+    {
+      "file": "tools/vanilla-reference/README.md",
+      "action": "documentation-edit",
+      "beforePublicSha256": "c0d1311cd0808b9f1196fba3a80dd3daec416607b5e629afa3e165846d0797e7",
+      "afterPublicSha256": "2993a3a9d73a1ac7ce125ba54e6f9cb988235772b25175b5cd9b3bd470b6f008"
+    }
+  ],
+  "phase1Deviations": [
+    "Historical selector scenario/results kept at original path byte-for-byte; canonical reproduction document created separately.",
+    "Historical USA provenance JSON kept as byte-preserved old-path compatibility copy; bounded identical canonical copy documented in docs/usa/README.md.",
+    "Historical reports including American Century README and publication-redactions.json were not edited; owner navigation lives in docs/testing/README.md."
+  ],
+  "checks": {
+    "protectedBytes": "PASS",
+    "changedFileScope": "documentation only; scripts/config/fixtures/CI/ignore policies unchanged",
+    "linkAudit": {
+      "verdict": "PASS",
+      "localPublicLinks": 679,
+      "issues": 0
+    },
+    "publicationAudit": {
+      "verdict": "PASS",
+      "candidateFiles": 779,
+      "scannerFindings": 0
+    },
+    "nativeValidation": "not run; not applicable to documentation-only changes",
+    "whitespace": {
+      "verdict": "PASS",
+      "scope": "tracked diff and every new public file; no diagnostics"
+    },
+    "ownerAcceptance": {
+      "verdict": "PASS",
+      "scope": "canonical owners, plan labels, legacy anchors, unchanged DLC parser input, supported current CLI examples"
+    }
+  }
+}

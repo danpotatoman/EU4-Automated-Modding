@@ -1,5 +1,14 @@
 # Named mission reward effects and behavioral regression
 
+Owner: shared EU4 mechanics/tooling knowledge
+
+The Brittany/Nantes examples/results below are attributed workloads, not general mod coverage.
+Current framework capability lives in [framework status](../STATUS.md) and
+[runtime knowledge](../runtime/README.md); gameplay state/playtests belong to
+[the mod owners](../mods/README.md). Dated verification and unresolved assumptions
+remain scoped to their recorded versions, dependencies and fixtures.
+
+
 Applicable version: installed EU4 1.37.5.0, checked 2026-10-03. Native evidence
 already establishes country/province scripted-effect invocation through isolated
 console run files. This pattern gives LOGIC/EFFECT/WIRING coverage, not normal
@@ -102,3 +111,5 @@ for these values. A prior dynamic `Root/This.variable.GetValue` logging attempt
 crashed at load with stack overflow; causation was not isolated. Constant markers
 with state predicates work and are the supported harness pattern. Annual modifier
 effects, duration expiry, tooltips, mission dispatch and persistence remain open.
+
+Current example coverage: [Brittany/Nantes owner runbook](../mods/brittany_missions/testing/README.md).

@@ -1,5 +1,12 @@
 # Vanilla reference lookup
 
+Owner: shared EU4 tooling interface
+
+[Framework status](../../docs/STATUS.md) owns tool capability state;
+[mod runbooks](../../docs/mods/README.md) own gameplay state/coverage and
+[evidence index](../../docs/testing/README.md) labels historical workloads.
+
+
 Run from the project root. The game path comes from shared defaults/local overrides
 or `EU4_GAME_PATH`; see [setup](../../docs/SETUP.md).
 the version is read from the installed `launcher-settings.json`, not an old report.

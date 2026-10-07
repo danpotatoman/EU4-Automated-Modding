@@ -9,6 +9,11 @@ Use `YYYY-MM-DD-short-task-name.md`. Keep completed plans in place with status
 `complete`; do not treat unfinished checkboxes in a completed plan as implemented
 features. Record status (`active`, `blocked`, `complete`), last update and scope at
 the top. A blocked plan must state the dependency and the next action needed.
+Each plan names its primary Owner, Affected mods and canonical current-state
+sources. Preserve separate authorization for each phase; unapproved proposal
+checkboxes never imply permission to continue. Plans link durable owner state,
+rather than replacing it with task history.
+
 Plans document execution; creating one does not authorize implementation or work
 beyond the user's request.
 
@@ -61,6 +66,10 @@ user's authorization for that change while continuing independent authorized wor
 
 Status: active
 Last updated: YYYY-MM-DD
+Owner: repository/framework | shared EU4 runtime/tooling | mod/<source-id>
+Affected mods: source IDs or none
+Current state: canonical owner documents
+Authorization: adopted scope and phase boundary
 
 ## Goal
 Concrete outcome and scope.
@@ -101,29 +110,17 @@ Measurable criteria; distinguish completion of this task from release readiness.
 
 ## Plan index
 
-- [Publication preparation](plans/2026-10-05-publication-preparation.md): complete;
-  reviewed staged source in clean ongoing Git; original history privately archived;
-  no remote/push/commit.
+| Plan | Primary owner / affected mods | Execution state and canonical state |
+| --- | --- | --- |
+| [Project-state ownership](plans/2026-10-06-project-state-ownership.md) | repository/framework; both mod adapters/provenance/config | Authorized Phase 1/2A/2B/2C complete. [Phase 2C handoff](../docs/runtime/phase2c-configuration-ownership-2026-10-06.md), [framework status](../docs/STATUS.md). No next phase begins automatically. |
+| [Publication preparation](plans/2026-10-05-publication-preparation.md) | repository/framework; both mods protected | complete; dated publication evidence, no commit/remote/push. [Framework status](../docs/STATUS.md) |
+| [American Century](plans/2026-10-04-american-century.md) | mod/american_century; Brittany protected, shared runtime touched historically | active under its prior gameplay authorization; first slice complete, broader design remains active. [USA status](../docs/mods/american_century/STATUS.md) |
+| [Faithful mission automation](plans/2026-10-03-faithful-mission-automation.md) | shared EU4 runtime/tooling; Brittany workload | complete; bounded Nantes actual-input/refusal, driver extensions proposals only. [Framework status](../docs/STATUS.md), [Brittany coverage](../docs/mods/brittany_missions/testing/coverage.md) |
+| [Real native freeze](plans/2026-10-03-runtime-freeze-validation.md) | shared EU4 runtime/tooling; Brittany workload | complete; after-BEGIN suspension/retry, no broad UI certification. [Framework status](../docs/STATUS.md) |
+| [Native lifecycle recovery](plans/2026-10-03-runtime-recovery.md) | shared EU4 runtime/tooling; Brittany workload | complete; owned crash/exit/retry, unusual ownership gaps open. [Framework status](../docs/STATUS.md) |
+| [Documentation bootstrap](plans/2026-10-03-documentation-bootstrap.md) | repository/framework; Brittany docs | complete; historical bootstrap, current owner layout supersedes navigation only. [Framework project](../docs/PROJECT.md) |
+| [Nantes faithful completion](plans/2026-10-03-nantes-faithful-completion.md) | mod/brittany_missions; shared save/probe research | complete; dated manual readiness/rewards/reload, raw query FAILs retained. [Brittany status](../docs/mods/brittany_missions/STATUS.md) |
 
-- [American Century](plans/2026-10-04-american-century.md): active; user-authorized
-  USA design, isolated real-button vertical slice and subsequent branch expansion.
-
-- [Faithful mission automation](plans/2026-10-03-faithful-mission-automation.md):
-  complete; bounded Codex-driven real Nantes claim, independent saved production
-  rewards, fresh unready refusal and clean native suite verified. Further layouts
-  and standalone UI driver remain proposals in the linked report.
-
-- [Real native freeze validation](plans/2026-10-03-runtime-freeze-validation.md):
-  authorized narrow follow-up to close the real after-BEGIN suspension gap.
-
-- [Native lifecycle recovery](plans/2026-10-03-runtime-recovery.md): authorized
-  crash/hang, owned-remnant cleanup and bounded retry extension of the runner.
-
-- [Documentation bootstrap](plans/2026-10-03-documentation-bootstrap.md)
-  captures this migration. Subsequent substantial tasks should add their plan here.
-- [Nantes faithful readiness and completion](plans/2026-10-03-nantes-faithful-completion.md)
-  complete: faithful ordinary Nantes behavior verified manually, including both
-  permanent rewards, Textiles readiness, once-only action and save/reload.
-  Execution was authorized on 2026-10-03; raw query FAILs remain retained.
-  See the [final report](../docs/testing/runtime-nantes-market/faithful-completion-2026-10-03.md)
-  and existing [roadmap](../docs/ROADMAP.md) for scope and remaining boundaries.
+Current sources: [framework](../docs/PROJECT.md), [shared knowledge](../docs/runtime/README.md),
+[independent mods](../docs/mods/README.md), [historical evidence](../docs/testing/README.md).
+Completed task results remain dated; new facts go to their owner documents.

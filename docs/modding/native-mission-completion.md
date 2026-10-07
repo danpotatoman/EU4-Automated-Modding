@@ -1,5 +1,14 @@
 # Native mission completion investigation
 
+Owner: shared EU4 mechanics/tooling knowledge
+
+The Brittany/Nantes examples/results below are attributed workloads, not general mod coverage.
+Current framework capability lives in [framework status](../STATUS.md) and
+[runtime knowledge](../runtime/README.md); gameplay state/playtests belong to
+[the mod owners](../mods/README.md). Dated verification and unresolved assumptions
+remain scoped to their recorded versions, dependencies and fixtures.
+
+
 Started 2026-10-03 against installed EU4 1.37.5.0. Consult
 `runtime-script-assertions.md` for the verified isolated startup/flag/log pattern.
 No production mission logic should be copied into a test hook.
@@ -146,3 +155,5 @@ persists after actual reload, while UI/native saves retain completion, both name
 permanent rewards/contributions and Textiles readiness. No second ordinary action
 is available. See [final manual report](../testing/runtime-nantes-market/faithful-completion-2026-10-03.md).
 Neither `complete_mission` nor native `mission` is promoted to a faithful action.
+
+Current example coverage: [Brittany/Nantes owner runbook](../mods/brittany_missions/testing/README.md).

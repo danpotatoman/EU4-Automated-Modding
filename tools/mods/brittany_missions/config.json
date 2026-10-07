@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "sourceMod": "brittany_missions",
+  "developmentDisplayName": "Brittany Missions (Development)",
+  "supportedVersion": "1.37.*",
+  "missionInspector": {
+    "scenarios": [
+      { "name": "Initial Brittany", "tag": "BRI", "mapSetup": "map_setup_normal", "flags": [] },
+      { "name": "French diplomatic path", "tag": "BRI", "mapSetup": "map_setup_normal", "flags": ["bri_french_sphere_path"] },
+      { "name": "Autonomous diplomatic path", "tag": "BRI", "mapSetup": "map_setup_normal", "flags": ["bri_autonomous_path"] },
+      { "name": "Both path flags (invalid state check)", "diagnostic": true, "tag": "BRI", "mapSetup": "map_setup_normal", "flags": ["bri_french_sphere_path", "bri_autonomous_path"] }
+    ],
+    "mutuallyExclusiveFlags": [["bri_french_sphere_path", "bri_autonomous_path"]]
+  }
+}

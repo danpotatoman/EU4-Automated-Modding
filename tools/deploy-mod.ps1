@@ -8,8 +8,10 @@ param(
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
 . (Join-Path $PSScriptRoot 'config.ps1')
+. (Join-Path $PSScriptRoot 'mod-config.ps1')
 $config = Get-DeploymentConfig
 if ($Mod -notmatch '^[a-zA-Z0-9_-]+$') { throw 'Mod must be a simple folder name.' }
+$modMetadata = Get-ModConfig -Mod $Mod -Root $projectRoot -EmitNotice
 if (-not $DestinationRoot) { $DestinationRoot = $config.gameModDirectory }
 $source = [IO.Path]::GetFullPath((Join-Path $projectRoot "mod/$Mod"))
 $destinationRootPath = [IO.Path]::GetFullPath($DestinationRoot).TrimEnd('\', '/')
@@ -29,9 +31,17 @@ Write-Host "Source: $source"
 Write-Host "Destination: $target"
 Write-Host "Launcher descriptor: $launcher"
 if ($Preview) { Write-Host 'Preview only; no files changed and validation not run.'; return }
+$nodeCommand = Get-Command node -ErrorAction SilentlyContinue
+$nodePath = if ($nodeCommand) { $nodeCommand.Source } else { Join-Path $env:USERPROFILE '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe' }
+$sourceBuildJson = & $nodePath (Join-Path $PSScriptRoot 'evidence-record.mjs') build $source
+if ($LASTEXITCODE -ne 0) { throw 'Cannot establish source build identity.' }
+$sourceBuild = $sourceBuildJson | ConvertFrom-Json
+$sourceOwner = if ($Mod -in @('brittany_missions','american_century')) { $Mod } else { $null }
 if ((Test-Path -LiteralPath $target) -or (Test-Path -LiteralPath $launcher)) {
     if (-not (Test-Path -LiteralPath $recordPath)) { throw 'Destination already exists without a deployment record. Refusing to overwrite it.' }
     $previous = Get-Content -LiteralPath $recordPath -Raw | ConvertFrom-Json
+    if ($null -ne $previous.schemaVersion -and $previous.schemaVersion -ne 2) { throw 'Unsupported deployment schema version.' }
+    if ($previous.schemaVersion -eq 2 -and ($previous.sourceMod -ne $sourceOwner -or $previous.storageNamespace -ne $Mod -or $previous.artifactKind -ne 'staged')) { throw 'Deployment identity conflict.' }
     if ($previous.target -ne $target -or $previous.launcher -ne $launcher) { throw 'Existing deployment record belongs to a different destination.' }
     if (-not (Test-Path -LiteralPath $target -PathType Container) -or -not (Test-Path -LiteralPath $launcher -PathType Leaf)) { throw 'Existing deployment is incomplete; restore or move it before redeploying.' }
     $targetItems = @(Get-Item -LiteralPath $target) + @(Get-ChildItem -LiteralPath $target -Recurse -Force)
@@ -46,21 +56,26 @@ if ((Test-Path -LiteralPath $target) -or (Test-Path -LiteralPath $launcher)) {
     }
 }
 $validation = 'skipped'
+$validationStartedAtUtc = [DateTime]::UtcNow.ToString('o')
 if (-not $SkipValidation) {
+    $validationStartedAtUtc = [DateTime]::UtcNow.ToString('o')
     & powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'validate-cwtools.ps1') -Mod $Mod
     $validationExit = $LASTEXITCODE
     if ($validationExit -eq 2 -or $validationExit -notin @(0, 1)) { throw 'CWTools validation failed to complete. Deployment stopped.' }
     if ($validationExit -eq 1 -and -not $AllowValidationErrors) { throw 'CWTools found errors. Fix them or explicitly use -AllowValidationErrors for development testing.' }
     $validation = if ($validationExit -eq 0) { 'passed' } else { 'errors-allowed' }
+    $ownerArgument = if ($sourceOwner) { $sourceOwner } else { 'null' }
+    $validatedBuildJson = & $nodePath (Join-Path $PSScriptRoot 'evidence-record.mjs') cwtools $source (Join-Path $PSScriptRoot "cwtools/reports/$Mod/latest.json") $ownerArgument $Mod $validationStartedAtUtc
+    if ($LASTEXITCODE -ne 0) { throw 'CWTools evidence is stale, conflicting or incomplete. Deployment stopped.' }
+    if (($validatedBuildJson | ConvertFrom-Json).sha256 -ne $sourceBuild.sha256) { throw 'Source build changed during validation.' }
 }
 $stamp = [DateTime]::UtcNow.ToString('yyyyMMddTHHmmssfffZ')
 $runRoot = Join-Path $stateRoot $stamp
 $stage = Join-Path $runRoot 'staged'
 New-Item -ItemType Directory -Path $stage -Force | Out-Null
 foreach ($item in (Get-ChildItem -LiteralPath $source -Force)) { Copy-Item -LiteralPath $item.FullName -Destination $stage -Recurse -Force }
-$displayName = if ($Mod -eq 'brittany_missions') { $config.displayName } else { "$Mod (Development)" }
-if ($displayName -match '["\r\n]' -or $config.supportedVersion -notmatch '^[0-9.*]+$') { throw 'Invalid descriptor metadata.' }
-$descriptor = "name=`"$displayName`"`nsupported_version=`"$($config.supportedVersion)`"`n"
+$displayName = $modMetadata.developmentDisplayName
+$descriptor = Get-DevelopmentDescriptor $modMetadata
 $utf8 = New-Object Text.UTF8Encoding($false)
 [IO.File]::WriteAllText((Join-Path $stage 'descriptor.mod'), $descriptor, $utf8)
 $launcherText = $descriptor + "path=`"$($target.Replace('\', '/'))`"`n"
@@ -68,6 +83,8 @@ if ($target -match '["\r\n]') { throw 'Invalid destination path for descriptor.'
 $files = @(Get-ChildItem -LiteralPath $stage -Recurse -File -Force | ForEach-Object {
     [ordered]@{ path = $_.FullName.Substring($stage.Length + 1); sha256 = (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash }
 })
+$currentSourceJson = & $nodePath (Join-Path $PSScriptRoot 'evidence-record.mjs') build $source
+if ($LASTEXITCODE -ne 0 -or ($currentSourceJson | ConvertFrom-Json).sha256 -ne $sourceBuild.sha256) { throw 'Source changed during deployment preparation.' }
 New-Item -ItemType Directory -Path $destinationRootPath -Force | Out-Null
 if (Test-Path -LiteralPath $target) {
     Copy-Item -LiteralPath $target -Destination (Join-Path $runRoot 'previous') -Recurse
@@ -80,7 +97,9 @@ try {
     foreach ($entry in $files) {
         if ((Get-FileHash -LiteralPath (Join-Path $target $entry.path) -Algorithm SHA256).Hash -ne $entry.sha256) { throw "Copy verification failed: $($entry.path)" }
     }
-    $record = [ordered]@{ deployedAtUtc = $stamp; source = $source; target = $target; launcher = $launcher; validation = $validation; launcherSha256 = (Get-FileHash -LiteralPath $launcher -Algorithm SHA256).Hash; files = $files; backupDirectory = $runRoot }
+    $artifactBuildJson = & $nodePath (Join-Path $PSScriptRoot 'evidence-record.mjs') build $target
+    if ($LASTEXITCODE -ne 0) { throw 'Cannot establish deployed artifact identity.' }
+    $record = [ordered]@{ schemaVersion = 2; sourceMod = $sourceOwner; storageNamespace = $Mod; artifactKind = 'staged'; sourceBuild = $sourceBuild; artifactBuild = ($artifactBuildJson | ConvertFrom-Json); runId = $stamp; startedAtUtc = $validationStartedAtUtc; finishedAtUtc = [DateTime]::UtcNow.ToString('o'); status = 'complete'; verdict = 'UNVERIFIED'; verdictSource = 'verified deployment copy; activation and gameplay unverified'; evidenceSource = 'deployment'; coveredLayers = @(); deployedAtUtc = $stamp; source = $source; target = $target; launcher = $launcher; validation = $validation; launcherSha256 = (Get-FileHash -LiteralPath $launcher -Algorithm SHA256).Hash; files = $files; backupDirectory = $runRoot }
     $recordJson = $record | ConvertTo-Json -Depth 6
     [IO.File]::WriteAllText((Join-Path $runRoot 'deployment.json'), $recordJson, $utf8)
     [IO.File]::WriteAllText($recordPath, $recordJson, $utf8)

@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { evaluateUSA, usaChecks, usaMissions, judgeUSA, stageUSA } from './usa-slice.mjs';
-import { missionGeometry } from './mission-claim.mjs';
+import { evaluateUSA, usaChecks, usaMissions, judgeUSA, stageUSA } from './contracts/american_century/usa-slice.mjs';
+import { missionGeometry } from './mission-geometry.mjs';
 
 test('USA native protocol rejects missing, failed, duplicate, wrong-date and wrong-version markers',()=>{
   const outcomes=['BEGIN usa-slice',...usaChecks.map(c=>`OK ${c}`),'UI_READY usa-slice'];
@@ -52,7 +52,7 @@ test('USA source geometry is derived across files; unknown mission fails closed'
   assert.throws(()=>missionGeometry('mod/american_century',game,'amc_unknown'));
 });
 test('USA fixture never invokes completion, production rewards or formation effects',()=>{
-  const source=fs.readFileSync(new URL('./usa-slice.mjs',import.meta.url),'utf8');
+  const source=fs.readFileSync(new URL('./contracts/american_century/usa-slice.mjs',import.meta.url),'utf8');
   const stage=source.slice(source.indexOf('export function stageUSA'),source.indexOf('export function evaluateUSA'));
   assert.doesNotMatch(stage,/complete_mission|change_tag\s*=|add_country_modifier\s*=|amc_free_harbor\s*duration/);
   void stageUSA;void path;

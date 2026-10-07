@@ -1,5 +1,25 @@
 # Mission tree inspector
 
+Owner: shared EU4 tooling interface
+
+Generated JSON uses [evidence schema 2](../../docs/runtime/evidence-identity.md),
+with owner/namespace/artifact/full source manifest, run/start/finish and STATIC-only
+verdict. The Node generator accepts a third options argument for storage namespace,
+artifact kind and output storage. The self-test uses `self-test-brittany` fixture
+output so it cannot overwrite production latest provenance. Browser QA generates
+fresh `test-work/browser-<id>/reports/browser-brittany/` fixture input and uses an
+isolated headless profile. Structural scenarios establish no native mission dispatch.
+
+[Framework status](../../docs/STATUS.md) owns tool capability state;
+[mod runbooks](../../docs/mods/README.md) own gameplay state/coverage and
+[evidence index](../../docs/testing/README.md) labels historical workloads.
+
+These existing tools accept their documented -Mod and default to Brittany.
+Brittany examples/source-backed tests do not establish another mod's gameplay.
+Shared machine configuration is separate from [mod metadata](../mods/README.md);
+schema 2 semantics above apply to new reports.
+
+
 From the project root:
 
 ```powershell
@@ -49,12 +69,14 @@ clamped into a valid cell. Large layouts are flagged for review.
 
 ## Branches and country state
 
-`scenarios.json` provides initial, French and autonomous Brittany scenarios.
+`tools/mods/brittany_missions/config.json` provides initial, French and autonomous Brittany scenarios.
 French and autonomous branches legitimately reuse rows 11–13 of slot 1.
 Their mutual exclusion is respected by normal scenarios. A diagnostic scenario
 sets both flags: both branches disappear, and the configured state rule reports
-that invalid state. Configure other mods' scenarios in the same file, and
-mutually exclusive flags in `state-rules.json`.
+that invalid state. Each mod owns `missionInspector.scenarios` and
+`missionInspector.mutuallyExclusiveFlags` in its own canonical config. The former
+shared `scenarios.json` and `state-rules.json` are removed. See
+[metadata schema and unknown-mod fallback](../../docs/runtime/configuration-ownership.md).
 
 The selector evaluates only `tag`, `map_setup`, `has_country_flag`, `always`,
 and `AND`/`OR`/`NOT` groups with equality. Other conditions are **unknown**, and
@@ -105,4 +127,7 @@ node tools/mission-inspector/browser-test.mjs
 The core tests include deliberately broken fixtures and the actual Brittany tree.
 The browser checks cover scenario changes, overlap badges, finding focus, mission
 details, search and zoom, and save a screenshot under ignored `test-work/`.
+Fresh browser input is regenerated for every invocation; production reports are
+never consumed as fixtures. Self-test/browser outputs have fixture/STATIC identity,
+and tests verify production latest/HTML bytes remain unchanged.
 No existing browser session is opened or controlled.

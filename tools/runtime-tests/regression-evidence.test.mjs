@@ -1,7 +1,8 @@
+// Owner: mod/brittany_missions; offline checks/replays, no new native verdict
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { test } from 'node:test';
-import { evaluate } from './evaluate.mjs';
+import { evaluate } from './contracts/brittany_missions/evaluate.mjs';
 
 const evidence = new URL('../../docs/testing/runtime-regression-suite/evidence/', import.meta.url);
 function replay(name) {

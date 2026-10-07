@@ -2,6 +2,11 @@
 
 Status: complete
 Last updated: 2026-10-03
+Owner: shared EU4 runtime/tooling
+Affected mods: brittany_missions (regression workload)
+Documentation ownership updated: 2026-10-06
+Current state: [canonical owner status](../../docs/STATUS.md)
+Shared knowledge: [runtime index](../../docs/runtime/README.md)
 
 ## Goal and authorization
 
@@ -94,3 +99,6 @@ Completion criteria met: real identity-verified frozen EU4 after current BEGIN,
 progress-timeout despite general log noise, force cleanup, verified-clean-before-
 fresh-retry/four PASS, separate clean four PASS and no process/lock/collector remnants.
 Unidentifiable-dialog scenarios are outside this follow-up and remain open.
+
+Phase 1 added owner/current-source navigation only. Execution dates, authorizations,
+observations and verdicts above remain historical and do not authorize new work.
